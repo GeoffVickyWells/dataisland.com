@@ -1,16 +1,91 @@
 ---
-// Placeholder - Copilot will provide the full homepage structure
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import AppPreview from "../components/AppPreview.astro";
+import { products } from "../data/products.js";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataIsland Software - Productivity Apps for macOS</title>
-</head>
-<body>
-  <h1>DataIsland Software</h1>
-  <p>Placeholder homepage - awaiting Copilot's content</p>
-</body>
-</html>
+<BaseLayout title="DataIsland Software">
+  <Fragment slot="header">
+    <Header />
+  </Fragment>
+
+  <section class="hero">
+    <img src="/images/brand/palm.png" alt="DataIsland Logo" class="hero-logo" />
+    <h1>Tools for creators, professionals, and curious minds.</h1>
+    <p class="hero-sub">
+      We build privacy‑first apps that help you think, write, and work better.
+    </p>
+  </section>
+
+  <section class="product-grid">
+    {products.map(product => (
+      <AppPreview {...product} comingSoon={!product.active} />
+    ))}
+  </section>
+
+  <section class="next-steps">
+    <h2>What to do next</h2>
+    <p>
+      Explore our apps, choose the one that fits your workflow, or dive into the
+      product pages to learn more. Each tool is designed to be fast, private,
+      and beautifully simple.
+    </p>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 5rem 0 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.2rem;
+    color: var(--gray-dark);
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  .next-steps {
+    text-align: center;
+    max-width: 700px;
+    margin: 2rem auto 5rem;
+    padding: 0 1rem;
+  }
+
+  .next-steps h2 {
+    margin-bottom: 1rem;
+  }
+
+  .next-steps p {
+    font-size: 1.1rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+  }
+</style>

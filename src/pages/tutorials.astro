@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import YouTubeEmbed from "../components/YouTubeEmbed.astro";
+---
+
+<BaseLayout title="Tutorials" description="Video tutorials and guides for DataIsland apps.">
+
+  <section class="tutorials-page fade-in">
+    <h1>Tutorials</h1>
+    <p>Learn how to get the most out of Fusion, Check This, and other DataIsland tools.</p>
+
+    <div class="tutorial-block">
+      <h2>Fusion Tutorials</h2>
+      <YouTubeEmbed videoId="dQw4w9WgXcQ" />
+    </div>
+
+    <div class="tutorial-block">
+      <h2>Check This Tutorials</h2>
+      <YouTubeEmbed videoId="dQw4w9WgXcQ" />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .tutorials-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .tutorial-block {
+    margin-top: 3rem;
+  }
+
+  .tutorial-block h2 {
+    margin-bottom: 1rem;
+  }
+</style>

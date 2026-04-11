@@ -1,0 +1,89 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, icon, tagline } = Astro.props;
+---
+
+<BaseLayout title={title} description={tagline}>
+  <Fragment slot="header">
+    <Header />
+  </Fragment>
+
+  <section class="product-hero">
+    <img src={icon} alt={title} class="product-icon" />
+    <h1>{title}</h1>
+    <p class="tagline">{tagline}</p>
+  </section>
+
+  <section class="product-content">
+    <slot />
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: var(--gray-dark);
+  }
+
+  .product-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+  }
+
+  .product-content h2 {
+    margin: 2rem 0 1rem;
+  }
+
+  .product-content p,
+  .product-content li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .product-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background: var(--accent, #0066cc);
+    color: #fff;
+    border-radius: var(--radius, 8px);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .cta:hover {
+    opacity: 0.9;
+  }
+</style>

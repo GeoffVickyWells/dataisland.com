@@ -1,0 +1,62 @@
+---
+import { Astro } from "astro";
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="/images/dataisland-logo.png" alt="DataIsland Software" />
+    </a>
+
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/products/fusion">Fusion</a>
+      <a href="/products/checkthis">Check This</a>
+      <a href="/tutorials">Tutorials</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    width: 100%;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--gray-light);
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    height: 48px;
+    width: auto;
+  }
+
+  .nav a {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    transition: var(--transition);
+  }
+
+  .nav a:hover {
+    color: var(--blue);
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+  }
+</style>

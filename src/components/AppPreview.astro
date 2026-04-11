@@ -1,0 +1,63 @@
+---
+const { title, icon, description, id, comingSoon } = Astro.props;
+---
+
+<a href={comingSoon ? "#" : `/products/${id}`} class={`app-preview ${comingSoon ? "disabled" : ""}`}>
+  <img src={icon} alt={title} />
+  <h3>{title}</h3>
+  <p>{description}</p>
+  {comingSoon && <span class="badge">Coming Soon</span>}
+</a>
+
+<style>
+  .app-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--radius, 12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s;
+  }
+
+  .app-preview:hover:not(.disabled) {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .app-preview.disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .app-preview img {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+  }
+
+  .app-preview h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .app-preview p {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+</style>
