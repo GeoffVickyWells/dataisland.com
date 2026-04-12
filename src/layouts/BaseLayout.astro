@@ -22,44 +22,20 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
     <Footer />
 
     <script is:inline>
-      (function () {
-        var els = document.querySelectorAll(".fade-in");
-
-        // Set hidden state with direction-aware transform, no transition yet
-        els.forEach(function (el) {
-          el.style.opacity = "0";
-          el.style.transition = "none";
-          if (el.classList.contains("left")) {
-            el.style.transform = "translateX(-80px)";
-          } else if (el.classList.contains("right")) {
-            el.style.transform = "translateX(80px)";
-          } else {
-            el.style.transform = "translateY(50px)";
+      function checkFadeIns() {
+        document.querySelectorAll(".fade-in:not(.animate)").forEach(function (el) {
+          var rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.88) {
+            el.classList.add("animate");
           }
         });
+      }
 
-        // 100ms gives the browser time to paint the hidden state
-        // before transitions are enabled and the observer starts watching
-        setTimeout(function () {
-          els.forEach(function (el) {
-            el.style.transition = "opacity 2s ease, transform 2s ease";
-          });
-
-          var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translate(0, 0)";
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.1 });
-
-          els.forEach(function (el) {
-            observer.observe(el);
-          });
-        }, 100);
-      })();
+      // Small delay so CSS opacity:0 is painted before we check
+      setTimeout(function () {
+        checkFadeIns();
+        window.addEventListener("scroll", checkFadeIns, { passive: true });
+      }, 150);
     </script>
   </body>
 </html>

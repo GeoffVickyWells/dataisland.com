@@ -107,10 +107,57 @@ section {
 }
 
 /* ------------------------------
-   Animations (scroll-triggered)
+   Scroll Animations
 ------------------------------ */
 
-/* fade-in initial state and animation handled by /js/scroll-fade.js */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-150px) rotate(-6deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(150px) rotate(6deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.fade-in.animate.left {
+  animation: slideInLeft 3s ease forwards;
+}
+
+.fade-in.animate.right {
+  animation: slideInRight 3s ease forwards;
+}
+
+.fade-in.animate:not(.left):not(.right) {
+  animation: fadeInUp 3s ease forwards;
+}
 
 /* ------------------------------
    Responsive
