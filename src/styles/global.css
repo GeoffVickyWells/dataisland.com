@@ -110,16 +110,7 @@ section {
    Animations (scroll-triggered)
 ------------------------------ */
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* fade-in initial state and animation handled by /js/scroll-fade.js */
 
 /* ------------------------------
    Responsive
