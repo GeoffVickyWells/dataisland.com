@@ -1,19 +1,18 @@
 ---
-import { Astro } from "astro";
 ---
 
 <header class="site-header">
   <div class="container">
-    <a href="/" class="logo">
-      <img src="/images/dataisland-logo.png" alt="DataIsland Software" />
+    <a href="/" class="logo-link">
+      <img src="/images/brand/palm.png" alt="DataIsland Logo" class="logo" />
+      <span class="site-name">DataIsland Software</span>
     </a>
 
     <nav class="nav">
       <a href="/">Home</a>
-      <a href="/products/fusion">Fusion</a>
-      <a href="/products/checkthis">Check This</a>
       <a href="/tutorials">Tutorials</a>
       <a href="/about">About</a>
+      <a href="/contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -21,7 +20,7 @@ import { Astro } from "astro";
 <style>
   .site-header {
     width: 100%;
-    padding: 1.25rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid var(--gray-light);
     background: #fff;
     position: sticky;
@@ -38,9 +37,24 @@ import { Astro } from "astro";
     justify-content: space-between;
   }
 
-  .logo img {
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo {
+    width: 48px;
     height: 48px;
-    width: auto;
+    object-fit: contain;
+  }
+
+  .site-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--gray-dark);
   }
 
   .nav a {
@@ -55,6 +69,10 @@ import { Astro } from "astro";
   }
 
   @media (max-width: 768px) {
+    .site-name {
+      display: none;
+    }
+
     .nav {
       display: none;
     }

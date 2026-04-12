@@ -107,20 +107,18 @@ section {
 }
 
 /* ------------------------------
-   Animations
+   Animations (scroll-triggered)
 ------------------------------ */
 
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ------------------------------

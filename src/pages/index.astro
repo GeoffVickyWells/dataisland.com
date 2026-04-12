@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import AppPreview from "../components/AppPreview.astro";
 import { products } from "../data/products.js";
 ---
 
@@ -19,13 +18,28 @@ import { products } from "../data/products.js";
     </p>
   </section>
 
-  <section class="product-grid">
-    {products.map(product => (
-      <AppPreview {...product} comingSoon={!product.active} />
-    ))}
-  </section>
+  {products.map((product, index) => (
+    <section class={`product-section fade-in ${index % 2 === 0 ? "left" : "right"}`}>
+      <div class="product-image">
+        <img src={product.icon} alt={product.title} />
+      </div>
 
-  <section class="next-steps">
+      <div class="product-text">
+        <h2>{product.title}</h2>
+        <p>{product.description}</p>
+
+        {!product.active && <span class="coming-soon">Coming Soon</span>}
+
+        {product.active && (
+          <a href={`/products/${product.id}`} class="cta">
+            Learn More
+          </a>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <section class="next-steps fade-in">
     <h2>What to do next</h2>
     <p>
       Explore our apps, choose the one that fits your workflow, or dive into the
@@ -39,18 +53,33 @@ import { products } from "../data/products.js";
   </Fragment>
 </BaseLayout>
 
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+</script>
+
 <style>
   .hero {
     text-align: center;
     padding: 5rem 0 3rem;
     max-width: 800px;
     margin: 0 auto;
+    border-bottom: none;
   }
 
   .hero-logo {
-    width: 120px;
-    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
     margin-bottom: 2rem;
+    opacity: 0.9;
   }
 
   .hero h1 {
@@ -63,29 +92,94 @@ import { products } from "../data/products.js";
     color: var(--gray-dark);
   }
 
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+  .product-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 4rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .product-section.left .product-image { order: 1; }
+  .product-section.left .product-text  { order: 2; }
+  .product-section.right .product-image { order: 2; }
+  .product-section.right .product-text  { order: 1; }
+
+  .product-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 24px;
+  }
+
+  .product-text {
+    flex: 1;
+  }
+
+  .product-text h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .coming-soon {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.3rem 0.85rem;
+    background: var(--gray-light);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray);
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+
+  .cta:hover {
+    background: #005fa3;
+    opacity: 1;
   }
 
   .next-steps {
     text-align: center;
     max-width: 700px;
     margin: 2rem auto 5rem;
-    padding: 0 1rem;
-  }
-
-  .next-steps h2 {
-    margin-bottom: 1rem;
+    padding: 3rem 1rem;
+    border-bottom: none;
   }
 
   .next-steps p {
     font-size: 1.1rem;
-    color: var(--gray-dark);
     line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .product-section,
+    .product-section.left,
+    .product-section.right {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .product-section .product-image,
+    .product-section .product-text {
+      order: unset;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
   }
 </style>
