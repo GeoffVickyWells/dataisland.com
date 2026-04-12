@@ -12,6 +12,7 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="stylesheet" href="/styles/global.css" />
+    <script src="/js/scroll-fade.js" defer></script>
   </head>
 
   <body>
@@ -21,18 +22,5 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
     </main>
     <Footer />
 
-    <script is:inline>
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll(".fade-in").forEach(function (el) {
-        observer.observe(el);
-      });
-    </script>
   </body>
 </html>
