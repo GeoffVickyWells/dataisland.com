@@ -1,4 +1,7 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 const { title = "DataIsland Software", description = "Privacy‑first tools for creators and professionals." } = Astro.props;
 ---
 
@@ -12,10 +15,26 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
   </head>
 
   <body>
-    <slot name="header" />
+    <Header />
     <main>
       <slot />
     </main>
-    <slot name="footer" />
+    <Footer />
   </body>
 </html>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".fade-in").forEach(function (el) {
+      observer.observe(el);
+    });
+  });
+</script>
