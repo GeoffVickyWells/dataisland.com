@@ -12,7 +12,6 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="stylesheet" href="/styles/global.css" />
-    <script src="/js/scroll-fade.js" defer></script>
   </head>
 
   <body>
@@ -22,5 +21,33 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
     </main>
     <Footer />
 
+    <script is:inline>
+      window.addEventListener("load", function () {
+        var els = document.querySelectorAll(".fade-in");
+
+        els.forEach(function (el) {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(32px)";
+          el.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+        });
+
+        // Force the browser to paint the hidden state before we start observing
+        document.body.getBoundingClientRect();
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "none";
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+        els.forEach(function (el) {
+          observer.observe(el);
+        });
+      });
+    </script>
   </body>
 </html>
