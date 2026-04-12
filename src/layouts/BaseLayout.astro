@@ -22,20 +22,17 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
     <Footer />
 
     <script is:inline>
-      function checkFadeIns() {
-        document.querySelectorAll(".fade-in:not(.animate)").forEach(function (el) {
+      function check() {
+        document.querySelectorAll(".fade-in:not(.go)").forEach(function (el) {
           var rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.88) {
-            el.classList.add("animate");
+          if (rect.top < window.innerHeight * 0.85) {
+            el.classList.add("go");
           }
         });
       }
 
-      // Small delay so CSS opacity:0 is painted before we check
-      setTimeout(function () {
-        checkFadeIns();
-        window.addEventListener("scroll", checkFadeIns, { passive: true });
-      }, 150);
+      window.addEventListener("scroll", check, { passive: true });
+      window.addEventListener("load", check);
     </script>
   </body>
 </html>
