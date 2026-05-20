@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "20 May 2026";
+---
+
+<BaseLayout
+  title="Ordina — Privacy Policy"
+  description="Privacy policy for Ordina, the multi-drive file search app by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>Ordina — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      Ordina is a file search and organisation tool for macOS. This policy explains exactly what
+      Ordina indexes, what leaves your device, and what is stored locally.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>Ordina does not collect personal data.</strong> All file index data is stored locally
+      on your Mac. Ordina has no server, no account, and no analytics. The only outbound network
+      activity is OAuth authentication for cloud drive providers (credentials stored in macOS
+      Keychain) and Bonjour service discovery on your local network.
+    </p>
+
+    <h2>What Ordina Indexes</h2>
+    <p>
+      When you add a drive, Ordina scans it and builds a local SQLite database containing:
+    </p>
+    <ul>
+      <li>File and folder names</li>
+      <li>File sizes and modification dates</li>
+      <li>Folder hierarchy (path structure)</li>
+      <li>Alias and symlink targets</li>
+      <li>Tags you apply within Ordina</li>
+      <li>Notes you attach within Ordina</li>
+    </ul>
+    <p>
+      Ordina <strong>does not read file contents</strong>. Documents, images, videos, and other
+      files are not opened or transmitted. Only metadata is indexed.
+    </p>
+
+    <h2>Where Index Data Is Stored</h2>
+    <p>
+      All index databases are stored locally at:
+    </p>
+    <p>
+      <code>~/Library/Application Support/Ordina/Volumes/</code>
+    </p>
+    <p>
+      This data is not synced to iCloud, not transmitted to DataIsland, and not accessible
+      to any third party. There is no Ordina server.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>Cloud Drive Authentication (Optional — Opt-In Only)</h3>
+    <p>
+      To index Google Drive, OneDrive, Dropbox, or iCloud Drive, Ordina uses OAuth
+      authentication provided by each cloud service. When you connect a cloud account:
+    </p>
+    <ul>
+      <li>You authenticate through an in-app browser window hosted by the cloud provider</li>
+      <li>DataIsland never sees your cloud account password</li>
+      <li>Access tokens are stored only in your macOS Keychain</li>
+      <li>Ordina uses the provider's API to retrieve file and folder metadata (names, sizes,
+        dates — not file contents)</li>
+    </ul>
+    <p>
+      Each cloud provider's privacy policy governs their handling of authentication and API calls:
+    </p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+      <li><a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener">Microsoft Privacy Statement</a></li>
+      <li><a href="https://www.dropbox.com/privacy" rel="noopener">Dropbox Privacy Policy</a></li>
+      <li><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy Policy (iCloud)</a></li>
+    </ul>
+
+    <h3>Bonjour — Local Network Only</h3>
+    <p>
+      Ordina uses Apple's Bonjour protocol on your local network (LAN) for two purposes:
+    </p>
+    <ul>
+      <li><strong>Ordina Agent discovery</strong> — when the Ordina Agent is running on another
+        machine on your network, Ordina discovers it automatically via Bonjour. No data is sent
+        to the internet.</li>
+      <li><strong>Pro licence broadcast</strong> (Ordina Pro only) — Ordina broadcasts a hash of
+        your purchase receipt on the LAN to enforce single-machine licensing. This hash contains
+        no personal information. No data is sent to the internet.</li>
+    </ul>
+    <p>
+      Bonjour traffic stays entirely within your local network. It is not routed to the internet.
+    </p>
+
+    <h2>Ordina Agent</h2>
+    <p>
+      The Ordina Agent is a command-line tool that runs on a remote machine on your local network.
+      It builds an index database and broadcasts its availability via Bonjour. All communication
+      between the Agent and Ordina occurs on your local network only. No data is sent to DataIsland
+      or to any internet server.
+    </p>
+
+    <h2>Full Disk Access</h2>
+    <p>
+      Ordina requests Full Disk Access (FDA) to index external drives and paths outside your
+      home folder. FDA is used solely to read file metadata for indexing. Ordina does not read
+      file contents, modify files, or transmit files or file contents to any server.
+    </p>
+
+    <h2>What Ordina Does Not Do</h2>
+    <ul>
+      <li>Does not read or transmit file contents</li>
+      <li>Does not send index data to DataIsland or any internet server</li>
+      <li>Does not require an account or login</li>
+      <li>Does not collect analytics or send crash reports to DataIsland</li>
+      <li>Does not share any data with third parties for advertising</li>
+      <li>Does not sync index databases to iCloud or any cloud service</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Ordina is not directed at children under 13. We do not knowingly collect information
+      from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of Ordina after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:
+      <br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a>
+      <br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  code {
+    background: var(--gray-light);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  ul { margin: 0.5rem 0 1rem 1.25rem; color: var(--gray-dark); }
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

@@ -1,0 +1,154 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "20 May 2026";
+---
+
+<BaseLayout
+  title="FusionMD — Privacy Policy"
+  description="Privacy policy for FusionMD, the Markdown document studio by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>FusionMD — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      FusionMD is a Markdown document studio for macOS. This policy explains what FusionMD
+      accesses, what leaves your device, and what is stored locally.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>FusionMD does not collect personal data.</strong> Your documents are stored locally
+      as <code>.fusiondoc</code> files (plain Markdown with metadata). Document content is never
+      sent to DataIsland. AI features are opt-in — either on-device via Apple Intelligence
+      (nothing leaves your Mac) or via OpenRouter (with your own API key and your explicit
+      consent). FusionMD has no server, no account, and no analytics.
+    </p>
+
+    <h2>Your Documents</h2>
+    <p>
+      FusionMD stores documents as <code>.fusiondoc</code> files on your Mac, in locations you
+      choose. The format is plain Markdown with a small JSON metadata header — your content is
+      always recoverable without FusionMD. Documents are never transmitted to DataIsland.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>OpenRouter (Optional — Opt-In Only)</h3>
+    <p>
+      FusionMD can optionally use the OpenRouter API to provide AI writing assistance. This feature:
+    </p>
+    <ul>
+      <li>Is disabled by default</li>
+      <li>Requires you to supply your own OpenRouter API key in Settings → AI</li>
+      <li>Sends the active document or selected text to OpenRouter's servers when you invoke an
+        AI action (generate, refine, summarise, etc.)</li>
+      <li>Is governed by <a href="https://openrouter.ai/privacy" rel="noopener">OpenRouter's privacy policy</a></li>
+    </ul>
+    <p>
+      DataIsland does not receive or store any document content sent through OpenRouter.
+      Your API key is stored only in your macOS Keychain.
+    </p>
+
+    <h3>Apple Intelligence (Optional — Opt-In Only)</h3>
+    <p>
+      On supported hardware (Apple Silicon Mac, macOS 26, Apple Intelligence enabled), FusionMD
+      can use Apple Intelligence for AI writing assistance. Apple Intelligence processes everything
+      on-device. No document content leaves your Mac via this path. Apple Intelligence is governed
+      by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>.
+    </p>
+
+    <h3>No Other Outbound Network Activity</h3>
+    <p>
+      When neither AI feature is enabled, FusionMD makes no outbound network connections.
+      It is a fully offline-capable application.
+    </p>
+
+    <h2>What Is Stored Locally</h2>
+    <ul>
+      <li>Documents — stored as <code>.fusiondoc</code> files in user-chosen locations</li>
+      <li>Templates — stored as <code>.fusiontemplate</code> files</li>
+      <li>Settings and preferences — stored in UserDefaults, local only</li>
+      <li>OpenRouter API key (if provided) — stored in macOS Keychain</li>
+      <li>Recent documents list — stored in UserDefaults, local only</li>
+    </ul>
+    <p>
+      None of this data is synced to iCloud by FusionMD or transmitted to DataIsland.
+      (If you store documents in an iCloud-backed folder, iCloud's own sync applies under
+      Apple's privacy policy.)
+    </p>
+
+    <h2>Analysis Tools</h2>
+    <p>
+      FusionMD includes eight document analysis tools (proofreader, readability, style clarity,
+      grammar, etc.). All analysis runs locally on your Mac using system frameworks and built-in
+      rules. No document content is sent to any server to perform analysis.
+    </p>
+
+    <h2>IDML Export</h2>
+    <p>
+      IDML export generates a structured file on your Mac from your document content. The export
+      process is local. No document content is transmitted to DataIsland or any server.
+    </p>
+
+    <h2>What FusionMD Does Not Do</h2>
+    <ul>
+      <li>Does not send document content to DataIsland or any server (except OpenRouter if enabled)</li>
+      <li>Does not require an account or login</li>
+      <li>Does not collect analytics or send crash reports to DataIsland</li>
+      <li>Does not share any data with third parties for advertising</li>
+      <li>Does not sync documents to any DataIsland cloud service</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      FusionMD is not directed at children under 13. We do not knowingly collect information
+      from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of FusionMD after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:
+      <br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a>
+      <br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  code {
+    background: var(--gray-light);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  ul { margin: 0.5rem 0 1rem 1.25rem; color: var(--gray-dark); }
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

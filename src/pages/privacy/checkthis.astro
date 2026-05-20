@@ -1,0 +1,155 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "20 May 2026";
+---
+
+<BaseLayout
+  title="CheckThis — Privacy Policy"
+  description="Privacy policy for CheckThis, the email phishing detection app for Apple Mail by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>CheckThis — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      CheckThis is an email phishing and fraud analysis tool for macOS. This policy explains
+      exactly what data CheckThis accesses, what leaves your device, and what is stored locally.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>CheckThis does not collect personal data.</strong> Email content never leaves
+      your Mac — except via the optional OpenRouter AI feature, which you must explicitly enable
+      with your own API key. The app has no server, no account, and no analytics.
+    </p>
+
+    <h2>What CheckThis Analyses</h2>
+    <p>
+      CheckThis reads email headers and content from Apple Mail. This analysis happens entirely
+      on your device. The raw email content is never transmitted to DataIsland or to any server.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>DNS, WHOIS, and Geolocation Lookups</h3>
+    <p>
+      To verify sender reputation, CheckThis sends the following to third-party services:
+    </p>
+    <ul>
+      <li><strong>Domain names</strong> — sent to DNS resolvers, WHOIS servers, and email
+        reputation blocklists to check sender domain age, authentication records (SPF, DKIM,
+        DMARC), and abuse history.</li>
+      <li><strong>IP addresses</strong> — sent to <a href="https://ipinfo.io" rel="noopener">ipinfo.io</a>
+        to resolve routing hops to a city, country, and ISP.</li>
+    </ul>
+    <p>
+      Your email subject, body, and personal information are <strong>not</strong> included in
+      these lookups. Only the domain name or IP address crosses the network.
+    </p>
+    <p>
+      These lookups can be individually disabled in Settings → DNS.
+    </p>
+
+    <h3>OpenRouter (Optional — Opt-In Only)</h3>
+    <p>
+      CheckThis can optionally use the OpenRouter API to add an AI analysis layer. This feature:
+    </p>
+    <ul>
+      <li>Is disabled by default</li>
+      <li>Requires you to supply your own OpenRouter API key</li>
+      <li>Sends email content (headers and body) to OpenRouter's servers for analysis</li>
+      <li>Is governed by <a href="https://openrouter.ai/privacy" rel="noopener">OpenRouter's privacy policy</a></li>
+    </ul>
+    <p>
+      DataIsland does not receive or store any content sent through OpenRouter. Your API key
+      is stored only in your macOS Keychain.
+    </p>
+
+    <h3>Apple Intelligence (Optional — Opt-In Only)</h3>
+    <p>
+      On supported hardware (Apple Silicon Mac, macOS 26, Apple Intelligence enabled), CheckThis
+      can use Apple Intelligence for AI analysis. Apple Intelligence processes everything on-device.
+      No email content leaves your Mac via this path.
+    </p>
+
+    <h2>Mail Extension</h2>
+    <p>
+      The CheckThis Mail Extension runs inside Apple Mail and screens incoming messages using a
+      local rule engine. The extension makes <strong>no network calls</strong> — it does not
+      contact DNS, WHOIS, or any external service. Analysis is entirely local and instant.
+    </p>
+
+    <h2>What Is Stored Locally</h2>
+    <ul>
+      <li>Analysis history — past analyses and verdicts, stored in the app's local sandbox</li>
+      <li>Safe Senders and Block List — stored locally</li>
+      <li>Settings and preferences — stored in UserDefaults, local only</li>
+      <li>OpenRouter API key (if provided) — stored in macOS Keychain</li>
+    </ul>
+    <p>
+      None of this data is synced to iCloud or transmitted to DataIsland.
+    </p>
+
+    <h2>What CheckThis Does Not Do</h2>
+    <ul>
+      <li>Does not send email content to DataIsland or any server (except OpenRouter if enabled)</li>
+      <li>Does not require an account or login</li>
+      <li>Does not track usage, collect analytics, or send crash reports to DataIsland</li>
+      <li>Does not share any data with third parties for advertising</li>
+      <li>Does not sync any data to the cloud</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      CheckThis is not directed at children under 13. We do not knowingly collect information
+      from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of CheckThis after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:
+      <br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a>
+      <br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

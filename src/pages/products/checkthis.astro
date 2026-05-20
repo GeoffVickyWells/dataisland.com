@@ -1,32 +1,505 @@
 ---
-import ProductLayout from "../../layouts/ProductLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EmailCapture from "../../components/EmailCapture.astro";
 
 const title = "CheckThis";
 const icon = "/images/products/checkthis/icon.png";
-const tagline = "A privacy‑first email trust analyzer for macOS and iOS.";
 ---
 
-<ProductLayout {title} {icon} {tagline}>
-  <h2>Overview</h2>
-  <p>
-    CheckThis helps you understand whether an email is legitimate — without
-    sending anything to the cloud. Everything runs locally, giving you clarity
-    and confidence without compromising privacy.
-  </p>
+<BaseLayout
+  title="CheckThis — Email Phishing Detection for Apple Mail"
+  description="CheckThis analyses email headers, DNS records, and content to flag phishing, fraud, and impersonation — before you click."
+>
 
-  <h2>Key Features</h2>
-  <ul>
-    <li>Local analysis — nothing leaves your device</li>
-    <li>Clear explanations of risks and signals</li>
-    <li>Simple, friendly interface</li>
-    <li>Works with macOS and iOS Mail</li>
-  </ul>
+  <!-- Hero -->
+  <section class="product-hero fade-in">
+    <img src={icon} alt="CheckThis" class="product-icon" />
+    <h1>CheckThis</h1>
+    <p class="tagline">Know before you click.</p>
+    <p class="hero-sub">
+      Most phishing emails look real. The sender's name checks out. The logo is right.
+      The urgency feels legitimate. But the evidence is always there — in the headers,
+      the DNS records, the routing path. CheckThis finds it.
+    </p>
+    <div class="hero-meta">macOS 13 Ventura or later &nbsp;·&nbsp; Apple Mail &nbsp;·&nbsp; One-time purchase</div>
+  </section>
 
-  <h2>Why You'll Love It</h2>
-  <p>
-    CheckThis gives you peace of mind in a world where phishing and spoofing are
-    increasingly sophisticated.
-  </p>
+  <!-- Feature 1: Mail Extension -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🛡️</div>
+    <div class="feature-body">
+      <h2>Your inbox, already checked.</h2>
+      <p>
+        CheckThis installs a silent extension inside Apple Mail. Every message that arrives
+        is automatically screened against dozens of phishing signals — header mismatches,
+        lookalike domains, suspicious routing, brand impersonation, and more.
+      </p>
+      <p>
+        Safe emails get a green row. Suspicious ones get orange. High-risk ones get red.
+        You see the verdict before you even open the email.
+      </p>
+      <p class="detail-note">
+        The extension runs entirely locally — no network calls, no servers, nothing sent anywhere.
+        Just your Mac, making a judgement call on every message that arrives.
+      </p>
+    </div>
+  </section>
 
-  <a href="#" class="cta">Download</a>
-</ProductLayout>
+  <!-- Feature 2: One-click analysis -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🔍</div>
+    <div class="feature-body">
+      <h2>Your second opinion, in seconds.</h2>
+      <p>
+        Got an email that doesn't feel right? Select it in Apple Mail, switch to CheckThis,
+        and click "Get Selected from Mail." In two to five seconds, you have a verdict.
+      </p>
+      <div class="verdict-grid">
+        <div class="verdict safe">
+          <strong>Safe</strong>
+          <span>Headers, DNS, and routing all check out</span>
+        </div>
+        <div class="verdict likely">
+          <strong>Likely OK</strong>
+          <span>Minor differences — probably fine (common for newsletters)</span>
+        </div>
+        <div class="verdict suspicious">
+          <strong>Suspicious</strong>
+          <span>Real concerns — verify before you act</span>
+        </div>
+        <div class="verdict highrisk">
+          <strong>High Risk</strong>
+          <span>Strong phishing indicators — do not engage</span>
+        </div>
+      </div>
+      <p>
+        Every verdict includes a plain-English explanation of what triggered it and
+        specific guidance on what to do next.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 3: What it detects -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">📡</div>
+    <div class="feature-body">
+      <h2>35+ signals. Every email.</h2>
+      <p>
+        CheckThis isn't a spam filter. It's a forensic tool that knows what phishing
+        looks like at a technical level — running four layers of analysis on every email.
+      </p>
+      <div class="signal-grid">
+        <div class="signal-group">
+          <h3>Header &amp; Identity</h3>
+          <ul>
+            <li>Reply-To routes to a different organisation than the sender</li>
+            <li>Display name impersonates Apple, PayPal, a bank</li>
+            <li>Lookalike domain (paypa1.com, amaz0n.com)</li>
+            <li>Punycode / Unicode homograph attack</li>
+            <li>Misleading link text (shows paypal.com, goes elsewhere)</li>
+          </ul>
+        </div>
+        <div class="signal-group">
+          <h3>DNS &amp; Domain</h3>
+          <ul>
+            <li>Domain registered in the last 30 days</li>
+            <li>MX-only domain — exists only to send email</li>
+            <li>Missing SPF, DKIM, or DMARC records</li>
+            <li>Domain on known abuse blocklists</li>
+          </ul>
+        </div>
+        <div class="signal-group">
+          <h3>Content &amp; Language</h3>
+          <ul>
+            <li>Financial fraud language (wire transfer, inheritance, lottery)</li>
+            <li>Urgency phrases in subject ("Act now", "Final notice")</li>
+            <li>Credential harvesting ("Enter your password")</li>
+            <li>Callback phishing (phone number + "call immediately")</li>
+          </ul>
+        </div>
+        <div class="signal-group">
+          <h3>Routing &amp; Geo</h3>
+          <ul>
+            <li>Email routed through 3+ countries</li>
+            <li>Hop-by-hop routing map with country flags and ISP</li>
+            <li>IP address links in body</li>
+            <li>URL shorteners hiding the real destination</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4: AI layer -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🧠</div>
+    <div class="feature-body">
+      <h2>AI that reads between the lines.</h2>
+      <p>
+        On supported hardware, CheckThis adds an AI layer that catches what rules alone can miss:
+        social engineering framing, narrative inconsistency, and pressure tactics that feel
+        wrong even when every technical signal checks out.
+      </p>
+      <ul class="feature-list">
+        <li><strong>Apple Intelligence</strong> — on-device, completely private.
+          Requires Apple Silicon + macOS 26 + Apple Intelligence enabled.</li>
+        <li><strong>OpenRouter</strong> — optional fallback for users without Apple Intelligence.
+          You supply your own API key. Email content is sent to OpenRouter under their privacy policy.</li>
+        <li><strong>Neither</strong> — CheckThis works fully without AI.
+          The rule engine and DNS analysis stand alone.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Feature 5: Privacy -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🔒</div>
+    <div class="feature-body">
+      <h2>Private by design.</h2>
+      <p>
+        Email content never leaves your Mac — unless you explicitly enable OpenRouter. In all
+        other cases, CheckThis sends only domain names and IP addresses to DNS and WHOIS
+        services to look up sender reputation. Nothing else crosses the network.
+      </p>
+      <p>
+        No account. No cloud. No subscription. Your emails are yours.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section fade-in">
+    <h2>Simple, honest pricing.</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Free Trial</h3>
+        <div class="price">10 days</div>
+        <ul>
+          <li>Full forensic analysis</li>
+          <li>Mail extension with inbox colour-coding</li>
+          <li>DNS, WHOIS, and routing analysis</li>
+          <li>AI layer (if supported)</li>
+          <li>Analysis history</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <h3>CheckThis Pro</h3>
+        <div class="price">$29.99</div>
+        <div class="price-detail">one-time purchase · no subscription</div>
+        <ul>
+          <li>Everything in the trial</li>
+          <li>Unlimited email analysis</li>
+          <li>Safe Senders and Block List</li>
+          <li>Full analysis history</li>
+          <li>One purchase · yours forever</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section class="waitlist-section fade-in">
+    <EmailCapture
+      label="Get 10% off at launch"
+      subtext="Join the waitlist and we'll send you an App Store discount code when CheckThis is available. No spam."
+    />
+  </section>
+
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 {
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+
+  /* Feature sections */
+  .feature-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .feature-section.alt {
+    background: var(--gray-light);
+    max-width: 100%;
+    padding: 3.5rem 1.5rem;
+    margin: 0;
+    border-bottom: none;
+  }
+
+  .feature-section.alt .feature-icon,
+  .feature-section.alt .feature-body {
+    max-width: 900px;
+  }
+
+  .feature-section.alt > * {
+    max-width: 450px;
+  }
+
+  .feature-section.alt {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .feature-body {
+    flex: 1;
+  }
+
+  .feature-body h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-body p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .detail-note {
+    font-size: 0.95rem !important;
+    color: var(--gray) !important;
+    font-style: italic;
+    border-left: 3px solid var(--blue-light);
+    padding-left: 1rem;
+  }
+
+  /* Verdict grid */
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .verdict {
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    border-left: 4px solid transparent;
+  }
+
+  .verdict strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .verdict span {
+    font-size: 0.85rem;
+    color: var(--gray-dark);
+  }
+
+  .verdict.safe     { background: #f0faf0; border-color: #2e8b57; }
+  .verdict.likely   { background: #f0f8ff; border-color: #0077cc; }
+  .verdict.suspicious { background: #fff8f0; border-color: #e07800; }
+  .verdict.highrisk { background: #fff0f0; border-color: #c0392b; }
+
+  /* Signal grid */
+  .signal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .signal-group h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .signal-group ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .signal-group ul li {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    padding: 0.2rem 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .signal-group ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--gray);
+  }
+
+  /* Feature list */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .feature-list li {
+    padding: 0.6rem 0;
+    padding-left: 1.25rem;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    border-bottom: 1px solid var(--gray-light);
+    position: relative;
+  }
+
+  .feature-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+
+  /* Pricing */
+  .pricing-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .pricing-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .pricing-card {
+    flex: 1;
+    max-width: 280px;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-align: left;
+  }
+
+  .pricing-card.featured {
+    background: var(--blue);
+    color: #fff;
+  }
+
+  .pricing-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-card.featured h3 { color: rgba(255,255,255,0.8); }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .price-detail {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .pricing-card ul li {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--gray-dark);
+  }
+
+  .pricing-card.featured ul li {
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .pricing-card ul li::before { content: "✓  "; }
+
+  /* Waitlist */
+  .waitlist-section {
+    padding: 1rem 0 3rem;
+    border-bottom: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .feature-section,
+    .feature-section.alt {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .verdict-grid,
+    .signal-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-card {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+</style>
