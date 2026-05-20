@@ -1,22 +1,28 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import YouTubeEmbed from "../components/YouTubeEmbed.astro";
 ---
 
-<BaseLayout title="Tutorials" description="Video tutorials and guides for DataIsland apps.">
+<BaseLayout title="Tutorials — DataIsland Software" description="Video tutorials and guides for FusionMD, Ordina, and CheckThis.">
 
   <section class="tutorials-page fade-in">
     <h1>Tutorials</h1>
-    <p>Learn how to get the most out of Fusion, Check This, and other DataIsland tools.</p>
+    <p class="intro">
+      Step-by-step guides for FusionMD, Ordina, and CheckThis.
+      Video tutorials are coming — check back after launch.
+    </p>
 
-    <div class="tutorial-block">
-      <h2>Fusion Tutorials</h2>
-      <YouTubeEmbed videoId="dQw4w9WgXcQ" />
-    </div>
-
-    <div class="tutorial-block">
-      <h2>Check This Tutorials</h2>
-      <YouTubeEmbed videoId="dQw4w9WgXcQ" />
+    <div class="coming-soon-block">
+      <div class="icon">🎬</div>
+      <h2>Coming Soon</h2>
+      <p>
+        We're recording tutorial videos for each app. In the meantime, each product
+        page covers the key features in detail.
+      </p>
+      <div class="product-links">
+        <a href="/products/fusionmd">FusionMD →</a>
+        <a href="/products/ordina">Ordina →</a>
+        <a href="/products/checkthis">CheckThis →</a>
+      </div>
     </div>
   </section>
 
@@ -24,17 +30,56 @@ import YouTubeEmbed from "../components/YouTubeEmbed.astro";
 
 <style>
   .tutorials-page {
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 3rem 0;
-    text-align: center;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
   }
 
-  .tutorial-block {
-    margin-top: 3rem;
-  }
-
-  .tutorial-block h2 {
+  .tutorials-page h1 {
+    font-size: 2.25rem;
     margin-bottom: 1rem;
+  }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    margin-bottom: 3rem;
+  }
+
+  .coming-soon-block {
+    text-align: center;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+  }
+
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .coming-soon-block h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .coming-soon-block p {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    max-width: 450px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+  }
+
+  .product-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .product-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
   }
 </style>
