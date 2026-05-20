@@ -183,6 +183,83 @@ const icon = "/images/products/fusionmd/icon.png";
     </div>
   </section>
 
+  <!-- Feature 7: Languages & Translation -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🌍</div>
+    <div class="feature-body">
+      <h2>21 languages. Set once, everything adapts.</h2>
+      <p>
+        Setting the document language is a single action that changes five things at once:
+        spell checking, smart quotes, typographic spacing, AI context, and dialogue correction
+        all switch automatically. You don't configure each feature separately.
+      </p>
+
+      <div class="lang-grid">
+        <div class="lang-card">
+          <h3>Smart Quotes</h3>
+          <p>The correct quotation style for the document's language, applied automatically as you type.</p>
+          <table class="quote-table">
+            <tr><td>English</td><td class="mono">"Hello"</td></tr>
+            <tr><td>French / Spanish</td><td class="mono">«Bonjour»</td></tr>
+            <tr><td>German</td><td class="mono">„Hallo"</td></tr>
+            <tr><td>Chinese (Traditional)</td><td class="mono">「你好」</td></tr>
+          </table>
+        </div>
+        <div class="lang-card">
+          <h3>French Typographic Spacing</h3>
+          <p>When the document language is French (Canada or France), a French Spacing button inserts the correct narrow no-break space before <span class="mono">! ? ; :</span> — the convention used in professional French publishing.</p>
+        </div>
+        <div class="lang-card">
+          <h3>English Variant Scanning</h3>
+          <p>For US, UK, and Australian English: detects out-of-convention spellings and vocabulary (38 spelling pairs, 23 vocabulary pairs) and offers to convert in either direction.</p>
+          <p class="lang-note">Disabled for English (Canada) — both US and UK spellings are correct in Canadian English and Fusion won't flag them.</p>
+        </div>
+        <div class="lang-card">
+          <h3>AI Writes in Your Language</h3>
+          <p>The document language is passed to the AI on every generation request. Ask for a paragraph and it writes in the document's language — using correct vocabulary, spelling conventions, and punctuation style — without you having to say "write in French" each time.</p>
+        </div>
+      </div>
+
+      <div class="canada-callout">
+        <strong>Built for Canada's two official languages.</strong>
+        <p>
+          <strong>English (Canada)</strong> accepts both US and UK spellings — because both are correct.
+          Fusion won't flag "colour" or tell you "centre" is misspelled in a Canadian document.
+        </p>
+        <p>
+          <strong>Français (Canada)</strong> is a fully implemented locale: fr-CA dictionary,
+          guillemets (« »), correct French typographic spacing, and AI that writes in Quebec French.
+        </p>
+        <p class="lang-note">
+          Fusion is the only Mac document editor that treats English Canada and French Canada
+          as the first-class, distinct writing environments they are.
+        </p>
+      </div>
+
+      <h3>On-Device Translation <span class="badge">macOS 15+</span></h3>
+      <p>
+        On macOS 15 Sequoia or later, translate an entire document into another language — or just
+        a selected passage — entirely on your Mac. Paragraph structure is preserved. No API key,
+        no cloud service, no data sent anywhere. Powered by Apple's Translation framework.
+      </p>
+      <p>
+        Two modes: <strong>Full document → new window</strong> (original untouched) or
+        <strong>Selection → in-place replacement</strong> (translate one paragraph while
+        leaving the rest unchanged). Language packs are downloaded once by macOS and then
+        run offline.
+      </p>
+
+      <div class="lang-chips">
+        <span>English (US)</span><span>English (Canada)</span><span>English (UK)</span>
+        <span>English (Australia)</span><span>Français (Canada)</span><span>Français (France)</span>
+        <span>Español</span><span>Italiano</span><span>Deutsch</span><span>Svenska</span>
+        <span>Русский</span><span>Português (BR)</span><span>Português (PT)</span>
+        <span>中文 (简体)</span><span>中文 (繁體)</span><span>日本語</span><span>한국어</span>
+        <span>हिन्दी</span><span>Welsh</span><span>Irish</span><span>Scottish Gaelic</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="pricing-section fade-in">
     <h2>Simple, honest pricing.</h2>
@@ -517,6 +594,108 @@ const icon = "/images/products/fusionmd/icon.png";
     font-style: italic;
   }
 
+  /* Language section */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .lang-card {
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .lang-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .lang-card p {
+    font-size: 0.88rem;
+    margin: 0;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+
+  .lang-note {
+    font-size: 0.82rem !important;
+    color: var(--gray) !important;
+    font-style: italic;
+    margin-top: 0.4rem !important;
+  }
+
+  .quote-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .quote-table td {
+    padding: 0.2rem 0.4rem;
+    color: var(--gray-dark);
+  }
+
+  .mono {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.9em;
+  }
+
+  .canada-callout {
+    background: #fff8e6;
+    border-left: 4px solid #e8a200;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .canada-callout strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: #5c3d00;
+  }
+
+  .canada-callout p {
+    font-size: 0.9rem !important;
+    color: var(--gray-dark) !important;
+    margin-bottom: 0.4rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15em 0.5em;
+    border-radius: 999px;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+    letter-spacing: 0.03em;
+  }
+
+  .lang-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+  }
+
+  .lang-chips span {
+    background: var(--gray-light);
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    color: var(--gray-dark);
+  }
+
   /* Waitlist */
   .waitlist-section {
     padding: 1rem 0 3rem;
@@ -539,6 +718,7 @@ const icon = "/images/products/fusionmd/icon.png";
     }
 
     .mini-feature-grid { grid-template-columns: 1fr; }
+    .lang-grid { grid-template-columns: 1fr; }
 
     .pricing-cards {
       flex-direction: column;
