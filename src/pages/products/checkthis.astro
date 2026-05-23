@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EmailCapture from "../../components/EmailCapture.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
 
 const icon = "/images/products/checkthis/icon.png";
 ---
@@ -21,6 +23,7 @@ const icon = "/images/products/checkthis/icon.png";
       the DNS records, the routing path. CheckThis finds it.
     </p>
     <div class="hero-meta">macOS 13 Ventura or later &nbsp;·&nbsp; Apple Mail &nbsp;·&nbsp; One-time purchase</div>
+    <AppStoreCTA />
   </section>
 
   <!-- Feature 1: Mail Extension -->
@@ -196,12 +199,49 @@ const icon = "/images/products/checkthis/icon.png";
     </div>
   </section>
 
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "Does CheckThis work with Outlook, Spark, Gmail, or other email clients?",
+      answer: "Yes — the forensic engine works with any email client. The Mail extension (automatic inbox colour-coding and one-click analysis) is exclusive to Apple Mail. With any other client, you can still get a full verdict by copying the raw source or headers from the email and pasting them directly into CheckThis. You get the same analysis; you just bring the email to the app rather than the app reaching into your inbox automatically."
+    },
+    {
+      question: "How do I get raw email headers from my email client?",
+      answer: "Every major client exposes them differently. In Apple Mail: View → Message → All Headers (or ⌥⌘H). In Gmail: the three-dot menu → Show original. In Outlook: File → Properties → Internet headers. In Spark: tap the three-dot menu → View source. Copy the full text and paste it into CheckThis — it will extract everything it needs."
+    },
+    {
+      question: "What's the difference between the Mail extension and the standalone app?",
+      answer: "The extension lives inside Apple Mail and works silently — every arriving message is automatically screened and colour-coded before you open it. The standalone app does the same forensic analysis on demand: select an email in Mail and click 'Get Selected from Mail', or paste raw headers from any client. Both use the same detection engine and give the same verdict."
+    },
+    {
+      question: "Does CheckThis require an internet connection?",
+      answer: "Partially. Header analysis and content rules run entirely on-device with no network access. DNS and WHOIS lookups — which verify sender domains and check IP reputation against blocklists — do require an internet connection. The AI layer requires internet if you use OpenRouter; Apple Intelligence runs fully on-device."
+    },
+    {
+      question: "Will CheckThis flag legitimate newsletters and marketing emails?",
+      answer: "It may rate some newsletters as 'Likely OK' rather than 'Safe'. Large email service providers like Mailchimp or Sendgrid send on behalf of another domain, which can trigger a header mismatch signal. CheckThis always explains exactly what it found, so you can see whether it's a structural quirk of newsletter delivery or a genuine concern. You can add trusted senders to your Safe Senders list to skip future analysis."
+    },
+    {
+      question: "Does the AI layer send my emails anywhere?",
+      answer: "Only if you choose OpenRouter. Apple Intelligence runs completely on-device — email content never leaves your Mac. If you enable OpenRouter, content is sent to OpenRouter under their privacy policy, and CheckThis will warn you clearly before you enable it. The rule engine and DNS analysis are fully capable on their own — AI is an optional extra layer, not a requirement."
+    },
+    {
+      question: "Can CheckThis tell me if a link is actually malicious?",
+      answer: "CheckThis analyses link characteristics — URL shorteners, IP address links, domain mismatches, lookalike domains, and redirect chains — but it does not visit or render linked pages. Fetching the page would expose you to the threat before you know it exists. Instead, CheckThis flags the structural patterns that are strongly predictive of phishing, and tells you plainly when a link should not be clicked."
+    },
+    {
+      question: "Is there a subscription?",
+      answer: "No. CheckThis is a one-time purchase of $29.99, yours to keep including all future updates to the current major version. A 10-day free trial gives you complete access to every feature before you decide."
+    },
+  ]} />
+
   <!-- Waitlist -->
   <section class="waitlist-section fade-in">
-    <EmailCapture
-      label="Get 10% off at launch"
-      subtext="Join the waitlist and we'll send you an App Store discount code when CheckThis is available. No spam."
-    />
+    <EmailCapture app="CheckThis" />
+    <p class="privacy-note">
+      By joining you agree to our <a href="/terms">Terms of Use</a>.
+      Read the <a href="/privacy/checkthis">CheckThis Privacy Policy</a>.
+    </p>
   </section>
 
 </BaseLayout>
@@ -476,6 +516,22 @@ const icon = "/images/products/checkthis/icon.png";
   .waitlist-section {
     padding: 1rem 0 3rem;
     border-bottom: none;
+  }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: -1.5rem;
+  }
+
+  .privacy-note a {
+    color: var(--gray-dark);
+    text-decoration: underline;
+  }
+
+  .privacy-note a:hover {
+    color: var(--blue);
   }
 
   /* Responsive */

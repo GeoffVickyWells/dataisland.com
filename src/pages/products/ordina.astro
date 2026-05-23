@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EmailCapture from "../../components/EmailCapture.astro";
+import AppScreenshots from "../../components/AppScreenshots.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
 
 const icon = "/images/products/ordina/icon.png";
 ---
@@ -21,6 +24,7 @@ const icon = "/images/products/ordina/icon.png";
       simultaneously — in under a second.
     </p>
     <div class="hero-meta">macOS 12 Monterey or later &nbsp;·&nbsp; Free for one drive &nbsp;·&nbsp; Pro unlocks everything</div>
+    <AppStoreCTA />
   </section>
 
   <!-- Feature 1: The problem -->
@@ -155,6 +159,20 @@ const icon = "/images/products/ordina/icon.png";
     </div>
   </section>
 
+  <!-- Screenshots -->
+  <AppScreenshots
+    heading="See it in action"
+    screenshots={[
+      { src: "/images/products/ordina/screenshots/1.png", alt: "Ordina search results across multiple drives", caption: "Search every connected drive in under a second — sorted by relevance, name, size, or date." },
+      { src: "/images/products/ordina/screenshots/2.png", alt: "Ordina duplicate file detection", caption: "Find duplicates scattered across cloud services and local drives — with one-click resolution." },
+      { src: "/images/products/ordina/screenshots/3.png", alt: "Ordina storage analysis view", caption: "Storage Analysis — see exactly what's eating your space, including hidden files macOS keeps out of sight." },
+      { src: "/images/products/ordina/screenshots/4.png", alt: "Ordina filtered search by file type", caption: "Filter by file type, size, date, or tags — then save any combination as a one-click sidebar filter." },
+      { src: "/images/products/ordina/screenshots/5.png", alt: "Ordina font browsing with preview", caption: "Browse every font across all your drives with a live preview panel — no app switching required." },
+      { src: "/images/products/ordina/screenshots/6.png", alt: "Ordina picture folder browsing", caption: "Picture folders with instant preview — across every connected drive, not just the internal one." },
+      { src: "/images/products/ordina/screenshots/7.png", alt: "Ordina music and media files", caption: "Music and media files — sorted, searchable, and always findable no matter which drive they live on." },
+    ]}
+  />
+
   <!-- Privacy -->
   <section class="feature-section fade-in alt">
     <div class="feature-icon">🔒</div>
@@ -206,12 +224,49 @@ const icon = "/images/products/ordina/icon.png";
     </div>
   </section>
 
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "How is Ordina different from Spotlight?",
+      answer: "Spotlight only indexes your internal drive. Ordina indexes every drive you add — external drives, network shares, cloud storage, and remote machines via the Ordina Agent — and searches them all simultaneously from a single interface. It also goes further with duplicate detection, storage analysis, saved filters, and file tagging."
+    },
+    {
+      question: "Does Ordina need to be running to search?",
+      answer: "Yes — Ordina maintains a local index built when you add a drive. Search is instant because you're querying that index rather than scanning the drive in real time. The index does not track changes automatically; simply hit Reindex any time you want to pick up new or moved files."
+    },
+    {
+      question: "How long does the initial index take?",
+      answer: "It depends on drive size and speed. A typical 500 GB internal SSD with around 200,000 files takes a few minutes. External and network drives vary with connection speed. You can search immediately — results appear as indexing progresses."
+    },
+    {
+      question: "What happens if I disconnect a drive?",
+      answer: "The index for that drive is retained. You can still search and browse its contents — files just can't be opened until the drive is reconnected. Ordina clearly marks offline drives so you always know what you're looking at."
+    },
+    {
+      question: "Which cloud services does Ordina support?",
+      answer: "Google Drive, OneDrive, Dropbox, and iCloud Drive. Ordina indexes the cloud provider's local sync folder, so results appear whether files are downloaded locally or stored only in the cloud."
+    },
+    {
+      question: "Does Ordina send my files or file names anywhere?",
+      answer: "No. All index data is stored locally on your Mac in Application Support. The natural language filter runs entirely on-device. The only outbound network activity is OAuth for cloud provider sign-in (credentials stored in your Keychain) and Bonjour for Agent discovery on your local network."
+    },
+    {
+      question: "Can I use Ordina on more than one Mac?",
+      answer: "A Pro license is per-user and covers all Macs you personally own. The Ordina Agent can be installed on any Mac or headless server so you can search its drives from your main machine."
+    },
+    {
+      question: "Is there a subscription?",
+      answer: "No. Ordina Pro is a one-time purchase of $79.99 — yours to keep, including all future updates to the current major version. No renewal fees, no account required."
+    },
+  ]} />
+
   <!-- Waitlist -->
   <section class="waitlist-section fade-in">
-    <EmailCapture
-      label="Get 10% off at launch"
-      subtext="Join the waitlist and we'll send you an App Store discount code when Ordina is available. No spam."
-    />
+    <EmailCapture app="Ordina" />
+    <p class="privacy-note">
+      By joining you agree to our <a href="/terms">Terms of Use</a>.
+      Read the <a href="/privacy/ordina">Ordina Privacy Policy</a>.
+    </p>
   </section>
 
 </BaseLayout>
@@ -459,6 +514,22 @@ const icon = "/images/products/ordina/icon.png";
   .waitlist-section {
     padding: 1rem 0 3rem;
     border-bottom: none;
+  }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: -1.5rem;
+  }
+
+  .privacy-note a {
+    color: var(--gray-dark);
+    text-decoration: underline;
+  }
+
+  .privacy-note a:hover {
+    color: var(--blue);
   }
 
   @media (max-width: 768px) {

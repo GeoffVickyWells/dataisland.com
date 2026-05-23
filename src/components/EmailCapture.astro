@@ -1,63 +1,206 @@
 ---
-const { label = "Start Free Trial", subtext = "No spam. Unsubscribe anytime." } = Astro.props;
+interface Props {
+  app?: string;
+  label?: string;
+  subtext?: string;
+}
+
+const {
+  app = "",
+  label = "Get 10% off at launch",
+  subtext = "Join the waitlist and we'll send you a discount code when the app is available. No spam, unsubscribe anytime.",
+} = Astro.props;
+
+// Replace with your Pabbly Connect webhook URL once configured
+const WEBHOOK_URL = "https://connect.pabbly.com/webhook-listener/webhook/IjU3NjIwNTZlMDYzNDA0Mzc1MjY5NTUzMiI_3D_pc/IjU3NjcwNTZlMDYzMTA0MzA1MjY4NTUzMzUxMzIi_pc";
 ---
 
-<form class="email-capture" method="post" action="#">
-  <h3>{label}</h3>
+<section class="email-capture fade-in" id="waitlist">
+  <div class="capture-inner">
+    <div class="capture-badge">Early Access</div>
+    <h2>{label}</h2>
+    <p class="capture-sub">{subtext}</p>
 
-  <div class="field-row">
-    <input
-      type="email"
-      name="email"
-      placeholder="Your email address"
-      required
-    />
-    <button type="submit">Join</button>
+    <form class="capture-form" data-app={app} data-webhook={WEBHOOK_URL}>
+      <div class="field-row">
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          autocomplete="email"
+        />
+        <button type="submit">Join Waitlist</button>
+      </div>
+      <p class="capture-status" aria-live="polite"></p>
+    </form>
+
+    <p class="capture-fine">One email when the app launches. That's it.</p>
   </div>
+</section>
 
-  <p class="subtext">{subtext}</p>
-</form>
+<script>
+  document.querySelectorAll<HTMLFormElement>(".capture-form").forEach((form) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const webhook = form.dataset.webhook ?? "";
+      const app     = form.dataset.app ?? "";
+      const email   = (form.querySelector<HTMLInputElement>('[name="email"]'))?.value ?? "";
+      const btn     = form.querySelector<HTMLButtonElement>("button[type='submit']")!;
+      const status  = form.querySelector<HTMLElement>(".capture-status")!;
+
+      if (webhook.includes("REPLACE_ME")) {
+        status.textContent = "⚠️ Webhook not configured yet.";
+        status.className = "capture-status error";
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      status.textContent = "";
+      status.className = "capture-status";
+
+      try {
+        await fetch(webhook, {
+          method: "POST",
+          mode: "no-cors",
+          body: new URLSearchParams({ email, app, source: "dataisland.com" }),
+        });
+        // no-cors returns an opaque response — treat any completion as success
+        form.innerHTML = `<p class="capture-success">✓ You're on the list! We'll be in touch at launch.</p>`;
+      } catch {
+        btn.disabled = false;
+        btn.textContent = "Join Waitlist";
+        status.textContent = "Something went wrong — please try again.";
+        status.className = "capture-status error";
+      }
+    });
+  });
+</script>
 
 <style>
   .email-capture {
-    background: var(--blue-light);
-    padding: 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    max-width: 500px;
-    margin: 3rem auto;
+    padding: 4rem 1rem;
   }
 
-  .email-capture h3 {
+  .capture-inner {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .capture-badge {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25em 0.8em;
+    border-radius: 999px;
     margin-bottom: 1rem;
+  }
+
+  .capture-inner h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .capture-sub {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .capture-form {
+    margin: 0;
   }
 
   .field-row {
     display: flex;
-    gap: 0.75rem;
-    margin: 1rem 0;
+    gap: 0.6rem;
+    max-width: 420px;
+    margin: 0 auto;
   }
 
-  .field-row input {
+  .field-row input[type="email"] {
     flex: 1;
-    padding: 0.75rem 1rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--gray);
-    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 1.5px solid rgba(59, 130, 246, 0.3);
+    font-size: 0.97rem;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.18s;
+  }
+
+  .field-row input[type="email"]:focus {
+    border-color: var(--blue);
   }
 
   .field-row button {
-    padding: 0.75rem 1.25rem;
-    font-size: 1rem;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    font-size: 0.97rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.18s, transform 0.12s;
   }
 
-  .subtext {
-    margin-top: 0.5rem;
+  .field-row button:hover:not(:disabled) {
+    background: var(--blue-dark, #1a56db);
+    transform: translateY(-1px);
+  }
+
+  .field-row button:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .capture-status {
+    margin-top: 0.6rem;
     font-size: 0.85rem;
-    color: var(--gray-dark);
+    min-height: 1.2em;
+  }
+
+  .capture-status.error {
+    color: #c0392b;
+  }
+
+  .capture-success {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a7a45;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  .capture-fine {
+    margin-top: 0.85rem;
+    font-size: 0.8rem;
+    color: var(--gray);
   }
 
   @media (max-width: 600px) {
+    .capture-inner {
+      padding: 2rem 1.25rem;
+    }
+
     .field-row {
       flex-direction: column;
     }

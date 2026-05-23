@@ -1,0 +1,262 @@
+---
+interface Screenshot {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+interface Props {
+  screenshots: Screenshot[];
+  heading?: string;
+}
+
+const { screenshots, heading = "See it in action" } = Astro.props;
+const uid = `ss-${Math.random().toString(36).slice(2, 7)}`;
+---
+
+<section class="screenshots-section fade-in" data-gallery={uid}>
+  <h2>{heading}</h2>
+
+  <div class="carousel">
+    <button class="nav prev" aria-label="Previous screenshot">&#8249;</button>
+
+    <div class="slides-wrap">
+      {screenshots.map((shot, i) => (
+        <div class={`slide${i === 0 ? " active" : ""}`} data-index={i}>
+          <img src={shot.src} alt={shot.alt} loading={i === 0 ? "eager" : "lazy"} />
+        </div>
+      ))}
+    </div>
+
+    <button class="nav next" aria-label="Next screenshot">&#8250;</button>
+  </div>
+
+  <p class="caption">{screenshots[0].caption}</p>
+
+  <div class="dots" role="tablist">
+    {screenshots.map((shot, i) => (
+      <button
+        class={`dot${i === 0 ? " active" : ""}`}
+        data-index={i}
+        aria-label={shot.caption}
+        role="tab"
+        aria-selected={i === 0 ? "true" : "false"}
+      />
+    ))}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".screenshots-section").forEach((section) => {
+    if (section.dataset.ready) return;
+    section.dataset.ready = "1";
+
+    const slides  = section.querySelectorAll<HTMLElement>(".slide");
+    const dots    = section.querySelectorAll<HTMLButtonElement>(".dot");
+    const caption = section.querySelector<HTMLElement>(".caption")!;
+    const captions: string[] = [];
+    dots.forEach((dot) => { captions.push(dot.getAttribute("aria-label") ?? ""); });
+    let current = 0;
+    let busy    = false;
+
+    function goTo(next: number, dir: "next" | "prev" = "next") {
+      next = ((next % slides.length) + slides.length) % slides.length;
+      if (next === current || busy) return;
+      busy = true;
+
+      // Set wheel spin direction
+      section.classList.toggle("going-prev", dir === "prev");
+
+      // Exit current slide over the top (or bottom for prev)
+      const leaving = slides[current];
+      leaving.classList.remove("active");
+      leaving.classList.add("leaving");
+      leaving.addEventListener("transitionend", () => {
+        leaving.classList.remove("leaving");
+        busy = false;
+      }, { once: true });
+
+      // Update dots
+      dots[current].classList.remove("active");
+      dots[current].setAttribute("aria-selected", "false");
+
+      // Advance
+      current = next;
+      slides[current].classList.add("active");
+      dots[current].classList.add("active");
+      dots[current].setAttribute("aria-selected", "true");
+
+      // Fade caption text
+      caption.classList.add("fading");
+      setTimeout(() => {
+        caption.textContent = captions[current];
+        caption.classList.remove("fading");
+      }, 200);
+    }
+
+    section.querySelector(".prev")!.addEventListener("click", () => goTo(current - 1, "prev"));
+    section.querySelector(".next")!.addEventListener("click", () => goTo(current + 1, "next"));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i, i < current ? "prev" : "next")));
+
+    // Touch swipe
+    let touchStartX = 0;
+    section.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    section.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1), dx < 0 ? "next" : "prev");
+    });
+  });
+</script>
+
+<style>
+  .screenshots-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .screenshots-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Carousel shell */
+  .carousel {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  /* Slides */
+  .slides-wrap {
+    flex: 1;
+    position: relative;
+    aspect-ratio: 8 / 5;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+    background: #111;
+    perspective: 1200px;
+  }
+
+  /* Default: waiting below the wheel */
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: rotateX(74deg);
+    transform-origin: center center;
+    transition: transform 6.3s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity   3.5s ease;
+    pointer-events: none;
+    backface-visibility: hidden;
+  }
+
+  /* Visible at the front of the wheel */
+  .slide.active {
+    opacity: 1;
+    transform: rotateX(0deg);
+    pointer-events: auto;
+  }
+
+  /* Exiting over the top */
+  .slide.leaving {
+    opacity: 0;
+    transform: rotateX(-74deg);
+    transition: transform 6.3s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity   2.8s ease;
+    pointer-events: none;
+  }
+
+  /* Going backward: flip the enter/exit directions */
+  .going-prev .slide:not(.active):not(.leaving) {
+    transform: rotateX(-74deg);
+  }
+
+  .going-prev .slide.leaving {
+    transform: rotateX(74deg);
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Nav arrows */
+  .nav {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav:hover {
+    background: var(--blue-dark, #1a56db);
+    transform: scale(1.08);
+  }
+
+  /* Caption */
+  .caption {
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    min-height: 1.4em;
+    transition: opacity 0.18s ease;
+  }
+
+  .caption.fading {
+    opacity: 0;
+  }
+
+  /* Dots */
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .dot.active {
+    background: var(--blue);
+    transform: scale(1.4);
+  }
+
+  @media (max-width: 768px) {
+    .screenshots-section {
+      padding: 2.5rem 1rem;
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .slides-wrap {
+      border-radius: 10px;
+    }
+  }
+</style>
