@@ -17,7 +17,7 @@ export const products = [
     id: "checkthis",
     title: "CheckThis",
     icon: "/images/products/checkthis/icon.png",
-    description: "Email phishing and fraud analysis for Apple Mail. A silent Mail extension colour-codes your inbox, and one click delivers a full forensic verdict on any email.",
+    description: "Email phishing and fraud analysis for Apple Mail. A silent Mail extension color-codes your inbox, and one click delivers a full forensic verdict on any email.",
     active: true
   },
   // Coming-soon products — kept for reference, not rendered on site

@@ -1,0 +1,531 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="CheckThis Tutorials — DataIsland Software"
+  description="Step-by-step written tutorials for CheckThis — setup, reading verdicts, forensic details, AI analysis, and managing your sender lists."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>CheckThis — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in CheckThis. Work through them in order
+        for a complete introduction, or jump to any section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">First launch &amp; Mail Extension setup</a></li>
+          <li><a href="#t2">Checking your first email</a></li>
+          <li><a href="#t3">Reading the verdict</a></li>
+          <li><a href="#t4">Understanding the signal list</a></li>
+          <li><a href="#t5">Forensic details</a></li>
+          <li><a href="#t6">Safe Senders &amp; Blocked Senders</a></li>
+          <li><a href="#t7">AI analysis setup</a></li>
+          <li><a href="#t8">History</a></li>
+          <li><a href="#t9">Settings reference</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> First Launch &amp; Mail Extension Setup</h2>
+          <p class="goal">What you'll learn: getting CheckThis running and enabling the Mail Extension so incoming messages are pre-screened automatically.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Launch CheckThis.</strong> The Welcome screen explains what the app does and shows a one-time setup notice. Read the disclaimer — CheckThis is an analysis tool that helps you make better decisions, not a guarantee.</li>
+            <li><strong>Grant permissions if prompted.</strong> CheckThis needs Automation access to Apple Mail so it can read the email you drag in. When macOS shows the Automation permission dialog, click Allow. If you accidentally denied it, go to System Settings → Privacy &amp; Security → Automation and enable CheckThis.</li>
+            <li><strong>Enable the Mail Extension.</strong> Open <strong>Settings → Extension</strong> inside CheckThis. Click <strong>"Open Mail Settings."</strong> In Apple Mail, go to Settings → Extensions. Find CheckThis in the list and tick its checkbox. Close Mail Settings.</li>
+            <li><strong>Return to CheckThis.</strong> The extension status in Settings → Extension should now show as active. From this point, incoming mail in Apple Mail is pre-screened and coloured dots appear on flagged messages before you open them — no manual step required.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Note:</strong> The Mail Extension is optional. You can use CheckThis entirely by dragging emails manually — the extension just automates the process.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Checking Your First Email</h2>
+          <p class="goal">What you'll learn: the three ways to get an email into CheckThis.</p>
+
+          <h3>Method A — Drag from Apple Mail</h3>
+          <ol class="steps">
+            <li>Open Apple Mail alongside CheckThis.</li>
+            <li>Find a message you want to check. Drag it from the Mail message list directly onto the CheckThis window. Drop it anywhere on the app — the drop zone accepts it.</li>
+            <li>CheckThis extracts the full email source automatically. Analysis begins immediately.</li>
+          </ol>
+
+          <h3>Method B — Copy &amp; Paste Raw Email Source</h3>
+          <ol class="steps">
+            <li>In Apple Mail, select a message. Go to View → Message → Raw Source (⌥⌘U). The raw headers and body appear in a window.</li>
+            <li>Select all (⌘A) and copy (⌘C).</li>
+            <li>In CheckThis, paste (⌘V) into the drop zone. Analysis begins immediately.</li>
+          </ol>
+
+          <h3>Method C — Open an .eml File</h3>
+          <ol class="steps">
+            <li>If you have a saved <code>.eml</code> file, drag it onto the CheckThis window, or use File → Open.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>What happens during analysis:</strong> CheckThis works through four stages shown in the status bar — Parsing headers → Looking up domain &amp; origin → Extracting signals → Scoring. The full process typically takes 2–5 seconds.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Reading the Verdict</h2>
+          <p class="goal">What you'll learn: how to interpret the verdict banner and confidence indicator.</p>
+
+          <h3>The verdict banner</h3>
+          <p>After analysis, a large icon and verdict label appear at the top of the results view. There are four possible verdicts:</p>
+
+          <table>
+            <thead><tr><th>Verdict</th><th>Meaning</th><th>What to do</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Safe</strong></td><td>No significant risk signals found.</td><td>Proceed normally. The email appears legitimate.</td></tr>
+              <tr><td><strong>Low Risk</strong></td><td>Minor anomalies — likely legitimate but worth a glance.</td><td>Check the signal list. Usually safe to act on.</td></tr>
+              <tr><td><strong>Suspicious</strong></td><td>Multiple concerning signals. Treat with caution.</td><td>Do not click links or open attachments until verified.</td></tr>
+              <tr><td><strong>High Risk</strong></td><td>Strong indicators of phishing, fraud, or impersonation.</td><td>Do not interact. Delete or report. Do not click anything.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>The "What to do" card</h3>
+          <p>Below the banner, a plain-English card explains the verdict and gives specific guidance — including what makes this particular email suspicious (or safe). Read this card first before acting on any email flagged as Suspicious or High Risk.</p>
+
+          <h3>Confidence</h3>
+          <p>A confidence bar shows how certain the verdict is. High confidence means many consistent signals all pointing the same direction. Low confidence means the signals are mixed — treat the verdict as a starting point, not a definitive answer.</p>
+
+          <h3>Action bar</h3>
+          <p>At the bottom of the result view, three buttons appear:</p>
+          <ul>
+            <li><strong>Add to Safe Senders</strong> — marks this sender's domain as trusted. Future emails from this domain skip to Safe immediately.</li>
+            <li><strong>Forensic Details</strong> — opens the full raw-data view (see Tutorial 5).</li>
+            <li><strong>Check Another</strong> — resets the app for a new email.</li>
+          </ul>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Understanding the Signal List</h2>
+          <p class="goal">What you'll learn: how to read the individual signals that drove the verdict.</p>
+
+          <p>Below the "What to do" card, the <strong>Signal List</strong> shows every factor CheckThis detected — both risk factors and trust factors. Each row shows:</p>
+
+          <ul>
+            <li><strong>Signal name</strong> — what CheckThis detected (e.g., "Lookalike domain", "DMARC authenticated")</li>
+            <li><strong>Value</strong> — the specific data found (e.g., the domain name, the IP address)</li>
+            <li><strong>Explanation</strong> — plain English: why this signal matters and what it means in context</li>
+            <li><strong>Source badge</strong> — where the signal came from: Local (header analysis), DNS (domain lookup), AI (AI layer), or User (your Safe/Blocked lists)</li>
+          </ul>
+
+          <h3>Signal types you'll commonly see</h3>
+          <table>
+            <thead><tr><th>Signal</th><th>What it means</th></tr></thead>
+            <tbody>
+              <tr><td>Reply-To mismatch</td><td>The Reply-To address differs from the From address — a classic phishing technique so your reply goes to the attacker's mailbox.</td></tr>
+              <tr><td>Lookalike domain</td><td>The sending domain closely resembles a well-known brand (e.g., paypa1.com vs paypal.com).</td></tr>
+              <tr><td>Domain age</td><td>The sending domain was registered recently — newly registered domains are disproportionately used for fraud.</td></tr>
+              <tr><td>DMARC authenticated</td><td>The email passed DMARC authentication — a strong positive signal. Legitimate senders like banks and major services almost always pass DMARC.</td></tr>
+              <tr><td>Urgency language</td><td>Phrases designed to pressure you into acting immediately without thinking ("Your account will be closed in 24 hours").</td></tr>
+              <tr><td>Brand impersonation</td><td>The email mentions a well-known brand name (Apple, PayPal, etc.) but the sending domain does not match that brand's legitimate domain.</td></tr>
+              <tr><td>Marketing platform detected</td><td>The email was sent through a bulk mailing service (Mailchimp, HubSpot, etc.) — not inherently suspicious but reduces the weight of some other signals.</td></tr>
+              <tr><td>Routing anomaly</td><td>The email's path through mail servers is inconsistent with a legitimate sender.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip">
+            <strong>Green signals reduce risk; red signals increase it.</strong> CheckThis combines all signals using a weighted scoring model. A single red signal doesn't automatically mean fraud — it's the overall pattern that drives the verdict.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Forensic Details</h2>
+          <p class="goal">What you'll learn: using the Forensic Details view to inspect raw headers, routing, and DNS data.</p>
+
+          <p>Tap <strong>Forensic Details</strong> in the result action bar to open the full raw-data inspector. This is for advanced users who want to verify CheckThis's conclusions or dig deeper into an anomaly.</p>
+
+          <h3>Headers tab</h3>
+          <p>Shows the complete raw email headers exactly as received — every Received, From, To, Reply-To, Return-Path, DKIM-Signature, and DMARC header. Search within the text to find any specific field.</p>
+
+          <h3>Routing tab</h3>
+          <p>Visualises the hop-by-hop path the email took through mail servers before arriving in your inbox. Each hop shows the server hostname, IP address, and timestamp. Geographic data is shown where available. Unexpected routing hops (e.g., an email from a US company that was relayed through servers in an unrelated country) are flagged here.</p>
+
+          <h3>DNS / WHOIS tab</h3>
+          <p>Shows the DNS analysis CheckThis performed on the sending domain:</p>
+          <ul>
+            <li><strong>SPF record</strong> — whether the sender's domain authorises the sending IP</li>
+            <li><strong>DKIM signature</strong> — whether the message body was cryptographically signed by the sender</li>
+            <li><strong>DMARC policy</strong> — what the domain's policy says to do with failed authentication</li>
+            <li><strong>Domain registration date</strong> — how old the domain is</li>
+            <li><strong>MX records</strong> — whether the domain has mail exchange records (MX-only domains with no web presence are a warning sign)</li>
+          </ul>
+
+          <div class="tip">
+            <strong>Forensic Details is read-only.</strong> Nothing you do here affects the verdict or your Safe/Blocked lists. It is purely for inspection.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Safe Senders &amp; Blocked Senders</h2>
+          <p class="goal">What you'll learn: managing your personal allow-list and block-list to refine verdicts for known contacts.</p>
+
+          <h3>Safe Senders</h3>
+          <p>Adding a domain to Safe Senders tells CheckThis that you trust all email from that domain. Any future email from a domain on this list instantly receives a Safe verdict — CheckThis skips all signal analysis and shows "This domain is on your Safe Senders list."</p>
+
+          <p>To add a domain:</p>
+          <ol class="steps">
+            <li>After analysing an email you trust, click <strong>"Add to Safe Senders"</strong> in the action bar. The sender's domain is added automatically.</li>
+            <li>Or go to <strong>Settings → Senders</strong> and type any domain manually.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Use Safe Senders for high-volume trusted senders</strong> — your bank, your employer's domain, newsletters you've subscribed to. Don't add domains you don't recognise just because an email looked legitimate once.
+          </div>
+
+          <h3>Blocked Senders</h3>
+          <p>Adding a domain to Blocked Senders immediately flags any email from that domain as High Risk — regardless of what the signals say. This is a permanent manual override.</p>
+
+          <p>To block a domain:</p>
+          <ol class="steps">
+            <li>Go to <strong>Settings → Senders</strong>.</li>
+            <li>Type the domain in the Blocked Senders field and press ↩.</li>
+          </ol>
+
+          <h3>Managing your lists</h3>
+          <p>Both lists are editable in <strong>Settings → Senders</strong>. To remove a domain, click the × next to it. Changes take effect immediately — the next email from that domain will be treated according to the updated list.</p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> AI Analysis Setup</h2>
+          <p class="goal">What you'll learn: enabling the AI analysis layer, which detects social engineering and pressure tactics that rule-based analysis may miss.</p>
+
+          <p>CheckThis has two analysis modes: rule-based (always on) and AI (optional). The AI layer adds a second pass that looks for social engineering patterns — urgency, authority impersonation, fear tactics, and subtle manipulation — that don't always leave obvious technical traces.</p>
+
+          <h3>Option A — Apple Intelligence (recommended)</h3>
+          <ol class="steps">
+            <li>Apple Intelligence requires macOS 26 or later, Apple Silicon, and Apple Intelligence enabled in System Settings.</li>
+            <li>In CheckThis, go to <strong>Settings → AI</strong>. Select <strong>Apple Intelligence</strong>.</li>
+            <li>AI analysis is now active. No API key needed, no data leaves your Mac.</li>
+          </ol>
+
+          <h3>Option B — OpenRouter (any Mac)</h3>
+          <ol class="steps">
+            <li>Create an account at openrouter.ai and generate an API key.</li>
+            <li>In CheckThis, go to <strong>Settings → AI</strong>. Select <strong>OpenRouter</strong>.</li>
+            <li>Paste your API key. Select a model from the dropdown (Claude or GPT-4o recommended).</li>
+            <li>AI analysis is now active. Your email content is sent to OpenRouter's servers for analysis.</li>
+          </ol>
+
+          <h3>How AI results appear</h3>
+          <p>When AI analysis is active, the signal list includes rows tagged with an <strong>AI</strong> source badge. These signals describe patterns the AI found — for example, "High-pressure deadline combined with authority impersonation" or "Text attempts to bypass critical thinking with fear of account loss." The AI result contributes to the overall verdict score.</p>
+
+          <div class="tip">
+            <strong>AI is off by default.</strong> Rule-based analysis catches the vast majority of phishing attacks without AI. The AI layer adds depth for sophisticated social engineering attacks that are harder to detect technically.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> History</h2>
+          <p class="goal">What you'll learn: using the History panel to review past checks and find a previous result.</p>
+
+          <ol class="steps">
+            <li>Click the <strong>History button</strong> in the toolbar (clock icon) to open the History panel.</li>
+            <li>Every email you have checked is listed with sender, subject, date, and verdict. The most recent is at the top.</li>
+            <li><strong>Click any row</strong> to re-open that result. The full verdict, signal list, and forensic details are available exactly as they were when you originally checked it.</li>
+            <li><strong>Delete an entry</strong> by right-clicking it and selecting Remove, or by selecting it and pressing ⌫.</li>
+            <li><strong>Clear all history</strong> via Settings → Privacy → Clear History.</li>
+          </ol>
+
+          <div class="tip">
+            History is stored locally on your Mac — it is never uploaded or shared. Clearing history is permanent and cannot be undone.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 9 -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Settings Reference</h2>
+          <p class="goal">A complete guide to every setting in CheckThis.</p>
+
+          <h3>General</h3>
+          <ul>
+            <li><strong>Launch at login</strong> — start CheckThis automatically when you log in to your Mac.</li>
+            <li><strong>Show in menu bar</strong> — adds a CheckThis icon to the macOS menu bar for quick access without switching windows.</li>
+          </ul>
+
+          <h3>AI</h3>
+          <ul>
+            <li><strong>AI Provider</strong> — choose between Apple Intelligence (on-device) and OpenRouter (cloud, requires API key).</li>
+            <li><strong>Model</strong> — when using OpenRouter, select from available models. Claude Sonnet is the default.</li>
+            <li><strong>API Key</strong> — your OpenRouter API key. Stored securely in your Mac's Keychain.</li>
+            <li><strong>Test Connection</strong> — sends a test request to verify your key is working before analysing a real email.</li>
+          </ul>
+
+          <h3>Extension</h3>
+          <ul>
+            <li><strong>Open Mail Settings</strong> — shortcut to Mail → Settings → Extensions so you can enable or disable the Mail Extension.</li>
+            <li><strong>Extension status</strong> — shows whether the extension is currently active in Mail.</li>
+          </ul>
+
+          <h3>Senders</h3>
+          <ul>
+            <li><strong>Safe Senders</strong> — domains that always receive a Safe verdict. Add, remove, or clear the list.</li>
+            <li><strong>Blocked Senders</strong> — domains that always receive a High Risk verdict. Add, remove, or clear the list.</li>
+          </ul>
+
+          <h3>Privacy</h3>
+          <ul>
+            <li><strong>Clear History</strong> — permanently deletes all stored check history.</li>
+            <li><strong>Privacy note</strong> — a reminder of what data leaves your Mac (nothing, unless AI is configured with OpenRouter).</li>
+          </ul>
+
+          <h3>About</h3>
+          <ul>
+            <li>App version, licence status, and links to the website and support.</li>
+          </ul>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+
+</BaseLayout>
+
+<style>
+  /* ── Layout ───────────────────────────────────────────── */
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ── TOC ──────────────────────────────────────────────── */
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol {
+    list-style: decimal;
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .toc li { margin-bottom: 0.45rem; }
+
+  .toc a {
+    font-size: 0.88rem;
+    color: var(--gray-dark);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .toc a:hover { color: var(--blue); }
+
+  /* ── Tutorial sections ────────────────────────────────── */
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 {
+    font-size: 1.05rem;
+    margin: 1.25rem 0 0.5rem;
+    color: var(--blue);
+  }
+
+  .tut-section p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .steps {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .steps li {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 0.6rem;
+  }
+
+  .tut-section ul {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .tut-section ul li {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin-bottom: 0.45rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+
+  /* ── Responsive ───────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  /* ── Print ────────────────────────────────────────────── */
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

@@ -84,7 +84,7 @@ const icon = "/images/products/fusionmd/icon.png";
         </div>
         <div class="mini-feature">
           <h3>Typewriter Mode</h3>
-          <p>Holds your cursor in the centre of the screen as you type — no more eyes chasing the bottom.</p>
+          <p>Holds your cursor in the center of the screen as you type — no more eyes chasing the bottom.</p>
         </div>
         <div class="mini-feature">
           <h3>Live Preview</h3>
@@ -92,7 +92,7 @@ const icon = "/images/products/fusionmd/icon.png";
         </div>
         <div class="mini-feature">
           <h3>19 App Themes</h3>
-          <p>Light, dark, and everything between — named colour palettes that change the whole writing environment, not just a mode toggle.</p>
+          <p>Light, dark, and everything between — named color palettes that change the whole writing environment, not just a mode toggle.</p>
         </div>
       </div>
     </div>
@@ -102,15 +102,15 @@ const icon = "/images/products/fusionmd/icon.png";
   <section class="feature-section fade-in alt">
     <div class="feature-icon">🎨</div>
     <div class="feature-body">
-      <h2>Your writing environment, your colour.</h2>
+      <h2>Your writing environment, your color.</h2>
       <p>
         Most writing apps give you a light/dark toggle — if you're lucky. FusionMD ships
-        with 19 named colour themes covering the full spectrum from crisp white to deep espresso,
+        with 19 named color themes covering the full spectrum from crisp white to deep espresso,
         with a dozen variations in between. Pick the environment you want to write in, not
         the one the developer decided on.
       </p>
       <p>
-        Each theme sets the editor background, sidebar, toolbar, and accent colour as a
+        Each theme sets the editor background, sidebar, toolbar, and accent color as a
         coordinated palette — not just a tint applied over a fixed grey UI. Switch to
         Hot Coffee and everything goes dark brown with latte cream accents. Switch to
         Sandstone and the whole app becomes warm editorial cream. The writing surface
@@ -159,7 +159,7 @@ const icon = "/images/products/fusionmd/icon.png";
       <p>
         The AI in FusionMD is not a chatbot tacked on. It knows whether you are drafting
         a blog post, filling a contract template, laying out a report, or scripting a
-        screenplay — and it adapts its behaviour accordingly.
+        screenplay — and it adapts its behavior accordingly.
       </p>
       <ul class="feature-list">
         <li>
@@ -217,25 +217,67 @@ const icon = "/images/products/fusionmd/icon.png";
     </div>
   </section>
 
-  <!-- Feature 6: Analysis -->
+  <!-- Feature 6: Writing Coach -->
   <section class="feature-section fade-in alt">
-    <div class="feature-icon">📊</div>
+    <div class="feature-icon">🖊️</div>
     <div class="feature-body">
-      <h2>Eight analysis tools, built in.</h2>
-      <p>No context switching. Every writing analysis tool lives in the right panel.</p>
-      <div class="analysis-grid">
-        <span class="analysis-chip">Proofreader</span>
-        <span class="analysis-chip">Readability (Flesch-Kincaid)</span>
-        <span class="analysis-chip">Style clarity</span>
-        <span class="analysis-chip">Adjective &amp; adverb density</span>
-        <span class="analysis-chip">Passive voice</span>
-        <span class="analysis-chip">Filler words</span>
-        <span class="analysis-chip">Dialogue checker</span>
-        <span class="analysis-chip">Grammar tools</span>
-      </div>
-      <p style="margin-top: 1rem;">
-        Also: 21 languages supported, multi-language document detection, and on-device translation.
+      <h2>A complete Writing Coach, built into the right panel.</h2>
+      <p>
+        No extra apps, no subscriptions. Every writing analysis tool lives in one tab and
+        updates as you work. Select a word — the thesaurus and dictionary fill instantly.
+        Switch tools with a single icon tap.
       </p>
+      <div class="coach-grid">
+        <div class="coach-card">
+          <h3>Spell Check</h3>
+          <p>Scans the full document and lists every misspelled word. Click any suggestion chip to apply the correction instantly — the list updates as you fix.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Grammar</h3>
+          <p>Goes beyond red underlines. Surfaces macOS's plain-English descriptions of each grammar issue — what's wrong and why — with one-click correction buttons where available.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Thesaurus</h3>
+          <p>Select any word to see synonyms, antonyms, and related terms from the Datamuse API. Click a synonym to replace the word in your document in one step.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Dictionary</h3>
+          <p>Full definitions, phonetic pronunciation, part of speech, and example sentences — right in the panel. Language-aware. Powered by the Free Dictionary API. No browser required.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Overused Words</h3>
+          <p>On-device lemma analysis scans the full document and flags content words you have used too frequently. Spot repetition before your readers do.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Proofreader</h3>
+          <p>Catches unfilled placeholders, repeated phrases, unmatched punctuation, long sentences, capitalisation errors, and word-usage mistakes. Click any issue to jump to it.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Style &amp; Clarity</h3>
+          <p>Highlights adjectives, adverbs, passive voice, and filler words throughout the document. Live Flesch-Kincaid readability score updates as you edit.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Parts of Speech</h3>
+          <p>Colour-codes every word by grammatical category — nouns, verbs, adjectives, adverbs, and four more. Works across 10+ languages, entirely on-device.</p>
+        </div>
+      </div>
+      <p class="coach-note">
+        All analysis runs locally or via free, key-free public APIs —
+        nothing sensitive leaves your machine.
+      </p>
+      <div class="coach-polish">
+        <h3>AI Polish — rewrite any selection, four ways</h3>
+        <p>
+          Select a passage, open the Cleanup tab, and choose your mode:
+          <strong>Polish</strong> (full professional edit),
+          <strong>Fix Errors</strong> (proofreading only),
+          <strong>Shorten</strong> (half the length, all the meaning), or
+          <strong>Simplify</strong> (plain language). The rewritten version
+          appears in the panel for review — apply it or discard it, nothing
+          changes until you decide. Requires Apple Intelligence or an
+          OpenRouter API key.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -397,7 +439,7 @@ const icon = "/images/products/fusionmd/icon.png";
           <li>IDML export</li>
           <li>AI assistant (Apple Intelligence or OpenRouter)</li>
           <li>Fountain screenplay mode</li>
-          <li>All eight analysis tools</li>
+          <li>Full Writing Coach — spell check, grammar, thesaurus, dictionary &amp; more</li>
         </ul>
       </div>
       <div class="pricing-card featured">
@@ -423,7 +465,7 @@ const icon = "/images/products/fusionmd/icon.png";
   <AppFAQ items={[
     {
       question: "What does FusionMD use AI for?",
-      answer: "FusionMD uses AI for four things: generating or expanding content (draft a paragraph, write a section, continue where you left off); rewriting and polishing (adjust tone, improve clarity, make it shorter); analysis and proofreading (the eight built-in writing tools); and context-aware assistance — the AI knows whether you are writing Markdown, filling a template, or building a screenplay, and adapts its suggestions accordingly. AI is optional: every feature except AI generation works without any AI configuration."
+      answer: "FusionMD uses AI for four things: generating or expanding content (draft a paragraph, write a section, continue where you left off); rewriting and polishing (adjust tone, improve clarity, make it shorter); explaining grammar — the Parts of Speech panel can ask AI to explain why a word functions as a particular part of speech in that specific sentence; and context-aware assistance — the AI knows whether you are writing Markdown, filling a template, or building a screenplay, and adapts its suggestions accordingly. AI is optional: every feature except AI generation works without any AI configuration."
     },
     {
       question: "Can the AI write in languages other than English?",
@@ -439,7 +481,7 @@ const icon = "/images/products/fusionmd/icon.png";
     },
     {
       question: "Can I use FusionMD without AI?",
-      answer: "Completely. The editor, templates, boilerplates, IDML export, Fountain screenplay mode, all eight analysis tools, and the full language system work without any AI. You don't need an Apple Intelligence device, and you don't need an OpenRouter API key. AI is an optional layer on top of a fully functional writing and publishing tool."
+      answer: "Completely. The editor, templates, boilerplates, IDML export, Fountain screenplay mode, the full Writing Coach (spell check, grammar, thesaurus, dictionary, proofreader, style analysis, and more), and the full language system all work without any AI. You don't need an Apple Intelligence device, and you don't need an OpenRouter API key. AI is an optional layer on top of a fully functional writing and publishing tool."
     },
     {
       question: "What is the difference between a Template and a Boilerplate?",
@@ -658,7 +700,64 @@ const icon = "/images/products/fusionmd/icon.png";
     color: var(--gray-dark);
   }
 
-  /* Analysis chips */
+  /* Writing Coach grid */
+  .coach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .coach-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .coach-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 0.35rem;
+  }
+
+  .coach-card p {
+    font-size: 0.88rem;
+    margin: 0;
+    color: var(--gray-dark);
+    line-height: 1.55;
+  }
+
+  .coach-note {
+    margin-top: 1.25rem !important;
+    font-size: 0.88rem !important;
+    color: var(--gray) !important;
+    font-style: italic;
+  }
+
+  .coach-polish {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .coach-polish h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin: 0 0 0.4rem 0;
+  }
+
+  .coach-polish p {
+    font-size: 0.88rem;
+    margin: 0;
+    color: var(--gray-dark);
+    line-height: 1.6;
+  }
+
+  /* Analysis chips (legacy — kept for reference) */
   .analysis-grid {
     display: flex;
     flex-wrap: wrap;
@@ -960,6 +1059,7 @@ const icon = "/images/products/fusionmd/icon.png";
     }
 
     .mini-feature-grid { grid-template-columns: 1fr; }
+    .coach-grid { grid-template-columns: 1fr; }
     .lang-grid { grid-template-columns: 1fr; }
     .theme-grid { grid-template-columns: 1fr; }
     .app-theme-columns { flex-direction: column; gap: 1rem; }

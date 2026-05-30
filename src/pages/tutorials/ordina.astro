@@ -1,0 +1,556 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Ordina Tutorials — DataIsland Software"
+  description="Step-by-step written tutorials for Ordina — adding drives, searching files, finding duplicates, smart filters, storage statistics, tags, and the Ordina Agent."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>Ordina — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in Ordina. Work through them in order
+        to get a full introduction, or jump to any section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">First launch &amp; Full Disk Access</a></li>
+          <li><a href="#t2">Adding a local or external drive</a></li>
+          <li><a href="#t3">Connecting cloud storage</a></li>
+          <li><a href="#t4">Searching your files</a></li>
+          <li><a href="#t5">Smart filters</a></li>
+          <li><a href="#t6">Finding duplicates</a></li>
+          <li><a href="#t7">Storage statistics</a></li>
+          <li><a href="#t8">Tags</a></li>
+          <li><a href="#t9">Ordina Agent (AI search)</a></li>
+          <li><a href="#t10">File detail panel</a></li>
+          <li><a href="#t11">Settings reference</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> First Launch &amp; Full Disk Access</h2>
+          <p class="goal">What you'll learn: completing the one-time setup so Ordina can index your files.</p>
+
+          <p>Ordina indexes file <em>metadata</em> — names, sizes, dates, types, and locations — not file content. To do this across your Mac, it needs Full Disk Access.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Launch Ordina.</strong> If Full Disk Access has not been granted, a prompt appears explaining what it is and why it's needed.</li>
+            <li><strong>Click "Open Privacy Settings."</strong> macOS opens System Settings → Privacy &amp; Security → Full Disk Access.</li>
+            <li><strong>Find Ordina in the list</strong> and toggle it on. macOS may ask for your password.</li>
+            <li><strong>Return to Ordina.</strong> The app detects the permission automatically — no restart needed.</li>
+            <li><strong>The Welcome screen</strong> is shown on first launch. It gives a brief overview of how Ordina works: drives are indexed into a local database, and all searching happens against that database — fast, private, offline.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Why Full Disk Access?</strong> macOS restricts apps from reading the file system without this permission. Ordina uses it only to read file metadata (names, sizes, dates) — it never reads file contents.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Adding a Local or External Drive</h2>
+          <p class="goal">What you'll learn: adding your Mac's internal drive or an external drive to Ordina's index.</p>
+
+          <h3>Adding a drive</h3>
+          <ol class="steps">
+            <li>In the left sidebar, click the <strong>+</strong> button at the bottom of the Drives section, or use the toolbar's Add Drive button.</li>
+            <li>Ordina scans for available volumes. Your internal Mac drive and any connected external drives appear in the list.</li>
+            <li><strong>Select the drive</strong> you want to add and click <strong>Add</strong>.</li>
+            <li>Ordina imports the drive's metadata. A progress bar appears showing the import status — file count and estimated time remaining. Large drives (500,000+ files) may take a few minutes on first import.</li>
+            <li>When the import is complete, the drive appears in the left sidebar with a file count. You can now search it.</li>
+          </ol>
+
+          <h3>Re-scanning a drive</h3>
+          <p>Ordina's index reflects the state of the drive at the time of the last import. To update the index after adding, deleting, or moving files:</p>
+          <ol class="steps">
+            <li>Right-click the drive in the left sidebar.</li>
+            <li>Select <strong>Re-scan Drive</strong>. The import runs again, updating only what has changed.</li>
+          </ol>
+
+          <h3>Removing a drive</h3>
+          <ol class="steps">
+            <li>Right-click the drive in the left sidebar.</li>
+            <li>Select <strong>Remove Drive</strong>. The drive and all its indexed data are removed from the database. The actual files on your drive are untouched.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>External drives:</strong> If you disconnect an external drive, Ordina retains its index — you can still search it and see file metadata from the last scan. When reconnected and re-scanned, the index updates to reflect current state.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Connecting Cloud Storage</h2>
+          <p class="goal">What you'll learn: adding iCloud Drive, Dropbox, Google Drive, and OneDrive to your Ordina index.</p>
+
+          <p>Ordina supports four cloud storage services. Cloud files are indexed just like local files — you can search them, see their metadata, and open their detail panel. For Dropbox, Google Drive, and OneDrive, Ordina can also show a live thumbnail preview of the file using the provider's API.</p>
+
+          <h3>iCloud Drive</h3>
+          <ol class="steps">
+            <li>In the Drives sidebar, click <strong>+</strong> and select <strong>iCloud Drive</strong>.</li>
+            <li>An Open dialog appears. Navigate to your iCloud Drive folder (it is usually inside your Home folder under iCloud Drive). Click <strong>Allow</strong>.</li>
+            <li>Ordina stores a security-scoped bookmark so it can access iCloud Drive without prompting you again. Import begins immediately.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>iCloud evicted files</strong> (files stored in iCloud but not downloaded to your Mac) appear in the index with a cloud icon. Their metadata is available, but you cannot open them without downloading them first via Finder.
+          </div>
+
+          <h3>Dropbox</h3>
+          <ol class="steps">
+            <li>In the Drives sidebar, click <strong>+</strong> and select <strong>Dropbox</strong>.</li>
+            <li>Click <strong>Connect Dropbox</strong>. Ordina opens a browser window to the Dropbox OAuth login page.</li>
+            <li>Sign in to your Dropbox account and grant Ordina read-only access. You are redirected back to Ordina automatically.</li>
+            <li>Ordina fetches your Dropbox file list and imports metadata. Thumbnail previews are available in the detail panel for supported file types.</li>
+          </ol>
+
+          <h3>Google Drive</h3>
+          <ol class="steps">
+            <li>In the Drives sidebar, click <strong>+</strong> and select <strong>Google Drive</strong>.</li>
+            <li>Click <strong>Connect Google Drive</strong>. A browser window opens for Google OAuth.</li>
+            <li>Sign in and grant Ordina read-only Drive access. You are redirected back to Ordina.</li>
+            <li>Ordina indexes your Google Drive files. Thumbnail previews are fetched via the Drive API for supported files.</li>
+          </ol>
+
+          <h3>OneDrive</h3>
+          <ol class="steps">
+            <li>In the Drives sidebar, click <strong>+</strong> and select <strong>OneDrive</strong>.</li>
+            <li>Click <strong>Connect OneDrive</strong>. Microsoft OAuth opens in a browser.</li>
+            <li>Sign in with your Microsoft account and grant Ordina read-only Files access. You are redirected back.</li>
+            <li>Ordina imports your OneDrive file list. Large preview thumbnails are available via the Graph API.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Open in Ordina Browser:</strong> For cloud files (Dropbox, Google Drive, OneDrive), the detail panel has an "Open in Ordina Browser" button. This opens the file's web URL in a dedicated in-app browser window — your cloud provider sign-in is remembered across sessions, so you don't need to log in each time.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Searching Your Files</h2>
+          <p class="goal">What you'll learn: running searches, filtering by drive, and understanding search results.</p>
+
+          <h3>Basic search</h3>
+          <ol class="steps">
+            <li>Click the <strong>Search tab</strong> in the toolbar (magnifying glass icon).</li>
+            <li>Type in the search bar at the top of the main area. Results update as you type — no need to press ↩.</li>
+            <li>Results show file name, type, size, last modified date, and the drive it lives on.</li>
+          </ol>
+
+          <h3>Filtering by drive</h3>
+          <ol class="steps">
+            <li>Click any drive in the left sidebar to restrict results to that drive only.</li>
+            <li>Click <strong>All Drives</strong> at the top of the sidebar to search across every indexed drive simultaneously.</li>
+          </ol>
+
+          <h3>Sorting results</h3>
+          <p>Click any column header in the results list to sort by that column. Click again to reverse the sort order. Useful columns for finding things quickly:</p>
+          <ul>
+            <li><strong>Date Modified</strong> — find recently changed files</li>
+            <li><strong>Size</strong> — find the largest files consuming space</li>
+            <li><strong>Name</strong> — alphabetical browse</li>
+            <li><strong>Type</strong> — group files by extension</li>
+          </ul>
+
+          <h3>Opening a file</h3>
+          <ol class="steps">
+            <li>Double-click any result to open it in its default application.</li>
+            <li>Right-click for more options: Open, Reveal in Finder, Copy Path, Move to Trash.</li>
+          </ol>
+
+          <h3>Multi-select</h3>
+          <ol class="steps">
+            <li>Click a file to select it. ⌘-click to add individual files to the selection. ⇧-click to select a range.</li>
+            <li>With multiple files selected, the right panel shows a summary (count, total size). Right-clicking shows batch operations.</li>
+          </ol>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Smart Filters</h2>
+          <p class="goal">What you'll learn: using built-in filters and creating custom filters to find specific file types and sets.</p>
+
+          <p>Smart Filters let you instantly surface every file matching a specific condition — all PDFs across all drives, all images, all Word documents — without typing a search query. Filter results update automatically when drives are re-scanned.</p>
+
+          <h3>Using built-in filters</h3>
+          <ol class="steps">
+            <li>In the left sidebar, scroll down to the <strong>Filters</strong> section.</li>
+            <li>Click any built-in filter to apply it instantly:</li>
+          </ol>
+
+          <table>
+            <thead><tr><th>Filter</th><th>What it shows</th></tr></thead>
+            <tbody>
+              <tr><td>All Documents</td><td>Every document-type file (PDF, Word, Pages, text, etc.)</td></tr>
+              <tr><td>Word Docs</td><td>.doc and .docx files only</td></tr>
+              <tr><td>PDFs</td><td>.pdf files only</td></tr>
+              <tr><td>Images</td><td>JPEG, PNG, HEIC, GIF, TIFF, and other image formats</td></tr>
+              <tr><td>Duplicates</td><td>Files that have an exact duplicate elsewhere in your index</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Creating a custom filter</h3>
+          <ol class="steps">
+            <li>In the Filters section of the sidebar, click the <strong>+</strong> button.</li>
+            <li>The Custom Filter editor opens. Give your filter a name.</li>
+            <li>Add one or more conditions. Conditions can match on: file name, file extension, size (greater/less than), date modified (before/after), drive, or a combination.</li>
+            <li>Click <strong>Save.</strong> Your filter appears in the sidebar alongside the built-in filters.</li>
+            <li>Click the filter to run it at any time. Results are always live against the current index.</li>
+          </ol>
+
+          <div class="tip">
+            Custom filters are persistent — they remain in your sidebar across app restarts and are recomputed each time you click them, so they always reflect the current state of your indexed drives.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Finding Duplicates</h2>
+          <p class="goal">What you'll learn: using the Duplicates tab to identify and remove exact duplicate files to reclaim storage space.</p>
+
+          <h3>Running a duplicate scan</h3>
+          <ol class="steps">
+            <li>Click the <strong>Duplicates tab</strong> in the toolbar (two overlapping documents icon).</li>
+            <li>If no scan has been run, click <strong>Find Duplicates.</strong> Ordina compares files across all indexed drives using file size and content hash — only exact byte-for-byte duplicates are matched.</li>
+            <li>Results are grouped by confidence level using sub-tabs: <strong>100%</strong> (exact hash match), and lower confidence tiers for near-matches. Start with the 100% tab for safe deletions.</li>
+          </ol>
+
+          <h3>Reviewing duplicate groups</h3>
+          <ol class="steps">
+            <li>Each duplicate group shows all copies of a file: their name, size, location, and last modified date.</li>
+            <li><strong>Click a file</strong> in the group to see its detail panel on the right — confirm it is actually the file you think it is before deleting.</li>
+            <li>Ordina does not automatically choose which copy to keep. You decide. A common strategy: keep the copy on your main drive and delete the one on an external or cloud backup drive.</li>
+          </ol>
+
+          <h3>Deleting a duplicate</h3>
+          <ol class="steps">
+            <li>Select the copy you want to remove.</li>
+            <li>Right-click and choose <strong>Move to Trash.</strong> The file moves to the macOS Trash — it is not permanently deleted until you empty the Trash.</li>
+            <li>The duplicate group updates after deletion. If only one copy remains, the group disappears.</li>
+          </ol>
+
+          <h3>Exporting the duplicate report</h3>
+          <ol class="steps">
+            <li>With the Duplicates tab active, click the <strong>Export</strong> button in the toolbar.</li>
+            <li>A CSV file is saved listing every duplicate group, file paths, sizes, and modification dates. Useful for reviewing a large set of duplicates before deciding what to delete.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Never delete a file you can't identify.</strong> Use the detail panel to preview or open a file in its app before removing it. Ordina moves files to Trash — not permanently deleted — so you have a safety net until the Trash is emptied.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> Storage Statistics</h2>
+          <p class="goal">What you'll learn: using the Statistics tab to understand what is consuming space across your drives.</p>
+
+          <ol class="steps">
+            <li>Click the <strong>Statistics tab</strong> in the toolbar (bar chart icon).</li>
+            <li>Ordina shows a breakdown of storage usage across all indexed drives. Key views:</li>
+          </ol>
+
+          <h3>By file type</h3>
+          <p>A chart shows how your storage is divided by file category — Videos, Images, Documents, Audio, Archives, and Other. Hover over any segment for the exact size and file count.</p>
+
+          <h3>By drive</h3>
+          <p>A per-drive breakdown shows total size, used space, available space, and the percentage consumed by indexed files.</p>
+
+          <h3>Largest files</h3>
+          <p>A sortable list of the largest individual files across all drives. Click any file to jump to its result and open its detail panel. This is the fastest way to find space-consuming files you may have forgotten about.</p>
+
+          <h3>Largest folders</h3>
+          <p>Shows the top folders by total content size. Useful for finding old project folders, application caches, or archive directories that are consuming significant space.</p>
+
+          <div class="tip">
+            Statistics are calculated from the current index. After re-scanning a drive, click the Refresh button in the Statistics tab to update the numbers.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Tags</h2>
+          <p class="goal">What you'll learn: browsing files by macOS tag colour to find tagged files across all your drives at once.</p>
+
+          <p>Ordina reads the macOS Finder tags (coloured labels) already on your files — Red, Orange, Yellow, Green, Blue, Purple, and Grey — and lets you browse by tag across every indexed drive simultaneously.</p>
+
+          <ol class="steps">
+            <li>In the left sidebar, scroll to the <strong>Tags</strong> section. Each tag colour shows how many files across all drives carry that tag.</li>
+            <li>Click any tag colour to show all files with that tag. Results appear in the main area — same list view as Search, with all the same sorting and detail panel capabilities.</li>
+            <li>Click a file to open its detail panel. Double-click to open it in its default app.</li>
+            <li>To return to normal search, click <strong>All Drives</strong> in the Drives section or start a new search query.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Tags are indexed at import time.</strong> If you add or remove Finder tags after a drive has been indexed, re-scan the drive (right-click → Re-scan Drive) to update the Tags counts.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 9 -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Ordina Agent (AI Search)</h2>
+          <p class="goal">What you'll learn: using natural-language queries to search your files without needing to know exact filenames or extensions.</p>
+
+          <p>The Ordina Agent translates natural-language questions into structured file searches. Instead of remembering that a file was called "Q3_report_final_v2.docx", you can ask "find Word documents from last quarter" and Ordina figures out the rest.</p>
+
+          <h3>Opening the Agent panel</h3>
+          <ol class="steps">
+            <li>Click the <strong>sparkles (✦) button</strong> in the toolbar to open the AI Assistant panel on the right side.</li>
+          </ol>
+
+          <h3>Natural-language search</h3>
+          <ol class="steps">
+            <li>Type a query in plain English. Examples:</li>
+          </ol>
+          <ul>
+            <li>"PDFs modified in the last two weeks"</li>
+            <li>"Large video files on my external drive"</li>
+            <li>"Images created this year"</li>
+            <li>"Word documents bigger than 10 MB"</li>
+            <li>"Files I haven't opened in more than a year"</li>
+          </ul>
+          <ol class="steps" start="2">
+            <li>The Agent parses your query and builds a filter. A preview of the interpreted filter appears below your query — confirming what Ordina understood.</li>
+            <li>Click <strong>Run Search</strong> (or press ↩). Results appear in the main search view.</li>
+            <li>If the results are not what you expected, refine your query. The Agent shows its interpretation so you can see exactly how it understood your request and adjust accordingly.</li>
+          </ol>
+
+          <h3>Context-aware features</h3>
+          <p>The Agent also offers suggestions based on what you're currently doing:</p>
+          <ul>
+            <li>In the <strong>Search tab</strong> with results visible — the Agent can suggest related searches or refine the current query.</li>
+            <li>In the <strong>Duplicates tab</strong> — the Agent can help identify which duplicate copies are safest to remove based on location and date.</li>
+            <li>In the <strong>Statistics tab</strong> — the Agent can explain unusually large categories and suggest what to look at first.</li>
+          </ul>
+
+          <div class="tip">
+            The Ordina Agent works entirely locally — it parses your natural-language query on your Mac and converts it to a database filter. No file names or metadata are sent to any server.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 10 -->
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> File Detail Panel</h2>
+          <p class="goal">What you'll learn: using the right-hand detail panel to inspect a file before opening it.</p>
+
+          <ol class="steps">
+            <li>Click any file in the search results, filter results, duplicates list, or tag browser. The detail panel opens on the right.</li>
+          </ol>
+
+          <h3>What the detail panel shows</h3>
+          <ul>
+            <li><strong>File name and path</strong> — full location on the drive.</li>
+            <li><strong>Preview</strong> — a thumbnail or inline preview for supported types: images, PDFs, fonts (glyph preview), and common document formats.</li>
+            <li><strong>Metadata</strong> — file size, creation date, last modified date, file type, and UTI (Universal Type Identifier).</li>
+            <li><strong>Cloud status</strong> (for cloud files) — whether the file is downloaded locally or stored only in the cloud.</li>
+            <li><strong>Tags</strong> — macOS Finder tag colours applied to this file.</li>
+          </ul>
+
+          <h3>Actions from the detail panel</h3>
+          <ul>
+            <li><strong>Open</strong> — opens the file in its default application.</li>
+            <li><strong>Reveal in Finder</strong> — opens a Finder window with the file selected.</li>
+            <li><strong>Open in Ordina Browser</strong> (cloud files only) — opens the file's web URL in the in-app Ordina Browser window.</li>
+            <li><strong>Open in Cloud</strong> (cloud files only) — opens the file in your default browser.</li>
+            <li><strong>Copy Path</strong> — copies the full file path to the clipboard.</li>
+          </ul>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 11 -->
+        <section class="tut-section" id="t11">
+          <h2><span class="num">11</span> Settings Reference</h2>
+          <p class="goal">A complete guide to every setting in Ordina.</p>
+
+          <h3>General</h3>
+          <ul>
+            <li><strong>Launch at login</strong> — start Ordina automatically when you log in.</li>
+            <li><strong>Index hidden files</strong> — include files and folders beginning with a dot (.) in the index. Off by default.</li>
+            <li><strong>Maximum file depth</strong> — how many folder levels deep Ordina descends when indexing. Increase for very deep folder hierarchies.</li>
+          </ul>
+
+          <h3>Privacy &amp; Security</h3>
+          <ul>
+            <li><strong>Full Disk Access status</strong> — shows whether permission is granted. A button opens System Settings if it needs to be enabled.</li>
+            <li><strong>Data storage</strong> — Ordina's index database is stored locally in your Application Support folder. The data never leaves your Mac.</li>
+          </ul>
+
+          <h3>Cloud Accounts</h3>
+          <ul>
+            <li>Shows connected cloud services (iCloud, Dropbox, Google Drive, OneDrive) and their sync status.</li>
+            <li><strong>Disconnect</strong> — removes the stored credentials for a cloud provider and deletes its indexed data from the database.</li>
+            <li><strong>Re-authenticate</strong> — if a cloud provider's token expires, use this to refresh the connection without removing existing indexed data.</li>
+          </ul>
+
+          <h3>Appearance</h3>
+          <ul>
+            <li><strong>Theme</strong> — Light, Dark, or System (follows macOS).</li>
+            <li><strong>Accent colour</strong> — customise the highlight colour used throughout the interface.</li>
+            <li><strong>Sidebar width</strong> — set default widths for the left and right panels.</li>
+          </ul>
+
+          <h3>About</h3>
+          <ul>
+            <li>App version, licence status (trial or full), and a Purchase button if you are in trial mode.</li>
+            <li>Links to the DataIsland website and support.</li>
+          </ul>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal { font-size: 0.95rem; color: var(--gray-dark); font-style: italic; margin-bottom: 1.25rem; padding-left: 2.4rem; }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1rem 0 1.25rem; }
+  th { text-align: left; padding: 0.5rem 0.75rem; background: var(--gray-light); font-weight: 600; border: 1px solid #e0e0e0; }
+  td { padding: 0.5rem 0.75rem; border: 1px solid #e0e0e0; vertical-align: top; line-height: 1.55; }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

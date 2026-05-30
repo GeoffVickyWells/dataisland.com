@@ -6,23 +6,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="tutorials-page fade-in">
     <h1>Tutorials</h1>
-    <p class="intro">
-      Step-by-step guides for FusionMD, Ordina, and CheckThis.
-      Video tutorials are coming — check back after launch.
-    </p>
+    <p class="intro">Step-by-step guides for each DataIsland app. Select an app to get started.</p>
 
-    <div class="coming-soon-block">
-      <div class="icon">🎬</div>
-      <h2>Coming Soon</h2>
-      <p>
-        We're recording tutorial videos for each app. In the meantime, each product
-        page covers the key features in detail.
-      </p>
-      <div class="product-links">
-        <a href="/products/fusionmd">FusionMD →</a>
-        <a href="/products/ordina">Ordina →</a>
-        <a href="/products/checkthis">CheckThis →</a>
-      </div>
+    <div class="app-grid">
+      <a href="/tutorials/fusionmd" class="app-card">
+        <div class="app-icon">📝</div>
+        <h2>FusionMD</h2>
+        <p>Document studio, Markdown editor, and professional publishing pipeline.</p>
+        <span class="card-link">View tutorials →</span>
+      </a>
+      <a href="/tutorials/ordina" class="app-card">
+        <div class="app-icon">🔍</div>
+        <h2>Ordina</h2>
+        <p>Multi-drive file search across local, external, cloud, and remote drives.</p>
+        <span class="card-link">View tutorials →</span>
+      </a>
+      <a href="/tutorials/checkthis" class="app-card">
+        <div class="app-icon">🛡️</div>
+        <h2>CheckThis</h2>
+        <p>Email phishing and fraud analysis for Apple Mail.</p>
+        <span class="card-link">View tutorials →</span>
+      </a>
     </div>
   </section>
 
@@ -47,39 +51,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     margin-bottom: 3rem;
   }
 
-  .coming-soon-block {
-    text-align: center;
-    background: var(--gray-light);
-    border-radius: var(--radius);
-    padding: 3rem 2rem;
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
   }
 
-  .icon {
-    font-size: 3rem;
+  .app-card {
+    display: block;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+  }
+
+  .app-card:hover {
+    background: var(--blue-light);
+    opacity: 1;
+  }
+
+  .app-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+
+  .app-card h2 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+  .app-card p {
+    font-size: 0.92rem;
+    color: var(--gray);
+    line-height: 1.5;
     margin-bottom: 1rem;
   }
 
-  .coming-soon-block h2 {
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .coming-soon-block p {
-    font-size: 1rem;
-    color: var(--gray-dark);
-    max-width: 450px;
-    margin: 0 auto 1.5rem;
-    line-height: 1.6;
-  }
-
-  .product-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-
-  .product-links a {
+  .card-link {
+    font-size: 0.9rem;
     font-weight: 600;
-    font-size: 0.95rem;
+    color: var(--blue);
   }
 </style>

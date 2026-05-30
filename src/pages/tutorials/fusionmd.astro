@@ -1,0 +1,634 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="FusionMD Tutorials — DataIsland Software"
+  description="Step-by-step written tutorials for FusionMD — writing in Markdown, AI tools, templates, screenplay mode, IDML export, and the Writing Coach."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>FusionMD — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in FusionMD — from your first document
+        to professional layout export. Work through them in order or jump to any
+        section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Your first document</a></li>
+          <li><a href="#t2">Choosing &amp; customising a text theme</a></li>
+          <li><a href="#t3">AI Polish: rewriting selected text</a></li>
+          <li><a href="#t4">Using the AI prompt bar</a></li>
+          <li><a href="#t5">Templates &amp; variables</a></li>
+          <li><a href="#t6">Proofreading &amp; style analysis</a></li>
+          <li><a href="#t7">The boilerplate library</a></li>
+          <li><a href="#t8">Exporting for professional layout (IDML)</a></li>
+          <li><a href="#t9">Writing a screenplay</a></li>
+          <li><a href="#t10">Text transformations</a></li>
+          <li><a href="#t11">Parts of speech analyzer</a></li>
+          <li><a href="#t12">Settings &amp; customising your environment</a></li>
+          <li><a href="#t13">Writing Coach: spelling, grammar &amp; vocabulary</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Your First Document</h2>
+          <p class="goal">What you'll learn: creating a document, writing in Markdown, and exporting to PDF.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Launch FusionMD.</strong> The document browser opens, showing three sections: Blank, Templates, and For Layout.</li>
+            <li><strong>Click "Blank Document."</strong> A new untitled editor window opens. The toolbar shows the mode picker set to "Markdown" (the green default).</li>
+            <li><strong>Write a heading.</strong> Type <code># My First Document</code>. The heading appears large and bold in real time — syntax highlighting is live.</li>
+            <li><strong>Write body text.</strong> Press Return twice and write a paragraph. Notice the word count in the status bar updates as you type, and the preview pane on the right renders your text.</li>
+            <li><strong>Try some formatting.</strong> Select a word and click <strong>B</strong> in the format bar to make it bold. Or type <code>**word**</code> directly — both work.</li>
+            <li><strong>Insert a list.</strong> Press Return twice, then click the bullet-list button in the format bar. Type three items, pressing Return between each.</li>
+            <li><strong>Adjust the preview split.</strong> Drag the divider between the editor and preview left or right. Drag all the way right to go full-screen editor; all the way left to see only the preview.</li>
+            <li><strong>Export to PDF.</strong> Press ⌘⇧E or go to File → Export → PDF. Choose a save location. The PDF renders using your active text theme.</li>
+            <li><strong>Save.</strong> Press ⌘S. FusionMD saves as <code>.fusiondoc</code> by default.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>No lock-in:</strong> A <code>.fusiondoc</code> file is a ZIP archive. Rename it <code>.zip</code> and open it — your plain Markdown is inside as <code>content.md</code>, readable by any editor, forever.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Choosing &amp; Customising a Text Theme</h2>
+          <p class="goal">What you'll learn: applying a built-in theme, customising fonts and colours, and locking a theme to a document.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open any document.</li>
+            <li><strong>Open the right panel.</strong> Click the panel button in the toolbar (rightmost group), or press ⌘2.</li>
+            <li><strong>Go to the Document Styles tab</strong> — the last tab in the right panel. You'll see a list of built-in themes.</li>
+            <li><strong>Click "GitHub Light."</strong> The preview pane immediately updates — body font, heading colours, and background all change.</li>
+            <li><strong>Try "Dracula."</strong> The dark background appears in the preview. The editor background stays clean while the preview and all exports match.</li>
+            <li><strong>Create a custom theme.</strong> Click the <strong>+</strong> button. A sheet opens with controls for: body font, heading font, code font, colours (body text, headings, links, background), line height, and margins.</li>
+            <li><strong>Set a distinctive heading colour.</strong> Click the heading colour swatch, choose a deep teal. The preview updates live.</li>
+            <li><strong>Name your theme</strong> and click Save. It appears at the top of the list.</li>
+            <li><strong>Lock it to this document.</strong> With your custom theme selected, click <strong>"Set as Document Theme."</strong> A ✦ symbol appears. This theme now travels with the <code>.fusiondoc</code> file and renders identically on any Mac running FusionMD.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Note:</strong> Themes control the <em>preview and export appearance</em>, not the editor view. The editor is always clean and minimal — comfortable to write in regardless of your theme choice.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> AI Polish: Rewriting Selected Text</h2>
+          <p class="goal">What you'll learn: using AI to rewrite, fix, shorten, or simplify a selected passage — and reviewing the result before applying it.</p>
+
+          <h3>Prerequisite</h3>
+          <p>You need either Apple Intelligence (macOS 26, Apple Silicon, enabled in System Settings) or an OpenRouter API key in Settings → AI.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Select a passage</strong> in the editor — a sentence, paragraph, or any range of text. AI Polish works on whatever you have highlighted.</li>
+            <li><strong>Open the Writing Coach tab</strong> in the right panel (the checkmark icon). Click the <strong>Cleanup</strong> subtab (wand-and-sparkles icon), then select <strong>AI Polish</strong> in the segmented control at the top.</li>
+            <li>The panel shows a preview of your selected text and four rewrite modes:
+              <ul>
+                <li><strong>Polish</strong> — full professional edit: improves clarity, flow, and style while fixing all errors</li>
+                <li><strong>Fix Errors</strong> — proofreading only: corrects spelling and grammar with minimum changes</li>
+                <li><strong>Shorten</strong> — reduces the passage to roughly half its length while keeping all meaning</li>
+                <li><strong>Simplify</strong> — rewrites in plain language with shorter sentences</li>
+              </ul>
+            </li>
+            <li><strong>Select a mode</strong> and click <strong>Rewrite</strong>. A progress indicator appears while the AI works.</li>
+            <li><strong>Review the result.</strong> The rewritten text appears in the panel. You haven't changed your document yet — read it carefully first.</li>
+            <li>Click <strong>Apply</strong> to replace your selection, <strong>Discard</strong> to keep your original, or <strong>Try Again</strong> to discard and rewrite in a different mode.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Language-aware:</strong> The rewrite respects your document's language. A French document gets French rewrites; a Canadian English document gets Canadian spelling. If AI is not configured, an error message links you to Settings → AI.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Using the AI Prompt Bar</h2>
+          <p class="goal">What you'll learn: generating content with AI, understanding context-aware prompts, and inserting AI content at a specific cursor position.</p>
+
+          <h3>Prerequisite</h3>
+          <p>You need Apple Intelligence or an OpenRouter API key. Go to Settings → AI to configure.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open a blank document.</li>
+            <li><strong>Locate the AI prompt bar</strong> at the bottom of the editor window — a text field with a blue Generate button.</li>
+            <li><strong>Write a prompt:</strong> <em>"Write a 300-word introduction to a report on remote work productivity, including three key statistics as bullet points."</em></li>
+            <li><strong>Press ⌘↩ or click Generate.</strong> The bar shows "Generating…" while the AI works, then "Added to editor" when content is inserted.</li>
+            <li><strong>The content appears at your cursor position</strong> — not at the end of the document. Place your cursor anywhere before generating to control where content lands.</li>
+            <li><strong>Edit the content.</strong> AI output is just Markdown — select, retype, or delete any part of it normally.</li>
+            <li><strong>Try an inline expansion.</strong> Write a paragraph yourself, place your cursor at the end, and prompt: <em>"Continue with a paragraph about asynchronous communication."</em> The AI appends at the cursor.</li>
+            <li><strong>Switch to Variables mode</strong> (click "Variables" in the mode picker). The prompt bar placeholder changes. Prompt: <em>"A consulting proposal template for a software project."</em> The AI generates a full proposal with <code>&#123;&#123;client_name&#125;&#125;</code>, <code>&#123;&#123;budget&#125;&#125;</code>, and other variables already declared and detected in the Variables panel.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Context-aware generation:</strong> The AI adapts to the active mode automatically. In Markdown mode it writes content. In Variables mode it declares <code>&#123;&#123;variables&#125;&#125;</code>. In Script mode it writes Fountain-format scenes. In Layout mode it tags content with paragraph style names.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Templates &amp; Variables</h2>
+          <p class="goal">What you'll learn: using the built-in templates, filling variables, creating your own template, and using conditions.</p>
+
+          <h3>Using a Built-in Template</h3>
+          <ol class="steps">
+            <li>From the document browser, click the <strong>Templates</strong> section and select <strong>Proposal</strong>.</li>
+            <li>A configuration sheet lists all required variables: <code>&#123;&#123;client_name&#125;&#125;</code>, <code>&#123;&#123;project_title&#125;&#125;</code>, <code>&#123;&#123;author&#125;&#125;</code>, <code>&#123;&#123;date&#125;&#125;</code>, and more.</li>
+            <li>Fill in the fields and click <strong>"Create Document."</strong> A new document opens with all variables replaced by your values.</li>
+          </ol>
+
+          <h3>Authoring a Template</h3>
+          <ol class="steps">
+            <li>Open a blank document and switch to <strong>Variables mode</strong> (click "Variables" in the mode picker).</li>
+            <li>Write your document using <code>&#123;&#123;variable_name&#125;&#125;</code> wherever values should be filled in. Example: <em>"Dear &#123;&#123;recipient_name&#125;&#125;, I am writing on behalf of &#123;&#123;company_name&#125;&#125;."</em></li>
+            <li><strong>Open the Variables panel</strong> (left sidebar, Variables tab). FusionMD has already detected your variables.</li>
+            <li><strong>Expand a variable.</strong> Click its disclosure arrow and set a label, type (Text, Date, Number, or List), required toggle, and placeholder text. Dates get a date picker; lists get a dropdown — this is enforced when the template is filled.</li>
+            <li><strong>Add a condition.</strong> Click the Conditions tab and add a toggle condition, for example <code>include_signature</code>. Wrap an optional section in your document with a conditional block. One template can now cover both the full and short version of a document.</li>
+            <li><strong>Save as template.</strong> Click <strong>"Save as Template…"</strong>. The file saves as <code>.fusiontemplate</code> and can be shared with your team.</li>
+            <li><strong>Open your template.</strong> Double-click the <code>.fusiontemplate</code> file. The variable configuration sheet appears. Required fields are enforced — you cannot create the document without completing them.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Five built-in templates:</strong> Article, Report, Proposal, Story, and Screenplay — each with sensible pre-declared variables. Open them from the document browser to see how templates are constructed.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Proofreading &amp; Style Analysis</h2>
+          <p class="goal">What you'll learn: using the Proofreader, Style &amp; Clarity, and the Language subtab inside the Writing Coach panel.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open any document with several paragraphs of prose.</li>
+            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Writing tab</strong> (the checkmark icon).</li>
+            <li><strong>Set document language.</strong> Click the <strong>Language subtab</strong> (globe icon). Select your document's language (e.g., English — United Kingdom). This drives spell checking, smart-quote style, and the dialogue checker simultaneously. Hover any subtab icon to see its name in the tooltip.</li>
+            <li><strong>Switch to the Proofreader.</strong> Click the <strong>Proofread subtab</strong> (checkmark circle icon). It scans the document and lists issues grouped into categories: unfilled placeholders, repeated phrases, unmatched punctuation, long sentences (&gt;40 words), capitalisation errors, and word-usage mistakes ("alot", "could of").</li>
+            <li><strong>Click an issue.</strong> FusionMD highlights the relevant text in the editor. If the issue is auto-correctable, a Fix button appears — click it to apply the correction.</li>
+            <li><strong>Filter by category.</strong> Use the chips at the top of the list to show only one category at a time (e.g., "Long sentences").</li>
+            <li><strong>Switch to Style &amp; Clarity.</strong> Click the <strong>Style subtab</strong>. You'll see: Flesch-Kincaid reading ease score, estimated grade level, average sentence length, and highlight mode buttons — Adjectives (green), Adverbs (teal), Passive Voice (purple), Filler Words (amber).</li>
+            <li><strong>Enable Adverbs highlight.</strong> All adverbs highlight teal. Decide which ones earn their place and which are padding.</li>
+            <li><strong>Enable Passive Voice highlight.</strong> Purple highlights show sentences where the grammatical subject is not the actor. Revise toward active constructions where it improves clarity.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Non-destructive:</strong> Highlights are a visual overlay only. Toggle them on and off — they never change your document. The readability score updates live as you edit.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> The Boilerplate Library</h2>
+          <p class="goal">What you'll learn: saving reusable Markdown blocks, organising them by category, and inserting them into any document.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open a document containing text you reuse frequently — a legal disclaimer, a standard bio, an email sign-off.</li>
+            <li><strong>Select that text</strong> in the editor.</li>
+            <li><strong>Save as boilerplate.</strong> In the left sidebar, click the <strong>Boilerplate tab</strong>. Click <strong>"Save Selection as Block."</strong> Enter a name (e.g., "Privacy Policy Footer") and an optional category (e.g., "Legal"). Click Save.</li>
+            <li><strong>See it in the library.</strong> Your block appears under the category you chose.</li>
+            <li><strong>Insert it elsewhere.</strong> Open a different document. Open the Boilerplate panel, find your block, and click <strong>Insert</strong>. The Markdown is pasted at the cursor — exactly the text you saved.</li>
+            <li><strong>Create a few more blocks</strong> in different categories. Blocks are organised alphabetically within category groups; "Other" is always last.</li>
+            <li><strong>Edit a block.</strong> Right-click any block → Edit. The next insertion uses the updated version.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>App-global library:</strong> Every document you open has access to every boilerplate block. Blocks store raw Markdown — variables, headings, tables, and code blocks all work. This is distinct from template variables: boilerplate is static reusable text; variables are fill-in placeholders.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Exporting for Professional Layout (IDML)</h2>
+          <p class="goal">What you'll learn: using Layout mode to tag content with paragraph styles, and exporting to IDML for Affinity Publisher or Adobe InDesign.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open a multi-section document (article, report, newsletter content). Layout mode works best with structured writing.</li>
+            <li><strong>Enable Layout mode.</strong> Click <strong>"Layout"</strong> in the mode picker. A confirmation dialog may appear; confirm.</li>
+            <li><strong>Open the Layout panel.</strong> The left sidebar now shows a Layout tab with two sections: Paragraph Styles and Character Styles.</li>
+            <li><strong>Add paragraph styles.</strong> Click <strong>+</strong> next to Paragraph Styles. Add: "Body Text", "Chapter Title", "Pull Quote", "Byline".</li>
+            <li><strong>Tag a paragraph.</strong> Place your cursor in a paragraph. In the Layout panel, click "Body Text". FusionMD inserts <code>:::Body Text</code> before and <code>:::</code> after the paragraph — marking it with that style name. Click <strong>"Hide Markers"</strong> for a cleaner view.</li>
+            <li><strong>Tag an inline span.</strong> Select a word in the editor. In the Character Styles panel, click a style name to wrap it in the inline syntax.</li>
+            <li><strong>Use AI for layout generation.</strong> Clear the document. In the AI prompt bar, type: <em>"Write a 4-article newspaper front page covering local government, arts, sports, and weather. Tag each article with appropriate paragraph styles."</em> The AI generates multiple annotated articles — each becomes a separate IDML TextFrame.</li>
+            <li><strong>Export to IDML.</strong> Click <strong>"Export as IDML…"</strong> in the navigation bar.</li>
+            <li><strong>Open in Affinity or InDesign.</strong> Your content appears in TextFrames on a grid. Your style names are in the Paragraph Styles panel, pre-tagged, ready to assign visual appearance (font, size, colour).</li>
+          </ol>
+
+          <div class="tip">
+            <strong>No Pandoc required:</strong> IDML export is built into FusionMD — no third-party tools needed. FusionMD prefixes style names with <code>[FUSION]</code> to avoid collisions with any styles already in your layout document.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 9 -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Writing a Screenplay</h2>
+          <p class="goal">What you'll learn: switching to Script mode, using the Fountain format bar, navigating scenes, and exporting a screenplay PDF.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Create a new document.</strong> In the mode picker, click <strong>"Script."</strong> The editor transforms: Courier New 12pt appears, the left panel shows the Scene Navigator, and the format bar gains screenplay-specific buttons.</li>
+            <li><strong>Insert a title page.</strong> In format bar Row 2, click <strong>"Title Page."</strong> A Fountain title block is inserted. Edit the title and author fields.</li>
+            <li><strong>Add a scene heading.</strong> In Row 1, click <strong>"Scene."</strong> The snippet <code>INT. LOCATION – DAY</code> is inserted and highlighted purple — ready to edit.</li>
+            <li><strong>Write an action line.</strong> Click <strong>"Action"</strong> and describe what happens in the scene.</li>
+            <li><strong>Add a character cue.</strong> Click <strong>"Character"</strong> and type your character's name in ALL CAPS (Fountain standard).</li>
+            <li><strong>Write dialogue.</strong> Click <strong>"Dialogue"</strong> and type the character's lines. The preview renders them in the screenplay-standard indented position.</li>
+            <li><strong>Add a parenthetical.</strong> Click <strong>"Parenthetical"</strong> and insert a wryliner like <code>(sarcastically)</code> between the cue and dialogue.</li>
+            <li><strong>Add a second scene.</strong> Click "Scene" again. Notice the Scene Navigator on the left — your new scene appears as a clickable entry for instant navigation.</li>
+            <li><strong>Add a transition.</strong> Click <strong>"Transition"</strong> and insert <code>CUT TO:</code> between scenes.</li>
+            <li><strong>Check statistics.</strong> Click the statistics button in the toolbar to see page count, scene count, and word count.</li>
+            <li><strong>Export PDF.</strong> File → Export → PDF. The output is a properly formatted screenplay: correct margins, 12pt Courier, scene headings in caps, dialogue properly indented.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>AI writes scenes:</strong> In Script mode, the AI prompt bar generates Fountain-formatted scenes on demand. Describe what happens and let FusionMD write the draft — scene headings, action, dialogue, and all.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 10 -->
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> Text Transformations</h2>
+          <p class="goal">What you'll learn: using built-in transformation rulesets and creating a custom one.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open a document that was pasted in from another source — often these have smart/dumb quote inconsistencies, double spaces, or style issues.</li>
+            <li><strong>Open Text Transformations.</strong> Go to Edit → Text Transformations.</li>
+            <li><strong>Select "Whitespace Cleanup"</strong> from the ruleset list. Click <strong>Apply.</strong> FusionMD reports how many replacements were made (e.g., "47 replacements").</li>
+            <li><strong>Select "Smart Quotes"</strong> and apply. All straight quotes <code>"</code> and <code>'</code> are converted to curly typographic equivalents.</li>
+            <li><strong>Create a custom ruleset.</strong> Click <strong>+</strong> in the ruleset list. Name it "My Cleanup Rules."</li>
+            <li><strong>Add a rule.</strong> Click <strong>+</strong> in the rules list. Set Find: <code>\bvery\b</code> (regex), Replace: (leave empty). This removes "very" from the document — a classic style edit.</li>
+            <li><strong>Add more rules</strong> — for instance, replace "utilise" with "use", or "prior to" with "before."</li>
+            <li><strong>Apply your ruleset.</strong> The report shows how many instances of each rule matched.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Regex supported:</strong> Rules can use full regular expressions. Built-in rulesets are read-only; duplicate them to customise. All rulesets are saved and available across every document.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 11 -->
+        <section class="tut-section" id="t11">
+          <h2><span class="num">11</span> Parts of Speech Analyzer</h2>
+          <p class="goal">What you'll learn: colour-coding your text by grammatical category, using the panel to analyse prose patterns, and working across languages.</p>
+
+          <h3>What it does</h3>
+          <p>The Parts of Speech panel identifies every word by its grammatical role and highlights each category in a distinct colour — live, non-destructively, in any language Apple's Natural Language framework supports. All analysis runs on-device; no internet connection required.</p>
+
+          <table>
+            <thead><tr><th>Category</th><th>Colour</th><th>Practical use</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Nouns</strong></td><td>Blue</td><td>Spot noun-heavy sentences that could be tightened</td></tr>
+              <tr><td><strong>Verbs</strong></td><td>Green</td><td>See whether action words are doing the work</td></tr>
+              <tr><td><strong>Adjectives</strong></td><td>Amber</td><td>Find over-described passages</td></tr>
+              <tr><td><strong>Adverbs</strong></td><td>Purple</td><td>Classic editing target — "kill your adverbs"</td></tr>
+              <tr><td><strong>Pronouns</strong></td><td>Pink</td><td>Catch pronoun-heavy prose that loses specificity</td></tr>
+              <tr><td><strong>Prepositions</strong></td><td>Teal</td><td>Identify prepositional-phrase chains</td></tr>
+              <tr><td><strong>Determiners</strong></td><td>Yellow</td><td>Spot density of articles (the/a/an)</td></tr>
+              <tr><td><strong>Conjunctions</strong></td><td>Red</td><td>Long conjunction runs signal run-on sentences</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open a document with at least a few paragraphs of prose.</li>
+            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Parts of Speech tab</strong> (the tag icon).</li>
+            <li><strong>Watch the highlights appear.</strong> All eight categories are on by default. Your document text is unchanged — highlights are a visual overlay only.</li>
+            <li><strong>Toggle categories.</strong> Click any row to enable or disable that category. Try turning off everything except Adverbs (purple) for a focused editing pass.</li>
+            <li><strong>Use "None" then selectively re-enable.</strong> Click <strong>None</strong> at the bottom to clear all highlights, then tap individual categories to switch them on one at a time.</li>
+            <li><strong>Check the counts.</strong> Each row shows how many times that category appears. Total tagged-word count appears at the bottom.</li>
+            <li>
+              <strong>Try a practical editing pass:</strong>
+              <ul>
+                <li>Enable only <strong>Adjectives</strong> (amber). Does each amber word add meaning, or does the noun carry it alone?</li>
+                <li>Enable only <strong>Adverbs</strong> (purple). Consider replacing verb-adverb pairs with a single stronger verb ("walked slowly" → "shuffled").</li>
+                <li>Enable <strong>Verbs</strong> and <strong>Nouns</strong> together. Well-written action prose is mostly green and blue.</li>
+              </ul>
+            </li>
+            <li><strong>Switch document language.</strong> Open the Grammar tab and change the language to French, then return to the Parts of Speech tab. The analysis updates using French grammar models.</li>
+            <li><strong>Explain a word with AI.</strong> Select any single word. At the bottom of the panel, the Explain section appears. Click <strong>"Explain with AI"</strong> (sparkles button). In 2–3 sentences the AI explains why that word functions as that part of speech in this specific sentence. Requires Apple Intelligence or an OpenRouter API key.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Supported languages:</strong> English (US/UK/AU/CA), French, German, Spanish, Italian, Portuguese, Chinese (Simplified &amp; Traditional), Japanese, Russian, Arabic, and more — controlled by the document language setting.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 12 -->
+        <section class="tut-section" id="t12">
+          <h2><span class="num">12</span> Settings &amp; Customising Your Environment</h2>
+          <p class="goal">What you'll learn: the seven settings tabs and how to set up FusionMD the way you want it.</p>
+
+          <h3>Quick Tour of Settings (⌘,)</h3>
+
+          <h3>General</h3>
+          <p>Toggle <strong>"Enable professional layout features"</strong> to show or hide Layout mode and IDML export. Writers who don't need layout can keep the interface clean.</p>
+
+          <h3>Appearance</h3>
+          <p>Pick your app accent colour (Neutral, Blue, Orange, Red, Green). Choose System, Light, or Dark mode independently from the macOS system setting. Enable Contrast Boost for enhanced text contrast.</p>
+
+          <h3>Editor</h3>
+          <p>Drag the font size slider (8–28pt) — the editor updates live. Adjust line height and paragraph spacing. Toggle Typewriter Mode, Focus Mode (line dimming), Show Invisibles, and Soft Wrap. Disable Spell Check for code-heavy documents where Apple's checker is intrusive.</p>
+
+          <h3>Export</h3>
+          <p>Set your default export format. See Pandoc status — if not installed, click the install guidance button. Set paper size for PDF export: Letter, A4, or Legal.</p>
+
+          <h3>Accessibility</h3>
+          <p>Reduce Motion disables animated transitions. Font Size Multiplier scales all UI text up. High Contrast Mode enforces higher contrast ratios throughout the UI.</p>
+
+          <h3>AI</h3>
+          <p>Paste your OpenRouter API key and select your preferred AI provider. Use Apple Intelligence for fully on-device generation (macOS 26, Apple Silicon required). The trial status and purchase link are also shown here.</p>
+
+          <h3>About</h3>
+          <p>App version, build, and licence status. Links to the website, documentation, and the feedback issue tracker.</p>
+
+          <div class="tip">
+            <strong>Note:</strong> Most settings take effect immediately — no restart needed. The Editor font size is separate from the text theme font. The editor size is for writing comfort; the theme font controls how your document looks in the preview and in all exports.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 13 -->
+        <section class="tut-section" id="t13">
+          <h2><span class="num">13</span> Writing Coach: Spelling, Grammar &amp; Vocabulary</h2>
+          <p class="goal">What you'll learn: using the Spelling panel to fix misspellings in one click, the Grammar panel to understand and resolve grammar issues, and the Vocabulary tab to look up synonyms, definitions, and spot overused words.</p>
+
+          <p>The Writing Coach is the collection of eight analysis tools inside the <strong>Writing tab</strong> in the right panel. This tutorial covers Spelling, Grammar, and Vocabulary.</p>
+
+          <h3>Part 1 — Spell Check</h3>
+          <ol class="steps">
+            <li>Open any document (or paste a paragraph with a few deliberate misspellings).</li>
+            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Writing tab</strong> (checkmark icon). The eight subtab icons appear in a scrollable row. Hover any icon to see its name.</li>
+            <li><strong>Click the Spelling subtab</strong> (cursor icon). FusionMD scans the document and lists every misspelled word.</li>
+            <li><strong>Review the list.</strong> Each entry shows the word in context. Below each word, suggestion chips display up to five alternative spellings.</li>
+            <li><strong>Click a suggestion chip.</strong> The misspelled word is replaced in the document instantly. The list updates and the corrected word disappears.</li>
+            <li><strong>Repeat</strong> until the list is empty. If a word is correctly spelled but unfamiliar to the dictionary (a proper noun, technical term), simply ignore it — the list does not modify your text unless you click a chip.</li>
+          </ol>
+
+          <h3>Part 2 — Grammar Analysis</h3>
+          <ol class="steps">
+            <li>Still inside the Writing tab, <strong>click the Grammar subtab</strong> (checkmark badge icon).</li>
+            <li><strong>FusionMD lists grammar issues</strong> found by the macOS grammar engine. Each issue shows a plain-English description ("Agreement — verb does not agree with subject", "Fragment — consider revising") along with the surrounding text for context.</li>
+            <li><strong>Where macOS suggests a correction,</strong> a clickable button shows the proposed fix. Click it to apply directly.</li>
+            <li><strong>Where no automatic fix is available,</strong> the description helps you understand what to revise. Click the issue to scroll the editor to that location.</li>
+            <li><strong>Edit yourself</strong> if the automatic correction isn't quite right — the grammar panel is advisory, not prescriptive.</li>
+          </ol>
+
+          <h3>Part 3 — Thesaurus, Dictionary &amp; Overused Words</h3>
+          <ol class="steps">
+            <li>Click the <strong>Vocab subtab</strong> (books icon). Three sections appear: Thesaurus, Dictionary, and Overused Words.</li>
+            <li><strong>Select a word in the editor.</strong> Both the Thesaurus and Dictionary sections populate automatically — no search button needed.</li>
+            <li><strong>In the Thesaurus section,</strong> synonyms, antonyms, and related terms appear as chips. Click any chip to replace the selected word in the document immediately.</li>
+            <li><strong>In the Dictionary section,</strong> the full entry loads: phonetic pronunciation, part of speech, definitions, and example sentences. The dictionary is language-aware — it uses your document's language setting.</li>
+            <li><strong>Select a different word.</strong> Both sections update instantly.</li>
+            <li><strong>Scroll to Overused Words.</strong> This analysis runs on the full document without requiring a selection. It shows content words (nouns, verbs, adjectives, adverbs) that appear three or more times. A word recurring frequently is not always a problem — "character" in a story is fine. The list highlights candidates for review. Select a listed word and the Thesaurus suggests alternatives.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>All on-device:</strong> Overused-word analysis and the thesaurus run entirely on your Mac using Apple's Natural Language framework. External sources (Datamuse, Free Dictionary API) are used for word lookups; attribution appears at the bottom of the Vocab panel. No document text is ever transmitted.
+          </div>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 6rem;
+  }
+
+  .tut-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+
+  .tut-wrap h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ── TOC ──────────────────────────────────────────────── */
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol {
+    list-style: decimal;
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .toc li { margin-bottom: 0.45rem; }
+
+  .toc a {
+    font-size: 0.88rem;
+    color: var(--gray-dark);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .toc a:hover { color: var(--blue); }
+
+  /* ── Tutorial sections ────────────────────────────────── */
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 {
+    font-size: 1.05rem;
+    margin: 1.25rem 0 0.5rem;
+    color: var(--blue);
+  }
+
+  .tut-section p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .steps {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .steps li {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 0.6rem;
+  }
+
+  .tut-section ul {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .tut-section ul li {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin-bottom: 0.45rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+
+  /* ── Responsive ───────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  /* ── Print ────────────────────────────────────────────── */
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>
