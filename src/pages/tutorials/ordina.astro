@@ -198,11 +198,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <table>
             <thead><tr><th>Filter</th><th>What it shows</th></tr></thead>
             <tbody>
-              <tr><td>All Documents</td><td>Every document-type file (PDF, Word, Pages, text, etc.)</td></tr>
-              <tr><td>Word Docs</td><td>.doc and .docx files only</td></tr>
+              <tr><td>Documents</td><td>Word, Pages, text, RTF, and other document formats</td></tr>
+              <tr><td>Images</td><td>JPEG, PNG, HEIC, GIF, TIFF, WEBP, and other image formats</td></tr>
+              <tr><td>Videos</td><td>MP4, MOV, MKV, AVI, and other video formats</td></tr>
+              <tr><td>Audio</td><td>MP3, AAC, FLAC, WAV, and other audio formats</td></tr>
               <tr><td>PDFs</td><td>.pdf files only</td></tr>
-              <tr><td>Images</td><td>JPEG, PNG, HEIC, GIF, TIFF, and other image formats</td></tr>
-              <tr><td>Duplicates</td><td>Files that have an exact duplicate elsewhere in your index</td></tr>
+              <tr><td>Spreadsheets</td><td>Excel, Numbers, CSV, and other spreadsheet formats</td></tr>
+              <tr><td>Presentations</td><td>PowerPoint, Keynote, and other presentation formats</td></tr>
+              <tr><td>eBooks</td><td>.epub, .mobi, and other ebook formats</td></tr>
+              <tr><td>Fonts</td><td>TTF, OTF, WOFF, and other font files</td></tr>
+              <tr><td>Large (100–500 MB)</td><td>Files between 100 MB and 500 MB in size</td></tr>
+              <tr><td>Huge (&gt;500 MB)</td><td>Files larger than 500 MB — useful for finding space-consuming items quickly</td></tr>
             </tbody>
           </table>
 
@@ -287,19 +293,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- ─────────────────────────────────────────── Tutorial 8 -->
         <section class="tut-section" id="t8">
           <h2><span class="num">8</span> Tags</h2>
-          <p class="goal">What you'll learn: browsing files by macOS tag colour to find tagged files across all your drives at once.</p>
+          <p class="goal">What you'll learn: tagging files in Ordina and browsing by tag across all your drives.</p>
 
-          <p>Ordina reads the macOS Finder tags (coloured labels) already on your files — Red, Orange, Yellow, Green, Blue, Purple, and Grey — and lets you browse by tag across every indexed drive simultaneously.</p>
+          <p>Ordina has its own tag system for labelling files with custom name-based tags. Tags live in the <strong>right-hand detail panel</strong> and are stored in the Ordina database — they are separate from macOS Finder colour labels.</p>
 
           <ol class="steps">
-            <li>In the left sidebar, scroll to the <strong>Tags</strong> section. Each tag colour shows how many files across all drives carry that tag.</li>
-            <li>Click any tag colour to show all files with that tag. Results appear in the main area — same list view as Search, with all the same sorting and detail panel capabilities.</li>
-            <li>Click a file to open its detail panel. Double-click to open it in its default app.</li>
-            <li>To return to normal search, click <strong>All Drives</strong> in the Drives section or start a new search query.</li>
+            <li>Click any file to open its detail panel on the right.</li>
+            <li>In the detail panel, find the <strong>Tags</strong> field. Type a tag name and press Return to add it to the file.</li>
+            <li>Add as many tags as you like — for example "to review", "archived", "client: Acme".</li>
+            <li>To find all files with a given tag, use the <strong>Search</strong> tab and include the tag name in your query. Tagged files are returned alongside other matching results.</li>
           </ol>
 
           <div class="tip">
-            <strong>Tags are indexed at import time.</strong> If you add or remove Finder tags after a drive has been indexed, re-scan the drive (right-click → Re-scan Drive) to update the Tags counts.
+            <strong>Tags survive re-scans.</strong> Tags you add in Ordina are stored in the Ordina database, not in the file itself. Re-scanning a drive updates file metadata but does not remove tags you have applied.
           </div>
         </section>
 
@@ -360,7 +366,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li><strong>Preview</strong> — a thumbnail or inline preview for supported types: images, PDFs, fonts (glyph preview), and common document formats.</li>
             <li><strong>Metadata</strong> — file size, creation date, last modified date, file type, and UTI (Universal Type Identifier).</li>
             <li><strong>Cloud status</strong> (for cloud files) — whether the file is downloaded locally or stored only in the cloud.</li>
-            <li><strong>Tags</strong> — macOS Finder tag colours applied to this file.</li>
+            <li><strong>Tags</strong> — custom name-based tags you have applied to this file in Ordina.</li>
           </ul>
 
           <h3>Actions from the detail panel</h3>
@@ -378,37 +384,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h2><span class="num">11</span> Settings Reference</h2>
           <p class="goal">A complete guide to every setting in Ordina.</p>
 
-          <h3>General</h3>
+          <p>Settings has five tabs: <strong>Scanning, Appearance, Advanced, Agent,</strong> and <strong>About.</strong></p>
+
+          <h3>Scanning</h3>
           <ul>
-            <li><strong>Launch at login</strong> — start Ordina automatically when you log in.</li>
+            <li><strong>Full Disk Access status</strong> — shows whether FDA is granted. A button opens System Settings → Privacy &amp; Security → Full Disk Access if it needs to be enabled.</li>
             <li><strong>Index hidden files</strong> — include files and folders beginning with a dot (.) in the index. Off by default.</li>
-            <li><strong>Maximum file depth</strong> — how many folder levels deep Ordina descends when indexing. Increase for very deep folder hierarchies.</li>
-          </ul>
-
-          <h3>Privacy &amp; Security</h3>
-          <ul>
-            <li><strong>Full Disk Access status</strong> — shows whether permission is granted. A button opens System Settings if it needs to be enabled.</li>
-            <li><strong>Data storage</strong> — Ordina's index database is stored locally in your Application Support folder. The data never leaves your Mac.</li>
-          </ul>
-
-          <h3>Cloud Accounts</h3>
-          <ul>
-            <li>Shows connected cloud services (iCloud, Dropbox, Google Drive, OneDrive) and their sync status.</li>
-            <li><strong>Disconnect</strong> — removes the stored credentials for a cloud provider and deletes its indexed data from the database.</li>
-            <li><strong>Re-authenticate</strong> — if a cloud provider's token expires, use this to refresh the connection without removing existing indexed data.</li>
+            <li><strong>Maximum file depth</strong> — how many folder levels deep Ordina descends when indexing.</li>
+            <li><strong>Cloud Accounts</strong> — connect and manage iCloud, Dropbox, Google Drive, and OneDrive. Disconnect removes credentials and deletes indexed cloud data; Re-authenticate refreshes an expired token without losing data.</li>
           </ul>
 
           <h3>Appearance</h3>
           <ul>
-            <li><strong>Theme</strong> — Light, Dark, or System (follows macOS).</li>
-            <li><strong>Accent colour</strong> — customise the highlight colour used throughout the interface.</li>
-            <li><strong>Sidebar width</strong> — set default widths for the left and right panels.</li>
+            <li><strong>Color theme</strong> — choose from named themes (Slate, Forest, Ember, Ocean, and more). Each theme changes the accent and sidebar colors throughout the interface.</li>
+          </ul>
+
+          <h3>Advanced</h3>
+          <ul>
+            <li>Database storage location, cache management, and diagnostic options for power users.</li>
+          </ul>
+
+          <h3>Agent</h3>
+          <ul>
+            <li>Configure the OrdinaAgent background helper, which indexes drives on remote Macs and makes them available over your local network. Set the agent's listening port and manage discovered remote agents.</li>
           </ul>
 
           <h3>About</h3>
           <ul>
-            <li>App version, licence status (trial or full), and a Purchase button if you are in trial mode.</li>
-            <li>Links to the DataIsland website and support.</li>
+            <li>App version, Pro licence status, and links to the DataIsland website and support.</li>
           </ul>
         </section>
 

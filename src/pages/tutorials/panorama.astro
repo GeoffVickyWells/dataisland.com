@@ -1,0 +1,632 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Panorama Tutorials — DataIsland Software"
+  description="Step-by-step guides for Panorama — the Data / Views / Insights layout, charts, AI Verdict, Research Q&A, City Comparison, In-Depth PDF Report, API keys, and Siri."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>Panorama — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in Panorama. Work through them in order
+        for a full introduction, or jump directly to any section.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Your first search</a></li>
+          <li><a href="#t2">Data / Views / Insights layout</a></li>
+          <li><a href="#t3">Saving locations</a></li>
+          <li><a href="#t4">Data sections reference</a></li>
+          <li><a href="#t5">Adding API keys</a></li>
+          <li><a href="#t6">AI features</a></li>
+          <li><a href="#t7">Refreshing data</a></li>
+          <li><a href="#t8">Errors &amp; retrying</a></li>
+          <li><a href="#t9">Siri &amp; Apple Intelligence</a></li>
+          <li><a href="#t10">Settings reference</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Your First Search</h2>
+          <p class="goal">What you'll learn: searching for a location and loading its full data profile.</p>
+
+          <p>Panorama can look up any city, town, neighbourhood, ZIP code, postal code, or street address in the US, UK, Canada, and many other countries.</p>
+
+          <h3>Searching</h3>
+          <ol class="steps">
+            <li><strong>Launch Panorama.</strong> The search bar is in the left sidebar above your saved locations list.</li>
+            <li><strong>Type a location.</strong> You can enter a city and state ("Austin, TX"), a ZIP code ("78701"), a full address, or a city name on its own. International cities work too ("Edinburgh, Scotland").</li>
+            <li><strong>Press Return</strong> or click a suggestion. Panorama geocodes your query, saves the location, and begins fetching data immediately.</li>
+            <li>The <strong>Data</strong> panel fills in as each source responds. Sources load in parallel — you can read any completed section without waiting for the rest.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Search suggestions:</strong> As you type, Panorama shows autocomplete suggestions from its geocoder. Selecting a suggestion gives Panorama a precise coordinate, which improves results for county-level data (FEMA, CDC, BEA).
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> The Data / Views / Insights Layout</h2>
+          <p class="goal">What you'll learn: how Panorama is organised and where to find each feature.</p>
+
+          <p>Panorama has three top-level sections, selected from the <strong>navigation rail</strong> on the far left of the window. The rail can be collapsed to icons or expanded to show labels.</p>
+
+          <h3>Data</h3>
+          <p>The main data-fetch view. Shows everything Panorama has collected for the selected location — demographics, safety, health, economy, climate, amenities, and more. Each data group appears as it loads. The right-hand panel offers two sub-views:</p>
+          <ul>
+            <li><strong>Reports</strong> — nine focused report types (Relocation Overview, Safety Assessment, Health &amp; Wellbeing, and more) with comparison charts, AI narrative generation, and Markdown / CSV / PDF export.</li>
+            <li><strong>Q&amp;A</strong> — ask any question about the loaded data and get an AI answer. See Tutorial 6.</li>
+          </ul>
+
+          <h3>Views</h3>
+          <p>Ten interactive chart views, each visualising a different dimension of the data. Sub-items appear in the navigation rail when Views is selected:</p>
+          <ul>
+            <li>Location Overview — six-axis radar "fingerprint" of the city</li>
+            <li>Cost of Living</li>
+            <li>Safety &amp; Crime</li>
+            <li>Climate &amp; Environment</li>
+            <li>Natural Hazards</li>
+            <li>Economy</li>
+            <li>Health</li>
+            <li>Dining &amp; Entertainment</li>
+            <li>Tourism &amp; History</li>
+            <li>Social Climate</li>
+          </ul>
+          <p><strong>Chart styles.</strong> Most views offer style buttons in the <strong>top-right corner of the toolbar</strong> — look for the small segmented icons. Click them to switch between chart types: horizontal bar, vertical bar, pie/donut, or radar, depending on which view you are in. Choose the format that makes the most sense to you — a radar is great for the Location Fingerprint overview, while a pie makes the Venues breakdown easy to scan at a glance. The style resets to the section default each time you navigate to a different view.</p>
+          <p><strong>Drag to export.</strong> Every chart can be dragged directly into <strong>FusionMD</strong>, Affinity Publisher, Keynote, Pages, or Mail as a high-resolution PNG image. Once the chart has rendered, a small <em>Drag to export</em> label appears in the top-right corner of the card — drag from anywhere on the card to your destination. Right-click the card to copy it to the clipboard instead.</p>
+
+          <h3>Insights</h3>
+          <p>AI-powered analysis. Requires data to be loaded first. Three tabs:</p>
+          <ul>
+            <li><strong>AI Verdict</strong> — a direct, sourced verdict: headline finding, strengths, concerns, who it's best for, and a bottom line.</li>
+            <li><strong>Compare</strong> — side-by-side Comparison Matrix for up to 5 saved cities (tick checkboxes in the sidebar to select them).</li>
+            <li><strong>Report</strong> — generate and export an In-Depth PDF Report. See Tutorial 6.</li>
+          </ul>
+
+          <h3>International locations</h3>
+          <p>US-only sections (FEMA, CDC, BLS, BEA, FRED, FBI Crime) are automatically omitted for non-US locations. International profiles use World Bank, IMF, ILO, OECD, WHO, and Teleport data. UK addresses add Police UK crime statistics; EU cities add Eurostat; Canadian cities add Statistics Canada.</p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Saving Locations</h2>
+          <p class="goal">What you'll learn: saving a location to your list so you can return to it quickly.</p>
+
+          <h3>Saving a location</h3>
+          <ol class="steps">
+            <li>Search for a location. Panorama saves it to your list automatically when you select it from search results.</li>
+            <li>The location appears in your <strong>Saved Locations</strong> list in the left sidebar.</li>
+            <li>Click any saved location to reopen its profile. Previously loaded data is shown immediately; click <strong>Refresh</strong> to fetch the latest numbers.</li>
+          </ol>
+
+          <h3>Removing a saved location</h3>
+          <ol class="steps">
+            <li>Right-click (or swipe left) the location in the sidebar and select <strong>Delete.</strong></li>
+          </ol>
+
+          <h3>Selecting cities for comparison</h3>
+          <p>Switch to <strong>Insights</strong> in the navigation rail. Checkboxes appear next to each saved location. Tick up to five cities — they become available in the Compare tab.</p>
+
+          <div class="tip">
+            <strong>Free plan:</strong> Up to 5 saved locations. Panorama Pro removes the limit.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Data Sections Reference</h2>
+          <p class="goal">A quick reference for every data section — what it shows and where the data comes from.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Section</th>
+                <th>Source</th>
+                <th>Key metrics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Overview</td>
+                <td>Wikipedia</td>
+                <td>Location summary, history, notable facts</td>
+              </tr>
+              <tr>
+                <td>Demographics</td>
+                <td>US Census (ACS 5-year)</td>
+                <td>Population, median age, household income, education</td>
+              </tr>
+              <tr>
+                <td>Ethnicity</td>
+                <td>US Census (ACS 5-year)</td>
+                <td>Racial and ethnic composition percentages</td>
+              </tr>
+              <tr>
+                <td>Religion</td>
+                <td>Association of Religion Data Archives</td>
+                <td>Faith community breakdown by county</td>
+              </tr>
+              <tr>
+                <td>LGBTQ+</td>
+                <td>Movement Advancement Project</td>
+                <td>State-level inclusivity score and policy breakdown</td>
+              </tr>
+              <tr>
+                <td>Hazard Risk</td>
+                <td>FEMA National Risk Index</td>
+                <td>Composite risk score, 18 hazard ratings, flood zone</td>
+              </tr>
+              <tr>
+                <td>Crime</td>
+                <td>FBI / NIBRS</td>
+                <td>Violent crime rate, property crime rate per 100k</td>
+              </tr>
+              <tr>
+                <td>Earthquakes</td>
+                <td>USGS</td>
+                <td>Significant earthquakes in the past 30 years within 100 km</td>
+              </tr>
+              <tr>
+                <td>Health</td>
+                <td>CDC PLACES</td>
+                <td>36 chronic condition prevalence rates by census tract</td>
+              </tr>
+              <tr>
+                <td>Environment</td>
+                <td>EPA EJScreen</td>
+                <td>Air quality, particulates, ozone, environmental burden percentile</td>
+              </tr>
+              <tr>
+                <td>Income</td>
+                <td>BEA Regional Accounts</td>
+                <td>Per capita personal income by metro area</td>
+              </tr>
+              <tr>
+                <td>Employment</td>
+                <td>BLS</td>
+                <td>Unemployment rate by county or metro</td>
+              </tr>
+              <tr>
+                <td>Economy</td>
+                <td>FRED (St. Louis Fed)</td>
+                <td>Metro real GDP trend label, 5-year growth rate</td>
+              </tr>
+              <tr>
+                <td>Electricity</td>
+                <td>EIA</td>
+                <td>Average residential electricity rate (¢ per kWh) by state</td>
+              </tr>
+              <tr>
+                <td>Walkability</td>
+                <td>Walk Score</td>
+                <td>Walk Score, Transit Score, Bike Score</td>
+              </tr>
+              <tr>
+                <td>Amenities</td>
+                <td>OpenStreetMap / Overpass</td>
+                <td>Nearby schools, hospitals, parks, grocery stores, cafes</td>
+              </tr>
+              <tr>
+                <td>City Scores</td>
+                <td>Teleport</td>
+                <td>Quality-of-life scores across 17 categories</td>
+              </tr>
+              <tr>
+                <td>Climate</td>
+                <td>Open-Meteo / NOAA</td>
+                <td>Temperatures, precipitation, humidity, UV, extreme heat days</td>
+              </tr>
+              <tr>
+                <td>Cost of Living</td>
+                <td>Numbeo</td>
+                <td>City cost-of-living index, quality-of-life index (international)</td>
+              </tr>
+              <tr>
+                <td>Country</td>
+                <td>World Bank</td>
+                <td>GDP per capita, life expectancy, literacy rate (international)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Adding API Keys</h2>
+          <p class="goal">What you'll learn: which data sources need a key, how to get one, and where to enter it in Panorama.</p>
+
+          <p>Most of Panorama's data sources are fully open — no key required. A few sources require a free API key from the data provider. Panorama never bundles developer keys; you supply your own so your usage stays private and tied to your account.</p>
+
+          <h3>Which sources need a key?</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Data source</th>
+                <th>Key required?</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>US Census, FEMA, CDC, USGS, EPA, BLS, FRED, EIA, Wikipedia, OpenStreetMap</td><td>No</td><td>Free</td></tr>
+              <tr><td>Walk Score</td><td>Yes</td><td>Free tier available</td></tr>
+              <tr><td>FBI Crime (NIBRS)</td><td>Yes</td><td>Free</td></tr>
+              <tr><td>BEA Regional Income</td><td>Yes</td><td>Free</td></tr>
+              <tr><td>OpenRouter (AI summaries)</td><td>Yes</td><td>Pay per use · from ~$0.001/summary</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Getting and entering a key</h3>
+          <ol class="steps">
+            <li>Open <strong>Panorama → Settings</strong> (⌘,).</li>
+            <li>Select the <strong>Data Sources</strong> tab.</li>
+            <li>Find the source you want to enable and click <strong>Get API Key</strong> — this opens the provider's sign-up page in your browser.</li>
+            <li>Sign up for a free account on the provider's website and copy your API key.</li>
+            <li>Return to Panorama Settings, paste the key into the field, and press Return.</li>
+            <li>The key is saved to your macOS Keychain. Panorama will use it the next time that section loads.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Walk Score:</strong> Go to <strong>walkscore.com/professional/api.php</strong> and request a free API key. Keys are approved manually — allow 1–2 business days.
+          </div>
+          <div class="tip">
+            <strong>FBI Crime:</strong> Go to <strong>api.data.gov/signup</strong> and register. Your key is emailed immediately and works for FBI NIBRS and many other government APIs.
+          </div>
+          <div class="tip">
+            <strong>BEA:</strong> Go to <strong>apps.bea.gov/api/signup</strong>. Registration is instant and the key is emailed within minutes.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> AI Features</h2>
+          <p class="goal">What you'll learn: the four AI-powered features in Panorama — Research Q&amp;A, AI Verdict, City Comparison, and In-Depth PDF Report.</p>
+
+          <h3>Setting up the AI engine</h3>
+          <ol class="steps">
+            <li>Open <strong>Panorama → Settings → AI.</strong></li>
+            <li>
+              <strong>Apple Intelligence (M-chip Macs, macOS 26+):</strong> Select it — no key needed, everything runs on-device and is completely private.
+            </li>
+            <li>
+              <strong>OpenRouter (all Macs):</strong> Enter your OpenRouter API key (from openrouter.ai/keys) and choose a model — GPT-4o, Claude, Gemini, Llama, or any available model.
+            </li>
+          </ol>
+
+          <h3>Research Q&amp;A</h3>
+          <p>Found in the <strong>Q&amp;A</strong> tab of the right-hand detail panel (Data section). Ask any question about the loaded data and Panorama answers using the facts already on screen.</p>
+          <ol class="steps">
+            <li>Load data for a location in the <strong>Data</strong> section.</li>
+            <li>Click <strong>Q&amp;A</strong> in the top-right panel.</li>
+            <li>Type a question — or tap one of the starter suggestions — and press Return. Examples: "Is this a good place to retire?" or "How does the crime rate compare to the national average?"</li>
+            <li>Ask follow-ups in the same conversation. Click the trash icon to clear and start over.</li>
+          </ol>
+
+          <h3>AI Verdict</h3>
+          <p>Found in <strong>Insights → AI Verdict.</strong> A direct, data-backed verdict — not a generic summary.</p>
+          <ol class="steps">
+            <li>Switch to the <strong>Insights</strong> section. Select a city from the sidebar.</li>
+            <li>Click <strong>Generate Verdict.</strong> Panorama sends all loaded data to your AI engine.</li>
+            <li>The verdict returns with: a headline finding, scored strengths, scored concerns, a "best for" profile, and a bottom line.</li>
+            <li>Use the <strong>Switch City</strong> menu to generate verdicts for other saved locations without leaving Insights.</li>
+          </ol>
+
+          <h3>City Comparison</h3>
+          <p>Found in <strong>Insights → Compare.</strong> Side-by-side scores for up to 5 cities.</p>
+          <ol class="steps">
+            <li>In the Insights sidebar, tick checkboxes next to the cities you want to compare (up to 5).</li>
+            <li>Click <strong>Compare</strong> in the Insights tab bar.</li>
+            <li>Panorama builds a matrix scoring each city across safety, cost, climate, health, economy, and amenities.</li>
+          </ol>
+
+          <h3>In-Depth PDF Report</h3>
+          <p>Found in <strong>Insights → Report.</strong> A consultant-quality PDF — cover page, AI-written narratives for every section, inline SVG charts, hazard ratings, and a data sources page.</p>
+          <ol class="steps">
+            <li>Select a city in Insights and click the <strong>Report</strong> tab.</li>
+            <li>Click <strong>Data Report</strong> for a data-only PDF (no AI required), or <strong>Generate with AI</strong> for full AI-written narratives in every section.</li>
+            <li>Panorama generates an AI verdict and six section narratives (Executive Summary, Cost of Living, Safety Assessment, Economic Picture, Health &amp; Wellbeing, Climate &amp; Lifestyle) — progress is shown as each section is written.</li>
+            <li>When complete, click <strong>Export PDF.</strong> A save panel opens. The PDF opens in Preview automatically.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Privacy:</strong> When using Apple Intelligence, your location data never leaves your Mac. When using OpenRouter, the assembled facts are sent to OpenRouter and your chosen model provider. No searches or profile data are sent to DataIsland.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> Refreshing Data</h2>
+          <p class="goal">What you'll learn: updating a saved profile with the latest data.</p>
+
+          <p>Panorama caches the last successful fetch for each data section. When you reopen a saved location, the cached data is shown immediately. To pull fresh data from the sources:</p>
+
+          <ol class="steps">
+            <li>Open any saved location profile.</li>
+            <li>Click the <strong>Refresh</strong> button in the toolbar (circular arrow icon), or press ⌘R.</li>
+            <li>Panorama re-fetches every section from its source. Sections update as each fetch completes — you can continue reading while others refresh.</li>
+          </ol>
+
+          <div class="tip">
+            Government data (Census, BEA, BLS, FRED) updates on annual or quarterly schedules — you generally don't need to refresh more than once per month to see new data. Environmental and climate data updates less frequently still.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Errors &amp; Retrying</h2>
+          <p class="goal">What you'll learn: what to do when a section fails to load.</p>
+
+          <p>Each data section in Panorama loads independently. If a section fails, it shows an error message with a <strong>Retry</strong> button — other sections continue loading normally.</p>
+
+          <h3>Common causes and fixes</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Error message</th>
+                <th>Likely cause</th>
+                <th>Fix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cloudflare WARP is active</td>
+                <td>WARP is turned on. FEMA and some government APIs block Cloudflare IP ranges.</td>
+                <td>Open the WARP app and disable it. Tap Retry.</td>
+              </tr>
+              <tr>
+                <td>iCloud Private Relay is routing your connection</td>
+                <td>Private Relay routes traffic through Apple relay IPs that some government servers block.</td>
+                <td>Go to System Settings → [Your Name] → iCloud → Private Relay and turn it off. Tap Retry.</td>
+              </tr>
+              <tr>
+                <td>A network proxy is intercepting connections</td>
+                <td>Charles, Proxyman, Zscaler, or a corporate proxy is active.</td>
+                <td>Disable the proxy tool. Tap Retry.</td>
+              </tr>
+              <tr>
+                <td>Secure connection failed</td>
+                <td>General TLS failure — may be a temporary server issue or a network tool not detected above.</td>
+                <td>Tap Retry. If it keeps failing, check VPN, proxy, and Private Relay settings.</td>
+              </tr>
+              <tr>
+                <td>API key required</td>
+                <td>This section needs a key you haven't added yet.</td>
+                <td>Open Settings → Data Sources and add the key. See Tutorial 5.</td>
+              </tr>
+              <tr>
+                <td>Service unavailable</td>
+                <td>The data provider's server is temporarily down.</td>
+                <td>Wait a few minutes and tap Retry. Government APIs occasionally have brief outages.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tip">
+            FEMA, FBI Crime, EIA, and BEA are US government APIs that are most susceptible to network interference. If all four fail simultaneously, Cloudflare WARP or iCloud Private Relay is the most likely cause.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 9 -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Siri &amp; Apple Intelligence</h2>
+          <p class="goal">What you'll learn: using Siri and Apple Intelligence to open profiles and ask questions hands-free.</p>
+
+          <p>Panorama registers App Intents with macOS so Siri and Apple Intelligence can interact with your saved locations. This works on macOS 15 Sequoia and later — no additional setup required.</p>
+
+          <h3>Opening a location with Siri</h3>
+          <ol class="steps">
+            <li>Make sure the location is saved in Panorama (see Tutorial 3).</li>
+            <li>Say: <strong>"Open Austin in Panorama"</strong> or <strong>"Show me the Phoenix profile in Panorama."</strong></li>
+            <li>Siri opens Panorama and navigates to the matching saved location.</li>
+          </ol>
+
+          <h3>Asking about a location</h3>
+          <ol class="steps">
+            <li>Say: <strong>"What's the crime rate for my Austin location in Panorama?"</strong></li>
+            <li>Siri reads the relevant data field from the loaded profile and speaks the answer.</li>
+            <li>Follow-up questions work in the same conversation: <strong>"What about the cost of electricity?"</strong></li>
+          </ol>
+
+          <h3>Apple Intelligence integration (macOS 26+)</h3>
+          <p>On macOS 26, Apple Intelligence can use Panorama's App Intent to answer location questions as part of broader Siri conversations — even if Panorama is not in the foreground. It can also use Panorama data to augment answers about a city when you ask Siri something like "Is Seattle a good place to live?"</p>
+
+          <div class="tip">
+            App Intents work with any saved location. If a location isn't saved, Siri can't access it — save your shortlist first.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 10 -->
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> Settings Reference</h2>
+          <p class="goal">A complete guide to every setting in Panorama.</p>
+
+          <p>Settings has four tabs: <strong>General, Data Sources, AI,</strong> and <strong>About.</strong></p>
+
+          <h3>General</h3>
+          <ul>
+            <li><strong>Default country</strong> — sets the geocoder's default country bias so searches for ambiguous names (e.g. "Springfield") prefer the right country.</li>
+            <li><strong>Units</strong> — Imperial or Metric. Affects temperature display in the Climate section.</li>
+            <li><strong>Show section headers</strong> — toggle section titles in the profile view on or off.</li>
+          </ul>
+
+          <h3>Data Sources</h3>
+          <ul>
+            <li><strong>Enable / disable sections</strong> — toggle any data source off if you don't need it. Disabled sources are skipped and don't count against your API quota.</li>
+            <li><strong>API keys</strong> — enter keys for Walk Score, FBI Crime, BEA, and OpenRouter. Each key is stored in macOS Keychain, never in the app bundle.</li>
+            <li><strong>Get API Key buttons</strong> — open the provider's registration page directly from Settings.</li>
+          </ul>
+
+          <h3>AI</h3>
+          <ul>
+            <li><strong>AI engine</strong> — choose Apple Intelligence (on-device, M-chip only) or OpenRouter (cloud, any model).</li>
+            <li><strong>OpenRouter model</strong> — select from any model available on OpenRouter. The dropdown refreshes from the OpenRouter model list when you tap it.</li>
+            <li><strong>OpenRouter API key</strong> — stored in Keychain. Get a key at openrouter.ai.</li>
+            <li><strong>Auto-generate summaries</strong> — if on, the AI Summary is generated automatically when a profile finishes loading. Off by default to save API credits.</li>
+          </ul>
+
+          <h3>About</h3>
+          <ul>
+            <li>App version, Pro license status, and links to the DataIsland website and support.</li>
+            <li><strong>Restore Purchase</strong> — use this if you purchased Pro on another Mac and need to activate it on this one.</li>
+          </ul>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal { font-size: 0.95rem; color: var(--gray-dark); font-style: italic; margin-bottom: 1.25rem; padding-left: 2.4rem; }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1rem 0 1.25rem; }
+  th { text-align: left; padding: 0.5rem 0.75rem; background: var(--gray-light); font-weight: 600; border: 1px solid #e0e0e0; }
+  td { padding: 0.5rem 0.75rem; border: 1px solid #e0e0e0; vertical-align: top; line-height: 1.55; }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

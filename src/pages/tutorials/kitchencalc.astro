@@ -1,0 +1,555 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="KitchenCalc Tutorials — DataIsland Software"
+  description="Step-by-step guides for KitchenCalc — converting ingredients by density, substituting pan sizes, scaling recipes, and setting up AI import."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>KitchenCalc — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in KitchenCalc. Work through them in order
+        for a complete introduction, or jump to any section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Converting volumes &amp; weights</a></li>
+          <li><a href="#t2">Ingredient density conversions</a></li>
+          <li><a href="#t3">Custom ingredients</a></li>
+          <li><a href="#t4">Temperature &amp; fan ovens</a></li>
+          <li><a href="#t5">Pan substitution</a></li>
+          <li><a href="#t6">Scaling a recipe</a></li>
+          <li><a href="#t6b">Saving &amp; recalling recipes</a></li>
+          <li><a href="#t7">AI recipe import</a></li>
+          <li><a href="#t8">Appearance &amp; settings</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Converting Volumes &amp; Weights</h2>
+          <p class="goal">What you'll learn: converting between any two volume units, or between any two weight units, using the Convert tab.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Open the Convert tab.</strong> It's the first tab in the segmented control at the top of the window.</li>
+            <li><strong>Enter your amount.</strong> Type a whole number in the first field. If your recipe uses a fraction (e.g., 2¼), type "2" in the whole number field and choose "1/4" from the fraction dropdown beside it.</li>
+            <li><strong>Choose your From unit.</strong> Click the "From" dropdown. Units are grouped into Volume (tsp, tbsp, cup, fl oz, pint, mL, L) and Weight (g, kg, oz, lb). Select the unit your recipe uses.</li>
+            <li><strong>Choose your To unit.</strong> Click the "To" dropdown and select your target unit. The result appears instantly in the large display at the top.</li>
+            <li><strong>Copy the result</strong> using the Copy button at the bottom of the result summary line.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Fractions matter in baking.</strong> 2¼ cups is not the same as 2.25 cups when measuring flour — the fraction picker lets you match recipe notation exactly rather than rounding to a decimal.
+          </div>
+
+          <h3>Swapping units</h3>
+          <p>Use the ↑↓ Swap button between the From and To pickers to reverse the conversion in one click. Useful when you want to convert in the opposite direction without re-selecting both units.</p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Ingredient Density Conversions</h2>
+          <p class="goal">What you'll learn: converting between volume and weight using ingredient-specific density — the key feature that makes KitchenCalc accurate for baking.</p>
+
+          <p>
+            One cup of flour weighs very differently from one cup of honey. When you convert
+            between a volume unit and a weight unit, KitchenCalc needs to know <em>which ingredient</em>
+            you're converting, because the density determines the result.
+          </p>
+
+          <h3>Using the ingredient picker</h3>
+          <ol class="steps">
+            <li>In the Convert tab, the <strong>Ingredient</strong> row is always visible. When From and To are both volume (or both weight), it shows in grey with a note that it applies to vol ↔ weight conversions. When you cross types, it turns blue to signal it's actively used.</li>
+            <li>Click the ingredient dropdown and choose the ingredient you're converting. The list is grouped into Built-in (95+ common baking and cooking ingredients) and Custom (ingredients you've added yourself).</li>
+            <li>The density appears in g/mL next to the picker — for example, flour is 0.593 g/mL, butter is 0.911 g/mL.</li>
+            <li>Set From to a volume (e.g., cup) and To to a weight (e.g., g). The result reflects the density of the selected ingredient.</li>
+          </ol>
+
+          <h3>Common conversions</h3>
+          <table>
+            <thead><tr><th>Ingredient</th><th>1 cup =</th><th>1 tbsp =</th></tr></thead>
+            <tbody>
+              <tr><td>All-purpose flour</td><td>120 g</td><td>7.5 g</td></tr>
+              <tr><td>Caster / granulated sugar</td><td>200 g</td><td>12.5 g</td></tr>
+              <tr><td>Butter</td><td>227 g</td><td>14.2 g</td></tr>
+              <tr><td>Honey / golden syrup</td><td>339 g</td><td>21.2 g</td></tr>
+              <tr><td>Whole milk</td><td>244 g</td><td>15.3 g</td></tr>
+              <tr><td>Cocoa powder</td><td>85 g</td><td>5.3 g</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip">
+            <strong>Why density matters:</strong> A recipe that calls for "1 cup flour" and "1 cup honey" is using very different masses. If you're scaling by weight (the most accurate method for baking), you need the density conversion — not just a cup-to-gram shortcut that assumes water.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Custom Ingredients</h2>
+          <p class="goal">What you'll learn: adding ingredients to the database that aren't in the built-in list.</p>
+
+          <p>KitchenCalc ships with 95+ common cooking and baking ingredients. If you regularly work with something not in the list — a specialty flour, a particular nut butter, or an ingredient specific to your cuisine — you can add it with a density value.</p>
+
+          <h3>Finding the density</h3>
+          <p>Density is measured in grams per millilitre (g/mL). To find it:</p>
+          <ul>
+            <li><strong>Measure it yourself:</strong> fill a 1-cup measure with your ingredient and weigh it in grams. Divide by 236.6 to get g/mL.</li>
+            <li><strong>Look it up:</strong> search "[ingredient name] density g/mL" — many culinary references publish these values.</li>
+            <li><strong>Use a close substitute:</strong> if you can't find the exact value, a similar ingredient from the built-in list will give a reasonable approximation.</li>
+          </ul>
+
+          <h3>Adding a custom ingredient</h3>
+          <ol class="steps">
+            <li>In the Convert tab, click <strong>Manage…</strong> next to the ingredient picker. The Custom Ingredients sheet opens.</li>
+            <li>Type the ingredient name in the Name field.</li>
+            <li>Enter the density in g/mL in the Density field.</li>
+            <li>Click <strong>Add</strong>. The ingredient appears immediately in the list and in the ingredient picker.</li>
+          </ol>
+
+          <h3>Deleting a custom ingredient</h3>
+          <ol class="steps">
+            <li>Open the Manage sheet from the Convert tab.</li>
+            <li>Hover over the ingredient and click the delete (–) button, or swipe left on the row.</li>
+          </ol>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Temperature &amp; Fan Ovens</h2>
+          <p class="goal">What you'll learn: converting oven temperatures between all common units, including fan (convection) and Gas Mark.</p>
+
+          <ol class="steps">
+            <li><strong>Open the Temperature tab.</strong> Click "Temperature" in the segmented control at the top.</li>
+            <li><strong>Enter the temperature</strong> from your recipe in the input field.</li>
+            <li><strong>Choose the From unit</strong> — the unit your recipe uses.</li>
+            <li><strong>Choose the To unit</strong> — your oven's unit.</li>
+            <li>The converted temperature appears immediately.</li>
+          </ol>
+
+          <h3>Available temperature units</h3>
+          <table>
+            <thead><tr><th>Unit</th><th>Common in</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>°C (Celsius)</td><td>Most countries</td><td>Standard conventional oven</td></tr>
+              <tr><td>°F (Fahrenheit)</td><td>USA, some Caribbean</td><td>Standard conventional oven</td></tr>
+              <tr><td>Gas Mark</td><td>UK, Ireland, older AU recipes</td><td>GM 4 = 180°C = 350°F</td></tr>
+              <tr><td>Fan °C</td><td>UK, Europe, Australia</td><td>20°C lower than conventional</td></tr>
+              <tr><td>Fan °F</td><td>North America (convection)</td><td>Equivalent to Fan °C in Fahrenheit</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Fan vs conventional ovens</h3>
+          <p>
+            A fan oven (also called a convection oven) circulates hot air and cooks food approximately
+            20°C (36°F) hotter than the same setting on a conventional oven. If your recipe specifies
+            a conventional temperature but you have a fan oven, select <strong>°C → Fan °C</strong>
+            (or °F → Fan °F) to get the correct setting for your oven.
+          </p>
+
+          <div class="tip">
+            <strong>UK and Australian recipe note:</strong> Many recipes from these countries assume
+            a fan oven by default and specify temperatures accordingly. If a UK cake recipe says
+            "180°C" and your oven is a North American conventional, you should actually bake at
+            200°C — convert Fan °C → °C to get the right conventional temperature.
+          </div>
+
+          <h3>Gas Mark reference</h3>
+          <p>The formula KitchenCalc uses: Gas Mark × 14 + 121 = °C. So Gas Mark 6 = 204°C = 400°F.</p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Pan Substitution</h2>
+          <p class="goal">What you'll learn: finding the right adjustment when you don't own the pan a recipe calls for.</p>
+
+          <p>
+            Pan substitution is based on baking area. A deeper batter cooks slower; a shallower
+            batter cooks faster. KitchenCalc compares areas and tells you how to adjust time,
+            quantity, and temperature.
+          </p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Open the Pan tab.</strong> Click "Pan" in the segmented control.</li>
+            <li><strong>Choose inches or centimetres</strong> using the toggle at the top.</li>
+            <li><strong>Set up "Recipe calls for."</strong> Choose the pan shape from the Shape dropdown. Choose the standard size if it appears in the list, or choose Custom and enter the dimensions manually. Choose the Material (Metal, Dark/Non-stick, or Glass/Ceramic) to match the recipe's intended pan.</li>
+            <li><strong>Set up "Pan I have."</strong> Repeat for your actual pan.</li>
+            <li><strong>Read the Substitution Guide</strong> that appears below. It shows: the relative size of your pan as a percentage, the scale factor for recipe quantities, batter depth advice, baking time advice, and — if the materials differ — a temperature adjustment note.</li>
+          </ol>
+
+          <h3>Understanding the results</h3>
+          <table>
+            <thead><tr><th>Result</th><th>What it means</th></tr></thead>
+            <tbody>
+              <tr><td>Your pan is X%</td><td>The area of your pan relative to the recipe's pan. 80% = smaller; 120% = larger.</td></tr>
+              <tr><td>Scale recipe by N×</td><td>Multiply every ingredient quantity by this factor to fill your pan to the same depth as the recipe intended.</td></tr>
+              <tr><td>Batter depth note</td><td>Whether your batter will be shallower or deeper, and by how much.</td></tr>
+              <tr><td>Baking time note</td><td>Estimated time adjustment — check early for larger pans, allow extra time for smaller ones.</td></tr>
+              <tr><td>Temperature note</td><td>Only appears when materials differ. Explains the exact adjustment and why.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Material temperature adjustments</h3>
+          <p>When recipe and pan materials differ, KitchenCalc recommends:</p>
+          <ul>
+            <li><strong>Metal → Glass:</strong> reduce temperature 25°F (15°C). Glass heats slowly but retains heat.</li>
+            <li><strong>Glass → Metal:</strong> increase temperature 25°F (15°C). Metal heats faster.</li>
+            <li><strong>Metal → Dark/Non-stick:</strong> reduce temperature 25°F (15°C) or check 10 min early. Dark pans absorb more heat.</li>
+            <li><strong>Dark → Metal:</strong> increase temperature 25°F (15°C) to compensate.</li>
+          </ul>
+
+          <div class="tip">
+            <strong>Custom dimensions:</strong> if you own an unusual pan size, enter the dimensions
+            manually. For round pans enter the diameter; for rectangles enter width and length.
+            Depth is optional — KitchenCalc uses a standard depth for each shape if you leave it blank.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Scaling a Recipe</h2>
+          <p class="goal">What you'll learn: multiplying a recipe to serve more (or fewer) people, with results shown as proper cooking fractions.</p>
+
+          <ol class="steps">
+            <li><strong>Open the Recipe tab.</strong> Click "Recipe" in the segmented control.</li>
+            <li><strong>Set Original servings</strong> — how many people the recipe is written for. Type the number in the Original field.</li>
+            <li><strong>Set Target servings</strong> — how many you actually want to serve. The Scale Factor updates immediately (e.g., 4 → 6 gives 1.5×).</li>
+            <li><strong>Add ingredients.</strong> Each ingredient gets its own card. For each one:
+              <ul>
+                <li>Type the ingredient name in the name field at the top of the card.</li>
+                <li>Enter the whole number in the left field (e.g., "2" for 2½ cups).</li>
+                <li>Choose the fraction from the dropdown (e.g., "1/2").</li>
+                <li>Choose the unit from the unit dropdown (tsp, tbsp, cup, fl oz, pint, mL, L, g, kg, oz, lb, count).</li>
+              </ul>
+            </li>
+            <li><strong>Read the scaled result</strong> on the right side of each ingredient card. It appears as a proper fraction: "3 cups", "1 1/2 tbsp", "2 1/4 cups".</li>
+            <li><strong>Add more ingredients</strong> using the <strong>+ Add Ingredient</strong> button at the bottom left.</li>
+            <li><strong>Copy the full scaled recipe</strong> using <strong>Copy Scaled</strong>. The clipboard receives the recipe name (if saved), the serving count, and every ingredient line — ready to paste into FusionMD or any other app.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Count unit:</strong> use "count" for ingredients that can't be measured — eggs,
+            garlic cloves, bay leaves, etc. 3 eggs scaled by 1.5× gives "4 1/2 count", which you'd
+            round to 4 or 5 based on the dish.
+          </div>
+
+          <h3>Removing ingredients</h3>
+          <p>Click the − button (circle with minus) at the right of the ingredient name field to remove that row from the list.</p>
+
+          <h3>Starting fresh — Clear All</h3>
+          <p>Click <strong>Clear All</strong> (bottom left, next to Add Ingredient) to reset the Recipe tab to a blank slate. A confirmation dialog appears before anything is erased. Clearing also resets the servings to 4 → 6 and removes the recipe name from the header.</p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6b -->
+        <section class="tut-section" id="t6b">
+          <h2><span class="num">6b</span> Saving &amp; Recalling Recipes</h2>
+          <p class="goal">What you'll learn: saving a scaled recipe by name so you can reload it in one tap without re-entering every ingredient.</p>
+
+          <p>
+            KitchenCalc stores up to 20 named recipes. Once saved, a recipe can be loaded
+            instantly at any time. The Ingredients heading updates to show the recipe name
+            so you always know which recipe is active.
+          </p>
+
+          <h3>Saving a recipe</h3>
+          <ol class="steps">
+            <li>Enter your ingredients and servings in the Recipe tab.</li>
+            <li>Click <strong>Save…</strong> in the action bar at the bottom of the tab.</li>
+            <li>Type a name for the recipe — for example, "Yorkshire Pudding" — in the prompt that appears.</li>
+            <li>Click <strong>Save</strong>. The Ingredients heading immediately updates to <em>Ingredients — Yorkshire Pudding</em>.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>20-recipe limit:</strong> when you save a 21st recipe, the oldest one is
+            removed automatically to make room. Open the Saved list first and delete any
+            recipes you no longer need if you want to control which ones are kept.
+          </div>
+
+          <h3>Recalling a saved recipe</h3>
+          <ol class="steps">
+            <li>Click the <strong>Saved</strong> button (or the <strong>N of 20</strong> count button) in the action bar. A popover opens listing all saved recipes, newest first.</li>
+            <li>The header shows how many recipes are stored out of the 20-recipe maximum — for example, <strong>14 of 20</strong>.</li>
+            <li>Click <strong>Load</strong> next to any recipe. The ingredient list, servings, and recipe name all update immediately. The popover closes automatically.</li>
+          </ol>
+
+          <h3>Deleting a saved recipe</h3>
+          <ol class="steps">
+            <li>Click the <strong>Saved</strong> / <strong>N of 20</strong> button to open the list.</li>
+            <li>Click the <strong>trash icon</strong> on the right of the recipe you want to remove. The recipe is deleted immediately — no confirmation required.</li>
+          </ol>
+
+          <h3>Copying a saved recipe</h3>
+          <p>
+            After loading or saving a recipe, click <strong>Copy Scaled</strong>. The clipboard
+            contains the recipe name on the first line, the serving count on the second, then
+            every scaled ingredient — formatted for direct pasting into FusionMD or any writing app.
+          </p>
+          <p>Example output:</p>
+          <pre class="code-block">Yorkshire Pudding
+Serves 12:
+2 Cup (US) plain flour
+4 count eggs
+300 mL whole milk
+2 tbsp sunflower oil</pre>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> AI Recipe Import</h2>
+          <p class="goal">What you'll learn: pasting a recipe in plain text and letting AI extract every ingredient and amount automatically.</p>
+
+          <p>
+            Instead of typing each ingredient manually, you can paste the full text of a recipe
+            and KitchenCalc will extract every ingredient line into the scaler. This works with
+            recipes copied from websites, PDFs, or any text source.
+          </p>
+
+          <h3>Option A — Apple Intelligence (macOS 26, Apple Silicon)</h3>
+          <ol class="steps">
+            <li>Go to <strong>Settings → AI</strong>. Select <strong>Apple Intelligence</strong>. No key required.</li>
+            <li>In the Recipe tab, click <strong>Import Recipe</strong>.</li>
+            <li>Paste the recipe text into the sheet. Click <strong>Extract Ingredients</strong>.</li>
+            <li>KitchenCalc fills the ingredient list automatically. Review the results — AI extraction is very accurate but may occasionally misread unusual formatting.</li>
+          </ol>
+
+          <h3>Option B — OpenRouter (any Mac)</h3>
+          <ol class="steps">
+            <li>Create a free account at <strong>openrouter.ai</strong> and generate an API key.</li>
+            <li>Open KitchenCalc. Go to <strong>Settings (⌘,) → AI</strong>.</li>
+            <li>Paste your API key into the OpenRouter Key field and click <strong>Save Key</strong>.</li>
+            <li>In the Recipe tab, click <strong>Import Recipe</strong>.</li>
+            <li>Paste the recipe text and click <strong>Extract Ingredients</strong>. The recipe text is sent to OpenRouter for processing. Extraction usually completes in 2–5 seconds.</li>
+          </ol>
+
+          <h3>What to paste</h3>
+          <p>
+            Paste just the ingredients section of the recipe — or the whole recipe text.
+            KitchenCalc ignores instructions and extracts only ingredient lines. The AI
+            works best when amounts are written out clearly (e.g., "2 cups all-purpose flour"
+            rather than "flour (as needed)").
+          </p>
+
+          <div class="tip">
+            <strong>AI import is optional.</strong> You can enter every ingredient by hand without
+            any AI configuration. AI import just removes the typing step for long recipes.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Appearance &amp; Settings</h2>
+          <p class="goal">What you'll learn: personalising KitchenCalc's appearance and reviewing all settings.</p>
+
+          <h3>Opening Settings</h3>
+          <p>Press <strong>⌘,</strong> or go to <strong>KitchenCalc → Settings</strong> in the menu bar.</p>
+
+          <h3>Appearance tab</h3>
+          <p>
+            KitchenCalc ships with 19 built-in themes — a System theme that follows your macOS
+            accent colour, nine dark themes, and nine light themes. Click any swatch to apply
+            it instantly. Themes are remembered between launches.
+          </p>
+          <ul>
+            <li><strong>System</strong> — follows macOS appearance and accent colour automatically</li>
+            <li><strong>Dark themes</strong> — Slate, Forest, Graphite, Rosewood, Indigo, Midnight, Ember, Obsidian, Mocha</li>
+            <li><strong>Light themes</strong> — Sandstone, Minimalist, Blossom, Sky, Sage, Lavender, Arctic, Parchment, Peach</li>
+          </ul>
+
+          <h3>AI tab</h3>
+          <p>Configure the AI recipe import feature:</p>
+          <ul>
+            <li><strong>OpenRouter API Key</strong> — paste your key and click Save Key. Click Show/Hide to reveal or mask the key.</li>
+            <li>Use the Appearance tab's theme selector if you prefer a lighter or darker interface for kitchen use — high-contrast themes like Minimalist or Slate can be easier to read at a glance while cooking.</li>
+          </ul>
+
+          <div class="tip">
+            <strong>For kitchen use:</strong> consider pinning KitchenCalc to your Dock or keeping
+            it open in a smaller window alongside your recipe app. The 560×640 default size is
+            designed to sit alongside a browser or PDF without taking over your screen.
+          </div>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul  { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

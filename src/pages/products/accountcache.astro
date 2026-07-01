@@ -1,0 +1,615 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
+
+const icon = "/images/products/accountcache/icon.png";
+---
+
+<BaseLayout
+  title="AccountCache — Your Account Directory for Mac"
+  description="One secure place for every service, subscription, and credential you manage. Smart reports, password manager import, and a one-time purchase."
+>
+
+  <!-- Hero -->
+  <section class="product-hero fade-in">
+    <img src={icon} alt="AccountCache" class="product-icon" />
+    <h1>AccountCache</h1>
+    <p class="tagline">Every account. One place. Always yours.</p>
+    <p class="hero-sub">
+      You have dozens of services, subscriptions, logins, and credentials scattered
+      across your life. AccountCache gives you a single organised directory on your Mac —
+      not a cloud vault someone else controls, but a native app that lives on your machine
+      and stays there.
+    </p>
+    <div class="hero-meta">macOS 14 Sonoma or later &nbsp;·&nbsp; One-time purchase</div>
+    <AppStoreCTA />
+  </section>
+
+  <!-- Feature 1: Not just passwords -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🗂️</div>
+    <div class="feature-body">
+      <h2>More than a password manager.</h2>
+      <p>
+        AccountCache stores everything a password manager ignores — the account name,
+        login, URL, registration email, two-factor method, security questions, expiry
+        date, subscription cost, billing cycle, and your own notes. Every field
+        you actually need, in one record.
+      </p>
+      <p>
+        Accounts live in categories you define. Built-in smart categories give
+        specialist fields to the accounts that need them: email servers, hosting
+        configuration, financial details, software licences, API keys.
+        Everything else goes in General.
+      </p>
+      <p class="detail-note">
+        All data is stored in a local SQLite database in your Application Support folder.
+        Optional iCloud sync uses your own Apple ID — nothing touches any DataIsland server.
+        No account. No subscription.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 2: Smart categories -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📂</div>
+    <div class="feature-body">
+      <h2>Categories built for real life.</h2>
+      <p>
+        AccountCache ships with ten Pro categories — each with the specialist fields
+        that type of account actually needs. Add your own categories for everything else.
+      </p>
+      <div class="category-grid">
+        <div class="cat-card">
+          <strong>Financial</strong>
+          <span>Institution, logins per holder, account products, physical and digital cards</span>
+        </div>
+        <div class="cat-card">
+          <strong>Email</strong>
+          <span>IMAP / SMTP server, ports, and security settings — every detail your mail client needs</span>
+        </div>
+        <div class="cat-card">
+          <strong>Domains</strong>
+          <span>Registrar, nameservers, expiry date, DKIM, SPF, and MX records</span>
+        </div>
+        <div class="cat-card">
+          <strong>Hosting &amp; Servers</strong>
+          <span>Server IP, SSH port, control panel URL, and datacenter</span>
+        </div>
+        <div class="cat-card">
+          <strong>Software &amp; Licences</strong>
+          <span>Licence key, seat count, expiry date, and platform</span>
+        </div>
+        <div class="cat-card">
+          <strong>AI &amp; APIs</strong>
+          <span>API key, org ID, base URL, MCP transport, webhooks, and usage tier</span>
+        </div>
+        <div class="cat-card">
+          <strong>Medical Insurance</strong>
+          <span>Member ID, group number, plan type, deductible, copay, and renewal date</span>
+        </div>
+        <div class="cat-card">
+          <strong>Crypto Wallet</strong>
+          <span>Wallet address, seed phrase (locked), private key, blockchain, and wallet software</span>
+        </div>
+        <div class="cat-card">
+          <strong>Vehicle</strong>
+          <span>VIN, plate, registration expiry, insurance policy and expiry, and financing details</span>
+        </div>
+        <div class="cat-card">
+          <strong>Insurance</strong>
+          <span>Home, auto, life, and disability policies — provider, policy number, agent, premium, and renewal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: Reports -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">📊</div>
+    <div class="feature-body">
+      <h2>Reports that work for you.</h2>
+      <p>
+        AccountCache includes four built-in reports that turn your data into answers.
+        Open any of them from the Reports menu.
+      </p>
+      <ul class="feature-list">
+        <li>
+          <strong>Lost Wallet Report</strong> — a printable summary of every card and
+          credential marked as "in your physical wallet." If your wallet is stolen, open
+          this and you have every number you need to cancel everything, in one page.
+        </li>
+        <li>
+          <strong>Expiry Dashboard</strong> — see everything that's about to expire.
+          Domain registrations, subscription renewals, software licences — colour-coded
+          by urgency so nothing slips through.
+        </li>
+        <li>
+          <strong>Cost Summary</strong> — total what you're spending. Monthly and annual
+          breakdowns by account and category, so you can see where your money is going.
+        </li>
+        <li>
+          <strong>Account Health</strong> — surface weak passwords, old credentials,
+          accounts without two-factor authentication, and inactive subscriptions you
+          may have forgotten.
+        </li>
+        <li>
+          <strong>Emergency Data Pack</strong> — generate a structured text file for a
+          trusted contact (partner, solicitor, or executor) listing every account in
+          every category you choose. Optional AI-written guidance per category explains
+          what to do with each set of accounts in an emergency.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Feature 4: Import -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📥</div>
+    <div class="feature-body">
+      <h2>Bring your data with you.</h2>
+      <p>
+        Already using a password manager? AccountCache imports from all the major
+        formats — with a preview of every record before anything is written to your database.
+      </p>
+      <div class="import-grid">
+        <div class="import-format">Generic CSV</div>
+        <div class="import-format">Apple Passwords</div>
+        <div class="import-format">1Password</div>
+        <div class="import-format">Bitwarden JSON</div>
+        <div class="import-format">KeePass XML</div>
+        <div class="import-format">Excel / Numbers (.xlsx)</div>
+      </div>
+      <p>
+        If your file has no column headers, AccountCache's column mapping screen
+        lets you assign each column to the right field before importing.
+        Duplicate detection prevents the same account from being imported twice.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 5: Privacy -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🔒</div>
+    <div class="feature-body">
+      <h2>Private by design. Your data, your rules.</h2>
+      <p>
+        AccountCache is a local-first application. Your data is stored in a private
+        SQLite database on your Mac — never sent to any DataIsland server. There is
+        no analytics, no telemetry, no account to create.
+      </p>
+      <p>
+        Optional iCloud sync keeps your database in step across all your Macs using
+        your existing Apple ID. Everything travels through Apple's private CloudKit
+        infrastructure — we have no visibility into it, and neither does anyone else.
+      </p>
+      <p>
+        Getting a new Mac? Export an encrypted backup from Settings → General.
+        Your entire database is sealed with AES-256 and a password only you know —
+        restore it on the new Mac in seconds without iCloud ever being involved.
+      </p>
+      <p class="detail-note">
+        The app runs in Apple's App Sandbox with Hardened Runtime enabled,
+        meeting every requirement for Mac App Store distribution.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 6: Household profiles -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">👨‍👩‍👧</div>
+    <div class="feature-body">
+      <h2>One household. Everyone's accounts.</h2>
+      <p>
+        AccountCache supports named user profiles on a single shared database —
+        the same model as your Mac's login screen or your Netflix household. No
+        extra subscriptions. No different Apple IDs. One app, everyone's data, all
+        in one place.
+      </p>
+      <div class="category-grid two-col">
+        <div class="cat-card">
+          <strong>Named profiles</strong>
+          <span>Each person has their own profile with a name, colour, and optional PIN. Switch profiles from the toolbar — the database is shared but each person's private records stay private.</span>
+        </div>
+        <div class="cat-card">
+          <strong>Three visibility levels</strong>
+          <span>Each record is Open (everyone can see and edit), Shared (everyone can see, owner and admins can edit), or Private (owner and admins only). Set per record, change any time.</span>
+        </div>
+        <div class="cat-card">
+          <strong>Admin control</strong>
+          <span>The admin profile manages users — add, edit, deactivate, or transfer records when someone leaves. Admins see everything; members see only what they're meant to.</span>
+        </div>
+        <div class="cat-card">
+          <strong>iCloud sync included</strong>
+          <span>Enable iCloud Sync and every profile's data moves between all your Macs automatically. Everyone's changes, everywhere, all the time — using the same Apple ID.</span>
+        </div>
+      </div>
+      <p class="detail-note">
+        Household profiles share one Apple ID and one iCloud account. This is intentional —
+        it keeps your data inside a single, controlled Apple ecosystem rather than
+        scattering it across multiple cloud accounts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 7: Intelligence -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">✦</div>
+    <div class="feature-body">
+      <h2>Built for the intelligent Mac.</h2>
+      <p>
+        AccountCache is ready for Apple Intelligence. On macOS 26 and later with
+        Apple Intelligence enabled, the app uses Apple's on-device language model
+        for natural language search, smart import categorisation, and a weekly
+        security briefing — entirely on-device, with no data ever leaving your Mac.
+      </p>
+      <p>
+        On earlier systems, or when Apple Intelligence is off, the same features
+        work with your own OpenRouter API key entered in Settings → Intelligence.
+        You bring the key; we connect the features. No DataIsland cloud, no
+        middleman.
+      </p>
+      <ul class="feature-list">
+        <li><strong>Natural language search</strong> — ask "streaming services we never use" or "domains expiring this year" instead of hunting manually.</li>
+        <li><strong>Smart import</strong> — paste a block of account details and the AI picks the right category and fills the right fields automatically.</li>
+        <li><strong>Emergency Data Pack</strong> — AI writes plain-English guidance for each category, so a trusted contact knows exactly what to do.</li>
+        <li><strong>Siri &amp; Shortcuts</strong> — ask Siri to show expiring items, list your wallet cards, or look up an account password, right from your voice or the Shortcuts app.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section fade-in">
+    <h2>Simple, honest pricing.</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Basic — Free</h3>
+        <div class="price">Free</div>
+        <div class="price-detail">no limit · no expiry · no card</div>
+        <ul>
+          <li>1 user profile</li>
+          <li>Unlimited basic accounts</li>
+          <li>Import from any password manager</li>
+          <li>All four reports</li>
+          <li>Encrypted backup &amp; restore</li>
+          <li>iCloud sync across your Macs</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Family</h3>
+        <div class="price">$29.99</div>
+        <div class="price-detail">one-time purchase · no subscription</div>
+        <ul>
+          <li>Up to 5 user profiles</li>
+          <li>All Pro specialist categories</li>
+          <li>Per-record visibility controls</li>
+          <li>Apple Intelligence features</li>
+          <li>One purchase · yours forever</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Home Office</h3>
+        <div class="price">$49.99</div>
+        <div class="price-detail">one-time purchase · no subscription</div>
+        <ul>
+          <li>Up to 10 user profiles</li>
+          <li>Everything in Family</li>
+          <li>Ideal for small teams</li>
+          <li>One purchase · yours forever</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pricing-note">
+      Basic accounts — login, password, URL, and notes — are free with one user profile, no limit, forever.
+      The Family plan adds up to 5 profiles and all ten Pro specialist categories.
+      Home Office raises the profile limit to 10. Both are one-time purchases; no subscription, ever.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "How is AccountCache different from a password manager?",
+      answer: "A password manager stores one thing well: username and password pairs. AccountCache stores the full picture of each account — server settings, billing details, licence keys, security questions, physical wallet cards, API credentials, and your own notes. It also tells you what's expiring, what you're spending, and what needs attention. Think of it as a directory for your digital life, not just a key ring."
+    },
+    {
+      question: "Is my data encrypted?",
+      answer: "Your data lives in a local SQLite database protected by macOS file-system permissions, your Mac's login password, and App Sandbox. It is not additionally encrypted at the field level — it relies on your Mac's built-in security (FileVault, login password). For backups, AccountCache uses AES-256-GCM with PBKDF2 key derivation — the backup file is unreadable without your password."
+    },
+    {
+      question: "Can I sync my data across multiple Macs?",
+      answer: "Yes. Turn on iCloud Sync in Settings → Sync and every change on one Mac appears on the others within seconds, automatically. Sync is free and uses your existing Apple ID — all your Macs share the same database and the same user profiles."
+    },
+    {
+      question: "How do household profiles work?",
+      answer: "Household profiles are named users within a single shared database — like Mac login accounts or Netflix profiles. Each person has their own name, colour, and optional PIN. Records can be Open (everyone), Shared (visible to all, editable by owner and admin), or Private (owner and admin only). All profiles share the same Apple ID and sync automatically across your Macs."
+    },
+    {
+      question: "What happens if I get a new Mac?",
+      answer: "Two options. If iCloud Sync is on, sign in with the same Apple ID on the new Mac, install AccountCache, and your database appears automatically. If you prefer not to use iCloud, export an encrypted backup from Settings → General, copy it to the new Mac (USB drive, AirDrop, wherever you like), and restore it. The backup file is sealed with AES-256 — without your password it's unreadable."
+    },
+    {
+      question: "What's the difference between Basic and Pro categories?",
+      answer: "Basic categories — Login, Identity, WiFi, Social, Shopping, Streaming, Travel, Education, and Membership — use the universal form: name, login, password, URL, notes, tags, and more. These are free and unlimited. Pro categories add a specialist section with structured fields specific to that account type: bank account hierarchies for Financial, seed phrase vaults for Crypto, IMAP/SMTP settings for Email, and so on."
+    },
+    {
+      question: "Can I import from 1Password, Bitwarden, or other managers?",
+      answer: "Yes. AccountCache imports Generic CSV, Apple Passwords export, 1Password CSV, Bitwarden JSON, KeePass XML, and Excel / Numbers spreadsheets (.xlsx). The import wizard shows a preview of every record before anything is saved, and duplicate detection prevents the same account from being added twice."
+    },
+    {
+      question: "What happens if I lose my wallet?",
+      answer: "Open the Reports menu and choose Lost Wallet Report. It generates a complete list of every card marked as 'in physical wallet', with account numbers, emergency phone numbers, and notes — everything you need to cancel and replace in one printable page."
+    },
+    {
+      question: "What is the Emergency Data Pack?",
+      answer: "The Emergency Data Pack is a plain-text report you generate from the Reports menu and give to a trusted contact — your partner, a solicitor, or your executor. You choose which categories to include, and optionally include AI-written guidance explaining what to do with each set of accounts. It covers everything from bank logins to insurance policies to domain registrations. Store it somewhere safe so the right person can act quickly if you can't."
+    },
+    {
+      question: "Is there a subscription?",
+      answer: "No subscriptions, ever. Family is a one-time purchase of $29.99. Home Office is a one-time purchase of $49.99. Both include all future updates to the current major version."
+    }
+  ]} />
+
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 {
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+
+  /* Feature sections */
+  .feature-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .feature-section.alt {
+    background: var(--gray-light);
+    max-width: 100%;
+    padding: 3.5rem 1.5rem;
+    margin: 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .feature-section.alt > * { max-width: 450px; }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .feature-body { flex: 1; }
+
+  .feature-body h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-body p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .detail-note {
+    font-size: 0.95rem !important;
+    color: var(--gray) !important;
+    font-style: italic;
+    border-left: 3px solid var(--blue-light);
+    padding-left: 1rem;
+  }
+
+  /* Category grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .cat-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid var(--blue);
+  }
+
+  .cat-card strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    color: var(--blue);
+  }
+
+  .cat-card span {
+    font-size: 0.85rem;
+    color: var(--gray-dark);
+    line-height: 1.4;
+  }
+
+  /* Import grid */
+  .import-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+
+  .import-format {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.88rem;
+    color: var(--gray-dark);
+  }
+
+  /* Feature list */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .feature-list li {
+    padding: 0.7rem 0;
+    padding-left: 1.25rem;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    border-bottom: 1px solid var(--gray-light);
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .feature-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+
+  /* Pricing */
+  .pricing-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    text-align: center;
+  }
+
+  .pricing-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .pricing-card {
+    flex: 1;
+    max-width: 280px;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-align: left;
+  }
+
+  .pricing-card.featured {
+    background: var(--blue);
+    color: #fff;
+  }
+
+  .pricing-card h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+  .pricing-card.featured h3 { color: rgba(255,255,255,0.8); }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .price-detail {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .pricing-card ul li {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--gray-dark);
+  }
+
+  .pricing-card.featured ul li {
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .pricing-card ul li::before { content: "✓  "; }
+
+  .pricing-note {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+  }
+
+  /* Responsive */
+  .category-grid.two-col { grid-template-columns: 1fr 1fr; }
+
+  @media (max-width: 768px) {
+    .feature-section,
+    .feature-section.alt {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .category-grid,
+    .category-grid.two-col { grid-template-columns: 1fr; }
+
+    .pricing-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-card {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "13 June 2026";
+---
+
+<BaseLayout
+  title="Panorama — Privacy Policy"
+  description="Privacy policy for Panorama, the location intelligence app by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>Panorama — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      Panorama is a location intelligence app for macOS and iPhone. This policy explains exactly
+      what data Panorama collects, what leaves your device, and what is stored locally.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>Panorama does not collect personal data.</strong> Location searches and profile data
+      stay on your device. Panorama has no server, no account, and no analytics. All API calls
+      are made directly from your Mac to the data providers — DataIsland is not in the middle.
+    </p>
+
+    <h2>Location Searches</h2>
+    <p>
+      When you search for a location, Panorama sends your search query to a geocoding service
+      (Apple Maps or a compatible geocoder) to convert it to coordinates. This is the same
+      geocoding service used by other Apple apps. DataIsland does not receive or log your searches.
+    </p>
+    <p>
+      Coordinates are then sent directly from your Mac to the relevant data APIs (Census Bureau,
+      FEMA, CDC, etc.). DataIsland never sees which locations you search or which profiles you view.
+    </p>
+
+    <h2>Saved Profiles</h2>
+    <p>
+      Saved location profiles are stored locally in Application Support and, if iCloud Drive
+      is enabled on your Mac, synced via your personal iCloud account. DataIsland has no access
+      to your iCloud storage. Profiles contain the data fetched from public APIs and any AI
+      summaries you generate.
+    </p>
+
+    <h2>API Keys</h2>
+    <p>
+      Optional API keys (Walk Score, FBI Crime, BEA, FRED, OpenRouter) are stored only in your
+      macOS Keychain. They are never transmitted to DataIsland. Each key is sent only to the
+      corresponding provider's API when that data section loads.
+    </p>
+
+    <h2>AI Summaries</h2>
+
+    <h3>Apple Intelligence (on-device)</h3>
+    <p>
+      When you use Apple Intelligence for AI summaries, all processing happens on your device.
+      No location data or profile content is sent to Apple's servers or to DataIsland.
+    </p>
+
+    <h3>OpenRouter (optional cloud model)</h3>
+    <p>
+      When you use OpenRouter, Panorama sends a structured summary of your location profile
+      (the assembled facts — not raw API responses) to OpenRouter's API using your own API key.
+      This is governed by OpenRouter's privacy policy and the policy of the model provider
+      you select (OpenAI, Anthropic, Google, etc.). DataIsland does not receive this data.
+    </p>
+
+    <h2>Third-Party Data APIs</h2>
+    <p>
+      Panorama calls the following public data APIs directly from your device. Each provider's
+      own privacy policy governs their handling of API requests:
+    </p>
+    <ul>
+      <li>US Census Bureau — census.gov</li>
+      <li>FEMA — fema.gov</li>
+      <li>CDC PLACES — cdc.gov</li>
+      <li>FBI / NIBRS — crime-data-explorer.fr.cloud.gov</li>
+      <li>BEA — bea.gov</li>
+      <li>BLS — bls.gov</li>
+      <li>FRED (Federal Reserve Bank of St. Louis) — fred.stlouisfed.org</li>
+      <li>EIA — eia.gov</li>
+      <li>USGS — earthquake.usgs.gov</li>
+      <li>EPA EJScreen — ejscreen.epa.gov</li>
+      <li>Walk Score — walkscore.com</li>
+      <li>OpenStreetMap / Overpass API — openstreetmap.org</li>
+      <li>Teleport — teleport.org</li>
+      <li>World Bank — api.worldbank.org</li>
+      <li>Numbeo — numbeo.com</li>
+      <li>Wikipedia — wikipedia.org</li>
+      <li>WHO — who.int</li>
+      <li>Statistics Canada — statcan.gc.ca</li>
+      <li>UK Police API — data.police.uk</li>
+      <li>Open-Meteo — open-meteo.com</li>
+    </ul>
+    <p>
+      Panorama sends only the minimum required parameters (coordinates, state code, or county FIPS)
+      to each API. No personal information is included in these requests.
+    </p>
+
+    <h2>Network Interference Detection</h2>
+    <p>
+      When a government API fails with a TLS error, Panorama may contact Cloudflare's CDN trace
+      endpoint (cloudflare.com/cdn-cgi/trace) to detect whether Cloudflare WARP is active, and
+      Apple's egress IP list (mask-api.icloud.com) to detect iCloud Private Relay. These checks
+      help Panorama give you a specific, actionable error message. No personal data is included
+      in these requests; only your outbound IP address is involved, which is inherent to any
+      internet request.
+    </p>
+
+    <h2>Analytics and Crash Reporting</h2>
+    <p>
+      Panorama does not use third-party analytics or crash reporting services. DataIsland does
+      not receive any usage telemetry, crash logs, or diagnostics from Panorama.
+    </p>
+
+    <h2>What Panorama Does Not Do</h2>
+    <ul>
+      <li>Does not transmit your location searches to DataIsland</li>
+      <li>Does not store profile data on DataIsland servers</li>
+      <li>Does not require an account or login</li>
+      <li>Does not use advertising SDKs or share data with advertisers</li>
+      <li>Does not collect analytics or usage statistics</li>
+      <li>Does not read or transmit your contacts, photos, or other personal files</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Panorama is not directed at children under 13. We do not knowingly collect information
+      from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of Panorama after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:
+      <br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a>
+      <br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul { margin: 0.5rem 0 1rem 1.25rem; color: var(--gray-dark); }
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

@@ -20,6 +20,34 @@ export const products = [
     description: "Email phishing and fraud analysis for Apple Mail. A silent Mail extension color-codes your inbox, and one click delivers a full forensic verdict on any email.",
     active: true
   },
+  {
+    id: "accountcache",
+    title: "AccountCache",
+    icon: "/images/products/accountcache/icon.png",
+    description: "Your complete account directory for Mac. One secure place for every service, subscription, and credential you manage — with smart reports, import from any password manager, and a one-time purchase.",
+    active: true
+  },
+  {
+    id: "panorama",
+    title: "Panorama",
+    icon: "/images/products/panorama/icon.png",
+    description: "Location intelligence for Mac. Search any city or address and get a full profile built from 35+ live data sources — demographics, health, safety, economy, climate, AI Verdict, city comparison, and an in-depth PDF report.",
+    active: true
+  },
+  {
+    id: "kitchencalc",
+    title: "KitchenCalc",
+    icon: "/images/products/kitchencalc/icon.png",
+    description: "The native Mac kitchen converter for cooks and bakers. Convert volumes, weights, and ingredients by density. Substitute pan sizes with material-aware temperature notes. Scale recipes with AI-powered ingredient import.",
+    active: true
+  },
+  {
+    id: "networknotes",
+    title: "Network Notes",
+    icon: "/images/products/networknotes/icon.png",
+    description: "Free local-network messaging for Mac. Send notes, images, and links to anyone on your home network — no server, no internet, no account. Peer-to-peer encrypted. The spiritual successor to Adium.",
+    active: true
+  },
   // Coming-soon products — kept for reference, not rendered on site
   // {
   //   id: "scribe",

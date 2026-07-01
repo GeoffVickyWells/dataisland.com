@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Sky background -->
+  <rect width="64" height="64" rx="10" fill="#2D9CDB"/>
+
+  <!-- Sun -->
+  <circle cx="22" cy="26" r="13" fill="#F5A623"/>
+  <!-- Sun rays -->
+  <circle cx="22" cy="26" r="16" fill="none" stroke="#F5A623" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.6"/>
+
+  <!-- Palm trunk — curves slightly right as it rises -->
+  <path d="M34 60 C33 50 31 40 30 32 C29 24 30 20 31 16"
+        stroke="#1A1008" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Fronds radiating from crown at (31,16) -->
+  <!-- up-left -->
+  <path d="M31 16 C26 10 16 7 10 10" stroke="#1A4D1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- up-right -->
+  <path d="M31 16 C36 10 46 9 50 13" stroke="#1A4D1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- left droop -->
+  <path d="M31 16 C27 20 18 22 14 18" stroke="#1A4D1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- right droop -->
+  <path d="M31 16 C36 20 44 21 47 17" stroke="#1A4D1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- top -->
+  <path d="M31 16 C30 10 30 4 32 2" stroke="#1A4D1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Water / island base -->
+  <ellipse cx="36" cy="59" rx="18" ry="5" fill="#1A7EC4" opacity="0.7"/>
+</svg>

@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="FusionMD Tutorials — DataIsland Software"
-  description="Step-by-step written tutorials for FusionMD — writing in Markdown, AI tools, templates, screenplay mode, IDML export, and the Writing Coach."
+  description="Step-by-step written tutorials for FusionMD — writing in Markdown, AI tools, templates, ePub3 export, screenplay mode, IDML export, translation, and the Writing Coach."
 >
 
   <div class="tut-wrap">
@@ -14,8 +14,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <h1>FusionMD — Tutorials</h1>
       <p class="intro">
         Written guides for every feature in FusionMD — from your first document
-        to professional layout export. Work through them in order or jump to any
-        section using the contents list.
+        to professional layout export, ePub3 publishing, and document translation.
+        Work through them in order or jump to any section using the contents list.
       </p>
       <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
     </div>
@@ -27,7 +27,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <h2>Contents</h2>
         <ol>
           <li><a href="#t1">Your first document</a></li>
-          <li><a href="#t2">Choosing &amp; customising a text theme</a></li>
+          <li><a href="#t2">Choosing &amp; customizing a text theme</a></li>
           <li><a href="#t3">AI Polish: rewriting selected text</a></li>
           <li><a href="#t4">Using the AI prompt bar</a></li>
           <li><a href="#t5">Templates &amp; variables</a></li>
@@ -37,8 +37,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li><a href="#t9">Writing a screenplay</a></li>
           <li><a href="#t10">Text transformations</a></li>
           <li><a href="#t11">Parts of speech analyzer</a></li>
-          <li><a href="#t12">Settings &amp; customising your environment</a></li>
+          <li><a href="#t12">Settings &amp; customizing your environment</a></li>
           <li><a href="#t13">Writing Coach: spelling, grammar &amp; vocabulary</a></li>
+          <li><a href="#t14">Document metadata &amp; cover image</a></li>
+          <li><a href="#t15">Exporting an ePub3 ebook</a></li>
+          <li><a href="#t16">Translating a document</a></li>
+          <li><a href="#t17">Publishing on Apple Books &amp; Amazon KDP</a></li>
         </ol>
       </nav>
 
@@ -58,6 +62,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li><strong>Write body text.</strong> Press Return twice and write a paragraph. Notice the word count in the status bar updates as you type, and the preview pane on the right renders your text.</li>
             <li><strong>Try some formatting.</strong> Select a word and click <strong>B</strong> in the format bar to make it bold. Or type <code>**word**</code> directly — both work.</li>
             <li><strong>Insert a list.</strong> Press Return twice, then click the bullet-list button in the format bar. Type three items, pressing Return between each.</li>
+            <li><strong>Open the live preview.</strong> Click the eye icon in the toolbar to reveal the rendered Markdown preview alongside the editor.</li>
             <li><strong>Adjust the preview split.</strong> Drag the divider between the editor and preview left or right. Drag all the way right to go full-screen editor; all the way left to see only the preview.</li>
             <li><strong>Export to PDF.</strong> Press ⌘⇧E or go to File → Export → PDF. Choose a save location. The PDF renders using your active text theme.</li>
             <li><strong>Save.</strong> Press ⌘S. FusionMD saves as <code>.fusiondoc</code> by default.</li>
@@ -66,22 +71,27 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <div class="tip">
             <strong>No lock-in:</strong> A <code>.fusiondoc</code> file is a ZIP archive. Rename it <code>.zip</code> and open it — your plain Markdown is inside as <code>content.md</code>, readable by any editor, forever.
           </div>
+
+          <div class="tip">
+            <strong>Left sidebar tabs:</strong> The left panel has multiple tabs that appear or change with the active mode. In Markdown mode you'll find the <strong>Navigator</strong> (document outline, jump to any heading), the <strong>Boilerplate</strong> library, and the <strong>Table Creator</strong> (visual table builder that outputs Markdown tables). In Variables mode the Variables and Conditions tabs appear; in Script mode the Scene Navigator; in Layout mode the Layout Styles tab.
+          </div>
         </section>
 
         <!-- ─────────────────────────────────────────── Tutorial 2 -->
         <section class="tut-section" id="t2">
-          <h2><span class="num">2</span> Choosing &amp; Customising a Text Theme</h2>
-          <p class="goal">What you'll learn: applying a built-in theme, customising fonts and colours, and locking a theme to a document.</p>
+          <h2><span class="num">2</span> Choosing &amp; Customizing a Text Theme</h2>
+          <p class="goal">What you'll learn: applying a built-in theme, customizing fonts and colors, and locking a theme to a document.</p>
 
           <h3>Steps</h3>
           <ol class="steps">
             <li>Open any document.</li>
             <li><strong>Open the right panel.</strong> Click the panel button in the toolbar (rightmost group), or press ⌘2.</li>
             <li><strong>Go to the Document Styles tab</strong> — the last tab in the right panel. You'll see a list of built-in themes.</li>
-            <li><strong>Click "GitHub Light."</strong> The preview pane immediately updates — body font, heading colours, and background all change.</li>
-            <li><strong>Try "Dracula."</strong> The dark background appears in the preview. The editor background stays clean while the preview and all exports match.</li>
-            <li><strong>Create a custom theme.</strong> Click the <strong>+</strong> button. A sheet opens with controls for: body font, heading font, code font, colours (body text, headings, links, background), line height, and margins.</li>
-            <li><strong>Set a distinctive heading colour.</strong> Click the heading colour swatch, choose a deep teal. The preview updates live.</li>
+            <li><strong>Click "Novel."</strong> The preview pane immediately updates — a warm serif body font, generous line height, and book-style heading sizes appear.</li>
+            <li><strong>Try "Typewriter."</strong> The monospaced font and tighter spacing give the preview a classic typewritten look. The editor background stays clean while the preview and all exports reflect the theme.</li>
+            <li><strong>Try "Technical."</strong> Clean sans-serif body with code-friendly proportions — good for documentation and reference material.</li>
+            <li><strong>Create a custom theme.</strong> Click the <strong>+</strong> button. A sheet opens with controls for: body font, heading font, code font, colors (body text, headings, links, background), line height, and margins.</li>
+            <li><strong>Set a distinctive heading color.</strong> Click the heading color swatch, choose a deep teal. The preview updates live.</li>
             <li><strong>Name your theme</strong> and click Save. It appears at the top of the list.</li>
             <li><strong>Lock it to this document.</strong> With your custom theme selected, click <strong>"Set as Document Theme."</strong> A ✦ symbol appears. This theme now travels with the <code>.fusiondoc</code> file and renders identically on any Mac running FusionMD.</li>
           </ol>
@@ -142,7 +152,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>Context-aware generation:</strong> The AI adapts to the active mode automatically. In Markdown mode it writes content. In Variables mode it declares <code>&#123;&#123;variables&#125;&#125;</code>. In Script mode it writes Fountain-format scenes. In Layout mode it tags content with paragraph style names.
+            <strong>Context-aware generation:</strong> The AI adapts to the active mode automatically. In Markdown mode it writes content. In Variables mode it declares <code>&#123;&#123;variables&#125;&#125;</code>. In Script mode it writes Fountain-format scenes. In Design mode it generates a YAML <code>styles:</code> front-matter block for document typography. In Layout mode it tags content with paragraph style names.
           </div>
         </section>
 
@@ -170,7 +180,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>Five built-in templates:</strong> Article, Report, Proposal, Story, and Screenplay — each with sensible pre-declared variables. Open them from the document browser to see how templates are constructed.
+            <strong>Six built-in templates:</strong> Article, Report, Proposal, Short Story, Screenplay, and Research Paper — each with sensible pre-declared variables. Open them from the document browser to see how templates are constructed.
           </div>
         </section>
 
@@ -182,9 +192,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3>Steps</h3>
           <ol class="steps">
             <li>Open any document with several paragraphs of prose.</li>
-            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Writing tab</strong> (the checkmark icon).</li>
+            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Writing Coach tab</strong> (the checkmark icon).</li>
             <li><strong>Set document language.</strong> Click the <strong>Language subtab</strong> (globe icon). Select your document's language (e.g., English — United Kingdom). This drives spell checking, smart-quote style, and the dialogue checker simultaneously. Hover any subtab icon to see its name in the tooltip.</li>
-            <li><strong>Switch to the Proofreader.</strong> Click the <strong>Proofread subtab</strong> (checkmark circle icon). It scans the document and lists issues grouped into categories: unfilled placeholders, repeated phrases, unmatched punctuation, long sentences (&gt;40 words), capitalisation errors, and word-usage mistakes ("alot", "could of").</li>
+            <li><strong>Switch to the Proofreader.</strong> Click the <strong>Proofread subtab</strong> (checkmark circle icon). It scans the document and lists issues grouped into categories: unfilled placeholders, repeated phrases, unmatched punctuation, long sentences (&gt;40 words), capitalization errors, and word-usage mistakes ("alot", "could of").</li>
             <li><strong>Click an issue.</strong> FusionMD highlights the relevant text in the editor. If the issue is auto-correctable, a Fix button appears — click it to apply the correction.</li>
             <li><strong>Filter by category.</strong> Use the chips at the top of the list to show only one category at a time (e.g., "Long sentences").</li>
             <li><strong>Switch to Style &amp; Clarity.</strong> Click the <strong>Style subtab</strong>. You'll see: Flesch-Kincaid reading ease score, estimated grade level, average sentence length, and highlight mode buttons — Adjectives (green), Adverbs (teal), Passive Voice (purple), Filler Words (amber).</li>
@@ -200,7 +210,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- ─────────────────────────────────────────── Tutorial 7 -->
         <section class="tut-section" id="t7">
           <h2><span class="num">7</span> The Boilerplate Library</h2>
-          <p class="goal">What you'll learn: saving reusable Markdown blocks, organising them by category, and inserting them into any document.</p>
+          <p class="goal">What you'll learn: saving reusable Markdown blocks, organizing them by category, and inserting them into any document.</p>
 
           <h3>Steps</h3>
           <ol class="steps">
@@ -209,7 +219,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li><strong>Save as boilerplate.</strong> In the left sidebar, click the <strong>Boilerplate tab</strong>. Click <strong>"Save Selection as Block."</strong> Enter a name (e.g., "Privacy Policy Footer") and an optional category (e.g., "Legal"). Click Save.</li>
             <li><strong>See it in the library.</strong> Your block appears under the category you chose.</li>
             <li><strong>Insert it elsewhere.</strong> Open a different document. Open the Boilerplate panel, find your block, and click <strong>Insert</strong>. The Markdown is pasted at the cursor — exactly the text you saved.</li>
-            <li><strong>Create a few more blocks</strong> in different categories. Blocks are organised alphabetically within category groups; "Other" is always last.</li>
+            <li><strong>Create a few more blocks</strong> in different categories. Blocks are organized alphabetically within category groups; "Other" is always last.</li>
             <li><strong>Edit a block.</strong> Right-click any block → Edit. The next insertion uses the updated version.</li>
           </ol>
 
@@ -227,13 +237,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <ol class="steps">
             <li>Open a multi-section document (article, report, newsletter content). Layout mode works best with structured writing.</li>
             <li><strong>Enable Layout mode.</strong> Click <strong>"Layout"</strong> in the mode picker. A confirmation dialog may appear; confirm.</li>
-            <li><strong>Open the Layout panel.</strong> The left sidebar now shows a Layout tab with two sections: Paragraph Styles and Character Styles.</li>
+            <li><strong>Open the Layout panel.</strong> The left sidebar now shows a <strong>Layout Styles</strong> tab with two sections: Paragraph Styles and Character Styles.</li>
             <li><strong>Add paragraph styles.</strong> Click <strong>+</strong> next to Paragraph Styles. Add: "Body Text", "Chapter Title", "Pull Quote", "Byline".</li>
             <li><strong>Tag a paragraph.</strong> Place your cursor in a paragraph. In the Layout panel, click "Body Text". FusionMD inserts <code>:::Body Text</code> before and <code>:::</code> after the paragraph — marking it with that style name. Click <strong>"Hide Markers"</strong> for a cleaner view.</li>
             <li><strong>Tag an inline span.</strong> Select a word in the editor. In the Character Styles panel, click a style name to wrap it in the inline syntax.</li>
             <li><strong>Use AI for layout generation.</strong> Clear the document. In the AI prompt bar, type: <em>"Write a 4-article newspaper front page covering local government, arts, sports, and weather. Tag each article with appropriate paragraph styles."</em> The AI generates multiple annotated articles — each becomes a separate IDML TextFrame.</li>
             <li><strong>Export to IDML.</strong> Click <strong>"Export as IDML…"</strong> in the navigation bar.</li>
-            <li><strong>Open in Affinity or InDesign.</strong> Your content appears in TextFrames on a grid. Your style names are in the Paragraph Styles panel, pre-tagged, ready to assign visual appearance (font, size, colour).</li>
+            <li><strong>Open in Affinity or InDesign.</strong> Your content appears in TextFrames on a grid. Your style names are in the Paragraph Styles panel, pre-tagged, ready to assign visual appearance (font, size, color).</li>
           </ol>
 
           <div class="tip">
@@ -284,20 +294,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>Regex supported:</strong> Rules can use full regular expressions. Built-in rulesets are read-only; duplicate them to customise. All rulesets are saved and available across every document.
+            <strong>Regex supported:</strong> Rules can use full regular expressions. Built-in rulesets are read-only; duplicate them to customize. All rulesets are saved and available across every document.
           </div>
         </section>
 
         <!-- ─────────────────────────────────────────── Tutorial 11 -->
         <section class="tut-section" id="t11">
           <h2><span class="num">11</span> Parts of Speech Analyzer</h2>
-          <p class="goal">What you'll learn: colour-coding your text by grammatical category, using the panel to analyse prose patterns, and working across languages.</p>
+          <p class="goal">What you'll learn: color-coding your text by grammatical category, using the panel to analyze prose patterns, and working across languages.</p>
 
           <h3>What it does</h3>
-          <p>The Parts of Speech panel identifies every word by its grammatical role and highlights each category in a distinct colour — live, non-destructively, in any language Apple's Natural Language framework supports. All analysis runs on-device; no internet connection required.</p>
+          <p>The Parts of Speech panel identifies every word by its grammatical role and highlights each category in a distinct color — live, non-destructively, in any language Apple's Natural Language framework supports. All analysis runs on-device; no internet connection required.</p>
 
           <table>
-            <thead><tr><th>Category</th><th>Colour</th><th>Practical use</th></tr></thead>
+            <thead><tr><th>Category</th><th>Color</th><th>Practical use</th></tr></thead>
             <tbody>
               <tr><td><strong>Nouns</strong></td><td>Blue</td><td>Spot noun-heavy sentences that could be tightened</td></tr>
               <tr><td><strong>Verbs</strong></td><td>Green</td><td>See whether action words are doing the work</td></tr>
@@ -337,7 +347,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- ─────────────────────────────────────────── Tutorial 12 -->
         <section class="tut-section" id="t12">
-          <h2><span class="num">12</span> Settings &amp; Customising Your Environment</h2>
+          <h2><span class="num">12</span> Settings &amp; Customizing Your Environment</h2>
           <p class="goal">What you'll learn: the seven settings tabs and how to set up FusionMD the way you want it.</p>
 
           <h3>Quick Tour of Settings (⌘,)</h3>
@@ -346,7 +356,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>Toggle <strong>"Enable professional layout features"</strong> to show or hide Layout mode and IDML export. Writers who don't need layout can keep the interface clean.</p>
 
           <h3>Appearance</h3>
-          <p>Pick your app accent colour (Neutral, Blue, Orange, Red, Green). Choose System, Light, or Dark mode independently from the macOS system setting. Enable Contrast Boost for enhanced text contrast.</p>
+          <p>Choose from 19 interface color themes — from clean minimal options like Stone and Slate to vibrant accents like Ocean, Rust, and Sage. The selected theme applies to the app chrome: toolbar, sidebars, and panels. Enable Contrast Boost for enhanced text contrast throughout the interface.</p>
 
           <h3>Editor</h3>
           <p>Drag the font size slider (8–28pt) — the editor updates live. Adjust line height and paragraph spacing. Toggle Typewriter Mode, Focus Mode (line dimming), Show Invisibles, and Soft Wrap. Disable Spell Check for code-heavy documents where Apple's checker is intrusive.</p>
@@ -361,7 +371,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>Paste your OpenRouter API key and select your preferred AI provider. Use Apple Intelligence for fully on-device generation (macOS 26, Apple Silicon required). The trial status and purchase link are also shown here.</p>
 
           <h3>About</h3>
-          <p>App version, build, and licence status. Links to the website, documentation, and the feedback issue tracker.</p>
+          <p>App version, build, and license status. Links to the website, documentation, and the feedback issue tracker.</p>
 
           <div class="tip">
             <strong>Note:</strong> Most settings take effect immediately — no restart needed. The Editor font size is separate from the text theme font. The editor size is for writing comfort; the theme font controls how your document looks in the preview and in all exports.
@@ -373,12 +383,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h2><span class="num">13</span> Writing Coach: Spelling, Grammar &amp; Vocabulary</h2>
           <p class="goal">What you'll learn: using the Spelling panel to fix misspellings in one click, the Grammar panel to understand and resolve grammar issues, and the Vocabulary tab to look up synonyms, definitions, and spot overused words.</p>
 
-          <p>The Writing Coach is the collection of eight analysis tools inside the <strong>Writing tab</strong> in the right panel. This tutorial covers Spelling, Grammar, and Vocabulary.</p>
+          <p>The Writing Coach is the collection of eight analysis tools inside the <strong>Writing Coach tab</strong> in the right panel: Spelling, Grammar, Proofread, Style, Vocabulary, Language, Dialogue, and Cleanup. This tutorial covers Spelling, Grammar, and Vocabulary.</p>
 
           <h3>Part 1 — Spell Check</h3>
           <ol class="steps">
             <li>Open any document (or paste a paragraph with a few deliberate misspellings).</li>
-            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Writing tab</strong> (checkmark icon). The eight subtab icons appear in a scrollable row. Hover any icon to see its name.</li>
+            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Writing Coach tab</strong> (checkmark icon). The eight subtab icons appear in a scrollable row. Hover any icon to see its name.</li>
             <li><strong>Click the Spelling subtab</strong> (cursor icon). FusionMD scans the document and lists every misspelled word.</li>
             <li><strong>Review the list.</strong> Each entry shows the word in context. Below each word, suggestion chips display up to five alternative spellings.</li>
             <li><strong>Click a suggestion chip.</strong> The misspelled word is replaced in the document instantly. The list updates and the corrected word disappears.</li>
@@ -387,7 +397,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Part 2 — Grammar Analysis</h3>
           <ol class="steps">
-            <li>Still inside the Writing tab, <strong>click the Grammar subtab</strong> (checkmark badge icon).</li>
+            <li>Still inside the Writing Coach tab, <strong>click the Grammar subtab</strong> (checkmark badge icon).</li>
             <li><strong>FusionMD lists grammar issues</strong> found by the macOS grammar engine. Each issue shows a plain-English description ("Agreement — verb does not agree with subject", "Fragment — consider revising") along with the surrounding text for context.</li>
             <li><strong>Where macOS suggests a correction,</strong> a clickable button shows the proposed fix. Click it to apply directly.</li>
             <li><strong>Where no automatic fix is available,</strong> the description helps you understand what to revise. Click the issue to scroll the editor to that location.</li>
@@ -396,7 +406,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Part 3 — Thesaurus, Dictionary &amp; Overused Words</h3>
           <ol class="steps">
-            <li>Click the <strong>Vocab subtab</strong> (books icon). Three sections appear: Thesaurus, Dictionary, and Overused Words.</li>
+            <li>Click the <strong>Vocabulary subtab</strong> (books icon). Three sections appear: Thesaurus, Dictionary, and Overused Words.</li>
             <li><strong>Select a word in the editor.</strong> Both the Thesaurus and Dictionary sections populate automatically — no search button needed.</li>
             <li><strong>In the Thesaurus section,</strong> synonyms, antonyms, and related terms appear as chips. Click any chip to replace the selected word in the document immediately.</li>
             <li><strong>In the Dictionary section,</strong> the full entry loads: phonetic pronunciation, part of speech, definitions, and example sentences. The dictionary is language-aware — it uses your document's language setting.</li>
@@ -405,9 +415,191 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>All on-device:</strong> Overused-word analysis and the thesaurus run entirely on your Mac using Apple's Natural Language framework. External sources (Datamuse, Free Dictionary API) are used for word lookups; attribution appears at the bottom of the Vocab panel. No document text is ever transmitted.
+            <strong>All on-device:</strong> Overused-word analysis and the thesaurus run entirely on your Mac using Apple's Natural Language framework. External sources (Datamuse, Free Dictionary API) are used for word lookups; attribution appears at the bottom of the Vocabulary panel. No document text is ever transmitted.
+          </div>
+
+          <h3>The other two subtabs</h3>
+          <ul>
+            <li><strong>Dialogue</strong> (speech bubble icon) — analyses dialogue in fiction. Detects dialogue-heavy passages, checks for balanced attribution ("said" vs more colourful verbs), and flags long unbroken dialogue runs without action beats. Most useful in Script mode and in fiction documents.</li>
+            <li><strong>Cleanup</strong> (wand-and-sparkles icon) — runs configurable text-transformation rules across the document. Built-in rulesets include Whitespace Cleanup (normalises spacing), Smart Quotes (converts straight quotes to curly), and Em Dash Spacing. You can add custom find-and-replace rules. The AI Polish option rewrites selected text using the active AI model.</li>
+          </ul>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 14 -->
+        <section class="tut-section" id="t14">
+          <h2><span class="num">14</span> Document Metadata &amp; Cover Image</h2>
+          <p class="goal">What you'll learn: setting your document's title, author, description, language, and cover image in the Metadata panel — the fields ePub3 export and distributors need.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>Open a document. Open the right panel (⌘2) and click the <strong>Metadata tab</strong> (the info badge icon).</li>
+            <li><strong>Set the Title.</strong> By default this matches the document title FusionMD uses in the browser. Edit it here to set the published title independently of the filename.</li>
+            <li><strong>Set the Author.</strong> Type your name exactly as you want it to appear in the ePub file and in Apple Books.</li>
+            <li><strong>Add a Description.</strong> Write one to three sentences that describe the book. This appears in the ePub's metadata and in ebook store listings when you upload the file.</li>
+            <li><strong>Set the Language.</strong> The language picker here mirrors the document language setting. Arabic, Hebrew, and Persian set the reading direction to right-to-left automatically in every export.</li>
+            <li><strong>Attach a Cover Image.</strong> Click <strong>"Choose Cover Image…"</strong> and select a JPEG or PNG. FusionMD stores it with the document and embeds it in every ePub3 export. The recommended size is 1600 × 2560 px.</li>
+            <li><strong>Verify.</strong> All fields are optional individually, but a complete set — title, author, description, language, and cover — is required by most ebook distributors before they will accept an upload.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>These fields travel with the document.</strong> Save and re-open the file — metadata is stored inside the <code>.fusiondoc</code> archive. If you duplicate the document to create a translation, copy the metadata too and update the Language field.
           </div>
         </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 15 -->
+        <section class="tut-section" id="t15">
+          <h2><span class="num">15</span> Exporting an ePub3 Ebook</h2>
+          <p class="goal">What you'll learn: preparing a document for ePub export, choosing the right text theme, and producing a distribution-ready ePub3 file.</p>
+
+          <h3>Before you export</h3>
+          <p>A well-structured Markdown document exports a well-structured ebook. Use heading levels consistently — <code># Chapter One</code>, <code>## Section</code> — because FusionMD turns each heading into a chapter entry in the ePub's table of contents.</p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Complete the Metadata panel.</strong> See Tutorial 14. At minimum set Title, Author, and Language. Attach a cover image if you have one — it is embedded automatically.</li>
+            <li><strong>Choose a text theme.</strong> Open the Document Styles tab in the right panel. For fiction and narrative prose, select the <strong>ePub Book</strong> theme — it applies serif body type, first-line paragraph indents, and generous line height. For technical writing, <strong>Technical</strong> works well. The theme controls how the ebook renders in Apple Books and other readers.</li>
+            <li><strong>Preview the output.</strong> The live web preview panel (drag the divider left to widen it) shows a close approximation of what the ebook will look like.</li>
+            <li><strong>Export.</strong> Go to <strong>File → Export… → ePub3</strong>, or press ⌘⇧E and choose ePub3 from the format picker. Choose a save location.</li>
+            <li><strong>Open in Apple Books.</strong> Double-click the <code>.epub</code> file. Apple Books opens it. Check the cover, chapter list, text rendering, and any embedded images.</li>
+            <li><strong>Check for large files.</strong> If the document contains many embedded images or video, FusionMD warns you before export if the combined file size exceeds 50 MB — Apple Books and most distributors have practical limits on file size.</li>
+            <li><strong>Distribute.</strong> Upload the <code>.epub</code> file to Apple Books Connect, Draft2Digital, Kobo, Smashwords, or any ePub-accepting retailer.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Native ePub3 — no Pandoc required.</strong> FusionMD's built-in exporter produces a valid ePub3 file without any third-party tools. If you have Pandoc installed (Settings → Export), an alternative export path is available; the panel offers both options. For most documents the native exporter is faster and produces correct output.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 16 -->
+        <section class="tut-section" id="t16">
+          <h2><span class="num">16</span> Translating a Document</h2>
+          <p class="goal">What you'll learn: translating an entire document into another language and opening the result in a new window, and translating a selected passage in-place.</p>
+
+          <h3>Prerequisite</h3>
+          <p>Translation requires <strong>macOS 15 Sequoia</strong> or later. Language packs are downloaded once from Apple on first use; subsequent translations run entirely on-device with no internet connection required.</p>
+
+          <h3>Part 1 — Translate a full document to a new window</h3>
+          <ol class="steps">
+            <li>Open a document you want to translate — the original will not be changed.</li>
+            <li><strong>Open the right panel</strong> (⌘2) and click the <strong>Translation tab</strong> (the translate icon).</li>
+            <li><strong>Set the target language.</strong> The "From" language is detected from your document's language setting. Click the "To" picker and choose your target — for example, Français (France).</li>
+            <li><strong>Click "Translate to New Document."</strong> If the required language pack is not yet downloaded, macOS shows a one-time download prompt. After accepting, translation begins automatically.</li>
+            <li>FusionMD translates the document paragraph by paragraph, preserving all paragraph breaks and Markdown structure. YAML front matter (title, author, date) is passed through untranslated.</li>
+            <li><strong>Review the result.</strong> A new document window opens with the translated text. The original document is untouched. Both windows are independent — save, export, or discard the translation as needed.</li>
+            <li><strong>Set the new document's language.</strong> The translated document's language is automatically set to the target language, so spell checking and smart quotes update accordingly.</li>
+          </ol>
+
+          <h3>Part 2 — Translate a selection in-place</h3>
+          <ol class="steps">
+            <li>Select any passage in the editor — a sentence, a paragraph, or a heading.</li>
+            <li>Open the Translation panel and confirm the target language.</li>
+            <li><strong>Click "Translate Selection."</strong> The selected text is replaced with the translation immediately. Use ⌘Z to undo if needed.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Entirely on-device.</strong> All translation happens using Apple's Translation framework — no API key, no cloud service, and no document text ever leaves your Mac. The same framework powers iOS and macOS system translation. FusionMD simply connects it to your document.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 17 -->
+        <section class="tut-section" id="t17">
+          <h2><span class="num">17</span> Publishing on Apple Books &amp; Amazon KDP</h2>
+          <p class="goal">What you'll learn: preparing a professional ebook in FusionMD, meeting the exact technical requirements for Apple Books and Amazon Kindle, publishing on both platforms, and using FusionMD's translation feature to publish foreign-language editions.</p>
+
+          <p>This is a complete follow-along walkthrough. By the end you will have a finished ebook live on both Apple Books and Amazon KDP. Work through each part in order — they build on each other.</p>
+
+          <div class="tip">
+            <strong>Before you begin:</strong> You need a completed manuscript in FusionMD. You also need a free Apple ID and a free Amazon account. Cover image creation is covered in Part 2 — no prior design experience required.
+          </div>
+
+          <h3>Part 1 — Structure your manuscript</h3>
+          <ol class="steps">
+            <li>Use <code># Chapter Title</code> for main chapters — each becomes a top-level table-of-contents entry. Use <code>## Section</code> for subsections. Do not skip heading levels.</li>
+            <li><strong>Add a title page</strong> as your very first content:<br><code># Your Book Title</code><br><code>## Subtitle</code><br><code>*by Your Name*</code></li>
+            <li><strong>Body images:</strong> JPEG for photos, PNG for diagrams. Maximum 1200 px wide, under 1 MB each, keep total embedded media under 40 MB. Drag images directly into the editor to embed them.</li>
+          </ol>
+
+          <h3>Part 2 — Cover image specifications</h3>
+          <table>
+            <thead><tr><th>Requirement</th><th>Apple Books</th><th>Amazon KDP</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Recommended size</strong></td><td>1600 × 2560 px</td><td>1600 × 2560 px</td></tr>
+              <tr><td><strong>Minimum size</strong></td><td>1400 px on shortest side</td><td>1000 px on longest side</td></tr>
+              <tr><td><strong>Format</strong></td><td>JPEG or PNG</td><td>JPEG or TIFF</td></tr>
+              <tr><td><strong>Max file size</strong></td><td>4 MB</td><td>50 MB (keep under 4 MB)</td></tr>
+              <tr><td><strong>Color mode</strong></td><td>RGB</td><td>RGB</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Use a single file for both: 1600 × 2560 px JPEG, RGB, under 4 MB.</strong> Create it in Canva (search "Kindle ebook cover" for a pre-sized template), Apple Keynote, or commission a designer with that brief.</p>
+
+          <h3>Part 3 — Metadata panel in FusionMD</h3>
+          <ol class="steps">
+            <li>Open the right panel (⌘2) → <strong>Metadata tab</strong>.</li>
+            <li><strong>Title</strong> — exactly as it should appear in stores, in title case.</li>
+            <li><strong>Author</strong> — your full name or pen name.</li>
+            <li><strong>Description</strong> — 150–300 words of store listing copy. Hook in the first sentence; end with a call to action. Amazon allows HTML formatting in descriptions; you can add that later in KDP's dashboard.</li>
+            <li><strong>Language</strong> — match the manuscript language. This sets the correct ePub reading direction (right-to-left for Arabic, Hebrew, etc.).</li>
+            <li><strong>Cover image</strong> — click "Choose Cover Image…" and select your 1600 × 2560 px JPEG. It embeds automatically in every ePub3 export.</li>
+          </ol>
+
+          <h3>Part 4 — Export and test</h3>
+          <ol class="steps">
+            <li>In the right panel → Document Styles, select the <strong>ePub Book</strong> theme (serif body, first-line indents, generous line height).</li>
+            <li><strong>File → Export… → ePub3</strong> (or ⌘⇧E). Name the file: <code>your-book-title.epub</code>.</li>
+            <li><strong>Test in Apple Books:</strong> double-click the <code>.epub</code> file. Check the cover, table of contents, body text, and all images. Fix anything in FusionMD and re-export before uploading.</li>
+          </ol>
+
+          <h3>Part 5 — Publish on Apple Books Connect</h3>
+          <ol class="steps">
+            <li>Go to <a href="https://authors.apple.com" target="_blank" rel="noopener">authors.apple.com</a> and sign in with your Apple ID.</li>
+            <li>Click <strong>"Add a New Book."</strong> Enter title, author, description, category (up to two), and language.</li>
+            <li><strong>Upload the cover</strong> (1600 × 2560 px JPEG) as the store thumbnail.</li>
+            <li><strong>Upload the ePub file.</strong> Apple validates it automatically — errors include reference numbers. Fix in FusionMD and re-upload if needed.</li>
+            <li><strong>Set territories and pricing.</strong> Apple uses price tiers; set your tier and it prices in each currency automatically. Free books are allowed.</li>
+            <li><strong>Submit.</strong> Apple reviews within 24–72 hours and emails you when it's live.</li>
+            <li>Full guidelines: <a href="https://support.apple.com/en-us/101662" target="_blank" rel="noopener">support.apple.com/en-us/101662</a></li>
+          </ol>
+
+          <h3>Part 6 — Publish on Amazon KDP</h3>
+          <ol class="steps">
+            <li>Go to <a href="https://kdp.amazon.com" target="_blank" rel="noopener">kdp.amazon.com</a> and sign in with your Amazon account.</li>
+            <li>Click <strong>"+ Kindle eBook."</strong></li>
+            <li><strong>Page 1 — Details:</strong> language, title, author, description, keywords (up to 7), and categories (up to 2 BISAC categories).</li>
+            <li><strong>Page 2 — Content:</strong> skip the ISBN (Amazon assigns a free ASIN). Upload your <code>.epub</code> file. Upload your cover JPEG separately. Click "Preview on Kindle" — verify chapter navigation and images on a Kindle screen.</li>
+            <li><strong>Page 3 — Pricing:</strong> skip KDP Select for now (it requires 90-day Amazon exclusivity, preventing Apple Books sales). Choose "Worldwide rights." For 70% royalty, price between $2.99 and $9.99. Amazon calculates international prices automatically.</li>
+            <li><strong>Publish.</strong> Amazon reviews within 24–72 hours.</li>
+            <li>ePub submission guide: <a href="https://kdp.amazon.com/en_US/help/topic/G200634390" target="_blank" rel="noopener">kdp.amazon.com — ePub guidelines</a></li>
+          </ol>
+
+          <h3>Part 7 — Translate and publish foreign-language editions</h3>
+          <p>Each translated edition is a separate, independent book listing that earns alongside the original. The five highest-value ebook markets after English are Spanish, German, French, Portuguese (Brazil), and Japanese.</p>
+          <ol class="steps">
+            <li>In FusionMD, open the Translation panel → set target language → click <strong>"Translate to New Document."</strong> The original is untouched. Requires macOS 15+.</li>
+            <li><strong>Review the translation</strong> — check proper nouns, idiomatic expressions, and dialogue tone. Machine translation handles narrative prose well; idioms and character voice may need adjustment.</li>
+            <li><strong>Update the Metadata panel</strong> in the new document: confirm the language is set correctly, translate the description, and optionally create a cover with the title in the target language.</li>
+            <li><strong>Export</strong> as <code>your-book-title-es.epub</code> (or whatever language code fits).</li>
+            <li><strong>Create a new book listing</strong> on both Apple Books Connect and Amazon KDP. It is a separate book. Set the Language field to match — Amazon uses this to direct the listing to the correct regional stores.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Wide distribution alternative.</strong> Draft2Digital (<a href="https://www.draft2digital.com" target="_blank" rel="noopener">draft2digital.com</a>) distributes to Apple Books, Barnes &amp; Noble, Kobo, and others with one upload. Amazon KDP is not included — upload there directly. They take a small percentage per sale in exchange for handling the distribution.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Featured guide link -->
+        <section class="tut-section guide-link-section">
+          <h2>Going further — ePub publishing guide</h2>
+          <p>Ready to publish your ebook on Apple Books and Amazon KDP? The full step-by-step guide covers manuscript structure, cover image specifications, metadata, exporting, uploading to both stores, and using FusionMD's translation feature to publish in multiple languages.</p>
+          <a href="/tutorials/epub-author" class="guide-link-card">
+            <span class="guide-link-icon">📚</span>
+            <span class="guide-link-body">
+              <strong>Are You an ePub Author?</strong>
+              <span>A complete walkthrough from FusionMD manuscript to published ebook on Apple Books and Amazon KDP — including cover specs, translation, and reaching a global audience.</span>
+            </span>
+            <span class="guide-link-arrow">→</span>
+          </a>
+        </section>
+
 
       </div><!-- /tut-content -->
     </div><!-- /tut-layout -->
@@ -622,6 +814,44 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   }
 
   /* ── Print ────────────────────────────────────────────── */
+  /* Guide link card */
+  .guide-link-section h2 { margin-bottom: 0.75rem; }
+
+  .guide-link-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border: 1px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 1rem;
+    transition: background 0.15s;
+  }
+
+  .guide-link-card:hover { background: rgba(0,102,255,0.12); }
+
+  .guide-link-icon { font-size: 2rem; flex-shrink: 0; }
+
+  .guide-link-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .guide-link-body strong { font-size: 1.05rem; color: var(--blue); }
+
+  .guide-link-body span {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+
+  .guide-link-arrow { font-size: 1.25rem; color: var(--blue); flex-shrink: 0; }
+
   @media print {
     .print-btn, .breadcrumb { display: none; }
     .tut-layout { grid-template-columns: 1fr; }
