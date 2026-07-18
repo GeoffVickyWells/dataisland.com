@@ -34,9 +34,23 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
         });
       }
 
+      // A section already within the 90%-viewport line on the very first
+      // check (DOMContentLoaded fires before the browser's first paint)
+      // gets its "go" class added before the "opacity:0 / translated" start
+      // state ever renders — the transition has nothing to animate from, so
+      // it just appears in its final position with no reveal at all. Two
+      // rAFs guarantee a real paint of the start state first, so sections
+      // near the top of the page (the ones most likely to be in view on
+      // load) get the same visible reveal as everything below the fold.
+      function initialCheck() {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(check);
+        });
+      }
+
       window.addEventListener("scroll", check, { passive: true });
-      window.addEventListener("load", check);
-      document.addEventListener("DOMContentLoaded", check);
+      window.addEventListener("load", initialCheck);
+      document.addEventListener("DOMContentLoaded", initialCheck);
       document.addEventListener("mousemove", check, { once: true, passive: true });
     </script>
     <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
