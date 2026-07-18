@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import EmailCapture from "../components/EmailCapture.astro";
 import { products } from "../data/products.js";
 ---
 
@@ -12,8 +11,7 @@ import { products } from "../data/products.js";
       We build privacy‑first apps that help you think, write, and work better.
     </p>
     <p class="hero-launch">
-      <strong>FusionMD</strong> and <strong>PolyWrite</strong> are launching first —
-      <a href="#waitlist">join the waitlist</a> to hear the moment they're available.
+      <strong>FusionMD</strong> and <strong>PolyWrite</strong> are launching first.
     </p>
   </section>
 
@@ -47,11 +45,6 @@ import { products } from "../data/products.js";
       and beautifully simple.
     </p>
   </section>
-
-  <EmailCapture
-    label="Get 10% off FusionMD or PolyWrite at launch"
-    subtext="Join the waitlist and we'll send you a discount code the moment either app is available. No spam, unsubscribe anytime."
-  />
 </BaseLayout>
 
 <style>

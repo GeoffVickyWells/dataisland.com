@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import EmailCapture from "../../components/EmailCapture.astro";
 import AppFAQ from "../../components/AppFAQ.astro";
 import AppStoreCTA from "../../components/AppStoreCTA.astro";
 
@@ -316,15 +315,6 @@ const icon = "/images/products/polywrite/icon.png";
       answer: "Yes. When you type in Arabic, Hebrew, Urdu, Persian, or any of the other supported RTL languages, PolyWrite detects the language from the status bar and offers to switch the editor to right-to-left writing direction. One tap — cursor position, paragraph alignment, and layout all update automatically."
     }
   ]} />
-
-  <!-- Waitlist -->
-  <section class="waitlist-section fade-in">
-    <EmailCapture app="PolyWrite" />
-    <p class="privacy-note">
-      By joining you agree to our <a href="/terms">Terms of Use</a>.
-      Read the <a href="/privacy/polywrite">PolyWrite Privacy Policy</a>.
-    </p>
-  </section>
 
 </BaseLayout>
 

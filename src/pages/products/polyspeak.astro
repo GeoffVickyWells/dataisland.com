@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import EmailCapture from "../../components/EmailCapture.astro";
 import AppFAQ from "../../components/AppFAQ.astro";
 import AppStoreCTA from "../../components/AppStoreCTA.astro";
 
@@ -200,15 +199,6 @@ const apps = [
       answer: "Each app carries its own 14-day free trial with full functionality, no credit card required. Try the whole pipeline before deciding."
     }
   ]} />
-
-  <!-- Waitlist -->
-  <section class="waitlist-section fade-in">
-    <EmailCapture app="PolySpeak" label="Get 10% off the PolySpeak bundle at launch" />
-    <p class="privacy-note">
-      By joining you agree to our <a href="/terms">Terms of Use</a>.
-      Privacy policies for each app are linked from its own product page.
-    </p>
-  </section>
 
 </BaseLayout>
 
