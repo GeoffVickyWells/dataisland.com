@@ -137,7 +137,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Renaming or deleting a category</h3>
           <ol class="steps">
-            <li>Right-click a category in the sidebar.</li>
+            <li>Control-click a category in the sidebar (or two-finger click on a trackpad).</li>
             <li>Choose <strong>Rename</strong> to edit its name, or <strong>Delete</strong> to remove it.</li>
             <li>Deleting a category moves all its accounts to the first available category — no accounts are lost.</li>
           </ol>
@@ -242,7 +242,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>At the bottom of the form, AccountCache shows when the record was <strong>Created</strong> and last <strong>Modified</strong>, along with the name of the user who performed each action. These are set automatically and cannot be edited. When multiple people share a database, the user name tells you who last touched a record.</p>
 
           <div class="tip">
-            <strong>Deleting an account:</strong> Right-click the account in the centre list and choose <strong>Delete</strong>. A confirmation dialog appears before anything is removed.
+            <strong>Deleting an account:</strong> Control-click the account in the centre list (or two-finger click on a trackpad) and choose <strong>Delete</strong>. A confirmation dialog appears before anything is removed.
           </div>
         </section>
 
@@ -784,7 +784,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- ─────────────────────────────────────────── Tutorial 14 -->
         <section class="tut-section" id="t14">
           <h2><span class="num">14</span> Sync, Backup &amp; New Mac Migration</h2>
-          <p class="goal">What you'll learn: iCloud sync across your Macs, encrypted backup export, and how to move to a new Mac.</p>
+          <p class="goal">What you'll learn: iCloud sync across your Macs, cross-account sharing with a different Apple ID, encrypted backup export, and how to move to a new Mac.</p>
 
           <h3>iCloud sync — free</h3>
           <p>
@@ -799,6 +799,26 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
           <div class="tip">
             <strong>What syncs:</strong> Everything — accounts, categories, all specialist fields, user profiles, visibility, and deletion records. Sync is incremental; only changes are sent, not the full database each time.
+          </div>
+
+          <h3>Cross-account sharing — Family &amp; Home Office plans</h3>
+          <p>
+            iCloud sync above requires everyone to use the <strong>same Apple ID</strong>. If the
+            people you want to share with have their own separate Apple IDs — a partner, a
+            colleague — use cross-account sharing instead.
+          </p>
+          <ol class="steps">
+            <li>On the database owner's Mac, open <strong>Settings → Sync</strong> and click <strong>Create Share Link…</strong>.</li>
+            <li>Send the generated link to the other person however you'd like — Messages, email, AirDrop.</li>
+            <li>They open the link on their own Mac. AccountCache prompts them to accept and connect.</li>
+            <li>Once accepted, their AccountCache connects to the owner's database over Apple's CloudKit shared-database infrastructure — no separate install, no shared Apple ID required.</li>
+          </ol>
+          <div class="tip">
+            <strong>Whose database is it?</strong> Everything still lives in the owner's iCloud
+            account. The recipient sees every Open and Shared record and can add their own, but
+            records stay in the owner's database — this is sharing one database, not merging two.
+            Disconnecting (<strong>Settings → Sync → Disconnect from Shared Database</strong>)
+            stops syncing without deleting anything already shared.
           </div>
 
           <h3>Encrypted backup — export</h3>

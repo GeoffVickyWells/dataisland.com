@@ -1,0 +1,494 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="PolyScript Tutorials — DataIsland Software"
+  description="Step-by-step guides for PolyScript — Fountain screenwriting, format-teaching toolbar, autocomplete, title pages, page/runtime estimates, dual dialogue, AI tools, and translation."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>PolyScript — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in PolyScript, the Fountain screenwriting app at the
+        start of the PolySpeak pipeline. Work through them in order for a full introduction,
+        or jump to any section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Opening, saving &amp; new scripts</a></li>
+          <li><a href="#t2">Fountain format basics</a></li>
+          <li><a href="#t3">Character &amp; location autocomplete</a></li>
+          <li><a href="#t4">The Title Page editor</a></li>
+          <li><a href="#t5">Page count &amp; runtime estimate</a></li>
+          <li><a href="#t6">Dual dialogue</a></li>
+          <li><a href="#t7">The AI tab</a></li>
+          <li><a href="#t8">Translation</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─── Tutorial 1 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Opening, Saving &amp; New Scripts</h2>
+          <p class="goal">What you'll learn: creating a new script, opening an existing one, saving your work, and working with multiple scripts at once.</p>
+
+          <h3>Creating a new script</h3>
+          <ol class="steps">
+            <li>Press <strong>⌘N</strong>, or choose <strong>File → New</strong>. A new window opens with a fresh script.</li>
+            <li>New documents start with a built-in, annotated starter-template scene — a short example scene with notes explaining each Fountain element in place. It's there to teach the format; once you don't need it, turn it off in <strong>Settings → Editor</strong> so new scripts start blank.</li>
+          </ol>
+
+          <h3>Opening a script</h3>
+          <ol class="steps">
+            <li>Press <strong>⌘O</strong>, or choose <strong>File → Open…</strong>, and choose a .fountain file.</li>
+            <li>Double-clicking a .fountain file in Finder opens it directly in PolyScript — the file type is registered to the app.</li>
+            <li>Recently opened scripts are listed under <strong>File → Open Recent</strong>.</li>
+          </ol>
+
+          <h3>Saving a script</h3>
+          <ol class="steps">
+            <li>Press <strong>⌘S</strong> to save. If the script has never been saved, a Save dialog appears asking for a location and file name.</li>
+            <li>Press <strong>⇧⌘S</strong> to Save As — saves a copy under a new name or location, and switches the window to that new file.</li>
+          </ol>
+
+          <h3>Multiple scripts at once</h3>
+          <p>
+            Every script you open or create gets its own window. There's no limit on how many you can
+            have open at the same time — keep a feature script and a short side project open together,
+            or compare two drafts side by side.
+          </p>
+
+          <h3>Keyboard shortcuts</h3>
+          <table>
+            <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>⌘N</td><td>New script</td></tr>
+              <tr><td>⌘O</td><td>Open script</td></tr>
+              <tr><td>⌘S</td><td>Save</td></tr>
+              <tr><td>⇧⌘S</td><td>Save As</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip">
+            <strong>File extension.</strong> PolyScript always saves in the plain-text Fountain format
+            (.fountain) — the industry-standard screenplay markup that every app in the PolySpeak
+            suite, and most other screenwriting software, can read.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 2 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Fountain Format Basics</h2>
+          <p class="goal">What you'll learn: using the format-teaching toolbar to write correctly structured Fountain screenplay elements without memorizing syntax.</p>
+
+          <p>
+            Fountain is a plain-text markup for screenplays — scene headings, action, character
+            names, and dialogue are all just formatted text, but the formatting rules matter.
+            PolyScript's toolbar inserts each element correctly so you never have to remember the
+            exact syntax.
+          </p>
+
+          <h3>The format toolbar</h3>
+          <p>Each button inserts correctly formatted text at the cursor and shows a tooltip on hover explaining what it does:</p>
+          <table>
+            <thead><tr><th>Button</th><th>Inserts</th></tr></thead>
+            <tbody>
+              <tr><td>Scene Heading</td><td>An INT./EXT. slugline, formatted and capitalized as a scene heading</td></tr>
+              <tr><td>Action</td><td>A plain action/description paragraph</td></tr>
+              <tr><td>Character</td><td>A centered, capitalized character name line, ready for dialogue underneath</td></tr>
+              <tr><td>Dialogue</td><td>A dialogue block under the current character</td></tr>
+              <tr><td>Parenthetical</td><td>A short parenthetical direction inside a dialogue block, e.g. (beat)</td></tr>
+              <tr><td>Transition</td><td>A right-aligned transition, e.g. CUT TO:</td></tr>
+              <tr><td>Title Page</td><td>Opens the Title Page editor (see Tutorial 4)</td></tr>
+              <tr><td>Section</td><td>A # section heading, used for outlining and navigation</td></tr>
+              <tr><td>Synopsis</td><td>An = synopsis line summarizing a scene or section</td></tr>
+              <tr><td>Lyric</td><td>A ~ lyric line, italicized when sung dialogue is needed</td></tr>
+              <tr><td>Note</td><td>A [[bracketed note]] — visible in the editor, invisible in exported/printed pages</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Using the toolbar</h3>
+          <ol class="steps">
+            <li>Place your cursor where you want the new element, then click the matching toolbar button.</li>
+            <li>PolyScript inserts the correctly formatted text and positions your cursor ready to type.</li>
+            <li>Hover over any button to see a tooltip describing what it inserts.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Learning by example.</strong> Every new script starts with a short, annotated
+            starter-template scene that shows each of these elements already in place with notes
+            explaining them. Read through it once, then turn it off in <strong>Settings → Editor</strong>
+            so future new scripts start blank.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 3 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Character &amp; Scene-Location Autocomplete</h2>
+          <p class="goal">What you'll learn: how PolyScript speeds up typing character names and scene headings you've already used.</p>
+
+          <h3>Character autocomplete</h3>
+          <ol class="steps">
+            <li>Start typing a character name on a Character line.</li>
+            <li>As soon as the letters match a character you've already used in the script, a suggestion appears.</li>
+            <li>Press Return or Tab to accept the suggestion, or keep typing to enter a new name.</li>
+          </ol>
+
+          <h3>Scene-location autocomplete</h3>
+          <ol class="steps">
+            <li>Start a Scene Heading line and begin typing the location (after INT./EXT.).</li>
+            <li>PolyScript suggests locations you've already used elsewhere in the script.</li>
+            <li>Accept the suggestion the same way, or keep typing for a new location.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Why it matters.</strong> Consistent character and location names keep your script
+            clean — and matter downstream too: TableRead and PolyProject read character names directly
+            out of your Fountain file to build the cast list, so a typo'd name becomes a phantom
+            character that needs its own casting.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 4 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> The Title Page Editor</h2>
+          <p class="goal">What you'll learn: filling in your script's title page fields.</p>
+
+          <ol class="steps">
+            <li>Click the <strong>Title Page</strong> button in the toolbar.</li>
+            <li>Fill in the fields you want to include: <strong>Title</strong>, <strong>Credit</strong>, <strong>Author</strong>, <strong>Draft Date</strong>, <strong>Contact</strong>, and <strong>Language</strong>.</li>
+            <li>Leave any field blank to omit it — the title page only shows the fields you fill in.</li>
+            <li>The title page is stored as Fountain key/value metadata at the very top of the file, ahead of your first scene.</li>
+          </ol>
+
+          <table>
+            <thead><tr><th>Field</th><th>Typical use</th></tr></thead>
+            <tbody>
+              <tr><td>Title</td><td>The script's title, shown centered on the title page</td></tr>
+              <tr><td>Credit</td><td>Usually "Written by"</td></tr>
+              <tr><td>Author</td><td>Your name, or a pen name</td></tr>
+              <tr><td>Draft Date</td><td>The date of this draft, useful when tracking revisions</td></tr>
+              <tr><td>Contact</td><td>Email, phone, or representation info</td></tr>
+              <tr><td>Language</td><td>The script's primary language — also used as the source language for Translation (Tutorial 8)</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ─── Tutorial 5 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Page Count &amp; Runtime Estimate</h2>
+          <p class="goal">What you'll learn: reading the live page count and runtime estimate in the status bar, and why you can trust the number.</p>
+
+          <p>
+            The status bar at the bottom of the window shows two live numbers as you write: the
+            current page count and an estimated runtime.
+          </p>
+
+          <h3>How it's calculated</h3>
+          <p>
+            This is not a word-count guess. PolyScript lays out your actual script text at Courier
+            12pt — the standard screenplay format — and counts real pages from that layout, the
+            same way a printed or PDF script would paginate. Runtime then follows the long-standing
+            industry convention that <strong>one page of a properly formatted screenplay equals
+            roughly one minute of screen time</strong>. Because the page count comes from genuine
+            typeset pages rather than a word or character count, the runtime estimate tracks much
+            closer to reality than a simple words-per-minute formula.
+          </p>
+
+          <div class="tip">
+            <strong>Watch it move.</strong> Add a page of action description or a long monologue and
+            watch both numbers update immediately — because it's driven by real layout, formatting
+            choices (like switching a passage to Action vs. Dialogue) can shift the estimate too,
+            just as they would on a printed page.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 6 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Dual Dialogue</h2>
+          <p class="goal">What you'll learn: formatting two characters speaking at the same time, side by side.</p>
+
+          <ol class="steps">
+            <li>Write the first character's Character line and Dialogue as normal.</li>
+            <li>Write the second character's Character line directly after — then add a caret <strong>^</strong> immediately after the second character's name.</li>
+            <li>PolyScript recognizes the <strong>^</strong> marker and renders the two character/dialogue blocks side by side as simultaneous dialogue, the standard screenplay convention for two people talking over each other.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Where the caret goes.</strong> The <strong>^</strong> belongs on the second
+            character's line, not the first — it tells PolyScript "this dialogue happens alongside
+            the block above it."
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 7 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> The AI Tab</h2>
+          <p class="goal">What you'll learn: using PolyScript's AI actions to draft, tighten, and check your script, and choosing which AI engine powers them.</p>
+
+          <h3>Setting up AI (first time)</h3>
+          <p>Go to <strong>Settings → AI</strong> and choose a provider:</p>
+          <ul>
+            <li><strong>Apple Intelligence</strong> — runs entirely on-device. Requires Apple Silicon and macOS 26 with Apple Intelligence enabled. No API key, no data leaves your Mac.</li>
+            <li><strong>OpenRouter</strong> — uses your own OpenRouter API key and lets you pick from many cloud models. Paste your key in Settings → AI → OpenRouter Key.</li>
+          </ul>
+
+          <h3>AI actions</h3>
+          <table>
+            <thead><tr><th>Action</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td>Continue</td><td>Writes the next lines of action or dialogue, picking up where the script leaves off</td></tr>
+              <tr><td>Punch Up Dialogue</td><td>Rewrites selected dialogue to be sharper and more character-specific</td></tr>
+              <tr><td>Voice Check</td><td>Flags when two different characters' dialogue reads too similarly — a sign they need more distinct voices</td></tr>
+              <tr><td>Fix Format</td><td>Corrects Fountain formatting mistakes in the selection or scene</td></tr>
+              <tr><td>Proofread</td><td>Finds spelling, grammar, and consistency issues</td></tr>
+              <tr><td>Summarize Scene</td><td>Produces a short synopsis of the current scene</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Running an action</h3>
+          <ol class="steps">
+            <li>Open the AI tab in the sidebar.</li>
+            <li>Optionally select the text you want the action to apply to — some actions (like Continue) work from the cursor position instead.</li>
+            <li>Click the action button. The result appears in the AI tab for review.</li>
+            <li>Insert the result into your script, or discard it and try again.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Voice Check is a writing tool, not a Talent feature.</strong> It compares word
+            choice and rhythm in the text of your script — it has nothing to do with the voice
+            models you train in Talent. Think of it as an early warning that two characters are
+            starting to sound alike on the page.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 8 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Translation</h2>
+          <p class="goal">What you'll learn: translating an entire script to a new window, or just a selection in place.</p>
+
+          <h3>Translating the whole script</h3>
+          <ol class="steps">
+            <li>Open the Translation panel from the toolbar.</li>
+            <li>Choose a target language from the list — about 40 languages are available, powered by Apple's on-device Translation framework.</li>
+            <li>Click <strong>Translate</strong>. PolyScript opens a new window containing the translated script, leaving your original untouched.</li>
+          </ol>
+
+          <h3>Translating a selection in place</h3>
+          <ol class="steps">
+            <li>Select the lines you want to translate — a scene, a speech, or a single action line.</li>
+            <li>Open the Translation panel and choose a target language.</li>
+            <li>Click <strong>Translate Selection</strong>. The translated text replaces the selection directly in your current script.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>On-device.</strong> Because translation runs through Apple's on-device Translation
+            framework, your script text isn't sent anywhere — the first use of a given language pair
+            downloads a small language pack, and after that it works offline.
+          </div>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul  { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  code {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  .lang-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+
+  .lang-row span {
+    background: var(--gray-light);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.84rem;
+    color: var(--gray-dark);
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

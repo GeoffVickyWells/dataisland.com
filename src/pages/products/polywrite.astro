@@ -1,0 +1,639 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EmailCapture from "../../components/EmailCapture.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
+
+const icon = "/images/products/polywrite/icon.png";
+---
+
+<BaseLayout
+  title="PolyWrite — The Writing App TextEdit Should Have Been"
+  description="PolyWrite is a native Mac writing app with plain text, rich text, and Markdown — AI assistant, Apple Translation, 24 themes, and spell check in every language. $9.99, one-time purchase."
+>
+
+  <!-- Hero -->
+  <section class="product-hero fade-in">
+    <img src={icon} alt="PolyWrite" class="product-icon" />
+    <h1>PolyWrite</h1>
+    <p class="tagline">The writing app TextEdit should have been.</p>
+    <p class="hero-sub">
+      A native Mac editor that handles plain text, rich text, and Markdown in one window.
+      Automatic spell check in every language, AI writing assistance, Apple Translation,
+      24 rainbow themes, and a clean interface that stays out of your way.
+    </p>
+    <div class="hero-meta">macOS 14 Sonoma or later &nbsp;·&nbsp; 30-day free trial &nbsp;·&nbsp; $9.99 one-time purchase</div>
+    <AppStoreCTA />
+  </section>
+
+  <!-- Three modes -->
+  <section class="three-levels fade-in">
+    <div class="level">
+      <div class="level-num">01</div>
+      <h3>Plain Text</h3>
+      <p>A clean, distraction-free text editor with adjustable font size, full undo, smart quotes, and continuous spell check. Opens and saves .txt files.</p>
+    </div>
+    <div class="level">
+      <div class="level-num">02</div>
+      <h3>Rich Text</h3>
+      <p>Full RTF editing — bold, italic, underline, strikethrough, fonts, colors, highlight, links, alignment, lists, and images. Opens .rtf, .docx, and .html files. The replacement for TextEdit's rich text mode.</p>
+    </div>
+    <div class="level">
+      <div class="level-num">03</div>
+      <h3>Markdown</h3>
+      <p>Switch to Markdown mode and PolyWrite saves as .md — ready to open in FusionMD for publishing, or any Markdown tool in your workflow.</p>
+    </div>
+  </section>
+
+  <!-- Feature: International -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🌍</div>
+    <div class="feature-body">
+      <h2>The international features Americans don't know they're missing.</h2>
+      <p>
+        macOS has world-class multilingual support built in. Most writing apps ignore it.
+        PolyWrite surfaces it all — automatically, without configuration.
+      </p>
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Spell Check in Every Language at Once</h3>
+          <p>Type a sentence in French, then one in Japanese, then one in Arabic. PolyWrite checks spelling in all of them simultaneously — no language picker, no switching, no setup.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Automatic Language Detection</h3>
+          <p>The status bar identifies the dominant language of your document as you write. Write enough text and the language badge appears — tap it for options.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Right-to-Left Writing</h3>
+          <p>Writing in Arabic, Hebrew, Urdu, or Persian? PolyWrite detects the language and offers to switch the entire editor to right-to-left in one tap. Cursor, alignment, and layout all follow.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Smart Quotes by Language</h3>
+          <p>Smart quote substitution follows the convention of whatever you're writing in — no manual setting required.</p>
+        </div>
+      </div>
+
+      <div class="rtl-callout">
+        <strong>Right-to-left languages fully supported</strong>
+        <p>Arabic · Hebrew · Urdu · Persian/Farsi · Pashto · Kurdish · Sindhi · Yiddish · Dhivehi · Uyghur</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: AI -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🧠</div>
+    <div class="feature-body">
+      <h2>An AI assistant that works with what you're writing.</h2>
+      <p>
+        The AI panel slides in alongside your document. Choose a quick action or type any prompt.
+        Results appear in the panel — review them, then insert at your cursor or copy to the clipboard.
+      </p>
+      <ul class="feature-list">
+        <li><strong>Improve</strong> — polish the selected text for clarity and flow</li>
+        <li><strong>Summarise</strong> — compress a long passage to its key points</li>
+        <li><strong>Concise</strong> — cut the word count while keeping the meaning</li>
+        <li><strong>Formal / Casual</strong> — shift the register of any passage</li>
+        <li><strong>Translate</strong> — translate to any of 20 target languages via the AI panel</li>
+        <li><strong>Free prompt</strong> — type any instruction; the document text is included as context</li>
+      </ul>
+      <ul class="feature-list">
+        <li><strong>Apple Intelligence</strong> — on-device, private, no API key. Requires Apple Silicon + macOS 26.</li>
+        <li><strong>OpenRouter</strong> — cloud-based with your own API key. Choose from Claude, GPT-4o, Gemini, and others.</li>
+        <li><strong>Neither</strong> — PolyWrite is fully functional without any AI configuration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Feature: Translation -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🔤</div>
+    <div class="feature-body">
+      <h2>Two ways to translate — on-device and AI-powered.</h2>
+
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Apple Translation <span class="badge">macOS 15+</span></h3>
+          <p>Tap the translate button in the toolbar. Apple's Translation panel opens — pick your target language and tap Replace. The whole document is translated on-device, completely free, no API key required.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>AI Translation</h3>
+          <p>The AI panel includes a dedicated translation row: pick any of 20 languages from the dropdown and tap Go. The result lands in the panel — review it, then insert at your cursor to place the translation right where you want it.</p>
+        </div>
+      </div>
+
+      <div class="lang-chips">
+        <span>Spanish</span><span>Arabic</span><span>Mandarin Chinese</span><span>Portuguese</span>
+        <span>French</span><span>German</span><span>Japanese</span><span>Russian</span>
+        <span>Korean</span><span>Italian</span><span>Turkish</span><span>Hindi</span>
+        <span>Polish</span><span>Dutch</span><span>Swedish</span><span>Hebrew</span>
+        <span>Urdu</span><span>Persian</span><span>Thai</span><span>Vietnamese</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: Themes -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🎨</div>
+    <div class="feature-body">
+      <h2>24 rainbow themes. The whole app changes — not just the background.</h2>
+      <p>
+        Every theme sets the editor, toolbar, status bar, and AI panel as a coordinated palette.
+        Dark, light, and every hue between — plus System, so the app always matches macOS.
+      </p>
+
+      <div class="app-theme-columns">
+        <div class="app-theme-group">
+          <div class="app-theme-group-label">Dark</div>
+          <div class="app-theme-chips">
+            <span>System</span><span>Crimson Night</span><span>Ruby Dusk</span>
+            <span>Ember Glow</span><span>Sunset Fire</span><span>Golden Hour</span>
+            <span>Forest Twilight</span><span>Emerald Depth</span><span>Ocean Abyss</span>
+            <span>Cobalt Midnight</span><span>Indigo Void</span><span>Violet Storm</span>
+            <span>Magenta Dream</span>
+          </div>
+        </div>
+        <div class="app-theme-group">
+          <div class="app-theme-group-label">Light</div>
+          <div class="app-theme-chips">
+            <span>Coral Dawn</span><span>Peach Bloom</span><span>Amber Light</span>
+            <span>Citrus Day</span><span>Mint Breeze</span><span>Jade Morning</span>
+            <span>Azure Sky</span><span>Sapphire Horizon</span><span>Lavender Mist</span>
+            <span>Orchid Garden</span><span>Rose Quartz</span><span>Cherry Blossom</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: RTF & FusionMD -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">📄</div>
+    <div class="feature-body">
+      <h2>RTF done right. And a bridge to FusionMD when you need more.</h2>
+      <p>
+        PolyWrite is a complete RTF editor: bold, italic, underline, strikethrough, fonts,
+        text color, text highlight, hyperlinks, alignment, lists, and images — everything
+        TextEdit has, plus themes, AI, translation, and proper multilingual support.
+      </p>
+      <p>
+        When a document grows into something you want to publish — an ebook, a laid-out report,
+        an ePub — tap <strong>Open in FusionMD</strong>. PolyWrite converts your RTF to Markdown
+        and opens it in FusionMD in one step, with formatting preserved.
+      </p>
+      <div class="callout">
+        PolyWrite and FusionMD are designed as a pair. PolyWrite handles everyday writing — notes,
+        drafts, letters, RTF documents. FusionMD handles publishing. Neither gets in the way of the other.
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: What else -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">⚡</div>
+    <div class="feature-body">
+      <h2>The rest of what a good writing app should have.</h2>
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Find &amp; Replace</h3>
+          <p>Full Find bar with incremental search, case-sensitive and whole-word options.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Word &amp; Character Count</h3>
+          <p>Live count in the status bar. Updated as you type.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Zoom</h3>
+          <p>Pinch to zoom or use ⌘+/⌘− while typing. View stays at your preferred zoom between sessions.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Default Format</h3>
+          <p>Choose whether new documents start in Plain Text, Rich Text, or Markdown — Settings → Editor → New Documents.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Hyperlinks</h3>
+          <p>Add and remove hyperlinks in rich text documents. Select text, press ⌘K, type the URL, and click Apply. Links are saved in .rtf and .docx files.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Copy Plain / Copy with Formatting</h3>
+          <p>⌘C always copies plain text — no formatting pollution when pasting into other apps. ⇧⌘C copies with full RTF formatting for apps that support it.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Format Menu</h3>
+          <p>Format → Make Upper Case, Make Lower Case, and Capitalize work on any selection. Font Panel (⌘T) opens advanced font controls.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Open Recent</h3>
+          <p>Quick access to recently opened documents from the File menu. Drag a file onto PolyWrite's Dock icon to open it directly — or set PolyWrite as the default app for a file type in Finder (Get Info → Open with → Change All) to open it with a double-click too.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Share Sheet</h3>
+          <p>Share your document to Mail, Messages, AirDrop, or any share extension installed on your Mac.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Print</h3>
+          <p>Print directly from the toolbar. Works for plain text, RTF, and Markdown.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Writing Tools</h3>
+          <p>macOS 15+ Writing Tools integration — available from the Control-click menu (or two-finger click on a trackpad) in addition to the AI panel.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Spotlight &amp; Siri</h3>
+          <p>PolyWrite documents are indexed in Spotlight as you save. Siri shortcuts let you open, create, and work with documents by voice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section fade-in">
+    <h2>Simple, honest pricing.</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Free Trial</h3>
+        <div class="price">30 days</div>
+        <div class="price-detail">no credit card required</div>
+        <ul>
+          <li>Full editor — no feature limits</li>
+          <li>Plain text, rich text &amp; Markdown</li>
+          <li>AI assistant (Apple Intelligence or OpenRouter)</li>
+          <li>Apple Translation (macOS 15+)</li>
+          <li>24 rainbow themes</li>
+          <li>Multilingual spell check &amp; RTL writing</li>
+          <li>Strikethrough, links, text &amp; highlight color</li>
+          <li>Format menu, default format setting</li>
+          <li>Spotlight &amp; Siri Shortcuts</li>
+          <li>Open in FusionMD</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <h3>PolyWrite</h3>
+        <div class="price">$9.99</div>
+        <div class="price-detail">one-time purchase · no subscription</div>
+        <ul>
+          <li>Everything in the trial</li>
+          <li>Buy once · yours forever</li>
+          <li>Free updates</li>
+          <li>macOS 14 Sonoma or later</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pricing-compare">
+      TextEdit is free but frozen in 2009. Pages is $0 but competes with Word.
+      PolyWrite is $9.99 — the writing tool that sits between them.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "How is PolyWrite different from TextEdit?",
+      answer: "TextEdit hasn't changed meaningfully in over a decade. PolyWrite adds: 24 rainbow themes, an AI writing assistant, Apple Translation, Markdown mode, automatic language detection, right-to-left writing support, simultaneous multilingual spell check, strikethrough formatting, text highlight color, hyperlinks (⌘K), a Format menu with case transformation, plain-text copy (⌘C) with formatting preserved on ⇧⌘C, a live word count, font size control in Settings, a default document format preference, and a one-step handoff to FusionMD for publishing. It opens and saves all the same file formats TextEdit does."
+    },
+    {
+      question: "Can I use PolyWrite without setting up AI?",
+      answer: "Yes. The editor, themes, spell check, translation (via Apple Translation on macOS 15+), and all file formats work completely without AI. The AI panel is optional. If you never open it, PolyWrite works as a clean, capable RTF and plain text editor."
+    },
+    {
+      question: "How does multilingual spell check work?",
+      answer: "PolyWrite enables macOS's continuous spell checking with automatic language identification. macOS detects the language of each paragraph as you type and applies the correct dictionary — without you choosing anything. Write a paragraph in French, one in German, one in Japanese — each is checked in its own language simultaneously."
+    },
+    {
+      question: "What does 'Open in FusionMD' do?",
+      answer: "It converts your current document to Markdown and opens the result in FusionMD in one step. Bold text becomes **bold**, heading-sized fonts become # headings, and the rest becomes clean Markdown. From there you can publish to ePub3, IDML (for Affinity/InDesign), or any of FusionMD's export formats. FusionMD must be installed for this button to appear."
+    },
+    {
+      question: "What file formats does PolyWrite open and save?",
+      answer: "PolyWrite opens .txt, .rtf, .rtfd, .html, .md, and .docx files. It saves to .txt (plain text), .rtf (rich text), and .md (Markdown). For more format options — ePub3, PDF, IDML, Word — use FusionMD's Import and Export features."
+    },
+    {
+      question: "What is the difference between PolyWrite and FusionMD?",
+      answer: "PolyWrite is a writing tool: it edits text, formats RTF documents, and gets out of your way. FusionMD is a document studio: Markdown editor, template engine, ePub3 publisher, IDML exporter, Writing Coach, and 40-language system. PolyWrite is $9.99 one-time. FusionMD is $49.99 one-time. They are designed to work together — write in PolyWrite, publish in FusionMD."
+    },
+    {
+      question: "Does PolyWrite support right-to-left languages?",
+      answer: "Yes. When you type in Arabic, Hebrew, Urdu, Persian, or any of the other supported RTL languages, PolyWrite detects the language from the status bar and offers to switch the editor to right-to-left writing direction. One tap — cursor position, paragraph alignment, and layout all update automatically."
+    }
+  ]} />
+
+  <!-- Waitlist -->
+  <section class="waitlist-section fade-in">
+    <EmailCapture app="PolyWrite" />
+    <p class="privacy-note">
+      By joining you agree to our <a href="/terms">Terms of Use</a>.
+      Read the <a href="/privacy/polywrite">PolyWrite Privacy Policy</a>.
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 { font-size: 2.75rem; margin-bottom: 0.5rem; }
+
+  .tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta { font-size: 0.9rem; color: var(--gray); }
+
+  /* Three-level callouts */
+  .three-levels {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .level {
+    flex: 1;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .level-num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .level h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+
+  .level p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+    margin: 0;
+  }
+
+  /* Feature sections */
+  .feature-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .feature-section.alt {
+    background: var(--gray-light);
+    padding: 3.5rem 1.5rem;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    max-width: 100vw;
+    border-bottom: none;
+    justify-content: center;
+  }
+
+  .feature-section.alt > * { max-width: 420px; }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .feature-body { flex: 1; max-width: 820px; }
+  .feature-body h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+  .feature-body p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+
+  .callout {
+    background: var(--blue-light);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 10px 10px 0;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    margin-top: 1rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-list li {
+    padding: 0.65rem 0;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    border-bottom: 1px solid var(--gray-light);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .feature-list li::before { content: "→"; position: absolute; left: 0; color: var(--blue); }
+
+  .mini-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .mini-feature {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .mini-feature h3 { font-size: 0.9rem; font-weight: 600; color: var(--blue); margin-bottom: 0.35rem; }
+  .mini-feature p  { font-size: 0.88rem; margin: 0; color: var(--gray-dark); }
+
+  /* RTL callout */
+  .rtl-callout {
+    background: #e8f0fe;
+    border-left: 4px solid #4a80f0;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .rtl-callout strong { display: block; font-size: 0.95rem; margin-bottom: 0.35rem; color: #1a3a7a; }
+  .rtl-callout p { font-size: 0.88rem !important; color: var(--gray-dark) !important; margin: 0 !important; }
+
+  /* Language chips */
+  .lang-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+  }
+
+  .lang-chips span {
+    background: var(--gray-light);
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    color: var(--gray-dark);
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-block;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15em 0.5em;
+    border-radius: 999px;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+  }
+
+  /* Themes */
+  .app-theme-columns { display: flex; gap: 1.5rem; margin-top: 1.5rem; }
+  .app-theme-group { flex: 1; }
+
+  .app-theme-group-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.6rem;
+  }
+
+  .app-theme-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .app-theme-chips span {
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.83rem;
+    color: var(--gray-dark);
+  }
+
+  /* Pricing */
+  .pricing-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .pricing-section h2 { font-size: 1.6rem; margin-bottom: 2rem; }
+
+  .pricing-cards { display: flex; gap: 1.5rem; justify-content: center; }
+
+  .pricing-card {
+    flex: 1;
+    max-width: 320px;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-align: left;
+  }
+
+  .pricing-card.featured { background: var(--blue); color: #fff; }
+  .pricing-card h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+  .pricing-card.featured h3 { color: rgba(255,255,255,0.8); }
+
+  .price { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
+
+  .price-detail {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    margin-bottom: 1rem;
+    color: var(--gray-dark);
+  }
+
+  .pricing-card.featured .price-detail { color: rgba(255,255,255,0.7); }
+
+  .pricing-card ul { list-style: none; padding: 0; margin-top: 1rem; }
+
+  .pricing-card ul li {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--gray-dark);
+  }
+
+  .pricing-card.featured ul li {
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .pricing-card ul li::before { content: "✓  "; }
+
+  .pricing-compare {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-style: italic;
+  }
+
+  /* Waitlist */
+  .waitlist-section { padding: 1rem 0 3rem; border-bottom: none; }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: -1.5rem;
+  }
+
+  .privacy-note a { color: var(--gray-dark); text-decoration: underline; }
+  .privacy-note a:hover { color: var(--blue); }
+
+  @media (max-width: 768px) {
+    .three-levels { flex-direction: column; }
+
+    .feature-section,
+    .feature-section.alt {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 2.5rem 1rem;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    .mini-feature-grid { grid-template-columns: 1fr; }
+    .app-theme-columns { flex-direction: column; gap: 1rem; }
+    .pricing-cards { flex-direction: column; align-items: stretch; }
+    .pricing-card { max-width: 100%; }
+  }
+</style>

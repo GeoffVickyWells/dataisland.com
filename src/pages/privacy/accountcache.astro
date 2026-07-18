@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const updated = "9 June 2026";
+const updated = "12 July 2026";
 ---
 
 <BaseLayout
@@ -53,11 +53,30 @@ const updated = "9 June 2026";
       You can disable sync at any time in Settings → iCloud on your Mac.
     </p>
 
+    <h2>Cross-Account Sharing (Optional)</h2>
+    <p>
+      Family and Home Office plans include an optional cross-account sharing feature. The database
+      owner can generate a CloudKit share invitation link and send it to someone on a different
+      Apple ID. When the recipient accepts:
+    </p>
+    <ul>
+      <li>The recipient connects to the <strong>owner's iCloud zone</strong> via Apple's CloudKit shared database infrastructure</li>
+      <li>Records the recipient creates are stored in the <strong>owner's</strong> iCloud account, not the recipient's</li>
+      <li>The recipient can see all open and shared records; private records belonging to other users remain hidden</li>
+      <li>All data still travels only through Apple's CloudKit infrastructure — DataIsland has no access to it</li>
+    </ul>
+    <p>
+      If the recipient disconnects, their records remain in the owner's database. This sharing
+      feature uses Apple's standard CloudKit zone sharing and is governed by
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.
+    </p>
+
     <h2>What Leaves Your Device</h2>
     <p>
-      The only data that leaves your Mac is what you explicitly sync to iCloud (see above).
-      AccountCache makes no other network connections. It does not contact DataIsland servers,
-      does not send telemetry, and does not transmit your credentials to any third party.
+      The only data that leaves your Mac is what you explicitly sync to iCloud or share via the
+      cross-account sharing feature (both described above). AccountCache makes no other network
+      connections. It does not contact DataIsland servers, does not send telemetry, and does not
+      transmit your credentials to any third party.
     </p>
 
     <h2>Sensitive Fields</h2>

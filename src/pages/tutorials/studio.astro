@@ -1,0 +1,325 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Studio Tutorials — DataIsland Software"
+  description="Step-by-step guides for Studio — starting a session, importing or recording a take, converting through a voice, exporting the finished track, and session persistence."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>Studio — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in Studio, the performance-capture and conversion app
+        in the PolySpeak pipeline. Work through them in order for a full introduction, or jump
+        to any section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Starting a session</a></li>
+          <li><a href="#t2">Importing a recording</a></li>
+          <li><a href="#t3">Recording live in Studio</a></li>
+          <li><a href="#t4">Assigning a character &amp; converting</a></li>
+          <li><a href="#t5">Exporting the finished track</a></li>
+          <li><a href="#t6">Multi-window &amp; Finder integration</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─── Tutorial 1 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Starting a Session</h2>
+          <p class="goal">What you'll learn: creating, opening, and saving a Studio session.</p>
+
+          <ol class="steps">
+            <li>Press <strong>⌘N</strong>, or choose <strong>File → New</strong>, to start a fresh session — an empty takes list, ready for your first import or recording.</li>
+            <li>Press <strong>⌘O</strong> to open an existing <strong>.studiosession</strong> file, or double-click one in Finder.</li>
+            <li>Press <strong>⌘S</strong> to save, or <strong>⇧⌘S</strong> to Save As under a new name or location.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Nothing is lost anymore.</strong> Every take, character assignment, and selected
+            voice is saved with the session. Quit Studio mid-project and reopening the session
+            restores exactly where you left off.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 2 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Importing a Recording</h2>
+          <p class="goal">What you'll learn: bringing an existing performance recording into Studio as a take.</p>
+
+          <ol class="steps">
+            <li>Click <strong>Import…</strong> in the sidebar.</li>
+            <li>Choose one audio file, or select several at once if the recording is split across multiple files.</li>
+            <li>Studio stitches multiple selected files together, in the order you selected them, into a single take.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Split recordings are normal.</strong> A long reading recorded in more than one
+            session — even across different days — imports and stitches together the same way as a
+            single file.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 3 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Recording Live in Studio</h2>
+          <p class="goal">What you'll learn: capturing a performance directly in the app, across as many attempts as it takes.</p>
+
+          <ol class="steps">
+            <li>Click <strong>Record</strong> in the sidebar. Studio will ask for microphone access the first time.</li>
+            <li>Record a segment, then click <strong>Stop</strong>.</li>
+            <li>Preview the segment. If it didn't land, delete it and record another attempt.</li>
+            <li>Keep recording segments until you have everything you need — there's no limit to how many attempts.</li>
+            <li>Reorder the segments you're keeping into the order they should play.</li>
+            <li>Click <strong>Finish</strong> — Studio stitches the ordered segments into one continuous take.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Built for real performances, not one perfect run.</strong> Very few
+            non-professional performers land an emotional read in a single unbroken take. Record
+            as many segments as you need, discard the ones that don't work, and let Studio stitch
+            the keepers together.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 4 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Assigning a Character &amp; Converting</h2>
+          <p class="goal">What you'll learn: naming which character a take performs, and converting it through a voice.</p>
+
+          <ol class="steps">
+            <li>Select a take from the sidebar list.</li>
+            <li>Choose a voice from your Talent library in the voice picker — or click the import icon next to it to bring in a voice directly from a .pth file, no Talent required.</li>
+            <li>Click <strong>Convert</strong>. Studio runs the take through the chosen voice, entirely on-device.</li>
+            <li>When you first export (see the next section), Studio asks which character this take performs — it defaults to the take's own name, but you can change it.</li>
+          </ol>
+        </section>
+
+        <!-- ─── Tutorial 5 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Exporting the Finished Track</h2>
+          <p class="goal">What you'll learn: saving a converted take to a real audio file, in the format you need.</p>
+
+          <ol class="steps">
+            <li>Once conversion finishes, click <strong>Play</strong> to review the result.</li>
+            <li>Choose <strong>Export WAV</strong>, <strong>Export AIFF</strong>, or <strong>Export M4A</strong> depending on what you need it for.</li>
+            <li>Pick a destination and Studio writes the finished file.</li>
+          </ol>
+
+          <table>
+            <thead><tr><th>Format</th><th>Best for</th></tr></thead>
+            <tbody>
+              <tr><td>WAV</td><td>Uncompressed, further editing or archival</td></tr>
+              <tr><td>AIFF</td><td>Apple's native uncompressed format</td></tr>
+              <tr><td>M4A</td><td>Compressed and portable, quick sharing or playback</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip">
+            <strong>Exports are credited automatically.</strong> Every export writes a credit onto
+            the cast voice's resume in Talent, and — if a PolyProject file exists nearby — updates
+            that project's Performance Capture stage automatically.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 6 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Multi-Window &amp; Finder Integration</h2>
+          <p class="goal">What you'll learn: working across more than one session, and opening sessions from Finder.</p>
+
+          <ol class="steps">
+            <li>Each session you open or create gets its own window — work on more than one project at once.</li>
+            <li>Double-click a <strong>.studiosession</strong> file in Finder, or drag one onto the Studio dock icon, to open it directly.</li>
+          </ol>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul  { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  code {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

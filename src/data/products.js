@@ -4,7 +4,16 @@ export const products = [
     title: "FusionMD",
     icon: "/images/products/fusionmd/icon.png",
     description: "A native Mac document studio — Markdown editor, AI writing assistant, template engine, and professional publishing pipeline in one app. Exports to IDML for Affinity and InDesign.",
-    active: true
+    active: true,
+    launchingFirst: true
+  },
+  {
+    id: "polywrite",
+    title: "PolyWrite",
+    icon: "/images/products/polywrite/icon.png",
+    description: "The writing app TextEdit should have been. Plain text, rich text, and Markdown in one native Mac editor — with an AI assistant, Apple Translation, 24 themes, and automatic spell check in every language you type.",
+    active: true,
+    launchingFirst: true
   },
   {
     id: "ordina",
@@ -48,14 +57,14 @@ export const products = [
     description: "Free local-network messaging for Mac. Send notes, images, and links to anyone on your home network — no server, no internet, no account. Peer-to-peer encrypted. The spiritual successor to Adium.",
     active: true
   },
+  {
+    id: "polyspeak",
+    title: "PolySpeak",
+    icon: "/images/products/comingsoon/icon1.png",
+    description: "Real performances, carried by AI voices — not flat AI reading. PolySpeak captures how someone actually performs a line and carries that performance through an AI voice, the same principle motion capture uses for CG characters. Five connected Mac apps: write, cast, capture, and produce.",
+    active: true
+  },
   // Coming-soon products — kept for reference, not rendered on site
-  // {
-  //   id: "scribe",
-  //   title: "Scribe",
-  //   icon: "/images/products/comingsoon/icon1.png",
-  //   description: "A new way to capture, organize, and refine your ideas.",
-  //   active: false
-  // },
   // {
   //   id: "atlas",
   //   title: "Atlas",

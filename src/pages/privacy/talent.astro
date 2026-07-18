@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "11 July 2026";
+---
+
+<BaseLayout
+  title="Talent — Privacy Policy"
+  description="Privacy policy for Talent, the native Mac voice training and library app by DataIsland Software LLC, part of the PolySpeak suite."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>Talent — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      Talent is a native Mac voice training and voice library app, part of the PolySpeak
+      voice-production suite. Because Talent trains AI voice models from recordings of
+      real voices, this policy is deliberately direct about what the app does, what stays
+      on your device, and where your responsibility as a user begins.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>Talent makes no network requests of any kind.</strong> Voice training and
+      voice library management run entirely on your Mac using a local voice pipeline.
+      Talent does use your microphone to record training samples, but only while you are
+      actively recording, and only with your explicit permission. The app has no server,
+      no account, and no analytics. Talent also asks you to attest to consent before
+      training a voice — see "Consent Is Your Responsibility" below, which we consider
+      the most important section of this policy.
+    </p>
+
+    <h2>What Talent Accesses</h2>
+    <ul>
+      <li>
+        <strong>Microphone</strong> — used for recording training samples. This requires
+        the standard macOS microphone permission prompt, and the microphone is only
+        active while you are actively recording
+      </li>
+      <li>Audio files you explicitly import as training source material</li>
+      <li>
+        The local voice-library folder, where trained voice bundles are stored — model
+        files, metadata, consent records, and resume/credit history
+      </li>
+    </ul>
+    <p>
+      Talent does not access your camera, contacts, location, photos, or calendar.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>Nothing</h3>
+    <p>
+      Voice training runs a local Python/RVC pipeline via subprocess entirely on your Mac.
+      The recording used to train a voice, and the trained model itself, are never
+      uploaded anywhere — never sent to DataIsland, and never sent to any third party.
+      Everything Talent produces stays in your local voice library.
+    </p>
+
+    <h2>Consent Is Your Responsibility</h2>
+    <p>
+      Talent lets you train an AI voice model from a recording of someone's voice. This is
+      powerful, and it can be misused. <strong>You must have the consent of the person
+      whose voice you are recording and training a model from — or use only your own
+      voice.</strong>
+    </p>
+    <p>
+      Talent includes a consent-attestation step at training time, and the attestation is
+      stored alongside the resulting voice bundle in your local voice library. But we want
+      to be direct rather than defensive about the limits of that feature:
+      <strong>DataIsland does not and cannot verify real-world consent.</strong> The
+      attestation records that you affirmed you had consent at the time of training — it
+      is not proof, and Talent has no way to confirm who actually spoke in a recording or
+      whether that person actually agreed to it. That responsibility is yours, and it does
+      not transfer to DataIsland by virtue of the attestation existing.
+    </p>
+    <p>
+      If you are training a voice model from someone else's recording — a collaborator, a
+      voice actor, an interview subject, anyone — get their clear consent first, and keep
+      your own record of it. See also the Terms of Use, which addresses the consequences of
+      misusing voice-cloning technology.
+    </p>
+
+    <h2>What Is Stored Locally</h2>
+    <ul>
+      <li>
+        <strong>The entire voice library</strong> — trained voice models, metadata, consent
+        attestations, and resume/credit history, all in a local folder on your Mac
+      </li>
+    </ul>
+    <p>None of this data is synced to iCloud or any server — it stays in your local voice library.</p>
+
+    <h2>What Talent Does Not Do</h2>
+    <ul>
+      <li>Does not transmit any voice data or recordings anywhere</li>
+      <li>Does not require an account or login</li>
+      <li>Does not collect analytics, usage statistics, or crash reports</li>
+      <li>Does not access your microphone except while you are actively recording</li>
+      <li>Does not verify real-world consent — see above</li>
+      <li>Does not share data with third parties</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Talent is not directed at children under 13. We do not knowingly collect
+      information from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of Talent after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:<br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a><br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

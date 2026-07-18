@@ -1,0 +1,155 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "11 July 2026";
+---
+
+<BaseLayout
+  title="PolyScript — Privacy Policy"
+  description="Privacy policy for PolyScript, the native Mac screenwriting app by DataIsland Software LLC, part of the PolySpeak suite."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>PolyScript — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      PolyScript is a native Mac screenwriting app, part of the PolySpeak voice-production
+      suite. This policy explains exactly what data PolyScript accesses, what — if anything —
+      leaves your device, and what is stored locally.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>PolyScript does not collect personal data and makes no network requests
+      during normal use.</strong> All writing, formatting, and script navigation run entirely
+      on your Mac. The only optional network activity is the AI tab, which requires
+      explicit setup and is disabled by default. The app has no server, no account,
+      and no analytics.
+    </p>
+
+    <h2>What PolyScript Accesses</h2>
+    <p>PolyScript accesses only data you provide directly:</p>
+    <ul>
+      <li>Script text you type</li>
+      <li>.fountain, .fusiondoc, and .txt files you explicitly open</li>
+      <li>Locations you choose when saving a file</li>
+    </ul>
+    <p>
+      PolyScript does not access your microphone, camera, contacts, location, photos,
+      calendar, or any system data beyond the files you open.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>Normal Use — Nothing</h3>
+    <p>
+      Writing, formatting, script navigation, theme switching, and file open/save all run
+      entirely on your Mac. No data of any kind is transmitted during normal use.
+    </p>
+
+    <h3>Apple Translation (Optional — macOS 15+)</h3>
+    <p>
+      On macOS 15 Sequoia or later, PolyScript can use Apple's on-device Translation
+      framework to translate script text.
+    </p>
+    <ul>
+      <li>Translation runs entirely on-device using language packs downloaded once by macOS</li>
+      <li>No network connection is made — script text never leaves your Mac, even for translation</li>
+      <li>Governed by Apple's privacy policy, not DataIsland's</li>
+    </ul>
+
+    <h3>Apple Intelligence (Optional — Opt-In Only)</h3>
+    <p>
+      PolyScript can use Apple Intelligence for its AI tab. Apple Intelligence
+      runs entirely on-device.
+    </p>
+    <ul>
+      <li>Requires Apple Silicon Mac, macOS 26 or later, and Apple Intelligence enabled in System Settings</li>
+      <li>Disabled by default — must be configured in Settings → AI</li>
+      <li>Script text never leaves your Mac via this path</li>
+      <li>No data is sent to DataIsland or any third party</li>
+    </ul>
+
+    <h3>OpenRouter (Optional — Opt-In Only)</h3>
+    <p>
+      On Macs without Apple Intelligence, PolyScript can optionally use the OpenRouter API
+      for its AI tab. This feature:
+    </p>
+    <ul>
+      <li>Is disabled by default</li>
+      <li>Requires you to supply your own OpenRouter API key</li>
+      <li>Sends the script or selected text to OpenRouter's servers for processing</li>
+      <li>Is governed by <a href="https://openrouter.ai/privacy" rel="noopener">OpenRouter's privacy policy</a></li>
+    </ul>
+    <p>
+      DataIsland does not receive or store any content sent through OpenRouter.
+      Your API key is stored only in your macOS Keychain.
+    </p>
+
+    <h2>What Is Stored Locally</h2>
+    <ul>
+      <li><strong>Script files</strong> — saved to locations you choose on your Mac</li>
+      <li><strong>Theme preference</strong> — your selected app theme, stored in UserDefaults</li>
+      <li><strong>AI provider preference</strong> — whether the AI tab uses Apple Intelligence or OpenRouter, stored in UserDefaults</li>
+      <li><strong>Language preference</strong> — stored in UserDefaults</li>
+      <li><strong>OpenRouter API key</strong> (if provided) — stored in macOS Keychain, never transmitted to DataIsland</li>
+    </ul>
+    <p>None of this data is synced to iCloud or transmitted to DataIsland.</p>
+
+    <h2>What PolyScript Does Not Do</h2>
+    <ul>
+      <li>Does not transmit any data to DataIsland's servers — ever</li>
+      <li>Does not require an account or login</li>
+      <li>Does not collect analytics, usage statistics, or crash reports</li>
+      <li>Does not access your files without your explicit action</li>
+      <li>Does not share data with third parties for advertising</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      PolyScript is not directed at children under 13. We do not knowingly collect
+      information from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of PolyScript after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:<br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a><br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

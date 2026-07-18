@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "11 July 2026";
+---
+
+<BaseLayout
+  title="PolyProject — Privacy Policy"
+  description="Privacy policy for PolyProject, the native Mac production tracker by DataIsland Software LLC, included with the PolySpeak bundle."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>PolyProject — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      PolyProject is a native Mac production tracker, included with the PolySpeak
+      voice-production bundle and not sold individually. Its role in the suite is small,
+      but its privacy behavior is worth documenting on its own like every other app in
+      PolySpeak.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>PolyProject makes no network requests and has no AI features at all.</strong>
+      It reads and writes a single local manifest file and displays status information
+      gathered from files produced by the other PolySpeak apps. The app has no server,
+      no account, and no analytics.
+    </p>
+
+    <h2>What PolyProject Accesses</h2>
+    <ul>
+      <li>A <code>.polyproject</code> manifest file (JSON) that it reads and writes</li>
+      <li>
+        Output files produced nearby by the other PolySpeak apps — script files from
+        PolyScript, read-through audio from TableRead, and performance capture exports
+        from Studio — read only to display status. PolyProject does not modify these files
+      </li>
+    </ul>
+    <p>
+      PolyProject does not access your microphone, camera, contacts, location, photos, or
+      calendar.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>Nothing</h3>
+    <p>
+      PolyProject has no network features and no AI features at all. Everything it reads
+      and writes stays on your Mac.
+    </p>
+
+    <h2>What Is Stored Locally</h2>
+    <ul>
+      <li><strong>The <code>.polyproject</code> manifest file</strong> — saved wherever you choose on your Mac</li>
+    </ul>
+    <p>None of this data is synced to iCloud or transmitted to DataIsland.</p>
+
+    <h2>What PolyProject Does Not Do</h2>
+    <ul>
+      <li>Does not transmit any data anywhere</li>
+      <li>Does not require an account or login</li>
+      <li>Does not collect analytics, usage statistics, or crash reports</li>
+      <li>Does not modify the files produced by other PolySpeak apps — it only reads them for status display</li>
+      <li>Does not share data with third parties</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      PolyProject is not directed at children under 13. We do not knowingly collect
+      information from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of PolyProject after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:<br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a><br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

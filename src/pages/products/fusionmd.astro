@@ -91,8 +91,8 @@ const icon = "/images/products/fusionmd/icon.png";
           <p>Split view updates as you type. Drag the divider between full editor, full preview, or anywhere between.</p>
         </div>
         <div class="mini-feature">
-          <h3>19 App Themes</h3>
-          <p>Light, dark, and everything between — named color palettes that change the whole writing environment, not just a mode toggle.</p>
+          <h3>24 Rainbow Themes</h3>
+          <p>Named color palettes spanning the full spectrum — dark and light, from Crimson Night to Cherry Blossom — that change the whole writing environment, not just a mode toggle.</p>
         </div>
       </div>
     </div>
@@ -105,46 +105,53 @@ const icon = "/images/products/fusionmd/icon.png";
       <h2>Your writing environment, your color.</h2>
       <p>
         Most writing apps give you a light/dark toggle — if you're lucky. FusionMD ships
-        with 19 named color themes covering the full spectrum from crisp white to deep espresso,
-        with a dozen variations in between. Pick the environment you want to write in, not
-        the one the developer decided on.
+        with 24 named color themes across the full spectrum, plus System, so the app always
+        matches macOS. Pick the environment you want to write in, not the one the developer
+        decided on.
       </p>
       <p>
         Each theme sets the editor background, sidebar, toolbar, and accent color as a
         coordinated palette — not just a tint applied over a fixed grey UI. Switch to
-        Hot Coffee and everything goes dark brown with latte cream accents. Switch to
-        Sandstone and the whole app becomes warm editorial cream. The writing surface
-        you stare at for hours deserves to look the way you want it to.
+        Crimson Night and everything goes dramatic near-black with deep red accents. Switch to
+        Cherry Blossom and the whole app becomes soft pastel pink. The writing surface
+        you stare at for hours deserves to look the way you want it to. Don't see the exact
+        shade you want? Design your own theme and share it as a <code>.ditheme</code> file.
       </p>
 
       <div class="app-theme-columns">
         <div class="app-theme-group">
-          <div class="app-theme-group-label">Light</div>
+          <div class="app-theme-group-label">Dark</div>
           <div class="app-theme-chips">
             <span>System</span>
-            <span>Sandstone</span>
-            <span>Minimalist</span>
-            <span>Crystal Ice</span>
+            <span>Crimson Night</span>
+            <span>Ruby Dusk</span>
+            <span>Ember Glow</span>
+            <span>Sunset Fire</span>
             <span>Golden Hour</span>
-            <span>Health</span>
-            <span>Pina Colada</span>
-            <span>Tuscan Honey</span>
+            <span>Forest Twilight</span>
+            <span>Emerald Depth</span>
+            <span>Ocean Abyss</span>
+            <span>Cobalt Midnight</span>
+            <span>Indigo Void</span>
+            <span>Violet Storm</span>
+            <span>Magenta Dream</span>
           </div>
         </div>
         <div class="app-theme-group">
-          <div class="app-theme-group-label">Dark</div>
+          <div class="app-theme-group-label">Light</div>
           <div class="app-theme-chips">
-            <span>Slate</span>
-            <span>Forest</span>
-            <span>Graphite</span>
-            <span>Rosewood</span>
-            <span>Indigo</span>
-            <span>Flamingo</span>
-            <span>Evergreen</span>
-            <span>Hot Coffee</span>
-            <span>Pumpkin</span>
-            <span>Spiced Honey</span>
-            <span>Winter Storm</span>
+            <span>Coral Dawn</span>
+            <span>Peach Bloom</span>
+            <span>Amber Light</span>
+            <span>Citrus Day</span>
+            <span>Mint Breeze</span>
+            <span>Jade Morning</span>
+            <span>Azure Sky</span>
+            <span>Sapphire Horizon</span>
+            <span>Lavender Mist</span>
+            <span>Orchid Garden</span>
+            <span>Rose Quartz</span>
+            <span>Cherry Blossom</span>
           </div>
         </div>
       </div>
@@ -259,6 +266,10 @@ const icon = "/images/products/fusionmd/icon.png";
         <div class="coach-card">
           <h3>Parts of Speech</h3>
           <p>Color-codes every word by grammatical category — nouns, verbs, adjectives, adverbs, and four more. Works across 10+ languages, entirely on-device.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Dialogue</h3>
+          <p>Catches the four punctuation mistakes every author makes around dialogue tags — a period before "he said," a comma outside the quote mark, missing punctuation, a capital letter after a comma. One click fixes one issue; Fix All clears the whole document in a single undo step.</p>
         </div>
       </div>
       <p class="coach-note">
@@ -410,8 +421,7 @@ const icon = "/images/products/fusionmd/icon.png";
         </div>
       </div>
       <div class="callout">
-        Native ePub3 — no third-party tools required. Install Pandoc (free) for
-        an alternative export path with extended metadata support.
+        Native ePub3 built in — no third-party tools required. A Pandoc-based alternative export path is also available for edge cases that need extended metadata control.
       </div>
     </div>
   </section>
@@ -428,8 +438,7 @@ const icon = "/images/products/fusionmd/icon.png";
         can and cannot carry across — so you know exactly what to expect.
       </p>
       <p>
-        Eight formats are supported, powered by Pandoc — a free, one-time install available
-        from Settings → Import/Export:
+        Eight formats are supported, powered by Pandoc — built into FusionMD, no installation required:
       </p>
       <div class="import-table">
         <div class="import-row"><span class="fmt">.docx</span><span>Word Document — headings and named paragraph styles convert well</span></div>
@@ -566,7 +575,7 @@ const icon = "/images/products/fusionmd/icon.png";
     },
     {
       question: "Can FusionMD export ePub3 ebooks?",
-      answer: "Yes. The Metadata panel lets you set the title, author, description, language, and cover image for your document. Export to ePub3 and those fields are embedded in the file exactly as ebook distributors expect. Markdown headings become chapter entries in the ePub's table of contents automatically. The document language travels into the ePub metadata and sets the correct reading direction — including right-to-left for Arabic and Hebrew. No third-party tools are required for native ePub3. Install Pandoc (free) for an alternative export path with extended metadata support."
+      answer: "Yes. The Metadata panel lets you set the title, author, description, language, and cover image for your document. Export to ePub3 and those fields are embedded in the file exactly as ebook distributors expect. Markdown headings become chapter entries in the ePub's table of contents automatically. The document language travels into the ePub metadata and sets the correct reading direction — including right-to-left for Arabic and Hebrew. No third-party tools are required — FusionMD includes a built-in ePub3 exporter as well as a Pandoc-based alternative path for extended metadata control."
     },
     {
       question: "What are Boilerplates and how do I use them?",
@@ -586,7 +595,7 @@ const icon = "/images/products/fusionmd/icon.png";
     },
     {
       question: "What file format does FusionMD use?",
-      answer: "FusionMD saves documents as .fusiondoc files. A .fusiondoc is a plain Markdown file with a small metadata header that stores the document title, language setting, and variable values if the document was created from a template. You can open any .fusiondoc in a plain text editor and read the Markdown. FusionMD also opens plain .md files directly. Templates are saved as .fusiontemplate files and work the same way."
+      answer: "FusionMD saves documents as .fusiondoc files. A .fusiondoc is a plain JSON file with your Markdown stored directly in a text field, alongside metadata like the document's language, theme, and variable values if the document was created from a template. You can open any .fusiondoc in a plain text editor and read your writing right there in the file. FusionMD also opens plain .md files directly, and File → Save As can export any document straight to .md. Templates are saved as .fusiontemplate files and work the same way."
     },
     {
       question: "Do I need Affinity or InDesign to use FusionMD?",

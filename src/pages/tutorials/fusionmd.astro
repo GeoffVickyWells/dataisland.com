@@ -69,7 +69,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>No lock-in:</strong> A <code>.fusiondoc</code> file is a ZIP archive. Rename it <code>.zip</code> and open it — your plain Markdown is inside as <code>content.md</code>, readable by any editor, forever.
+            <strong>No lock-in:</strong> A <code>.fusiondoc</code> file is plain JSON with your Markdown stored directly in a <code>text</code> field, alongside metadata like the document's language, theme, and any template variables. Open it in any text editor and your writing is right there, readable — no proprietary binary format, ever. Prefer pure Markdown? File → Save As lets you export straight to <code>.md</code>.
           </div>
 
           <div class="tip">
@@ -220,7 +220,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li><strong>See it in the library.</strong> Your block appears under the category you chose.</li>
             <li><strong>Insert it elsewhere.</strong> Open a different document. Open the Boilerplate panel, find your block, and click <strong>Insert</strong>. The Markdown is pasted at the cursor — exactly the text you saved.</li>
             <li><strong>Create a few more blocks</strong> in different categories. Blocks are organized alphabetically within category groups; "Other" is always last.</li>
-            <li><strong>Edit a block.</strong> Right-click any block → Edit. The next insertion uses the updated version.</li>
+            <li><strong>Edit a block.</strong> Control-click any block (or two-finger click on a trackpad) → Edit. The next insertion uses the updated version.</li>
           </ol>
 
           <div class="tip">
@@ -466,7 +466,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>Native ePub3 — no Pandoc required.</strong> FusionMD's built-in exporter produces a valid ePub3 file without any third-party tools. If you have Pandoc installed (Settings → Export), an alternative export path is available; the panel offers both options. For most documents the native exporter is faster and produces correct output.
+            <strong>Native ePub3 — no Pandoc required.</strong> FusionMD's built-in exporter produces a valid ePub3 file without any third-party tools. Pandoc ships bundled inside FusionMD too, so a Pandoc-based alternative export path is always available alongside it; the panel offers both options. For most documents the native exporter is faster and produces correct output.
           </div>
         </section>
 
