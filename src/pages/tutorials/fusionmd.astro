@@ -404,6 +404,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li><strong>Edit yourself</strong> if the automatic correction isn't quite right — the grammar panel is advisory, not prescriptive.</li>
           </ol>
 
+          <div class="tip">
+            <strong>Using Grammarly or a similar tool?</strong> It won't interfere with the Spelling or Grammar subtabs. Grammarly's Mac app works by turning off a system-wide macOS setting that other apps rely on for spell check — FusionMD doesn't use that setting; it enables its own spell checking directly, regardless of what else is installed. We tested this with Grammarly active: both the inline red-underline spell check and these two subtabs caught every misspelling correctly. You also shouldn't see Grammarly's own suggestion bubbles appear inside the FusionMD editor, since it targets standard system text fields and this editor is a custom view. (Separately: if spell check has stopped working in other apps like Mail since you installed Grammarly, that's Grammarly's doing, not FusionMD's — Terminal: <code>defaults write -g NSAllowContinuousSpellChecking -bool true</code> restores it.) Writing in Russian, Chinese, Arabic, Hebrew, Persian, Thai, Greek, Welsh, Irish, or Scottish Gaelic? Grammarly doesn't support any of those — FusionMD's Spelling, Grammar, and AI writing all do, as part of the same 40-language system covered in tutorial 16.
+          </div>
+
           <h3>Part 3 — Thesaurus, Dictionary &amp; Overused Words</h3>
           <ol class="steps">
             <li>Click the <strong>Vocabulary subtab</strong> (books icon). Three sections appear: Thesaurus, Dictionary, and Overused Words.</li>
