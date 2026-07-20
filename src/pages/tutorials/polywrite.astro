@@ -34,6 +34,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li><a href="#t7">Translation</a></li>
           <li><a href="#t8">Open in FusionMD</a></li>
           <li><a href="#t9">Settings &amp; preferences</a></li>
+          <li><a href="#t10">Automating PolyWrite with AppleScript</a></li>
         </ol>
       </nav>
 
@@ -472,6 +473,53 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
         </section>
 
+        <!-- ─── Tutorial 10 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> Automating PolyWrite with AppleScript</h2>
+          <p class="goal">What you'll learn: reading PolyWrite's scripting dictionary in Script Editor, and writing a script that reads and replaces a document's contents.</p>
+
+          <h3>Open the dictionary</h3>
+          <ol class="steps">
+            <li>Open <strong>Script Editor</strong> (Applications → Utilities → Script Editor).</li>
+            <li><strong>File → Open Dictionary…</strong> and choose <strong>PolyWrite</strong> from the list.</li>
+            <li>The Standard Suite lists the commands every scriptable Mac app shares: <code>open</code>, <code>close</code>, <code>save</code>, <code>quit</code>, <code>get</code>, and <code>set</code>. Each open document exposes <code>name</code>, <code>file</code>, <code>modified</code>, and <code>contents</code> — the last one is the document's full text, and it's read-write.</li>
+          </ol>
+
+          <h3>A first script</h3>
+          <p>
+            This requires at least one document already open in PolyWrite. Open one, then run:
+          </p>
+          <pre class="code-block"><code>tell application "PolyWrite"
+	activate
+	if (count of documents) is 0 then
+		display dialog "Open a document in PolyWrite first, then run this script."
+		return
+	end if
+	tell document 1
+		set contents to contents & return & return & "— appended by AppleScript"
+		save
+	end tell
+end tell</code></pre>
+
+          <h3>Reading a document's text out</h3>
+          <p>Because <code>contents</code> is readable too, a script can pull a document's text into another workflow instead of writing into it:</p>
+          <pre class="code-block"><code>tell application "PolyWrite"
+	set docText to contents of document 1
+end tell</code></pre>
+
+          <h3>Beyond Script Editor</h3>
+          <ul>
+            <li><strong>Automator</strong> — a "Run AppleScript" action can drop the script body straight into any workflow.</li>
+            <li><strong>Shortcuts</strong> — the "Run AppleScript" action runs the same script from a Shortcut, so PolyWrite can sit inside a larger Shortcuts pipeline or run by voice via Siri.</li>
+            <li><strong>Terminal</strong> — a quick one-off check:</li>
+          </ul>
+          <pre class="code-block"><code>osascript -e 'tell application "PolyWrite" to get contents of document 1'</code></pre>
+
+          <div class="tip">
+            <strong>No "create new document" verb.</strong> PolyWrite's dictionary operates on documents that are already open — including one just opened from a file with the <code>open</code> command — but it doesn't expose a <code>make new document</code> command for building a blank document purely from a script. Create the document (⌘N or an <code>open</code> call on an existing file) first, then script the rest.
+          </div>
+        </section>
+
       </div><!-- /tut-content -->
     </div><!-- /tut-layout -->
   </div><!-- /tut-wrap -->
@@ -621,6 +669,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     background: var(--gray-light);
     padding: 0.1em 0.4em;
     border-radius: 4px;
+  }
+
+  .code-block {
+    background: #f5f5f5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .code-block code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
   }
 
   .tip {
