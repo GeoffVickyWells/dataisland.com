@@ -43,6 +43,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li><a href="#t15">Exporting an ePub3 ebook</a></li>
           <li><a href="#t16">Translating a document</a></li>
           <li><a href="#t17">Publishing on Apple Books &amp; Amazon KDP</a></li>
+          <li><a href="#t18">Automating FusionMD with AppleScript</a></li>
         </ol>
       </nav>
 
@@ -235,13 +236,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Steps</h3>
           <ol class="steps">
-            <li>Open a multi-section document (article, report, newsletter content). Layout mode works best with structured writing.</li>
-            <li><strong>Enable Layout mode.</strong> Click <strong>"Layout"</strong> in the mode picker. A confirmation dialog may appear; confirm.</li>
-            <li><strong>Open the Layout panel.</strong> The left sidebar now shows a <strong>Layout Styles</strong> tab with two sections: Paragraph Styles and Character Styles.</li>
-            <li><strong>Add paragraph styles.</strong> Click <strong>+</strong> next to Paragraph Styles. Add: "Body Text", "Chapter Title", "Pull Quote", "Byline".</li>
-            <li><strong>Tag a paragraph.</strong> Place your cursor in a paragraph. In the Layout panel, click "Body Text". FusionMD inserts <code>:::Body Text</code> before and <code>:::</code> after the paragraph — marking it with that style name. Click <strong>"Hide Markers"</strong> for a cleaner view.</li>
+            <li>Open a multi-section document (article, report, newsletter content) in Markdown mode.</li>
+            <li><strong>Open the Layout Styles tab.</strong> Open the Tools sidebar (<strong>⌘3</strong>) and select <strong>"Layout Styles"</strong> — it sits alongside Tables and Boilerplate, available in Markdown, Template, and Design modes. No need to switch modes just to tag styles.</li>
+            <li><strong>Add paragraph styles.</strong> Click <strong>"Add Paragraph Style"</strong> at the bottom of the Paragraph Styles section. Add: "Body Text", "Chapter Title", "Pull Quote", "Byline".</li>
+            <li><strong>Tag a paragraph.</strong> Place your cursor in a paragraph. In the Layout Styles panel, click "Body Text". FusionMD inserts <code>:::Body Text</code> before and <code>:::</code> after the paragraph — marking it with that style name. Toggle <strong>"Hide style markers"</strong> for a cleaner view while you write.</li>
             <li><strong>Tag an inline span.</strong> Select a word in the editor. In the Character Styles panel, click a style name to wrap it in the inline syntax.</li>
-            <li><strong>Use AI for layout generation.</strong> Clear the document. In the AI prompt bar, type: <em>"Write a 4-article newspaper front page covering local government, arts, sports, and weather. Tag each article with appropriate paragraph styles."</em> The AI generates multiple annotated articles — each becomes a separate IDML TextFrame.</li>
+            <li><strong>Faster: let AI tag it for you.</strong> If you're pasting in AI-drafted content, see <a href="#t10">Tutorial 10: Text Transformations</a> — the "Tags → Paragraph Styles" ruleset (and the automatic detection banner) convert bracket-tagged content like <code>[PULLQUOTE]...[/PULLQUOTE]</code> straight into these same fences, in bulk.</li>
+            <li><strong>Or generate a full layout with AI.</strong> Switch to <strong>Layout mode</strong> in the mode picker for the full-window Semantic Publish experience: clear the document, and in the AI prompt bar type <em>"Write a 4-article newspaper front page covering local government, arts, sports, and weather. Tag each article with appropriate paragraph styles."</em> The AI generates multiple annotated articles — each becomes a separate IDML TextFrame.</li>
             <li><strong>Export to IDML.</strong> Click <strong>"Export as IDML…"</strong> in the navigation bar.</li>
             <li><strong>Open in Affinity or InDesign.</strong> Your content appears in TextFrames on a grid. Your style names are in the Paragraph Styles panel, pre-tagged, ready to assign visual appearance (font, size, color).</li>
           </ol>
@@ -279,22 +280,23 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- ─────────────────────────────────────────── Tutorial 10 -->
         <section class="tut-section" id="t10">
           <h2><span class="num">10</span> Text Transformations</h2>
-          <p class="goal">What you'll learn: using built-in transformation rulesets and creating a custom one.</p>
+          <p class="goal">What you'll learn: applying built-in transformation rulesets, converting AI-tagged content into Fusion styles, picking a tag convention without writing regex, and creating a fully custom ruleset.</p>
 
           <h3>Steps</h3>
           <ol class="steps">
-            <li>Open a document that was pasted in from another source — often these have smart/dumb quote inconsistencies, double spaces, or style issues.</li>
-            <li><strong>Open Text Transformations.</strong> Go to Edit → Text Transformations.</li>
-            <li><strong>Select "Whitespace Cleanup"</strong> from the ruleset list. Click <strong>Apply.</strong> FusionMD reports how many replacements were made (e.g., "47 replacements").</li>
-            <li><strong>Select "Smart Quotes"</strong> and apply. All straight quotes <code>"</code> and <code>'</code> are converted to curly typographic equivalents.</li>
-            <li><strong>Create a custom ruleset.</strong> Click <strong>+</strong> in the ruleset list. Name it "My Cleanup Rules."</li>
-            <li><strong>Add a rule.</strong> Click <strong>+</strong> in the rules list. Set Find: <code>\bvery\b</code> (regex), Replace: (leave empty). This removes "very" from the document — a classic style edit.</li>
-            <li><strong>Add more rules</strong> — for instance, replace "utilise" with "use", or "prior to" with "before."</li>
-            <li><strong>Apply your ruleset.</strong> The report shows how many instances of each rule matched.</li>
+            <li>Open a document that was pasted in from another source, or drafted with an AI assistant — often these have smart/dumb quote inconsistencies, AI preamble text, or inline bracket tags.</li>
+            <li><strong>Open Text Transformations.</strong> Go to Edit → Text Transformations (<strong>⌘⌥T</strong>).</li>
+            <li><strong>Try "Clean Up Markdown"</strong> from the BUILT-IN list. Click <strong>"Apply to Document."</strong> It normalizes line endings, tabs, and repeated spaces, converts smart quotes to straight ones, and collapses stray blank lines. FusionMD reports how many changes were made.</li>
+            <li><strong>Try "Clean AI Output"</strong> — strips common preambles a chatbot adds before the actual content ("Certainly! Here's...", "As an AI...", "Note that...") along with excess blank lines.</li>
+            <li><strong>Convert AI-drafted tags into Fusion styles.</strong> If your document has bracket-tagged content like <code>[PULLQUOTE]A memorable line.[/PULLQUOTE]</code>, select <strong>"Tags → Paragraph Styles"</strong> and apply — it becomes a <code>:::PULLQUOTE</code> fence, ready for the Layout Styles panel and IDML export (see <a href="#t8">Tutorial 8</a>). For a single tag wrapping inline text rather than a whole paragraph, use <strong>"Tags → Character Styles"</strong> instead.</li>
+            <li><strong>Or let FusionMD spot it for you.</strong> Type or paste bracket-tagged content directly into the editor and a banner appears above the text — <em>"N AI tag(s) detected — Convert to Fusion styles"</em> — with a one-click <strong>Convert</strong> button. Dismiss it with the × if you're intentionally using literal brackets in your prose; it won't nag again until the tag count actually changes.</li>
+            <li><strong>Use a different tag convention.</strong> Not every AI or workflow uses square brackets. Click the <strong>"New Ruleset from Convention…"</strong> icon at the bottom of the ruleset list to open the shape picker: <strong>BBCode Brackets</strong> <code>[NAME]...[/NAME]</code>, <strong>HTML Tag</strong> <code>&lt;NAME&gt;...&lt;/NAME&gt;</code>, <strong>WordPress Shortcode</strong>, <strong>Mustache Section</strong> <code>{'{'}{'{'}#NAME{'}'}{'}'}...{'{'}{'{'}/NAME{'}'}{'}'}</code>, or <strong>Paragraph Marker</strong> — a single open marker with no closing tag needed, perfect for a quick caption like <code>[PIC] Photo of the coastline at sunset</code>, converted the moment it hits a blank line. Pick a shape and FusionMD generates working, fully editable rules — no regex required.</li>
+            <li><strong>Or define your own shape.</strong> In the same picker, click <strong>"New Custom Shape…"</strong> and set your own open/close delimiters (or "no closing tag") and the pattern your tag names follow. It's saved alongside your other custom shapes for next time.</li>
+            <li><strong>Create a fully custom ruleset from scratch.</strong> Click <strong>+</strong> in the ruleset list instead, name it, then click <strong>"Add Rule"</strong> and set Find: <code>\bvery\b</code> (regex), Replace: (leave empty) — a classic style edit that removes "very" from the document.</li>
           </ol>
 
           <div class="tip">
-            <strong>Regex supported:</strong> Rules can use full regular expressions. Built-in rulesets are read-only; duplicate them to customize. All rulesets are saved and available across every document.
+            <strong>Regex supported throughout:</strong> every rule — built-in, convention-generated, or hand-written — is visible and editable as plain find/replace text with a regex toggle. Built-in rulesets are read-only; duplicate them to customize. All custom rulesets and shapes are saved and available across every document.
           </div>
         </section>
 
@@ -590,6 +592,73 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
         </section>
 
+        <!-- ─────────────────────────────────────────── Tutorial 18 -->
+        <section class="tut-section" id="t18">
+          <h2><span class="num">18</span> Automating FusionMD with AppleScript</h2>
+          <p class="goal">What you'll learn: reading FusionMD's scripting dictionary in Script Editor, and writing a script that sets a document's editor mode and contents and saves it.</p>
+
+          <h3>Open the dictionary</h3>
+          <ol class="steps">
+            <li>Open <strong>Script Editor</strong> (Applications → Utilities → Script Editor).</li>
+            <li><strong>File → Open Dictionary…</strong> and choose <strong>FusionMD</strong> from the list of running or installed applications.</li>
+            <li>The dictionary window shows two suites: <strong>Standard Suite</strong> (open, close, save, quit, get, set — the commands every scriptable Mac app shares) and <strong>FusionMD Suite</strong>, which adds one FusionMD-specific term: a document's <code>editor mode</code>.</li>
+          </ol>
+
+          <h3>A first script</h3>
+          <p>
+            This script requires at least one document already open in FusionMD. Open one first,
+            then run the script below from Script Editor (▶ button, or ⌘R):
+          </p>
+          <pre class="code-block"><code>tell application "FusionMD"
+	activate
+	if (count of documents) is 0 then
+		display dialog "Open a document in FusionMD first, then run this script."
+		return
+	end if
+	tell document 1
+		set editor mode to "variables"
+		set contents to "# Weekly Report" & return & return & "Generated by AppleScript on " & (current date as string)
+		save
+	end tell
+end tell</code></pre>
+          <p>
+            This switches the front document to Variables mode, replaces its Markdown source with
+            a generated heading and timestamp, and saves it — all without touching the keyboard
+            once the script runs.
+          </p>
+
+          <h3>Reading a document back out</h3>
+          <p>
+            <code>contents</code> is readable as well as writable, so a script can pull a document's
+            Markdown source into another workflow instead of writing into it:
+          </p>
+          <pre class="code-block"><code>tell application "FusionMD"
+	set docText to contents of document 1
+	set docMode to editor mode of document 1
+end tell</code></pre>
+
+          <h3>The editor mode property</h3>
+          <p>
+            <code>editor mode</code> accepts five values, matching the mode picker in the toolbar:
+            <code>markdown</code>, <code>variables</code>, <code>design</code>, <code>script</code>,
+            and <code>layout</code>. Setting it switches the document's mode exactly as if you'd
+            clicked the picker yourself — useful for a script that, say, drops a document into
+            Script mode before pulling out Fountain-formatted scene text.
+          </p>
+
+          <h3>Beyond Script Editor</h3>
+          <ul>
+            <li><strong>Automator</strong> — add a "Run AppleScript" action to any workflow and paste the script body inside the provided <code>on run</code> handler.</li>
+            <li><strong>Shortcuts</strong> — the "Run AppleScript" action runs the same code from a Shortcut, so FusionMD automation can sit in a larger Shortcuts pipeline or run from Siri.</li>
+            <li><strong>Terminal</strong> — a single line works for quick checks, for example:</li>
+          </ul>
+          <pre class="code-block"><code>osascript -e 'tell application "FusionMD" to get contents of document 1'</code></pre>
+
+          <div class="tip">
+            <strong>No "create new document" verb.</strong> FusionMD's dictionary can operate on documents that are already open — including one opened moments earlier from a file — but it does not expose a <code>make new document</code> command for building a blank document purely from a script. Open (via the GUI, or the <code>open</code> command on an existing file) first, then script the rest.
+          </div>
+        </section>
+
         <!-- ─────────────────────────────────────────── Featured guide link -->
         <section class="tut-section guide-link-section">
           <h2>Going further — ePub publishing guide</h2>
@@ -809,6 +878,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     background: var(--gray-light);
     padding: 0.15em 0.4em;
     border-radius: 4px;
+  }
+
+  .code-block {
+    background: #f5f5f5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .code-block code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
   }
 
   /* ── Responsive ───────────────────────────────────────── */
