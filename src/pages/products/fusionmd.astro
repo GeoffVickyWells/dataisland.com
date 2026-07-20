@@ -59,9 +59,56 @@ const icon = "/images/products/fusionmd/icon.png";
         styles, body text, captions, and pull quotes already tagged — ready to design, not
         ready to re-type.
       </p>
+      <p>
+        Named styles come from the <strong>Layout Styles</strong> panel — browse, create, and
+        rename paragraph and character styles right in the sidebar, with document-wide
+        propagation when you rename one. Click a style to tag the paragraph or selection
+        you're on; no memorizing syntax required.
+      </p>
       <div class="callout">
         Works with <strong>Affinity</strong> and <strong>Adobe InDesign</strong>.
         The IDML spec is open and widely supported.
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: Text Transformations -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🔀</div>
+    <div class="feature-body">
+      <h2>Turn AI shorthand into tagged styles, automatically.</h2>
+      <p>
+        Ask an AI assistant to draft styled content and it'll often reach for its own shorthand —
+        bracket tags like <span class="mono">[PULLQUOTE]A memorable line.[/PULLQUOTE]</span>.
+        FusionMD watches for it: a banner appears above the editor the moment it spots
+        convertible tags, with a one-click <strong>Convert</strong> button that turns them into
+        real paragraph and character styles — the same ones IDML export uses.
+      </p>
+      <p>
+        Not every workflow uses square brackets. Open <strong>Text Transformations</strong>
+        (Edit menu, <span class="mono">⌘⌥T</span>) and pick a convention from the built-in
+        shape library — BBCode brackets, HTML tags, WordPress shortcodes, Mustache sections, or
+        a no-closing-tag paragraph marker for quick single-line captions — and FusionMD
+        generates working rules for it. No regex required, though full regular expressions are
+        there if you want them.
+      </p>
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Five built-in rulesets</h3>
+          <p>Clean AI Output and Clean Up Markdown handle the everyday cleanup; Tags → Paragraph/Character Styles and Strip Custom Tags handle the conversion.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Any convention, no regex</h3>
+          <p>Pick a shape from the picker, or define your own custom open/close delimiters — FusionMD writes the pattern.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Automatic detection</h3>
+          <p>A banner offers one-click conversion the moment it spots a tag you've told FusionMD to recognize.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Full regex when you want it</h3>
+          <p>Every rule — built-in, generated, or hand-written — is visible and editable as plain find/replace text.</p>
+        </div>
       </div>
     </div>
   </section>
