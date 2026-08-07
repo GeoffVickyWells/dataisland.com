@@ -220,21 +220,26 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- ─────────────────────────────────────────── Tutorial 8 -->
         <section class="tut-section" id="t8">
-          <h2><span class="num">8</span> Exporting for Professional Layout (IDML)</h2>
-          <p class="goal">What you'll learn: using Layout mode to tag content with paragraph styles, and exporting to IDML for Affinity Publisher or Adobe InDesign.</p>
+          <h2><span class="num">8</span> Layout Mode: AI-Structured Documents for IDML</h2>
+          <p class="goal">What you'll learn: using Layout mode's AI brief form to generate a structured document from scratch, reviewing its sections, and exporting to IDML for Affinity Publisher or Adobe InDesign.</p>
+
+          <h3>Prerequisite</h3>
+          <p>You need either Apple Intelligence (macOS 26, Apple Silicon, enabled in System Settings) or an OpenRouter API key in Settings → AI.</p>
 
           <h3>Steps</h3>
           <ol class="steps">
-            <li>Open a multi-section document (article, report, newsletter content). Layout mode works best with structured writing.</li>
-            <li><strong>Enable Layout mode.</strong> Click <strong>"Layout"</strong> in the mode picker. A confirmation dialog may appear; confirm.</li>
-            <li><strong>Open the Layout panel.</strong> The left sidebar now shows a Layout tab with two sections: Paragraph Styles and Character Styles.</li>
-            <li><strong>Add paragraph styles.</strong> Click <strong>+</strong> next to Paragraph Styles. Add: "Body Text", "Chapter Title", "Pull Quote", "Byline".</li>
-            <li><strong>Tag a paragraph.</strong> Place your cursor in a paragraph. In the Layout panel, click "Body Text". FusionMD inserts <code>:::Body Text</code> before and <code>:::</code> after the paragraph — marking it with that style name. Click <strong>"Hide Markers"</strong> for a cleaner view.</li>
-            <li><strong>Tag an inline span.</strong> Select a word in the editor. In the Character Styles panel, click a style name to wrap it in the inline syntax.</li>
-            <li><strong>Use AI for layout generation.</strong> Clear the document. In the AI prompt bar, type: <em>"Write a 4-article newspaper front page covering local government, arts, sports, and weather. Tag each article with appropriate paragraph styles."</em> The AI generates multiple annotated articles — each becomes a separate IDML TextFrame.</li>
-            <li><strong>Export to IDML.</strong> Click <strong>"Export as IDML…"</strong> in the navigation bar.</li>
-            <li><strong>Open in Affinity or InDesign.</strong> Your content appears in TextFrames on a grid. Your style names are in the Paragraph Styles panel, pre-tagged, ready to assign visual appearance (font, size, colour).</li>
+            <li><strong>Enable Layout mode.</strong> Click <strong>"Layout"</strong> in the mode picker. If your document already has Markdown content, a confirmation dialog explains that Layout mode works independently of it — confirm to continue. Layout mode replaces the usual editor with its own window: a <strong>Generate</strong> / <strong>Structure</strong> / <strong>JSON</strong> tab bar along the top.</li>
+            <li><strong>Fill in the brief</strong> on the Generate tab. <strong>Topic</strong> is required — describe the subject, key points, or angle. The rest are optional: <strong>Document type</strong> (Article, Newspaper, Magazine, Flyer, Guide, Report, Tutorial, Other), <strong>Layout</strong> (Single column for one continuous story, or Multi-frame for separate frames per story — newspapers, magazines, flyers), <strong>Audience</strong>, <strong>Length</strong> (Short ≈300 words, Medium ≈600, Long ≈1200), and <strong>Tone</strong>.</li>
+            <li><strong>Click Generate.</strong> FusionMD builds a complete, styled document structure from the brief — no manual paragraph tagging needed.</li>
+            <li><strong>Review the result on the Structure tab.</strong> Each section is listed with its block type (Headline, Body, Pull Quote, etc.). Click the disclosure arrow beside a section to expand or collapse its children.</li>
+            <li><em>Optional:</em> <strong>Check the JSON tab</strong> to inspect the raw structure the AI produced — useful if a section didn't come out the way you expected.</li>
+            <li><strong>Export to IDML.</strong> Once content exists, an <strong>"Export as IDML…"</strong> button appears in the tab bar. Click it, choose a location, and save.</li>
+            <li><strong>Open in Affinity or InDesign.</strong> Your content appears in TextFrames on a grid, each tagged with a paragraph style FusionMD generated — ready to assign visual appearance (font, size, colour).</li>
           </ol>
+
+          <div class="tip">
+            <strong>Apple Intelligence has a length ceiling:</strong> on-device generation is limited to a 4,096-token context window covering both your brief and the generated result — this is a fixed limit of Apple's on-device model, not a FusionMD bug. A Short or Medium brief normally fits comfortably; a Long or highly detailed one can exceed it. If that happens, FusionMD will offer to retry with OpenRouter (a cloud AI service billed against your own API key) — you'll always be asked before it switches, never billed silently.
+          </div>
 
           <div class="tip">
             <strong>No Pandoc required:</strong> IDML export is built into FusionMD — no third-party tools needed. FusionMD prefixes style names with <code>[FUSION]</code> to avoid collisions with any styles already in your layout document.
