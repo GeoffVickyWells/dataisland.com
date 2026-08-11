@@ -39,6 +39,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li><a href="#t11">Parts of speech analyzer</a></li>
           <li><a href="#t12">Settings &amp; customising your environment</a></li>
           <li><a href="#t13">Writing Coach: spelling, grammar &amp; vocabulary</a></li>
+          <li><a href="#t14">Building &amp; aligning tables</a></li>
         </ol>
       </nav>
 
@@ -64,7 +65,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>No lock-in:</strong> A <code>.fusiondoc</code> file is a ZIP archive. Rename it <code>.zip</code> and open it — your plain Markdown is inside as <code>content.md</code>, readable by any editor, forever.
+            <strong>No lock-in:</strong> A <code>.fusiondoc</code> file is a UTF-8 JSON document — your Markdown source lives in its <code>text</code> field alongside variables, boilerplate, and theme metadata. It's readable by any text editor, and a clean plain-Markdown copy is always one click away via File ▸ Save As ▸ Markdown.
           </div>
         </section>
 
@@ -76,8 +77,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3>Steps</h3>
           <ol class="steps">
             <li>Open any document.</li>
-            <li><strong>Open the right panel.</strong> Click the panel button in the toolbar (rightmost group), or press ⌘2.</li>
-            <li><strong>Go to the Document Styles tab</strong> — the last tab in the right panel. You'll see a list of built-in themes.</li>
+            <li><strong>Open the Tools panel.</strong> Click the Tools icon in the toolbar (inner-left group), or press ⌘3.</li>
+            <li><strong>Go to the Markdown Styles tab</strong> — alongside Tables and Boilerplate. You'll see a list of built-in themes.</li>
             <li><strong>Click "GitHub Light."</strong> The preview pane immediately updates — body font, heading colours, and background all change.</li>
             <li><strong>Try "Dracula."</strong> The dark background appears in the preview. The editor background stays clean while the preview and all exports match.</li>
             <li><strong>Create a custom theme.</strong> Click the <strong>+</strong> button. A sheet opens with controls for: body font, heading font, code font, colours (body text, headings, links, background), line height, and margins.</li>
@@ -401,6 +402,41 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <div class="tip">
             <strong>All on-device:</strong> Overused-word analysis and the thesaurus run entirely on your Mac using Apple's Natural Language framework. External sources (Datamuse, Free Dictionary API) are used for word lookups; attribution appears at the bottom of the Vocab panel. No document text is ever transmitted.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 14 -->
+        <section class="tut-section" id="t14">
+          <h2><span class="num">14</span> Building &amp; Aligning Tables</h2>
+          <p class="goal">What you'll learn: inserting a Markdown table with the Tables panel, keeping raw column padding tidy, and setting per-column alignment.</p>
+
+          <h3>Inserting a Table</h3>
+          <ol class="steps">
+            <li><strong>Open the Tools panel</strong> (⌘3, inner-left) — it opens to the <strong>Tables</strong> tab by default.</li>
+            <li><strong>Set Columns and Rows</strong> with the steppers (1–10 columns, 1–30 rows).</li>
+            <li><strong>Set Cell Width</strong> (3–30, default 10) — this only controls how many blank characters pad each empty cell in the raw Markdown, so wider cells hold more typed text before a row visually outgrows the others in the source. It has no effect on the rendered table either way.</li>
+            <li><strong>Choose header alignment</strong> — Left, Centre, or Right — for the table you're about to insert.</li>
+            <li><strong>Toggle column labels</strong> if you want the header row pre-filled with "Column 1," "Column 2," etc. instead of blank cells.</li>
+            <li><strong>Check the live preview</strong> at the bottom of the panel, then click <strong>"Insert Table."</strong> A GFM pipe table is inserted at your cursor.</li>
+          </ol>
+
+          <h3>Keeping a Table Tidy</h3>
+          <p>Typing into a table's raw Markdown cells doesn't automatically re-pad the surrounding pipes — column padding is cosmetic only (GFM trims whitespace when rendering regardless), so FusionMD never realigns automatically while you type, which would otherwise fight your cursor position.</p>
+          <ol class="steps">
+            <li><strong>Place your cursor inside a table</strong> that's grown ragged from editing.</li>
+            <li><strong>Click "Tidy Table"</strong> in the Tools panel to realign just that table's column padding.</li>
+            <li><strong>Click "Tidy All Tables"</strong> instead to realign every table in the document in one pass.</li>
+          </ol>
+
+          <h3>Aligning a Column</h3>
+          <ol class="steps">
+            <li><strong>Place your cursor in any cell</strong> of the column you want to align — header, separator, or body row all work.</li>
+            <li><strong>Click Left, Centre, or Right</strong> under "Align Current Column." FusionMD updates that column's separator-row markup immediately.</li>
+            <li>These buttons only work on an already-inserted table your cursor is inside — they're greyed out otherwise, and they're independent of the Insert Table alignment picker, which only sets the default for the <em>next</em> new table.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>One-shot, not a setting:</strong> The alignment buttons don't reflect a persistent selection — each click is a single realign action on whichever column your cursor currently occupies, not a toggle you switch on and off.
           </div>
         </section>
 

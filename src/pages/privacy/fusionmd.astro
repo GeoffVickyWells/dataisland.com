@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const updated = "20 May 2026";
+const updated = "11 August 2026";
 ---
 
 <BaseLayout
@@ -22,7 +22,8 @@ const updated = "20 May 2026";
     <h2>Summary</h2>
     <p>
       <strong>FusionMD does not collect personal data.</strong> Your documents are stored locally
-      as <code>.fusiondoc</code> files (plain Markdown with metadata). Document content is never
+      as <code>.fusiondoc</code> files (a JSON document containing your Markdown text plus
+      metadata). Document content is never
       sent to DataIsland. AI features are opt-in — either on-device via Apple Intelligence
       (nothing leaves your Mac) or via OpenRouter (with your own API key and your explicit
       consent). FusionMD has no server, no account, and no analytics.
@@ -31,8 +32,10 @@ const updated = "20 May 2026";
     <h2>Your Documents</h2>
     <p>
       FusionMD stores documents as <code>.fusiondoc</code> files on your Mac, in locations you
-      choose. The format is plain Markdown with a small JSON metadata header — your content is
-      always recoverable without FusionMD. Documents are never transmitted to DataIsland.
+      choose. The format is a UTF-8 JSON document containing your Markdown source (in its
+      <code>text</code> field) alongside variables, boilerplate, and theme metadata — your content
+      is always recoverable without FusionMD, and a plain Markdown export is one click away via
+      File ▸ Save As ▸ Markdown. Documents are never transmitted to DataIsland.
     </p>
 
     <h2>What Leaves Your Device</h2>
