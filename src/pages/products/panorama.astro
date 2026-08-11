@@ -1,0 +1,588 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
+
+const icon = "/images/products/panorama/icon.png";
+---
+
+<BaseLayout
+  title="Panorama — Location Intelligence for Mac"
+  description="Panorama pulls 35+ live data sources into a single location profile — demographics, health, safety, climate, economy, and more. Get an AI Verdict, compare cities side-by-side, and export a consultant-quality PDF report."
+>
+
+  <!-- Hero -->
+  <section class="product-hero fade-in">
+    <img src={icon} alt="Panorama" class="product-icon" />
+    <h1>Panorama</h1>
+    <p class="tagline">Every place. Every data point. One view.</p>
+    <p class="hero-sub">
+      Thinking about moving? Scouting a new city for work? Just curious about a neighbourhood?
+      Panorama pulls 35+ live data sources into a single location profile — demographics, health,
+      safety, climate, economy, and more — then delivers an AI Verdict, interactive charts,
+      and a consultant-quality PDF report.
+    </p>
+    <div class="hero-meta">macOS 14 Sonoma or later &nbsp;·&nbsp; One-time purchase &nbsp;·&nbsp; No subscription</div>
+    <AppStoreCTA />
+  </section>
+
+  <!-- Feature 1: The problem -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🌍</div>
+    <div class="feature-body">
+      <h2>Research a location used to mean ten browser tabs.</h2>
+      <p>
+        Finding a place to live — or understanding a place you already live — means bouncing
+        between the Census Bureau, the CDC, the FBI crime database, FEMA flood maps, the Bureau
+        of Labor Statistics, and a dozen other government sites. Each gives you one number.
+        None gives you the full picture.
+      </p>
+      <p>
+        Panorama does all of that in one search. Type a city, ZIP code, or address and get
+        a complete location profile built from 35+ live data sources, assembled in seconds.
+        Then visualise it in interactive charts, compare multiple cities side by side, and
+        export a polished PDF report — all without leaving the app.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 2: Data sources grid -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📡</div>
+    <div class="feature-body">
+      <h2>35+ live data sources, organised into sections.</h2>
+      <p>Every section in a Panorama profile is pulled fresh from its official source — not a stale database we maintain.</p>
+      <div class="source-grid">
+        <div class="source-card">
+          <div class="source-cat">People</div>
+          <ul>
+            <li>US Census — population, age, income, education</li>
+            <li>Pew Research — religion &amp; faith community breakdown</li>
+            <li>Movement Advancement Project — LGBTQ+ state equality</li>
+            <li>Equaldex — LGBTQ+ legal rights by country</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <div class="source-cat">Safety</div>
+          <ul>
+            <li>FBI / NIBRS — violent &amp; property crime rates</li>
+            <li>FEMA National Risk Index — 18 natural hazard ratings</li>
+            <li>FEMA flood zone designation</li>
+            <li>USGS earthquake history (200 km, 1 year)</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <div class="source-cat">Health &amp; Environment</div>
+          <ul>
+            <li>CDC PLACES — 36 chronic health metrics by tract</li>
+            <li>EPA AirToxScreen — air toxics cancer &amp; respiratory risk</li>
+            <li>WHO — healthy life expectancy, UHC coverage index</li>
+            <li>Open-Meteo — PM2.5 air quality, UV index</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <div class="source-cat">Economy</div>
+          <ul>
+            <li>BEA — metro per capita personal income</li>
+            <li>BLS — unemployment rate &amp; 12-month trend</li>
+            <li>FRED — metro real GDP trend &amp; 5-year growth</li>
+            <li>EIA — residential electricity rate by state</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <div class="source-cat">Liveability</div>
+          <ul>
+            <li>Walk Score — walkability, transit, bikeability</li>
+            <li>OpenStreetMap — schools, hospitals, parks, grocery, dining</li>
+            <li>Teleport — quality-of-life city scores (17 categories)</li>
+            <li>Wikipedia — location overview &amp; background</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <div class="source-cat">International</div>
+          <ul>
+            <li>World Bank — GDP, life expectancy, infrastructure</li>
+            <li>IMF — GDP growth, inflation, unemployment</li>
+            <li>ILO / OECD — global wages &amp; labour data</li>
+            <li>Eurostat (EU) · UK Police · Statistics Canada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: AI features -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">✦</div>
+    <div class="feature-body">
+      <h2>Three AI features that actually tell you something.</h2>
+      <p>
+        Panorama's AI features live in the Insights section and the detail panel — each designed
+        to answer a different question about the data.
+      </p>
+      <div class="mini-feature-grid" style="margin-top:1rem;">
+        <div class="mini-feature">
+          <h3>AI Verdict</h3>
+          <p>A direct, data-backed verdict for any city — a headline finding, scored strengths, scored concerns, who it's best for, and a bottom line. No hedging.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Research Q&amp;A</h3>
+          <p>Ask any question and Panorama answers using the data already loaded — "Is this a good place to retire?" "How does the crime rate compare to the national average?"</p>
+        </div>
+        <div class="mini-feature">
+          <h3>City Comparison</h3>
+          <p>Select up to 5 saved cities and Panorama builds a side-by-side matrix — scores across safety, cost, climate, health, economy, and amenities.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>In-Depth PDF Report</h3>
+          <p>A consultant-quality PDF — cover page, AI-written narratives for every section, inline charts, hazard ratings, and a full data sources page. Share it, print it, or open it in FusionMD.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;">
+        Panorama uses Apple Intelligence on M-chip Macs (private, on-device) and falls back to
+        OpenRouter so you can choose any model — GPT-4o, Claude, Gemini, or any open-weight
+        model you prefer. You supply your own key; DataIsland never sees it.
+      </p>
+      <div class="ai-chips">
+        <span class="chip">Apple Intelligence</span>
+        <span class="chip">OpenRouter</span>
+        <span class="chip">Any model</span>
+        <span class="chip">Your key, your data</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4: Save + compare -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📌</div>
+    <div class="feature-body">
+      <h2>Save locations. Build your shortlist. Compare side by side.</h2>
+      <p>
+        Save any location and build a list of cities you're evaluating. Select up to five
+        at once and Panorama's Comparison Matrix scores them across every category. Profiles
+        refresh on demand — one click re-fetches every source.
+      </p>
+      <p>
+        Siri and Apple Intelligence can open any saved location or answer questions about it
+        ("What's the crime rate in my saved Austin location?") using the Panorama App Intent.
+      </p>
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Saved locations</h3>
+          <p>Pin any city, neighbourhood, or address. Tick up to five checkboxes to compare them in Insights.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Siri integration</h3>
+          <p>Ask Siri to open a location profile or answer a question about it. Works hands-free on macOS.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>On-demand refresh</h3>
+          <p>Data is fetched live, not cached forever. One click re-pulls every source with the latest numbers.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Drag-and-drop charts</h3>
+          <p>Every chart in Panorama is draggable. Drop it straight into Affinity, Keynote, Pages, or Mail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 5: Privacy -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🔒</div>
+    <div class="feature-body">
+      <h2>Your searches stay on your device.</h2>
+      <p>
+        Panorama calls government and public data APIs directly from your Mac — there is no
+        Panorama server in the middle. Saved profiles are stored locally and synced via your
+        own iCloud. DataIsland never sees which locations you search.
+      </p>
+      <p>
+        API keys for optional services (Walk Score, FBI Crime, BEA, FRED) are stored only in
+        your macOS Keychain. The AI summary uses Apple Intelligence on-device or your own
+        OpenRouter key — no key is bundled in the app.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section fade-in">
+    <h2>Simple, honest pricing.</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <div class="price-detail">forever · no time limit</div>
+        <ul>
+          <li>Search any location</li>
+          <li>Census, climate, and Wikipedia data</li>
+          <li>USGS earthquakes</li>
+          <li>5 saved locations</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Panorama Pro</h3>
+        <div class="price">$29.99</div>
+        <div class="price-detail">one-time purchase · no subscription</div>
+        <ul>
+          <li>All 35+ data sources</li>
+          <li>AI Verdict &amp; Research Q&amp;A</li>
+          <li>City Comparison (up to 5 cities)</li>
+          <li>In-Depth PDF Report</li>
+          <li>10 interactive chart views</li>
+          <li>Drag-and-drop chart export</li>
+          <li>FEMA, CDC, FBI, BLS, BEA, FRED, EIA</li>
+          <li>LGBTQ+, Religion, Social Climate sections</li>
+          <li>International — EU, UK, Canada</li>
+          <li>Unlimited saved locations</li>
+          <li>Siri &amp; Apple Intelligence integration</li>
+          <li>Buy once · yours forever</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "Where does the data come from?",
+      answer: "Every data source in Panorama is a live call to an official public API — the US Census Bureau, CDC, FBI/NIBRS, FEMA, BLS, BEA, FRED, EIA, USGS, EPA EJScreen, Walk Score, World Bank, Statistics Canada, and others. Panorama assembles the results; it does not maintain its own database of location data."
+    },
+    {
+      question: "Do I need to sign up or create an account?",
+      answer: "No. Panorama has no account. Some optional data sources (Walk Score, FBI Crime, BEA, FRED) require free API keys from those providers — you add your key in Settings and it is stored only in your macOS Keychain. DataIsland never receives your keys."
+    },
+    {
+      question: "Which AI models does Panorama support?",
+      answer: "On Apple Silicon Macs running macOS 26 or later, Panorama uses Apple Intelligence for on-device AI — completely private. For other Macs or if you prefer a cloud model, Panorama uses OpenRouter so you can choose any model: GPT-4o, Claude, Gemini, Llama, and more. You supply your own OpenRouter key. AI powers three features: AI Verdict, Research Q&A, and the In-Depth PDF Report narratives."
+    },
+    {
+      question: "Does Panorama work outside the US?",
+      answer: "Yes. International locations use World Bank country indicators, Numbeo cost-of-living data, Teleport city scores, and WHO health data. UK locations add Met Police crime statistics. Canadian locations add Statistics Canada demographics. US-only sources (FEMA, CDC, BLS, BEA, FRED) are omitted automatically for non-US addresses."
+    },
+    {
+      question: "Why do some sections show no data or an error?",
+      answer: "Most Panorama data sources are US government APIs. Some block certain VPNs, proxies, or network tools like Cloudflare WARP. If you see errors in the FEMA, Crime, EIA, or BEA sections, try disabling any active VPN or proxy and tapping Retry. Each section has its own Retry button."
+    },
+    {
+      question: "How current is the data?",
+      answer: "Data is fetched live each time you search a location. Census data reflects the most recent ACS 5-year estimates. Crime data reflects the latest NIBRS release (typically one year behind). FRED, BLS, and BEA data reflects their most recent published releases. Climate and environmental data is updated annually by the respective agencies."
+    },
+    {
+      question: "Can I export data out of Panorama?",
+      answer: "Yes — several ways. The In-Depth PDF Report generates a multi-page consultant-quality PDF you can share or print. Individual report tabs export to Markdown or CSV. Every chart can be dragged directly into Affinity, Keynote, Pages, or Mail as a PNG. FusionMD users can open PDF reports directly for further editing and publishing."
+    },
+    {
+      question: "Is there a subscription?",
+      answer: "No. Panorama Pro is a one-time purchase of $29.99. All future updates to the current major version are included. No renewal fees, no account required."
+    },
+  ]} />
+
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 {
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+
+  /* Feature sections */
+  .feature-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .feature-section.alt {
+    background: var(--gray-light);
+    padding: 3.5rem calc((100% - 900px) / 2 + 1.5rem);
+    margin: 0 calc(-1 * (100vw - 900px) / 2);
+    max-width: 100vw;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    border-bottom: none;
+    justify-content: center;
+  }
+
+  .feature-section.alt > .feature-icon,
+  .feature-section.alt > .feature-body {
+    max-width: 420px;
+  }
+
+  .feature-section.alt > .feature-body {
+    max-width: 820px;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .feature-body {
+    flex: 1;
+    max-width: 820px;
+  }
+
+  .feature-body h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-body p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  /* Source grid */
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .source-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.1rem 1.1rem;
+  }
+
+  .source-cat {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--blue);
+    margin-bottom: 0.6rem;
+  }
+
+  .source-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .source-card ul li {
+    font-size: 0.87rem;
+    color: var(--gray-dark);
+    line-height: 1.55;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .source-card ul li:last-child { border-bottom: none; }
+
+  /* AI chips */
+  .ai-chips {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+
+  .chip {
+    background: var(--blue);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  /* Mini feature grid */
+  .mini-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .mini-feature {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .mini-feature h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .mini-feature p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--gray-dark);
+  }
+
+  /* Pricing */
+  .pricing-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .pricing-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .pricing-card {
+    flex: 1;
+    max-width: 320px;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-align: left;
+  }
+
+  .pricing-card.featured {
+    background: var(--blue);
+    color: #fff;
+  }
+
+  .pricing-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-card.featured h3 { color: rgba(255,255,255,0.8); }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .price-detail {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    margin-bottom: 1rem;
+    color: var(--gray-dark);
+  }
+
+  .pricing-card.featured .price-detail { color: rgba(255,255,255,0.7); }
+
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .pricing-card ul li {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--gray-dark);
+  }
+
+  .pricing-card.featured ul li {
+    border-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .pricing-card ul li::before { content: "✓  "; }
+
+  /* Waitlist */
+  .waitlist-section {
+    padding: 1rem 0 3rem;
+    border-bottom: none;
+  }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: -1.5rem;
+  }
+
+  .privacy-note a {
+    color: var(--gray-dark);
+    text-decoration: underline;
+  }
+
+  .privacy-note a:hover { color: var(--blue); }
+
+  @media (max-width: 768px) {
+    .feature-section,
+    .feature-section.alt {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 2.5rem 1rem;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    .source-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mini-feature-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-cards {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .pricing-card { max-width: 100%; }
+  }
+</style>

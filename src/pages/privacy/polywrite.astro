@@ -30,6 +30,18 @@ const updated = "11 August 2026";
       PolyWrite has no server, no account, and no analytics.
     </p>
 
+    <h2>What PolyWrite Accesses</h2>
+    <p>PolyWrite accesses only data you provide directly:</p>
+    <ul>
+      <li>Document text and formatting you type or paste</li>
+      <li>Files you explicitly open via the Open dialog or drag-and-drop</li>
+      <li>Locations you choose when saving a file</li>
+    </ul>
+    <p>
+      PolyWrite does not access your photos, contacts, location, calendar, microphone,
+      camera, or any system data beyond the files you open.
+    </p>
+
     <h2>Your Documents</h2>
     <p>
       PolyWrite stores documents as plain <code>.txt</code>, <code>.rtf</code>, or
@@ -76,18 +88,19 @@ const updated = "11 August 2026";
 
     <h3>No Other Outbound Network Activity</h3>
     <p>
-      Outside of the AI feature above, PolyWrite makes no outbound network connections. Every
+      Outside of the AI features above, PolyWrite makes no outbound network connections. Every
       other feature — plain text, rich text, and Markdown editing, translation, spell check, and
       all export formats — works fully offline.
     </p>
 
     <h2>What Is Stored Locally</h2>
     <ul>
-      <li>Documents — stored as <code>.txt</code>/<code>.rtf</code>/<code>.md</code> files in
-        user-chosen locations</li>
-      <li>Settings and preferences — stored in UserDefaults, local only</li>
-      <li>OpenRouter API key (if provided) — stored in macOS Keychain</li>
-      <li>Recent documents list — stored in UserDefaults, local only</li>
+      <li><strong>Document files</strong> — saved to locations you choose on your Mac</li>
+      <li><strong>Theme preference</strong> — your selected app theme, stored in UserDefaults</li>
+      <li><strong>Font size preference</strong> — plain text editor font size, stored in UserDefaults</li>
+      <li><strong>Default format preference</strong> — whether new documents start as Plain Text, Rich Text, or Markdown, stored in UserDefaults</li>
+      <li><strong>Recent documents list</strong> — file paths of recently opened documents, managed by macOS</li>
+      <li><strong>OpenRouter API key</strong> (if provided) — stored in macOS Keychain, never transmitted to DataIsland</li>
     </ul>
     <p>
       None of this data is synced to iCloud by PolyWrite or transmitted to DataIsland.

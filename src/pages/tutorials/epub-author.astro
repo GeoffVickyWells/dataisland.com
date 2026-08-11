@@ -1,0 +1,860 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Are You an ePub Author? — FusionMD Publishing Guide"
+  description="A complete guide to publishing your ebook on Apple Books and Amazon KDP using FusionMD — cover image specs, metadata, ePub3 export, and reaching a global audience through translation."
+>
+
+  <div class="guide-wrap">
+
+    <!-- Hero -->
+    <section class="guide-hero fade-in">
+      <div class="breadcrumb"><a href="/tutorials/fusionmd">← FusionMD Tutorials</a></div>
+      <div class="hero-badge">FusionMD Publishing Guide</div>
+      <h1>Are You an ePub Author?</h1>
+      <p class="hero-sub">
+        A complete walkthrough from FusionMD manuscript to published ebook —
+        cover image specifications, Apple Books, Amazon KDP, and how to reach
+        a global audience by publishing in multiple languages.
+      </p>
+      <div class="hero-meta">
+        Covers: macOS 14+ &nbsp;·&nbsp; Translation requires macOS 15+ &nbsp;·&nbsp; No third-party tools required for ePub3 export
+      </div>
+    </section>
+
+    <!-- What you need -->
+    <section class="guide-section fade-in">
+      <h2>What you need before you start</h2>
+      <div class="checklist-grid">
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>A completed manuscript in FusionMD</strong>
+            <p>Your book can be any length. Fiction, non-fiction, short story collection, how-to guide, cookbook — all work equally well.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>A cover image</strong>
+            <p>See Part 2 for the exact specifications. Free tools can create one in under an hour. You don't need design experience.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>A free Apple ID</strong>
+            <p>You already have one if you own a Mac or iPhone. Used to sign in to Apple Books Connect.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>A free Amazon account</strong>
+            <p>Your existing Amazon shopping account works. Used to sign in to Kindle Direct Publishing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 1 -->
+    <section class="guide-section fade-in" id="p1">
+      <div class="part-num">Part 1</div>
+      <h2>Structure your manuscript</h2>
+      <p>
+        ePub readers build the table of contents from your document's headings.
+        Getting this right takes two minutes and makes the entire book navigable on every device.
+      </p>
+
+      <div class="rule-block">
+        <h3>Heading rules</h3>
+        <ul>
+          <li><code># Chapter One</code> — each H1 becomes a top-level TOC entry</li>
+          <li><code>## Scene or section title</code> — nested under the chapter above it</li>
+          <li>Do not skip levels (no jumping from <code>#</code> directly to <code>###</code>)</li>
+        </ul>
+      </div>
+
+      <h3>Add a title page</h3>
+      <p>Make the very first content in your document the title page. Readers see this when they open the ebook:</p>
+      <pre class="code-block"><code># The Name of Your Book
+## A Subtitle if You Have One
+
+*by Your Name*
+
+---</code></pre>
+
+      <h3>Images inside the book</h3>
+      <table>
+        <thead><tr><th>Rule</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Maximum 1200 px wide</td><td>Wider images are scaled down by readers — no benefit, extra file size</td></tr>
+          <tr><td>Under 1 MB per image</td><td>Keeps total file size manageable for all devices</td></tr>
+          <tr><td>JPEG for photographs</td><td>Smaller file size for photos</td></tr>
+          <tr><td>PNG for diagrams and screenshots</td><td>Preserves sharp edges and text in illustrations</td></tr>
+          <tr><td>Total embedded media under 40 MB</td><td>Apple Books and most readers have practical limits</td></tr>
+        </tbody>
+      </table>
+      <p>Drag images directly into FusionMD's editor. They embed in the document and export into the ePub automatically.</p>
+    </section>
+
+    <!-- Part 2 -->
+    <section class="guide-section fade-in" id="p2">
+      <div class="part-num">Part 2</div>
+      <h2>Create your cover image</h2>
+      <p>
+        Your cover is the single most important marketing asset for your book.
+        A poor cover signals a low-quality book before anyone reads the first sentence.
+        Both platforms have specific requirements — a single file satisfies both.
+      </p>
+
+      <div class="spec-hero">
+        <div class="spec-badge">The one size that works everywhere</div>
+        <div class="spec-dims">1600 × 2560 px</div>
+        <div class="spec-detail">Portrait · JPEG · RGB · under 4 MB · 72 dpi</div>
+      </div>
+
+      <table>
+        <thead><tr><th>Requirement</th><th>Apple Books</th><th>Amazon KDP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Recommended</strong></td><td>1600 × 2560 px</td><td>1600 × 2560 px</td></tr>
+          <tr><td><strong>Minimum</strong></td><td>1400 px on shortest side</td><td>1000 px on longest side</td></tr>
+          <tr><td><strong>Aspect ratio</strong></td><td>Portrait — taller than wide</td><td>1.6:1 (height:width)</td></tr>
+          <tr><td><strong>Format</strong></td><td>JPEG or PNG</td><td>JPEG or TIFF</td></tr>
+          <tr><td><strong>Max size</strong></td><td>4 MB</td><td>50 MB</td></tr>
+          <tr><td><strong>Color</strong></td><td>RGB (not CMYK)</td><td>RGB (not CMYK)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Free tools to create your cover</h3>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h4>Canva</h4>
+          <p>Search for "Kindle ebook cover" — Canva has pre-sized 1600 × 2560 templates with professional designs. Edit the text and export as JPEG. Free tier is sufficient.</p>
+        </div>
+        <div class="tool-card">
+          <h4>Apple Keynote</h4>
+          <p>Create a slide at 13.3 × 21.3 cm, design it, and export as JPEG at 150 dpi. The result is approximately 1600 × 2560 px at the correct ratio.</p>
+        </div>
+        <div class="tool-card">
+          <h4>Commission a designer</h4>
+          <p>Brief them with: "1600 × 2560 px portrait ebook cover, JPEG, RGB, under 4 MB." This brief is sufficient for any experienced cover designer.</p>
+        </div>
+      </div>
+
+      <div class="callout-block">
+        <strong>Platform content rules.</strong> Both Apple and Amazon review covers and will reject: real people who haven't consented to commercial use, stock images without the appropriate license, content that is misleading about the book's subject matter, or anything violating their content guidelines.
+      </div>
+    </section>
+
+    <!-- Part 3 -->
+    <section class="guide-section fade-in" id="p3">
+      <div class="part-num">Part 3</div>
+      <h2>Complete the Metadata panel</h2>
+      <p>
+        Open the right panel in FusionMD (⌘2) and click the <strong>Metadata tab</strong>.
+        These fields travel inside the ePub3 file — every export carries them automatically.
+      </p>
+
+      <div class="metadata-fields">
+        <div class="meta-field">
+          <div class="meta-label">Title</div>
+          <div class="meta-desc">Exactly as it should appear in the stores. Use title case. This is not the filename — it's the published title.</div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Author</div>
+          <div class="meta-desc">Your full name or pen name, as you want it to appear in search results and on the book's store page.</div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Description</div>
+          <div class="meta-desc">
+            Your store listing copy — the text readers see before buying. 150–300 words.
+            Structure: hook in the first sentence → what the book is about → a closing call to action.
+            Amazon allows basic HTML formatting; you can enhance it in KDP's dashboard after uploading.
+          </div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Language</div>
+          <div class="meta-desc">
+            Match the language your manuscript is written in. This controls the ePub's reading direction —
+            Arabic and Hebrew documents get <code>dir="rtl"</code> in the ePub metadata automatically.
+          </div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Cover Image</div>
+          <div class="meta-desc">Click "Choose Cover Image…" and select your 1600 × 2560 px JPEG. FusionMD embeds it in every ePub3 export. You will also upload the cover separately to each platform — the embedded version powers the book's internal cover page; the uploaded version powers the store thumbnail.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 4 -->
+    <section class="guide-section fade-in" id="p4">
+      <div class="part-num">Part 4</div>
+      <h2>Export and test your ePub3</h2>
+      <ol class="guide-steps">
+        <li>
+          <strong>Apply the ePub Book text theme.</strong>
+          In the right panel → Document Styles, select <strong>ePub Book</strong>.
+          This sets a serif body font, first-line paragraph indents, and generous leading — the standard layout used by published fiction and narrative non-fiction. Adjust or choose a different theme if your book's genre calls for it.
+        </li>
+        <li>
+          <strong>Review the live preview.</strong>
+          Widen the preview pane and scroll through the entire manuscript. Verify:
+          <ul>
+            <li>Chapter headings appear correctly and at the right level</li>
+            <li>Images are where you expect them and not distorted</li>
+            <li>No heading appears without body text below it</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Export.</strong>
+          File → Export… → ePub3 (or ⌘⇧E, then choose ePub3 from the format picker).
+          Name the file using your book title with hyphens instead of spaces: <code>my-book-title.epub</code>
+        </li>
+        <li>
+          <strong>Test in Apple Books before uploading anywhere.</strong>
+          Double-click the <code>.epub</code> file — Apple Books opens it immediately. Check:
+          <ul>
+            <li>Cover appears on the book's front page and as the library thumbnail</li>
+            <li>Table of contents lists all chapters with correct hierarchy</li>
+            <li>Body text renders in the expected font at readable size</li>
+            <li>All images appear and are correctly sized</li>
+          </ul>
+          Fix any issues in FusionMD and re-export. It takes seconds.
+        </li>
+      </ol>
+    </section>
+
+    <!-- Part 5 -->
+    <section class="guide-section fade-in" id="p5">
+      <div class="part-num">Part 5</div>
+      <h2>Publish on Apple Books Connect</h2>
+      <p>Apple Books Connect is Apple's self-publishing portal. There is no fee — Apple takes a 30% commission on each sale. Free books are allowed.</p>
+
+      <ol class="guide-steps">
+        <li>
+          Go to <a href="https://authors.apple.com" target="_blank" rel="noopener"><strong>authors.apple.com</strong></a> and sign in with your Apple ID.
+        </li>
+        <li>
+          Click <strong>"Add a New Book."</strong>
+        </li>
+        <li>
+          <strong>Book Details.</strong> You already have all of this:
+          <ul>
+            <li>Title and subtitle</li>
+            <li>Author name</li>
+            <li>Description (paste from your Metadata panel)</li>
+            <li>Language</li>
+            <li>Category — choose up to two; pick the most specific ones that fit your book</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Upload the cover.</strong> This is the store thumbnail — upload your 1600 × 2560 px JPEG here. This is separate from the cover embedded in the ePub file.
+        </li>
+        <li>
+          <strong>Upload the ePub file.</strong> Drag your <code>.epub</code> into the upload field. Apple validates it automatically. If validation fails, the error list includes reference numbers with descriptions — fix the issue in FusionMD and re-upload.
+        </li>
+        <li>
+          <strong>Set territories and pricing.</strong> For worldwide release, select all territories. Apple uses price tiers — choose a tier and it sets the price in each territory's currency automatically. You can price in US dollars and let Apple handle currency conversion, or set prices per territory.
+        </li>
+        <li>
+          <strong>Submit for review.</strong> Apple reviews ebooks within 24–72 hours. You receive an email when it is approved and live on the store.
+        </li>
+      </ol>
+
+      <div class="resource-link">
+        <span class="resource-icon">📖</span>
+        Apple Books publishing guidelines: <a href="https://support.apple.com/en-us/101662" target="_blank" rel="noopener">support.apple.com/en-us/101662</a>
+      </div>
+    </section>
+
+    <!-- Part 6 -->
+    <section class="guide-section fade-in" id="p6">
+      <div class="part-num">Part 6</div>
+      <h2>Publish on Amazon KDP</h2>
+      <p>Amazon Kindle Direct Publishing (KDP) is free to use. Amazon takes 30–65% depending on the royalty plan and your book's price.</p>
+
+      <ol class="guide-steps">
+        <li>
+          Go to <a href="https://kdp.amazon.com" target="_blank" rel="noopener"><strong>kdp.amazon.com</strong></a> and sign in with your Amazon account.
+        </li>
+        <li>
+          On the Bookshelf, click <strong>"+ Kindle eBook."</strong>
+        </li>
+        <li>
+          <strong>Page 1 — Kindle eBook Details.</strong>
+          <ul>
+            <li>Language (critical — must match the manuscript language)</li>
+            <li>Book title and subtitle</li>
+            <li>Author name</li>
+            <li>Description (paste from FusionMD's Metadata panel)</li>
+            <li>Publishing rights: check "I own the copyright and I hold the necessary publishing rights"</li>
+            <li>Keywords (up to 7): think about what a reader would search for to find your book</li>
+            <li>Categories (up to 2 BISAC categories): choose the most specific subcategories available</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Page 2 — Kindle eBook Content.</strong>
+          <ul>
+            <li>ISBN: leave blank — Amazon assigns a free ASIN. You only need your own ISBN if you plan to sell the same edition through other retailers who require one.</li>
+            <li>Upload manuscript: click "Upload eBook Manuscript" and select your <code>.epub</code> file. Amazon converts it internally to their format.</li>
+            <li>Book cover: upload your 1600 × 2560 px JPEG cover separately. Even though it is embedded in the ePub, Amazon uses the separately uploaded version as the store thumbnail and Kindle device display image.</li>
+            <li>Kindle eBook Preview: click "Preview on Kindle" — Amazon's previewer shows how the book looks on Kindle devices and apps. Verify chapter navigation, image display, and text rendering before continuing.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Page 3 — Kindle eBook Pricing.</strong>
+
+          <div class="kdp-royalty-block">
+            <div class="royalty-option">
+              <div class="royalty-pct">70%</div>
+              <div class="royalty-detail">
+                <strong>Books priced $2.99–$9.99</strong>
+                <p>Amazon deducts a small delivery fee (~$0.15 per MB of file size). For a standard ebook this is pennies. This is the standard option for most self-published books.</p>
+              </div>
+            </div>
+            <div class="royalty-option">
+              <div class="royalty-pct">35%</div>
+              <div class="royalty-detail">
+                <strong>Books priced outside $2.99–$9.99</strong>
+                <p>No delivery fee deducted. Required for free books and books above $9.99. The $2.99–$9.99 range is the sweet spot for most ebook genres.</p>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            <strong>KDP Select:</strong> Skip it. KDP Select gives access to Kindle Unlimited (page-read royalties) but requires 90-day exclusivity with Amazon — meaning you cannot also sell on Apple Books during that period. You can enroll later if you decide you want to try it.
+          </p>
+          <p>
+            <strong>Territories:</strong> Choose "Worldwide rights — I own all rights." Set your US price; Amazon calculates suggested prices for all other territories automatically.
+          </p>
+        </li>
+        <li>
+          <strong>Click "Publish Your Kindle eBook."</strong> Amazon reviews within 24–72 hours and emails you when it is live on the Kindle Store.
+        </li>
+      </ol>
+
+      <div class="resource-link">
+        <span class="resource-icon">📖</span>
+        Amazon KDP ePub guidelines: <a href="https://kdp.amazon.com/en_US/help/topic/G200634390" target="_blank" rel="noopener">kdp.amazon.com — ePub submission guide</a>
+      </div>
+    </section>
+
+    <!-- Part 7 -->
+    <section class="guide-section fade-in" id="p7">
+      <div class="part-num">Part 7</div>
+      <h2>Reach a bigger market — publish in other languages</h2>
+
+      <p>
+        A translated edition is a separate, independent book listing that earns alongside the original.
+        It costs nothing to produce with FusionMD's on-device translation, and it puts your book in
+        front of readers who will never search in English.
+      </p>
+
+      <div class="market-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Key markets</th>
+              <th>Why it's worth it</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Spanish</strong></td>
+              <td>Mexico, USA (Hispanic), Spain, Latin America</td>
+              <td>500M+ native speakers; fast-growing ebook market with limited competition in many genres</td>
+            </tr>
+            <tr>
+              <td><strong>German</strong></td>
+              <td>Germany, Austria, Switzerland</td>
+              <td>Among the highest ebook spend per capita in Europe; voracious readers</td>
+            </tr>
+            <tr>
+              <td><strong>French</strong></td>
+              <td>France, Quebec, West Africa</td>
+              <td>Large market; Quebec in particular is underserved by English-language self-publishers</td>
+            </tr>
+            <tr>
+              <td><strong>Portuguese (Brazil)</strong></td>
+              <td>Brazil (primary), Portugal</td>
+              <td>Brazil is the fastest-growing ebook market in the Americas</td>
+            </tr>
+            <tr>
+              <td><strong>Japanese</strong></td>
+              <td>Japan</td>
+              <td>Enormous ebook market; niche genres outperform their English equivalents</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>How to produce a translated edition in FusionMD</h3>
+      <ol class="guide-steps">
+        <li>
+          <strong>Translate the manuscript.</strong>
+          In FusionMD, open the right panel → <strong>Translation tab</strong>.
+          Set the target language. Click <strong>"Translate to New Document."</strong>
+          FusionMD opens a translated copy in a new window. Your original document is untouched.
+          The new document's language is automatically set to the target language.
+          <div class="step-note">Requires macOS 15 Sequoia or later. Language packs download once from Apple; all subsequent translations run offline.</div>
+        </li>
+        <li>
+          <strong>Review and edit the translation.</strong>
+          Machine translation handles narrative prose, exposition, and dialogue well.
+          Give special attention to:
+          <ul>
+            <li><strong>Proper nouns</strong> — character names and place names usually stay untranslated</li>
+            <li><strong>Idiomatic expressions</strong> — "break a leg" should not be translated literally; find the target-language equivalent</li>
+            <li><strong>Dialogue voice</strong> — different characters may have distinct registers that machine translation flattens</li>
+            <li><strong>Genre-specific vocabulary</strong> — legal, medical, and technical terms may need verification by a domain expert</li>
+          </ul>
+          You can also send the exported ePub to a professional editor or native-speaker proofreader for a review pass before publishing.
+        </li>
+        <li>
+          <strong>Update the Metadata panel</strong> in the translated document:
+          <ul>
+            <li>Language — already set automatically; verify it is correct</li>
+            <li>Description — translate it into the target language, or write a version tailored to that market</li>
+            <li>Cover — for major markets, consider commissioning a cover with the title in the target language; a localised cover significantly improves click-through rates in regional stores</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Export</strong> as a separate file: <code>my-book-title-es.epub</code> for Spanish, <code>-de.epub</code> for German, and so on.
+        </li>
+        <li>
+          <strong>Create a new book listing</strong> on both Apple Books Connect and Amazon KDP.
+          It is a separate book, not a new edition — it gets its own ASIN on Amazon and its own listing on Apple Books.
+          Fill in all metadata (title, description, keywords) in the target language.
+          On Amazon KDP, set the Language field to the correct language — Amazon routes the listing to the appropriate regional stores based on this.
+        </li>
+      </ol>
+
+      <div class="callout-block">
+        <strong>Distribution shortcut: Draft2Digital.</strong>
+        If managing multiple platform accounts becomes complex as you add languages and titles,
+        <a href="https://www.draft2digital.com" target="_blank" rel="noopener">Draft2Digital</a>
+        lets you upload one ePub file and distributes it to Apple Books, Barnes &amp; Noble, Kobo,
+        and others automatically. Amazon KDP is not included — upload there directly for the best
+        royalty rates. Draft2Digital takes a small percentage of each sale in exchange for handling
+        the distribution logistics.
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="guide-cta fade-in">
+      <h2>You're ready to publish.</h2>
+      <p>
+        FusionMD handles every step of the workflow described in this guide — writing,
+        metadata, cover attachment, ePub3 export, and on-device translation.
+        No plugins, no conversion tools, no cloud accounts required.
+      </p>
+      <div class="cta-links">
+        <a href="/products/fusionmd" class="cta-primary">Learn about FusionMD →</a>
+        <a href="/tutorials/print-author" class="cta-secondary">Take it to print →</a>
+        <a href="/tutorials/fusionmd#t15" class="cta-secondary">ePub3 export tutorial →</a>
+      </div>
+    </section>
+
+  </div><!-- /guide-wrap -->
+
+</BaseLayout>
+
+<style>
+  .guide-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 6rem;
+  }
+
+  .breadcrumb { font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+  /* Hero */
+  .guide-hero {
+    padding: 2.5rem 0 3rem;
+    border-bottom: 1px solid var(--gray-light);
+    margin-bottom: 3rem;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3em 0.8em;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+
+  .guide-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-meta {
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
+
+  /* Sections */
+  .guide-section {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .part-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .guide-section p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  /* Checklist */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .check-item {
+    display: flex;
+    gap: 0.75rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+
+  .check-icon {
+    font-size: 1.1rem;
+    color: var(--blue);
+    flex-shrink: 0;
+    font-weight: 700;
+    margin-top: 0.1rem;
+  }
+
+  .check-item strong { font-size: 0.95rem; display: block; margin-bottom: 0.3rem; }
+  .check-item p { font-size: 0.87rem !important; margin: 0 !important; color: var(--gray-dark); line-height: 1.5 !important; }
+
+  /* Rule block */
+  .rule-block {
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .rule-block h3 { margin-top: 0 !important; }
+
+  .rule-block ul { padding-left: 1.25rem; margin: 0; }
+  .rule-block li { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.3rem; }
+
+  /* Code block */
+  .code-block {
+    background: #f5f5f5;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+    font-size: 0.9rem;
+  }
+
+  /* Cover spec hero */
+  .spec-hero {
+    text-align: center;
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .spec-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.5rem;
+  }
+
+  .spec-dims {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .spec-detail {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  /* Tool grid */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .tool-card {
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+  }
+
+  .tool-card h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .tool-card p {
+    font-size: 0.87rem !important;
+    margin: 0 !important;
+    color: var(--gray-dark);
+    line-height: 1.55 !important;
+  }
+
+  /* Callout */
+  .callout-block {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85rem 1rem;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    margin: 1.25rem 0;
+    color: var(--gray-dark);
+  }
+
+  /* Metadata fields */
+  .metadata-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1.25rem;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .meta-field {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .meta-field:last-child { border-bottom: none; }
+
+  .meta-label {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--blue);
+    padding: 0.9rem 1rem;
+    background: var(--gray-light);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .meta-desc {
+    padding: 0.9rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+  }
+
+  /* Guide steps */
+  .guide-steps {
+    padding-left: 1.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .guide-steps li {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .guide-steps ul {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0;
+  }
+
+  .guide-steps ul li {
+    margin-bottom: 0.3rem;
+  }
+
+  .step-note {
+    font-size: 0.88rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 0.4rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--gray-light);
+  }
+
+  /* Resource link */
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    margin-top: 1.25rem;
+  }
+
+  .resource-icon { font-size: 1rem; }
+
+  /* KDP royalty block */
+  .kdp-royalty-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .royalty-option {
+    display: flex;
+    gap: 0.75rem;
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .royalty-pct {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+
+  .royalty-detail strong { font-size: 0.9rem; display: block; margin-bottom: 0.3rem; }
+  .royalty-detail p { font-size: 0.85rem !important; margin: 0 !important; line-height: 1.5 !important; color: var(--gray-dark); }
+
+  /* Market table */
+  .market-table-wrap { margin: 1.25rem 0; }
+
+  /* CTA */
+  .guide-cta {
+    text-align: center;
+    padding: 3.5rem 0 1rem;
+  }
+
+  .guide-cta h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .guide-cta p  { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; max-width: 560px; margin: 0 auto 2rem; }
+
+  .cta-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-primary {
+    background: var(--blue);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .cta-primary:hover { background: #005fa3; }
+
+  .cta-secondary {
+    background: var(--gray-light);
+    color: var(--gray-dark);
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .cta-secondary:hover { background: #e0e0e0; }
+
+  code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .checklist-grid { grid-template-columns: 1fr; }
+    .tool-grid { grid-template-columns: 1fr; }
+    .kdp-royalty-block { grid-template-columns: 1fr; }
+    .meta-field { grid-template-columns: 1fr; }
+    .meta-label { border-bottom: 1px solid var(--gray-light); }
+    .guide-hero h1 { font-size: 2rem; }
+  }
+</style>

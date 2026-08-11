@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import EmailCapture from "../../components/EmailCapture.astro";
 import AppFAQ from "../../components/AppFAQ.astro";
 import AppStoreCTA from "../../components/AppStoreCTA.astro";
 
@@ -9,7 +8,7 @@ const icon = "/images/products/fusionmd/icon.png";
 
 <BaseLayout
   title="FusionMD — From First Word to Final Layout"
-  description="FusionMD is a native Mac document studio combining a Markdown editor, AI writing assistant, template engine, and professional IDML publishing pipeline."
+  description="FusionMD is a native Mac writing studio — Markdown editor, AI assistant, ePub3 export, 40 languages with RTL support, and professional IDML publishing pipeline."
 >
 
   <!-- Hero -->
@@ -20,7 +19,7 @@ const icon = "/images/products/fusionmd/icon.png";
     <p class="hero-sub">
       A native Mac document studio that combines a beautiful Markdown editor, an AI writing
       assistant, a template engine, and a professional publishing pipeline — all in one app.
-      The only Markdown editor that exports directly to Affinity and InDesign.
+      The only Markdown editor that exports to ePub3, Affinity, and InDesign.
     </p>
     <div class="hero-meta">macOS 14 Sonoma or later &nbsp;·&nbsp; 30-day free trial &nbsp;·&nbsp; One-time purchase</div>
     <AppStoreCTA />
@@ -41,7 +40,7 @@ const icon = "/images/products/fusionmd/icon.png";
     <div class="level">
       <div class="level-num">03</div>
       <h3>Publish</h3>
-      <p>Export to IDML — the format Affinity and InDesign speak natively. Tag content with style names and hand a perfectly structured file to your layout tool.</p>
+      <p>Import from Word, RTF, EPUB, and eight formats. Export to ePub3, IDML, PDF, Word, HTML, and more. One app for the full document lifecycle.</p>
     </div>
   </section>
 
@@ -60,9 +59,56 @@ const icon = "/images/products/fusionmd/icon.png";
         styles, body text, captions, and pull quotes already tagged — ready to design, not
         ready to re-type.
       </p>
+      <p>
+        Named styles come from the <strong>Layout Styles</strong> panel — browse, create, and
+        rename paragraph and character styles right in the sidebar, with document-wide
+        propagation when you rename one. Click a style to tag the paragraph or selection
+        you're on; no memorizing syntax required.
+      </p>
       <div class="callout">
         Works with <strong>Affinity</strong> and <strong>Adobe InDesign</strong>.
         The IDML spec is open and widely supported.
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: Text Transformations -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🔀</div>
+    <div class="feature-body">
+      <h2>Turn AI shorthand into tagged styles, automatically.</h2>
+      <p>
+        Ask an AI assistant to draft styled content and it'll often reach for its own shorthand —
+        bracket tags like <span class="mono">[PULLQUOTE]A memorable line.[/PULLQUOTE]</span>.
+        FusionMD watches for it: a banner appears above the editor the moment it spots
+        convertible tags, with a one-click <strong>Convert</strong> button that turns them into
+        real paragraph and character styles — the same ones IDML export uses.
+      </p>
+      <p>
+        Not every workflow uses square brackets. Open <strong>Text Transformations</strong>
+        (Edit menu, <span class="mono">⌘⌥T</span>) and pick a convention from the built-in
+        shape library — BBCode brackets, HTML tags, WordPress shortcodes, Mustache sections, or
+        a no-closing-tag paragraph marker for quick single-line captions — and FusionMD
+        generates working rules for it. No regex required, though full regular expressions are
+        there if you want them.
+      </p>
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Five built-in rulesets</h3>
+          <p>Clean AI Output and Clean Up Markdown handle the everyday cleanup; Tags → Paragraph/Character Styles and Strip Custom Tags handle the conversion.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Any convention, no regex</h3>
+          <p>Pick a shape from the picker, or define your own custom open/close delimiters — FusionMD writes the pattern.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Automatic detection</h3>
+          <p>A banner offers one-click conversion the moment it spots a tag you've told FusionMD to recognize.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Full regex when you want it</h3>
+          <p>Every rule — built-in, generated, or hand-written — is visible and editable as plain find/replace text.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -91,8 +137,8 @@ const icon = "/images/products/fusionmd/icon.png";
           <p>Split view updates as you type. Drag the divider between full editor, full preview, or anywhere between.</p>
         </div>
         <div class="mini-feature">
-          <h3>19 App Themes</h3>
-          <p>Light, dark, and everything between — named color palettes that change the whole writing environment, not just a mode toggle.</p>
+          <h3>24 Rainbow Themes</h3>
+          <p>Named color palettes spanning the full spectrum — dark and light, from Crimson Night to Cherry Blossom — that change the whole writing environment, not just a mode toggle.</p>
         </div>
       </div>
     </div>
@@ -105,46 +151,53 @@ const icon = "/images/products/fusionmd/icon.png";
       <h2>Your writing environment, your color.</h2>
       <p>
         Most writing apps give you a light/dark toggle — if you're lucky. FusionMD ships
-        with 19 named color themes covering the full spectrum from crisp white to deep espresso,
-        with a dozen variations in between. Pick the environment you want to write in, not
-        the one the developer decided on.
+        with 24 named color themes across the full spectrum, plus System, so the app always
+        matches macOS. Pick the environment you want to write in, not the one the developer
+        decided on.
       </p>
       <p>
         Each theme sets the editor background, sidebar, toolbar, and accent color as a
         coordinated palette — not just a tint applied over a fixed grey UI. Switch to
-        Hot Coffee and everything goes dark brown with latte cream accents. Switch to
-        Sandstone and the whole app becomes warm editorial cream. The writing surface
-        you stare at for hours deserves to look the way you want it to.
+        Crimson Night and everything goes dramatic near-black with deep red accents. Switch to
+        Cherry Blossom and the whole app becomes soft pastel pink. The writing surface
+        you stare at for hours deserves to look the way you want it to. Don't see the exact
+        shade you want? Design your own theme and share it as a <code>.ditheme</code> file.
       </p>
 
       <div class="app-theme-columns">
         <div class="app-theme-group">
-          <div class="app-theme-group-label">Light</div>
+          <div class="app-theme-group-label">Dark</div>
           <div class="app-theme-chips">
             <span>System</span>
-            <span>Sandstone</span>
-            <span>Minimalist</span>
-            <span>Crystal Ice</span>
+            <span>Crimson Night</span>
+            <span>Ruby Dusk</span>
+            <span>Ember Glow</span>
+            <span>Sunset Fire</span>
             <span>Golden Hour</span>
-            <span>Health</span>
-            <span>Pina Colada</span>
-            <span>Tuscan Honey</span>
+            <span>Forest Twilight</span>
+            <span>Emerald Depth</span>
+            <span>Ocean Abyss</span>
+            <span>Cobalt Midnight</span>
+            <span>Indigo Void</span>
+            <span>Violet Storm</span>
+            <span>Magenta Dream</span>
           </div>
         </div>
         <div class="app-theme-group">
-          <div class="app-theme-group-label">Dark</div>
+          <div class="app-theme-group-label">Light</div>
           <div class="app-theme-chips">
-            <span>Slate</span>
-            <span>Forest</span>
-            <span>Graphite</span>
-            <span>Rosewood</span>
-            <span>Indigo</span>
-            <span>Flamingo</span>
-            <span>Evergreen</span>
-            <span>Hot Coffee</span>
-            <span>Pumpkin</span>
-            <span>Spiced Honey</span>
-            <span>Winter Storm</span>
+            <span>Coral Dawn</span>
+            <span>Peach Bloom</span>
+            <span>Amber Light</span>
+            <span>Citrus Day</span>
+            <span>Mint Breeze</span>
+            <span>Jade Morning</span>
+            <span>Azure Sky</span>
+            <span>Sapphire Horizon</span>
+            <span>Lavender Mist</span>
+            <span>Orchid Garden</span>
+            <span>Rose Quartz</span>
+            <span>Cherry Blossom</span>
           </div>
         </div>
       </div>
@@ -250,7 +303,7 @@ const icon = "/images/products/fusionmd/icon.png";
         </div>
         <div class="coach-card">
           <h3>Proofreader</h3>
-          <p>Catches unfilled placeholders, repeated phrases, unmatched punctuation, long sentences, capitalisation errors, and word-usage mistakes. Click any issue to jump to it.</p>
+          <p>Catches unfilled placeholders, repeated phrases, unmatched punctuation, long sentences, capitalization errors, and word-usage mistakes. Click any issue to jump to it.</p>
         </div>
         <div class="coach-card">
           <h3>Style &amp; Clarity</h3>
@@ -258,7 +311,11 @@ const icon = "/images/products/fusionmd/icon.png";
         </div>
         <div class="coach-card">
           <h3>Parts of Speech</h3>
-          <p>Colour-codes every word by grammatical category — nouns, verbs, adjectives, adverbs, and four more. Works across 10+ languages, entirely on-device.</p>
+          <p>Color-codes every word by grammatical category — nouns, verbs, adjectives, adverbs, and four more. Works across 10+ languages, entirely on-device.</p>
+        </div>
+        <div class="coach-card">
+          <h3>Dialogue</h3>
+          <p>Catches the four punctuation mistakes every author makes around dialogue tags — a period before "he said," a comma outside the quote mark, missing punctuation, a capital letter after a comma. One click fixes one issue; Fix All clears the whole document in a single undo step.</p>
         </div>
       </div>
       <p class="coach-note">
@@ -285,7 +342,7 @@ const icon = "/images/products/fusionmd/icon.png";
   <section class="feature-section fade-in">
     <div class="feature-icon">🌍</div>
     <div class="feature-body">
-      <h2>21 languages. Set once, everything adapts.</h2>
+      <h2>40 languages. Set once, everything adapts.</h2>
       <p>
         Setting the document language is a single action that changes five things at once:
         spell checking, smart quotes, typographic spacing, AI context, and dialogue correction
@@ -310,7 +367,7 @@ const icon = "/images/products/fusionmd/icon.png";
         <div class="lang-card">
           <h3>English Variant Scanning</h3>
           <p>For US, UK, and Australian English: detects out-of-convention spellings and vocabulary (38 spelling pairs, 23 vocabulary pairs) and offers to convert in either direction.</p>
-          <p class="lang-note">Disabled for English (Canada) — both US and UK spellings are correct in Canadian English and Fusion won't flag them.</p>
+          <p class="lang-note">Disabled for English (Canada) — Canadian English follows its own defined standard, not a free mix of US and UK spellings (see below). American spellings are commonly seen and tolerated in casual Canadian writing, but they aren't the correct form — Fusion just doesn't run the US/UK scanner against Canadian English, since flagging every everyday Americanism would be more pedantic than useful.</p>
         </div>
         <div class="lang-card">
           <h3>AI Writes in Your Language</h3>
@@ -318,11 +375,23 @@ const icon = "/images/products/fusionmd/icon.png";
         </div>
       </div>
 
+      <div class="rtl-callout">
+        <strong>Right-to-left support. Arabic, Hebrew, and Persian.</strong>
+        <p>
+          العربية, עברית, and فارسی are fully supported. Set the document language and
+          the editor switches to right-to-left writing direction automatically — cursor
+          position, paragraph alignment, and the web preview all follow. ePub3 exports
+          carry the correct reading direction so ebook readers display the text correctly.
+        </p>
+      </div>
+
       <div class="canada-callout">
         <strong>Built for Canada's two official languages.</strong>
         <p>
-          <strong>English (Canada)</strong> accepts both US and UK spellings — because both are correct.
-          Fusion won't flag "colour" or tell you "centre" is misspelled in a Canadian document.
+          <strong>English (Canada)</strong> follows the Canadian standard — not a mix of US and UK, but its own defined system.
+          Canadian English keeps British spellings for vowel patterns ("colour", "honour", "centre", "cheque")
+          but uses American-style verb suffixes ("organize", "recognize", not "organise", "recognise").
+          Fusion applies the Canadian dictionary correctly: "colour" is right, "organize" is right, and neither is flagged.
         </p>
         <p>
           <strong>Français (Canada)</strong> is a fully implemented locale: fr-CA dictionary,
@@ -351,9 +420,85 @@ const icon = "/images/products/fusionmd/icon.png";
         <span>English (US)</span><span>English (Canada)</span><span>English (UK)</span>
         <span>English (Australia)</span><span>Français (Canada)</span><span>Français (France)</span>
         <span>Español</span><span>Italiano</span><span>Deutsch</span><span>Svenska</span>
-        <span>Русский</span><span>Português (BR)</span><span>Português (PT)</span>
+        <span>Nederlands</span><span>Norsk</span><span>Dansk</span><span>Suomi</span>
+        <span>Polski</span><span>Čeština</span><span>Slovenčina</span><span>Magyar</span>
+        <span>Română</span><span>Українська</span><span>Русский</span><span>Ελληνικά</span>
+        <span>Türkçe</span><span>Welsh</span><span>Irish</span><span>Scottish Gaelic</span>
         <span>中文 (简体)</span><span>中文 (繁體)</span><span>日本語</span><span>한국어</span>
-        <span>हिन्दी</span><span>Welsh</span><span>Irish</span><span>Scottish Gaelic</span>
+        <span>हिन्दी</span><span>Português (BR)</span><span>Português (PT)</span>
+        <span>Bahasa Indonesia</span><span>Bahasa Melayu</span>
+        <span>Tiếng Việt</span><span>ภาษาไทย</span>
+        <span>العربية</span><span>עברית</span><span>فارسی</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: ePub3 Export -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📚</div>
+    <div class="feature-body">
+      <h2>Publish an ebook from the document you're already writing in.</h2>
+      <p>
+        ePub3 export turns your Markdown document into a properly structured ebook — ready
+        to open in Apple Books, submit to a distributor, or send to a reader. No conversion,
+        no reformatting, no extra tools required.
+      </p>
+      <p>
+        The Metadata panel lets you set the title, author, description, language, and cover image.
+        These fields embed in the ePub3 file exactly as ebook distributors expect
+        them — fill them once and every export is ready to distribute.
+      </p>
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Cover Image</h3>
+          <p>Attach a cover image in the Metadata panel. It is embedded in every ePub3 export automatically — open the file in Apple Books and the cover appears immediately.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>ePub Book Theme</h3>
+          <p>A dedicated text theme with serif body type, first-line indents, and generous leading — correctly formatted fiction right out of the box.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Chapter Structure</h3>
+          <p>Markdown headings become chapter entries in the ePub's table of contents. Structure already in your document becomes the book's navigation automatically.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Language Direction</h3>
+          <p>The document language travels into the ePub metadata and sets the correct reading direction — including right-to-left for Arabic and Hebrew.</p>
+        </div>
+      </div>
+      <div class="callout">
+        Native ePub3 built in — no third-party tools required. A Pandoc-based alternative export path is also available for edge cases that need extended metadata control.
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: Import -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">📥</div>
+    <div class="feature-body">
+      <h2>Bring your existing documents in.</h2>
+      <p>
+        <strong>File → Import…</strong> converts a document from another app into Markdown
+        and opens the result as a new FusionMD document. The original file is never touched.
+        Before the import runs, FusionMD shows you an honest description of what each format
+        can and cannot carry across — so you know exactly what to expect.
+      </p>
+      <p>
+        Eight formats are supported, powered by Pandoc — built into FusionMD, no installation required:
+      </p>
+      <div class="import-table">
+        <div class="import-row"><span class="fmt">.docx</span><span>Word Document — headings and named paragraph styles convert well</span></div>
+        <div class="import-row"><span class="fmt">.odt</span><span>OpenDocument — LibreOffice and Pages exports with paragraph styles</span></div>
+        <div class="import-row"><span class="fmt">.rtf</span><span>Rich Text Format — named styles become headings; visual-only formatting becomes plain text</span></div>
+        <div class="import-row"><span class="fmt">.epub</span><span>EPUB — chapter structure and headings from reflowable ebook files</span></div>
+        <div class="import-row"><span class="fmt">.html</span><span>HTML — links, headings, lists, and basic tables from well-formed markup</span></div>
+        <div class="import-row"><span class="fmt">.rst</span><span>reStructuredText — high-fidelity conversion; advanced directives may drop</span></div>
+        <div class="import-row"><span class="fmt">.org</span><span>Org-mode — headings, lists, links, and tables</span></div>
+        <div class="import-row"><span class="fmt">.tex</span><span>LaTeX — sections, paragraphs, and basic math; custom macros may not survive</span></div>
+      </div>
+      <div class="callout">
+        Migrating from Word, LibreOffice, or Scrivener? Import your existing documents and
+        keep writing in FusionMD. Your files stay in their original format — nothing is overwritten.
       </div>
     </div>
   </section>
@@ -420,7 +565,36 @@ const icon = "/images/products/fusionmd/icon.png";
       </div>
 
       <div class="callout">
-        Every theme is fully customisable. Save your own typography system as a custom theme and it becomes available across all your documents.
+        Every theme is fully customizable. Save your own typography system as a custom theme and it becomes available across all your documents.
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: AppleScript -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">⚙️</div>
+    <div class="feature-body">
+      <h2>Scriptable, with a real dictionary.</h2>
+      <p>
+        FusionMD ships an AppleScript dictionary — not a stub. Open Script Editor's
+        Library, pick FusionMD, and you get a working Standard Suite: <span class="mono">open</span>,
+        <span class="mono">close</span>, <span class="mono">save</span>, and <span class="mono">quit</span>,
+        plus each open document's <span class="mono">name</span>, <span class="mono">file</span>,
+        <span class="mono">modified</span> state, and full <span class="mono">contents</span> —
+        readable and writable as plain Markdown text.
+      </p>
+      <p>
+        A FusionMD-specific extension goes further: every document exposes an
+        <span class="mono">editor mode</span> property you can get or set directly —
+        <em>markdown</em>, <em>variables</em>, <em>design</em>, <em>script</em>, or <em>layout</em>.
+        A script can open a document, switch it to Script mode, pull the screenplay text out,
+        and hand it to another app, all without a click.
+      </p>
+      <div class="callout">
+        Automator, Shortcuts (via the "Run AppleScript" action), and any script you write in
+        Script Editor or a terminal <span class="mono">osascript</span> call can all drive FusionMD —
+        useful for batch-generating reports from a template, pulling document text into another
+        workflow, or wiring FusionMD into a larger publishing pipeline.
       </div>
     </div>
   </section>
@@ -436,9 +610,11 @@ const icon = "/images/products/fusionmd/icon.png";
         <ul>
           <li>Full editor — no feature limits</li>
           <li>Templates and variables</li>
+          <li>ePub3 export with metadata &amp; cover image</li>
           <li>IDML export</li>
           <li>AI assistant (Apple Intelligence or OpenRouter)</li>
           <li>Fountain screenplay mode</li>
+          <li>40 languages with RTL support</li>
           <li>Full Writing Coach — spell check, grammar, thesaurus, dictionary &amp; more</li>
         </ul>
       </div>
@@ -450,6 +626,7 @@ const icon = "/images/products/fusionmd/icon.png";
           <li>Everything in the trial</li>
           <li>Unlimited documents</li>
           <li>Templates and <code style="background:rgba(255,255,255,0.15); padding: 0.1em 0.3em; border-radius:4px">{"{{variables}}"}</code></li>
+          <li>ePub3 export</li>
           <li>IDML export to Affinity &amp; InDesign</li>
           <li>Fountain mode</li>
           <li>Buy once · yours forever</li>
@@ -457,7 +634,7 @@ const icon = "/images/products/fusionmd/icon.png";
       </div>
     </div>
     <p class="pricing-compare">
-      Comparable to iA Writer ($49.99) — with templates, IDML export, and Fountain mode that iA Writer doesn't have.
+      Comparable to iA Writer ($49.99) — with templates, ePub3 export, IDML export, 40 languages with RTL, and Fountain mode that iA Writer doesn't have.
     </p>
   </section>
 
@@ -469,7 +646,11 @@ const icon = "/images/products/fusionmd/icon.png";
     },
     {
       question: "Can the AI write in languages other than English?",
-      answer: "Yes. When you set the document language — say, French (Canada) or German — that language is passed to the AI on every generation request. Ask for a paragraph and the AI writes in the document's language with correct spelling conventions, vocabulary, and punctuation style. You never need to say \"write in French\" each time. This works with both Apple Intelligence and OpenRouter-connected models."
+      answer: "Yes. When you set the document language — any of FusionMD's 40 supported languages — that language is passed to the AI on every generation request. Ask for a paragraph and the AI writes in the document's language with correct spelling conventions, vocabulary, and punctuation style. You never need to say \"write in French\" each time. This works with both Apple Intelligence and OpenRouter-connected models."
+    },
+    {
+      question: "Can FusionMD export ePub3 ebooks?",
+      answer: "Yes. The Metadata panel lets you set the title, author, description, language, and cover image for your document. Export to ePub3 and those fields are embedded in the file exactly as ebook distributors expect. Markdown headings become chapter entries in the ePub's table of contents automatically. The document language travels into the ePub metadata and sets the correct reading direction — including right-to-left for Arabic and Hebrew. No third-party tools are required — FusionMD includes a built-in ePub3 exporter as well as a Pandoc-based alternative path for extended metadata control."
     },
     {
       question: "What are Boilerplates and how do I use them?",
@@ -481,7 +662,7 @@ const icon = "/images/products/fusionmd/icon.png";
     },
     {
       question: "Can I use FusionMD without AI?",
-      answer: "Completely. The editor, templates, boilerplates, IDML export, Fountain screenplay mode, the full Writing Coach (spell check, grammar, thesaurus, dictionary, proofreader, style analysis, and more), and the full language system all work without any AI. You don't need an Apple Intelligence device, and you don't need an OpenRouter API key. AI is an optional layer on top of a fully functional writing and publishing tool."
+      answer: "Completely. The editor, templates, boilerplates, ePub3 export, IDML export, Fountain screenplay mode, the full Writing Coach (spell check, grammar, thesaurus, dictionary, proofreader, style analysis, and more), and the full 40-language system all work without any AI. You don't need an Apple Intelligence device, and you don't need an OpenRouter API key. AI is an optional layer on top of a fully functional writing and publishing tool."
     },
     {
       question: "What is the difference between a Template and a Boilerplate?",
@@ -489,7 +670,7 @@ const icon = "/images/products/fusionmd/icon.png";
     },
     {
       question: "What file format does FusionMD use?",
-      answer: "FusionMD saves documents as .fusiondoc files. A .fusiondoc is a plain Markdown file with a small metadata header that stores the document title, language setting, and variable values if the document was created from a template. You can open any .fusiondoc in a plain text editor and read the Markdown. FusionMD also opens plain .md files directly. Templates are saved as .fusiontemplate files and work the same way."
+      answer: "FusionMD saves documents as .fusiondoc files. A .fusiondoc is a plain JSON file with your Markdown stored directly in a text field, alongside metadata like the document's language, theme, and variable values if the document was created from a template. You can open any .fusiondoc in a plain text editor and read your writing right there in the file. FusionMD also opens plain .md files directly, and File → Save As can export any document straight to .md. Templates are saved as .fusiontemplate files and work the same way."
     },
     {
       question: "Do I need Affinity or InDesign to use FusionMD?",
@@ -497,18 +678,13 @@ const icon = "/images/products/fusionmd/icon.png";
     },
     {
       question: "How is FusionMD different from iA Writer or Ulysses?",
-      answer: "iA Writer and Ulysses are excellent focused Markdown editors. FusionMD goes further in three ways. First, templates: {{variable}} placeholders, typed fields, required-field enforcement, and conditional sections — neither iA Writer nor Ulysses has anything close. Second, boilerplates: a managed library of reusable content blocks. Third, IDML export: the ability to hand a properly tagged document to Affinity or InDesign. FusionMD is priced identically to iA Writer and adds capabilities neither competitor ships."
+      answer: "iA Writer and Ulysses are excellent focused Markdown editors. FusionMD goes further in four ways. First, templates: {{variable}} placeholders, typed fields, required-field enforcement, and conditional sections — neither iA Writer nor Ulysses has anything close. Second, boilerplates: a managed library of reusable content blocks. Third, ePub3 export: publish an ebook directly from your document, with cover image, metadata, and correct chapter structure, no conversion required. Fourth, IDML export: hand a properly tagged document to Affinity or InDesign. FusionMD is priced identically to iA Writer and adds capabilities neither competitor ships."
+    },
+    {
+      question: "I use Grammarly (or a similar grammar tool) — will it interfere with FusionMD's Writing Coach?",
+      answer: "No. FusionMD's spell check and grammar checking don't rely on the system-wide setting that Grammarly changes — the editor explicitly enables its own continuous spell checking regardless of that setting, and the Writing Coach's Spelling and Grammar tabs run their own checks independently. We tested this directly with Grammarly installed and active: both the inline red-underline spell check and the Writing Coach panel caught every misspelling correctly, with no suppressed results. Vocabulary, Proofreader, Style & Clarity, Parts of Speech, and Dialogue don't touch the system spell-check service at all, so they're unaffected regardless of what else is installed. You shouldn't see duplicate or conflicting suggestion overlays inside the FusionMD editor either, since Grammarly targets standard system text fields and FusionMD's editor is a custom view. One unrelated thing worth knowing: installing Grammarly's Mac app silently turns off macOS's own system-wide spell check (a Grammarly behavior, not FusionMD's), which is why spelling underlines can disappear in apps like Mail or Notes after installing it. If you want that back, Terminal: defaults write -g NSAllowContinuousSpellChecking -bool true — this has no effect on FusionMD either way, since it doesn't depend on that setting. There's also a language angle: Grammarly's own writing support covers roughly two dozen languages, and doesn't include Russian, Chinese, Arabic, Hebrew, Persian, Thai, Greek, or the three Celtic languages (Welsh, Irish, Scottish Gaelic). FusionMD's spell check, grammar analysis, and AI writing assistance handle all of these natively, as part of the same 40-language system — so if you write in one of them, FusionMD's Writing Coach isn't just unaffected by Grammarly, it's doing something Grammarly can't do at all."
     }
   ]} />
-
-  <!-- Waitlist -->
-  <section class="waitlist-section fade-in">
-    <EmailCapture app="FusionMD" />
-    <p class="privacy-note">
-      By joining you agree to our <a href="/terms">Terms of Use</a>.
-      Read the <a href="/privacy/fusionmd">FusionMD Privacy Policy</a>.
-    </p>
-  </section>
 
 </BaseLayout>
 
@@ -1021,6 +1197,28 @@ const icon = "/images/products/fusionmd/icon.png";
     color: var(--gray-dark);
   }
 
+  .rtl-callout {
+    background: #e8f0fe;
+    border-left: 4px solid #4a80f0;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+
+  .rtl-callout strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: #1a3a7a;
+  }
+
+  .rtl-callout p {
+    font-size: 0.9rem !important;
+    color: var(--gray-dark) !important;
+    margin: 0 !important;
+    line-height: 1.55 !important;
+  }
+
   /* Waitlist */
   .waitlist-section {
     padding: 1rem 0 3rem;
@@ -1041,6 +1239,39 @@ const icon = "/images/products/fusionmd/icon.png";
 
   .privacy-note a:hover {
     color: var(--blue);
+  }
+
+  /* Import format table */
+  .import-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 1rem 0 1.25rem;
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+  }
+
+  .import-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--gray-dark);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 0.3rem 0;
+  }
+
+  .import-row:last-child { border-bottom: none; }
+
+  .fmt {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--blue);
+    flex-shrink: 0;
+    width: 46px;
   }
 
   @media (max-width: 768px) {

@@ -99,7 +99,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <thead><tr><th>Verdict</th><th>Meaning</th><th>What to do</th></tr></thead>
             <tbody>
               <tr><td><strong>Safe</strong></td><td>No significant risk signals found.</td><td>Proceed normally. The email appears legitimate.</td></tr>
-              <tr><td><strong>Low Risk</strong></td><td>Minor anomalies — likely legitimate but worth a glance.</td><td>Check the signal list. Usually safe to act on.</td></tr>
+              <tr><td><strong>Likely OK</strong></td><td>Minor anomalies — likely legitimate but worth a glance.</td><td>Check the signal list. Usually safe to act on.</td></tr>
               <tr><td><strong>Suspicious</strong></td><td>Multiple concerning signals. Treat with caution.</td><td>Do not click links or open attachments until verified.</td></tr>
               <tr><td><strong>High Risk</strong></td><td>Strong indicators of phishing, fraud, or impersonation.</td><td>Do not interact. Delete or report. Do not click anything.</td></tr>
             </tbody>
@@ -112,12 +112,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>A confidence bar shows how certain the verdict is. High confidence means many consistent signals all pointing the same direction. Low confidence means the signals are mixed — treat the verdict as a starting point, not a definitive answer.</p>
 
           <h3>Action bar</h3>
-          <p>At the bottom of the result view, three buttons appear:</p>
+          <p>At the bottom of the result view, up to four buttons appear:</p>
           <ul>
-            <li><strong>Add to Safe Senders</strong> — marks this sender's domain as trusted. Future emails from this domain skip to Safe immediately.</li>
+            <li><strong>Check Another Email</strong> — resets the app for a new email.</li>
             <li><strong>Forensic Details</strong> — opens the full raw-data view (see Tutorial 5).</li>
-            <li><strong>Check Another</strong> — resets the app for a new email.</li>
+            <li><strong>Add to Safe Senders</strong> — marks this sender's domain as trusted. Future emails from this domain skip to Safe immediately.</li>
+            <li><strong>Add to Block List</strong> — marks this sender's domain as blocked. Future emails from this domain immediately receive a High Risk verdict without analysis.</li>
           </ul>
+          <p>Once you add a sender to either list the corresponding button is replaced by a confirmation label and the other list button disappears.</p>
         </section>
 
         <!-- ─────────────────────────────────────────── Tutorial 4 -->
@@ -249,11 +251,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p class="goal">What you'll learn: using the History panel to review past checks and find a previous result.</p>
 
           <ol class="steps">
-            <li>Click the <strong>History button</strong> in the toolbar (clock icon) to open the History panel.</li>
+            <li>On the home screen, a <strong>recent history strip</strong> shows your last three checked emails. Click any row to re-open that result immediately.</li>
+            <li>To see all history, click the <strong>History button</strong> (clock-arrow icon) on the home screen. The full History panel opens.</li>
             <li>Every email you have checked is listed with sender, subject, date, and verdict. The most recent is at the top.</li>
             <li><strong>Click any row</strong> to re-open that result. The full verdict, signal list, and forensic details are available exactly as they were when you originally checked it.</li>
-            <li><strong>Delete an entry</strong> by right-clicking it and selecting Remove, or by selecting it and pressing ⌫.</li>
-            <li><strong>Clear all history</strong> via Settings → Privacy → Clear History.</li>
+            <li><strong>Delete an entry</strong> by Control-clicking it (or two-finger clicking on a trackpad) and selecting Remove, or by selecting it and pressing ⌫.</li>
+            <li><strong>Clear all history</strong> using the <strong>Clear All</strong> button at the top of the History panel.</li>
           </ol>
 
           <div class="tip">
@@ -266,41 +269,43 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h2><span class="num">9</span> Settings Reference</h2>
           <p class="goal">A complete guide to every setting in CheckThis.</p>
 
-          <h3>General</h3>
-          <ul>
-            <li><strong>Launch at login</strong> — start CheckThis automatically when you log in to your Mac.</li>
-            <li><strong>Show in menu bar</strong> — adds a CheckThis icon to the macOS menu bar for quick access without switching windows.</li>
-          </ul>
+          <p>Settings has six tabs: <strong>AI, Extension, Privacy, Safe Senders, Blocked,</strong> and <strong>Licence.</strong></p>
 
           <h3>AI</h3>
           <ul>
-            <li><strong>AI Provider</strong> — choose between Apple Intelligence (on-device) and OpenRouter (cloud, requires API key).</li>
+            <li><strong>AI mode</strong> — choose between Apple Intelligence (on-device), OpenRouter (cloud, requires API key), or <strong>Rule-based only (no AI)</strong> to disable the AI layer entirely and rely solely on header and DNS analysis.</li>
             <li><strong>Model</strong> — when using OpenRouter, select from available models. Claude Sonnet is the default.</li>
             <li><strong>API Key</strong> — your OpenRouter API key. Stored securely in your Mac's Keychain.</li>
-            <li><strong>Test Connection</strong> — sends a test request to verify your key is working before analysing a real email.</li>
+            <li><strong>Test Connection</strong> — sends a test request to verify your key is working before analyzing a real email.</li>
           </ul>
 
           <h3>Extension</h3>
           <ul>
             <li><strong>Open Mail Settings</strong> — shortcut to Mail → Settings → Extensions so you can enable or disable the Mail Extension.</li>
             <li><strong>Extension status</strong> — shows whether the extension is currently active in Mail.</li>
-          </ul>
-
-          <h3>Senders</h3>
-          <ul>
-            <li><strong>Safe Senders</strong> — domains that always receive a Safe verdict. Add, remove, or clear the list.</li>
-            <li><strong>Blocked Senders</strong> — domains that always receive a High Risk verdict. Add, remove, or clear the list.</li>
+            <li><strong>Indicator style</strong> — choose how the verdict appears in Mail's message list.</li>
           </ul>
 
           <h3>Privacy</h3>
           <ul>
-            <li><strong>Clear History</strong> — permanently deletes all stored check history.</li>
-            <li><strong>Privacy note</strong> — a reminder of what data leaves your Mac (nothing, unless AI is configured with OpenRouter).</li>
+            <li><strong>Privacy note</strong> — a summary of what data leaves your Mac (nothing, unless AI is configured with OpenRouter).</li>
+            <li><strong>Privacy Policy</strong> and <strong>Terms of Use</strong> links.</li>
           </ul>
 
-          <h3>About</h3>
+          <h3>Safe Senders</h3>
           <ul>
-            <li>App version, licence status, and links to the website and support.</li>
+            <li>Domains that always receive a Safe verdict. Add, remove, or clear the list. Any future email from a listed domain skips all analysis.</li>
+          </ul>
+
+          <h3>Blocked</h3>
+          <ul>
+            <li>Domains that always receive a High Risk verdict. Add, remove, or clear the list.</li>
+            <li><strong>Export Block List…</strong> — saves the blocked list as a text file for backup or sharing.</li>
+          </ul>
+
+          <h3>Licence</h3>
+          <ul>
+            <li>View your licence status and activation code. Use this tab to enter a new licence key or transfer activation to another Mac.</li>
           </ul>
         </section>
 

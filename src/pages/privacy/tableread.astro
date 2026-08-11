@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "11 July 2026";
+---
+
+<BaseLayout
+  title="TableRead — Privacy Policy"
+  description="Privacy policy for TableRead, the native Mac casting and AI table-read app by DataIsland Software LLC, part of the PolySpeak suite."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>TableRead — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      TableRead is a native Mac casting and AI table-read app, part of the PolySpeak
+      voice-production suite. This policy explains exactly what data TableRead accesses
+      and — importantly — confirms that nothing it processes ever leaves your device.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>TableRead makes no network requests of any kind.</strong> Casting, script
+      reading, and AI table-read generation all run entirely on your Mac using a local
+      voice pipeline. There is no cloud AI feature in TableRead — unlike PolyScript's
+      optional AI tab, TableRead's read-through generation never touches the network.
+      The app has no server, no account, and no analytics.
+    </p>
+
+    <h2>What TableRead Accesses</h2>
+    <p>TableRead accesses only data on your Mac that's needed to cast and read your script:</p>
+    <ul>
+      <li>Script files you explicitly open (.fountain, .fusiondoc)</li>
+      <li>A shared local voice-library folder, read to populate the casting picker with available voice models</li>
+      <li>A nearby <code>.polyproject</code> manifest file, if one exists near the open script, which TableRead may write progress information into</li>
+    </ul>
+    <p>
+      TableRead does not access your microphone — it doesn't record audio, only generates
+      read-throughs from text using existing voice models. It also does not access your
+      camera, contacts, location, photos, or calendar.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>Nothing, Ever</h3>
+    <p>
+      This is worth stating plainly: TableRead's AI read-through generation runs a local
+      Python/RVC voice pipeline entirely on your Mac via a subprocess. No script text,
+      dialogue, casting choice, or generated audio is ever uploaded anywhere. There is no
+      cloud AI feature in TableRead at all — the entire pipeline, from script to finished
+      read-through, executes on-device with no network connection involved.
+    </p>
+
+    <h2>What Is Stored Locally</h2>
+    <ul>
+      <li><strong>Script files</strong> — wherever you saved them</li>
+      <li><strong>Generated read-through audio files</strong> — saved to locations you choose on your Mac</li>
+      <li><strong>The shared voice library</strong> — local voice models used for casting</li>
+      <li><strong>Casting assignments</strong> — saved back into the script's own file</li>
+    </ul>
+    <p>None of this data is synced to iCloud or transmitted to DataIsland.</p>
+
+    <h2>What TableRead Does Not Do</h2>
+    <ul>
+      <li>Does not transmit any data anywhere — script text, casting, and generated audio all stay on your Mac</li>
+      <li>Does not require an account or login</li>
+      <li>Does not collect analytics, usage statistics, or crash reports</li>
+      <li>Does not access your files without your explicit action</li>
+      <li>Does not access your microphone</li>
+      <li>Does not share data with third parties</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      TableRead is not directed at children under 13. We do not knowingly collect
+      information from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of TableRead after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:<br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a><br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

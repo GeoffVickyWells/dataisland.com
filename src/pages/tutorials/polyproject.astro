@@ -1,0 +1,297 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="PolyProject Tutorials — DataIsland Software"
+  description="Step-by-step guides for PolyProject — creating a project, reading the four-stage tracker, jumping into sibling apps, automatic sync, and exporting finished captures."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>PolyProject — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in PolyProject, the production tracker included with
+        the PolySpeak bundle. Work through them in order for a full introduction, or jump to any
+        section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Creating a new project</a></li>
+          <li><a href="#t2">Reading the four-stage view</a></li>
+          <li><a href="#t3">Jumping into a sibling app</a></li>
+          <li><a href="#t4">How automatic sync works</a></li>
+          <li><a href="#t5">Exporting finished captures</a></li>
+          <li><a href="#t6">Multi-window &amp; Finder integration</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─── Tutorial 1 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Creating a New Project</h2>
+          <p class="goal">What you'll learn: setting up a project around an existing screenplay.</p>
+
+          <ol class="steps">
+            <li>Press <strong>⌘N</strong>, or choose <strong>File → New Project</strong>.</li>
+            <li>Give the project a name.</li>
+            <li>Choose an existing <strong>.fountain</strong> script to build the project around.</li>
+            <li>PolyProject creates a new <strong>.polyproject</strong> file tracking that script.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Requires a bundle you already own.</strong> PolyProject is included free with
+            the PolySpeak bundle and isn't sold on its own — you'll need at least PolyScript,
+            TableRead, Talent, or Studio installed for there to be anything to track.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 2 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Reading the Four-Stage View</h2>
+          <p class="goal">What you'll learn: understanding what each stage tracks and what "done" looks like.</p>
+
+          <table>
+            <thead><tr><th>Stage</th><th>Tracks</th><th>Done when</th></tr></thead>
+            <tbody>
+              <tr><td>Script</td><td>The linked screenplay</td><td>The script file exists and loads</td></tr>
+              <tr><td>Casting</td><td>Character-to-voice assignments</td><td>Every character has a voice cast in TableRead</td></tr>
+              <tr><td>Table Read</td><td>The AI read-through</td><td>A full read-through has been generated in TableRead</td></tr>
+              <tr><td>Performance Capture</td><td>Finished character takes</td><td>Every character has an exported take from Studio</td></tr>
+            </tbody>
+          </table>
+
+          <p>Each stage shows a clear complete/incomplete indicator so you always know what's left.</p>
+        </section>
+
+        <!-- ─── Tutorial 3 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Jumping into a Sibling App</h2>
+          <p class="goal">What you'll learn: moving from PolyProject straight into the right app for the next step.</p>
+
+          <ol class="steps">
+            <li>On any stage, click the button that opens its app — the script in PolyScript, casting or the read-through in TableRead, or a take in Studio.</li>
+            <li>The relevant file opens directly — no manual searching for the right document.</li>
+          </ol>
+        </section>
+
+        <!-- ─── Tutorial 4 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> How Automatic Sync Works</h2>
+          <p class="goal">What you'll learn: why you don't need to manually update project status yourself.</p>
+
+          <ol class="steps">
+            <li>Finish a step in another app — cast a character in TableRead, generate a read-through, or export a take in Studio.</li>
+            <li>Bring the PolyProject window back to the front. It picks up the change automatically and updates the relevant stage.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>No exporting or re-importing between apps.</strong> PolyProject watches for
+            the standard files the other apps produce and reads their status directly — there's
+            no manual sync step to remember.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 5 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Exporting Finished Captures</h2>
+          <p class="goal">What you'll learn: pulling together the final performance-capture exports from one place.</p>
+
+          <ol class="steps">
+            <li>Once Performance Capture shows characters with finished takes, choose <strong>Export…</strong>.</li>
+            <li>Reorder or select which captures to include.</li>
+            <li>PolyProject writes them out together.</li>
+          </ol>
+        </section>
+
+        <!-- ─── Tutorial 6 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Multi-Window &amp; Finder Integration</h2>
+          <p class="goal">What you'll learn: working across multiple projects at once.</p>
+
+          <ol class="steps">
+            <li>Each project you open or create gets its own window.</li>
+            <li>Double-click a <strong>.polyproject</strong> file in Finder, or drag one onto the dock icon, to open it directly.</li>
+            <li>Press <strong>⌘S</strong> to save, or <strong>⇧⌘S</strong> to Save As.</li>
+          </ol>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul  { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

@@ -1,0 +1,619 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Are You Ready to Go to Print? — FusionMD Publishing Guide"
+  description="A complete guide to turning your FusionMD manuscript into a print-ready paperback — trim size, paragraph and character style tagging, Affinity layout, cover wrap design, and publishing through Amazon KDP Print and IngramSpark."
+>
+
+  <div class="guide-wrap">
+
+    <!-- Hero -->
+    <section class="guide-hero fade-in">
+      <div class="breadcrumb"><a href="/tutorials/fusionmd">← FusionMD Tutorials</a></div>
+      <div class="hero-badge">FusionMD Publishing Guide</div>
+      <h1>Are You Ready to Go to Print?</h1>
+      <p class="hero-sub">
+        The same manuscript, the same FusionMD document — no rewriting, no reformatting
+        from scratch. Tag it once, export to IDML, build the interior in Affinity
+        (or Adobe InDesign), and put a real paperback in front of readers through Amazon
+        KDP Print and IngramSpark.
+      </p>
+      <div class="hero-meta">
+        Covers: FusionMD's IDML export &nbsp;·&nbsp; Affinity (or InDesign) &nbsp;·&nbsp; No InCopy or Pandoc required
+      </div>
+    </section>
+
+    <!-- What you need -->
+    <section class="guide-section fade-in">
+      <h2>What you need before you start</h2>
+      <div class="checklist-grid">
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>A completed manuscript in FusionMD</strong>
+            <p>Ideally the same document you already published as an ebook. If you haven't yet, read <a href="/tutorials/epub-author">Are You an ePub Author?</a> first — this guide picks up exactly where that one leaves off.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>Affinity or Adobe InDesign</strong>
+            <p>FusionMD exports a real IDML file — both apps open it directly. Affinity (Canva folded Publisher, Designer, and Photo into one app) is a one-time purchase with no subscription, and is what this guide uses for its steps.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>A trim size decision</strong>
+            <p>The physical page dimensions of your finished book. See Part 1 — it takes two minutes to choose and it's the first thing both Affinity and your printer need.</p>
+          </div>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>A free Amazon account</strong>
+            <p>Your existing KDP account from publishing the ebook works — a paperback is added to the same book listing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 1 -->
+    <section class="guide-section fade-in" id="p1">
+      <div class="part-num">Part 1</div>
+      <h2>Choose your trim size and printer</h2>
+      <p>
+        "Trim size" is the finished page dimension of your printed book. Unlike an ebook,
+        which reflows to fit any screen, a print interior is laid out for one exact size —
+        this is the first decision every step downstream depends on.
+      </p>
+
+      <table>
+        <thead><tr><th>Trim size</th><th>Best for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>5 × 8 in</strong></td><td>Genre fiction — thriller, romance, sci-fi/fantasy paperbacks</td></tr>
+          <tr><td><strong>5.25 × 8 in</strong></td><td>Literary and trade fiction</td></tr>
+          <tr><td><strong>6 × 9 in</strong></td><td>Non-fiction, memoir, business books — the most common non-fiction size</td></tr>
+          <tr><td><strong>8.5 × 11 in</strong></td><td>Workbooks, journals, cookbooks, heavily-illustrated non-fiction</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Where to publish</h3>
+      <table>
+        <thead><tr><th></th><th>Amazon KDP Print</th><th>IngramSpark</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Distribution</strong></td><td>Amazon.com and its regional stores only</td><td>Amazon plus bookstores, libraries, and independent shops via the Ingram catalog</td></tr>
+          <tr><td><strong>ISBN</strong></td><td>Free, KDP-assigned</td><td>You supply your own (buy one from Bowker in the US, or your national ISBN agency elsewhere)</td></tr>
+          <tr><td><strong>Setup cost</strong></td><td>Free</td><td>Small per-title fee, frequently waived by promotions</td></tr>
+          <tr><td><strong>Bookstore returns</strong></td><td>Not supported — bookstores generally won't stock a non-returnable title</td><td>Optional returnability, which is what makes bookstore orders realistic</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout-block">
+        <strong>Start with KDP Print.</strong> It's free, it links directly to the ebook listing you already have, and a reader can buy the paperback and Kindle edition from the same product page. Add IngramSpark later — with your own ISBN — once you want the book in physical bookstores or libraries.
+      </div>
+    </section>
+
+    <!-- Part 2 -->
+    <section class="guide-section fade-in" id="p2">
+      <div class="part-num">Part 2</div>
+      <h2>Tag your manuscript with paragraph and character styles</h2>
+      <p>
+        This is the same Layout Styles workflow used for FusionMD's IDML export in general —
+        see <a href="/tutorials/fusionmd#t8">Tutorial 8</a> for the full mechanics. For a book
+        interior, the style list is short and reusable across your entire catalog.
+      </p>
+
+      <h3>Open the Layout Styles panel</h3>
+      <p>
+        Press <strong>⌘4</strong>, or click the inner-right panel button in the toolbar.
+        It's available in Markdown, Variables, and Design modes — stay in whichever mode you
+        already wrote the book in. You are tagging the finished manuscript, not rewriting it.
+      </p>
+
+      <div class="metadata-fields">
+        <div class="meta-field">
+          <div class="meta-label">Chapter Title</div>
+          <div class="meta-desc">Tag every chapter heading. In Affinity this becomes the style you give a large display font and generous space above/below.</div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Body Text (First)</div>
+          <div class="meta-desc">The opening paragraph of each chapter or section — conventionally set without a first-line indent, distinguishing it from the paragraphs that follow.</div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Body Text</div>
+          <div class="meta-desc">Every other paragraph. This is the style you'll spend the most time refining in Affinity — font, size, and leading for the entire book flow from one definition.</div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Scene Break</div>
+          <div class="meta-desc">Tag the paragraph containing your scene-break marker (∗ ∗ ∗ or similar) so it gets centered alignment and extra spacing automatically.</div>
+        </div>
+        <div class="meta-field">
+          <div class="meta-label">Front/Back Matter</div>
+          <div class="meta-desc">Title Page, Copyright, Dedication, About the Author — tag each as its own style so it lays out distinctly from body chapters.</div>
+        </div>
+      </div>
+
+      <h3>Add front and back matter directly in FusionMD</h3>
+      <p>
+        Before exporting, add these pages to the document itself, tagged with their own styles from the list above:
+      </p>
+      <ul class="rule-block-list">
+        <li><strong>Title page</strong> — book title, subtitle, author name.</li>
+        <li><strong>Copyright page</strong> — copyright notice, "All rights reserved," your ISBN once assigned, edition/printing information.</li>
+        <li><strong>Dedication</strong> — optional, but tag it distinctly so it doesn't inherit Body Text's justified paragraph styling.</li>
+        <li><strong>About the Author</strong> — typically the last page of the book, reusable across every title you publish.</li>
+      </ul>
+
+      <div class="callout-block">
+        <strong>Already tagged for something else?</strong> If you tagged this manuscript for a different IDML export — a newsletter or magazine layout, say — a book interior needs far fewer styles. Delete what you don't need in the Layout Styles panel rather than carrying over unrelated tags.
+      </div>
+    </section>
+
+    <!-- Part 3 -->
+    <section class="guide-section fade-in" id="p3">
+      <div class="part-num">Part 3</div>
+      <h2>Export to IDML</h2>
+      <p>
+        Click <strong>"Export as IDML…"</strong> in the navigation bar. FusionMD builds the
+        file directly — no Pandoc, no third-party conversion tool. Every tagged paragraph and
+        character style comes across prefixed <code>[FUSION]</code>, so it's unmistakable in
+        Affinity's Paragraph Styles panel and won't collide with anything already in a
+        template you reuse across books.
+      </p>
+    </section>
+
+    <!-- Part 4 -->
+    <section class="guide-section fade-in" id="p4">
+      <div class="part-num">Part 4</div>
+      <h2>Build the interior in Affinity</h2>
+
+      <ol class="guide-steps">
+        <li>
+          <strong>Switch to the Publish persona and create a new document at your trim size first.</strong>
+          Rather than opening the IDML directly (which creates a document sized to whatever
+          the export defaulted to), set up a document yourself: your Part 1 trim size, facing
+          pages turned on (since a bound book prints as spreads, not single sheets), and an
+          inside margin (gutter) wider than the outside margin to account for the binding
+          swallowing a few millimeters on every spread.
+        </li>
+        <li>
+          <strong>Place the IDML content.</strong>
+          File → Place, and select your exported <code>.idml</code>. Affinity flows the
+          content into linked text frames across as many pages as it needs.
+          <div class="step-note">If a paragraph or character style doesn't already exist in your document, Affinity creates it automatically from the incoming <code>[FUSION]</code>-prefixed name — nothing is dropped.</div>
+        </li>
+        <li>
+          <strong>Style your Paragraph Styles panel.</strong>
+          Open it and work through the list from Part 2 — this is where the book actually
+          gets its typographic identity:
+          <ul>
+            <li><strong>Body Text</strong> — a serif text face, 10–12pt, with leading around 1.3–1.4× the point size. This one definition controls the entire book's reading experience.</li>
+            <li><strong>Body Text (First)</strong> — same face and size, first-line indent set to none.</li>
+            <li><strong>Chapter Title</strong> — a larger display size, often a different typeface, generous space above.</li>
+            <li><strong>Scene Break</strong> — centered, with space above and below.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Add running heads, footers, and page numbers.</strong>
+          Use Affinity's master pages so page numbers and any running head (book title on
+          verso pages, chapter title on recto pages is a common pattern) apply automatically
+          across the whole interior — set once, not per page.
+        </li>
+        <li>
+          <strong>Proof the flow.</strong>
+          Scroll through every spread. Check for widows and orphans (a single line stranded
+          at the top or bottom of a page), chapter openings that land awkwardly, and that
+          front/back matter pages you tagged in Part 2 landed where you expect.
+        </li>
+      </ol>
+    </section>
+
+    <!-- Part 5 -->
+    <section class="guide-section fade-in" id="p5">
+      <div class="part-num">Part 5</div>
+      <h2>Design your print cover</h2>
+      <p>
+        Your ebook cover and your print cover are not the same file. A print cover is a single
+        flat artwork covering the <strong>back cover, spine, and front cover</strong> as one
+        continuous piece — and the spine width depends on your final page count, so this step
+        comes after your interior layout is locked.
+      </p>
+
+      <div class="spec-hero">
+        <div class="spec-badge">Get the exact dimensions</div>
+        <div class="spec-dims">KDP Cover Calculator</div>
+        <div class="spec-detail">Enter trim size, page count, and paper color — it returns the precise wrap template to design against</div>
+      </div>
+
+      <h3>What the wrap needs</h3>
+      <ul class="rule-block-list">
+        <li><strong>Front cover</strong> — the same artwork approach as your ebook cover, resized to the wrap template.</li>
+        <li><strong>Spine text</strong> — title and author name, required once your page count crosses roughly 79–100 pages (thinner books typically omit it — check your platform's current threshold).</li>
+        <li><strong>Back cover</strong> — your book's description (reuse the Description you already wrote in FusionMD's Metadata panel), a barcode area (KDP generates the barcode automatically if you use their free ISBN — leave the reserved area blank), and optional review quotes or author bio.</li>
+        <li><strong>Bleed</strong> — the full wrap must extend past the trim edge on every side, typically 0.125 in (3 mm), so nothing white shows at the cut edge.</li>
+      </ul>
+
+      <div class="callout-block">
+        <strong>Build the wrap in Affinity</strong> — the Publish persona, or Design if you prefer a freeform canvas — using the calculator's exact dimensions as your document size, with front cover, spine, and back cover as distinct zones on one canvas.
+      </div>
+    </section>
+
+    <!-- Part 6 -->
+    <section class="guide-section fade-in" id="p6">
+      <div class="part-num">Part 6</div>
+      <h2>Export print-ready PDFs</h2>
+      <p>Interior and cover export separately, with different requirements.</p>
+
+      <table>
+        <thead><tr><th></th><th>Interior PDF</th><th>Cover PDF</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Format</strong></td><td>PDF/X-1a:2001</td><td>PDF/X-1a:2001</td></tr>
+          <tr><td><strong>Color space</strong></td><td>RGB or grayscale text is generally accepted — check your platform's current interior spec before export</td><td>CMYK required</td></tr>
+          <tr><td><strong>Bleed</strong></td><td>Only if you have full-bleed images; plain text pages don't need it</td><td>Required on all sides — use your calculator template's exact bleed value</td></tr>
+          <tr><td><strong>Fonts</strong></td><td>Embedded — Affinity does this automatically in the PDF/X-1a preset</td><td>Embedded</td></tr>
+        </tbody>
+      </table>
+
+      <p>In Affinity: File → Export → PDF → More, then choose the <strong>PDF/X-1a:2001</strong> preset for both files. This is the standard prepress format both KDP Print and IngramSpark require.</p>
+    </section>
+
+    <!-- Part 7 -->
+    <section class="guide-section fade-in" id="p7">
+      <div class="part-num">Part 7</div>
+      <h2>Upload and order a proof</h2>
+
+      <ol class="guide-steps">
+        <li>
+          Go to <a href="https://kdp.amazon.com" target="_blank" rel="noopener"><strong>kdp.amazon.com</strong></a> and open your existing book — the same title you published as an ebook.
+        </li>
+        <li>
+          <strong>Add a paperback format</strong> to that listing rather than creating a new book. This keeps the ebook and paperback linked on one Amazon product page.
+        </li>
+        <li>
+          <strong>Enter print details.</strong> Trim size, ISBN (accept KDP's free one, or supply your own), and bleed settings — matching what you exported in Part 6.
+        </li>
+        <li>
+          <strong>Upload your interior and cover PDFs.</strong> KDP's online previewer flags margin and bleed problems immediately — fix any issues in Affinity and re-export rather than guessing.
+        </li>
+        <li>
+          <strong>Order a physical proof before publishing.</strong> This is the step ebooks never required and print does — a screen preview cannot show you actual paper color, real font size in hand, or whether your margins feel right when the book is physically open. Order one, read it, then publish.
+        </li>
+        <li>
+          <strong>Set pricing and publish.</strong> KDP suggests a minimum price based on your page count and trim size (print costs scale with page count, unlike an ebook). Amazon reviews within 24–72 hours.
+        </li>
+      </ol>
+
+      <div class="callout-block">
+        <strong>Want bookstores and libraries too?</strong> Once your paperback is live on KDP, the same interior and cover files (re-exported to IngramSpark's own template dimensions, since their bleed and cover-calculator values differ slightly from KDP's) can go to <a href="https://www.ingramspark.com" target="_blank" rel="noopener">IngramSpark</a> for wider distribution — this time with your own ISBN.
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="guide-cta fade-in">
+      <h2>From screen to shelf.</h2>
+      <p>
+        One FusionMD document, tagged once — ebook on Apple Books and Kindle, paperback on
+        Amazon and in bookstores. No separate manuscript, no re-keying content into a page
+        layout tool by hand.
+      </p>
+      <div class="cta-links">
+        <a href="/products/fusionmd" class="cta-primary">Learn about FusionMD →</a>
+        <a href="/tutorials/fusionmd#t8" class="cta-secondary">IDML export tutorial →</a>
+        <a href="/tutorials/epub-author" class="cta-secondary">ePub publishing guide →</a>
+      </div>
+    </section>
+
+  </div><!-- /guide-wrap -->
+
+</BaseLayout>
+
+<style>
+  .guide-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 6rem;
+  }
+
+  .breadcrumb { font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+  /* Hero */
+  .guide-hero {
+    padding: 2.5rem 0 3rem;
+    border-bottom: 1px solid var(--gray-light);
+    margin-bottom: 3rem;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3em 0.8em;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+
+  .guide-hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-meta {
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
+
+  /* Sections */
+  .guide-section {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .part-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .guide-section p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  /* Checklist */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .check-item {
+    display: flex;
+    gap: 0.75rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+
+  .check-icon {
+    font-size: 1.1rem;
+    color: var(--blue);
+    flex-shrink: 0;
+    font-weight: 700;
+    margin-top: 0.1rem;
+  }
+
+  .check-item strong { font-size: 0.95rem; display: block; margin-bottom: 0.3rem; }
+  .check-item p { font-size: 0.87rem !important; margin: 0 !important; color: var(--gray-dark); line-height: 1.5 !important; }
+
+  /* Rule block list (plain bullet list styled like the ePub guide's rule-block) */
+  .rule-block-list {
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .rule-block-list li { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.4rem; }
+  .rule-block-list li:last-child { margin-bottom: 0; }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+    font-size: 0.9rem;
+  }
+
+  /* Spec hero (reused for the cover calculator callout) */
+  .spec-hero {
+    text-align: center;
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .spec-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.5rem;
+  }
+
+  .spec-dims {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .spec-detail {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  /* Callout */
+  .callout-block {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.85rem 1rem;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    margin: 1.25rem 0;
+    color: var(--gray-dark);
+  }
+
+  /* Metadata fields (reused for the paragraph-style list) */
+  .metadata-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1.25rem;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .meta-field {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .meta-field:last-child { border-bottom: none; }
+
+  .meta-label {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--blue);
+    padding: 0.9rem 1rem;
+    background: var(--gray-light);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .meta-desc {
+    padding: 0.9rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+  }
+
+  /* Guide steps */
+  .guide-steps {
+    padding-left: 1.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .guide-steps li {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .guide-steps ul {
+    padding-left: 1.25rem;
+    margin: 0.5rem 0;
+  }
+
+  .guide-steps ul li {
+    margin-bottom: 0.3rem;
+  }
+
+  .step-note {
+    font-size: 0.88rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 0.4rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--gray-light);
+  }
+
+  /* CTA */
+  .guide-cta {
+    text-align: center;
+    padding: 3.5rem 0 1rem;
+  }
+
+  .guide-cta h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .guide-cta p  { font-size: 1rem; color: var(--gray-dark); line-height: 1.7; max-width: 560px; margin: 0 auto 2rem; }
+
+  .cta-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-primary {
+    background: var(--blue);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .cta-primary:hover { background: #005fa3; }
+
+  .cta-secondary {
+    background: var(--gray-light);
+    color: var(--gray-dark);
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  .cta-secondary:hover { background: #e0e0e0; }
+
+  code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .checklist-grid { grid-template-columns: 1fr; }
+    .meta-field { grid-template-columns: 1fr; }
+    .meta-label { border-bottom: 1px solid var(--gray-light); }
+    .guide-hero h1 { font-size: 2rem; }
+  }
+</style>

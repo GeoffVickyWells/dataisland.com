@@ -1,0 +1,379 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="TableRead Tutorials — DataIsland Software"
+  description="Step-by-step guides for TableRead — casting characters, importing voice models, generating full or partial AI read-throughs, and saving the results."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>TableRead — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in TableRead, the casting and AI read-through app in the
+        PolySpeak pipeline. Work through them in order for a full introduction, or jump to any
+        section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Opening &amp; creating scripts</a></li>
+          <li><a href="#t2">Casting characters</a></li>
+          <li><a href="#t3">Importing a voice model directly</a></li>
+          <li><a href="#t4">Full read-through vs. a selection</a></li>
+          <li><a href="#t5">Playback &amp; saving audio</a></li>
+          <li><a href="#t6">Multi-window &amp; saving your session</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─── Tutorial 1 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Opening &amp; Creating Scripts</h2>
+          <p class="goal">What you'll learn: bringing a script into TableRead — with or without PolyScript.</p>
+
+          <ol class="steps">
+            <li>Press <strong>⌘O</strong>, or choose <strong>File → Open…</strong>, to open an existing script.</li>
+            <li>TableRead opens both <strong>.fountain</strong> and <strong>.fusiondoc</strong> files directly. You don't need PolyScript installed — any properly formatted Fountain screenplay works, from PolyScript or any other source.</li>
+            <li>Press <strong>⌘N</strong>, or choose <strong>File → New</strong>, to start a new script from scratch inside TableRead itself.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>No PolyScript required.</strong> TableRead reads the Fountain format, not a
+            PolyScript-specific one — it's a standalone entry point into the PolySpeak pipeline for
+            anyone who already has a script, however it was written.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 2 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Casting Characters</h2>
+          <p class="goal">What you'll learn: assigning a trained or imported voice to each character before generating a read-through.</p>
+
+          <ol class="steps">
+            <li>Open the character sidebar — TableRead lists every character it finds in the script automatically.</li>
+            <li>Click a character to open its casting slot.</li>
+            <li>Choose a voice from your Talent library to assign it to that character.</li>
+            <li>Repeat for each character you want to cast. Cast characters show as ready in the sidebar; uncast characters are flagged.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Clean character names pay off here.</strong> Casting is per character name, so a
+            typo'd name in the script (e.g. "SARAH" vs "SARA") shows up as a second, uncast phantom
+            character. Fix inconsistent names in the script rather than casting the same voice twice.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 3 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Importing a Voice Model Directly</h2>
+          <p class="goal">What you'll learn: casting a character with a voice model file, without needing Talent at all.</p>
+
+          <ol class="steps">
+            <li>In a character's casting slot, choose <strong>Import Voice File…</strong> instead of picking from your library.</li>
+            <li>Select an RVC <strong>.pth</strong> model file from disk.</li>
+            <li>TableRead assigns it to that character for this session — no trip to Talent required.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>When to use this.</strong> This is the fastest path if you already have a .pth
+            file from elsewhere and just want to hear a scene — you don't need to add it to your
+            Talent library first. If you'll reuse the voice across projects, importing it into Talent
+            instead keeps its resume and consent record in one place (see the Talent tutorials).
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 4 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Full Read-Through vs. a Selection</h2>
+          <p class="goal">What you'll learn: the two ways to generate audio, and when to reach for each one.</p>
+
+          <h3>Generating a full read-through</h3>
+          <ol class="steps">
+            <li>Cast every character in the script — the full read-through button stays disabled until all characters have a voice assigned.</li>
+            <li>Click <strong>Generate Read-Through</strong>. TableRead converts every line of dialogue in the script, in order, through each character's assigned voice.</li>
+          </ol>
+          <p>Use this once you're ready to hear the entire cast together — a full table read of the script, start to finish.</p>
+
+          <div class="tip">
+            <strong>A read-through is a flat reading, not a performance.</strong> TableRead's AI
+            voices read the lines as written — useful for testing casting and hearing the whole
+            cast together, but it's a mechanical delivery, not a captured performance. It's the
+            same relationship film motion capture has to a finished character: an actor covered
+            in tracking markers delivers a real physical performance, and that performance drives
+            the CG character — the timing, the emotion, the choices are the actor's own, just
+            rendered in a different skin. Studio works the same way for voice — a real performer
+            delivers the lines with real timing and emotion, and Studio's conversion carries that
+            performance through the cast AI voice. TableRead tells you whether the casting works.
+            Studio is where you get the actual performance — see the
+            <a href="/tutorials/studio">Studio tutorials</a> once casting is settled.
+          </div>
+
+          <h3>Generating just a selection</h3>
+          <ol class="steps">
+            <li>Select the dialogue lines you want to hear — a scene, an exchange, or a single speech.</li>
+            <li>Only the characters who speak within that selection need to be cast.</li>
+            <li>Click <strong>Generate Selection</strong>. TableRead converts just those lines.</li>
+          </ol>
+          <p>
+            Use this to test a single scene or a single character's voice before committing to casting
+            everyone — much faster than generating the whole script just to check one line reads well.
+          </p>
+
+          <div class="tip">
+            <strong>Test small, commit big.</strong> A common workflow is: cast one or two key
+            characters, generate a selection of their toughest scene to make sure the voice choice
+            works, then finish casting everyone and generate the full read-through once you're happy.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 5 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Playback &amp; Saving Audio</h2>
+          <p class="goal">What you'll learn: listening to a generated read-through and saving it to disk.</p>
+
+          <ol class="steps">
+            <li>Once generation finishes, click <strong>Play</strong> to hear the result.</li>
+            <li>Click <strong>Save…</strong> to export the generated read-through as a WAV file.</li>
+            <li>Choose where to save the file and give it a name — perfect for quick YouTube projects or testing casting before moving to performance capture.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Unlimited characters, AI voices included.</strong> TableRead supports unlimited
+            characters with no additional cost — ideal for quick YouTube episodes or audio book projects
+            where you need a finished track immediately. For performance capture (real emotional delivery
+            through trained voices), continue to Studio after you're happy with the casting.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 6 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Multi-Window &amp; Saving Your Session</h2>
+          <p class="goal">What you'll learn: working on more than one script at once and keeping your casting and read-throughs safe.</p>
+
+          <ol class="steps">
+            <li>Each script you open or create in TableRead gets its own window — cast and generate for several scripts side by side.</li>
+            <li>Press <strong>⌘S</strong> to save your casting and generated audio references with the script, or <strong>⇧⌘S</strong> to Save As under a new name.</li>
+            <li>Dragging a .fountain or .fusiondoc file onto the TableRead icon in the Dock always opens it in TableRead for that one file.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Double-clicking opens PolyScript or FusionMD, not TableRead — on purpose.</strong>
+            PolyScript owns .fountain and FusionMD owns .fusiondoc as their default editors, so
+            double-clicking a script in Finder opens one of those. To open a script in TableRead
+            specifically, use <strong>File → Open</strong> inside TableRead, or drag the file onto
+            TableRead's Dock icon. If you'd rather make TableRead the default for a file type,
+            select a file of that type in Finder, press <strong>⌘I</strong> (Get Info — no
+            right-click needed), choose TableRead under <strong>Open with</strong>, and click
+            <strong>Change All…</strong>.
+          </div>
+
+          <div class="tip">
+            <strong>Casting is saved with the script.</strong> When you reopen a saved TableRead
+            script, your character-to-voice assignments come back with it — you don't need to
+            re-cast every time you revisit a project.
+          </div>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul  { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  code {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  .lang-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+
+  .lang-row span {
+    background: var(--gray-light);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.84rem;
+    color: var(--gray-dark);
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

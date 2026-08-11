@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import EmailCapture from "../../components/EmailCapture.astro";
 import AppFAQ from "../../components/AppFAQ.astro";
 import AppStoreCTA from "../../components/AppStoreCTA.astro";
 
@@ -234,15 +233,6 @@ const icon = "/images/products/checkthis/icon.png";
       answer: "No. CheckThis is a one-time purchase of $29.99, yours to keep including all future updates to the current major version. A 10-day free trial gives you complete access to every feature before you decide."
     },
   ]} />
-
-  <!-- Waitlist -->
-  <section class="waitlist-section fade-in">
-    <EmailCapture app="CheckThis" />
-    <p class="privacy-note">
-      By joining you agree to our <a href="/terms">Terms of Use</a>.
-      Read the <a href="/privacy/checkthis">CheckThis Privacy Policy</a>.
-    </p>
-  </section>
 
 </BaseLayout>
 

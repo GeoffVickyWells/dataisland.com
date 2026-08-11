@@ -10,11 +10,14 @@ import { products } from "../data/products.js";
     <p class="hero-sub">
       We build privacy‑first apps that help you think, write, and work better.
     </p>
+    <p class="hero-launch">
+      <strong>FusionMD</strong> and <strong>PolyWrite</strong> are launching first.
+    </p>
   </section>
 
   {products.map((product, index) => (
     <section class={`product-section fade-in ${index % 2 === 0 ? "left" : "right"}`}>
-      <div class="product-image">
+      <div class={`product-image ${product.id === "polywrite" ? "dark-backing" : ""}`}>
         <img src={product.icon} alt={product.title} />
       </div>
 
@@ -22,6 +25,7 @@ import { products } from "../data/products.js";
         <h2>{product.title}</h2>
         <p>{product.description}</p>
 
+        {product.launchingFirst && <span class="launching-first">Launching First</span>}
         {!product.active && <span class="coming-soon">Coming Soon</span>}
 
         {product.active && (
@@ -70,6 +74,33 @@ import { products } from "../data/products.js";
     color: var(--gray-dark);
   }
 
+  .hero-launch {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    margin-top: 1rem;
+  }
+
+  .hero-launch a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .hero-launch a:hover {
+    text-decoration: underline;
+  }
+
+  .launching-first {
+    display: inline-block;
+    margin-top: 0.75rem;
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.85rem;
+    background: var(--blue);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
   .product-section {
     display: flex;
     align-items: center;
@@ -89,6 +120,14 @@ import { products } from "../data/products.js";
     width: 200px;
     height: 200px;
     object-fit: contain;
+    border-radius: 24px;
+  }
+
+  /* PolyWrite's icon has transparent rounded corners baked in; on this
+     page's white background that reads as a white backing plate instead
+     of the dark one the icon was designed against. */
+  .product-image.dark-backing img {
+    background: #05070f;
     border-radius: 24px;
   }
 

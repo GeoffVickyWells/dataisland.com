@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "18 June 2026";
+---
+
+<BaseLayout
+  title="Network Notes — Privacy Policy"
+  description="Privacy policy for Network Notes, the local-network messaging app for Mac by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>Network Notes — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      Network Notes is a local-network messaging app for macOS. This policy explains exactly
+      what data Network Notes accesses, what leaves your device, and what is stored locally.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>Network Notes collects no personal data and has no server.</strong> Messages
+      travel directly between your Macs, encrypted end-to-end. Nothing passes through
+      DataIsland or any third-party service. The app has no account, no analytics, and
+      no internet requirement.
+    </p>
+
+    <h2>What Network Notes Accesses</h2>
+
+    <h3>Local Network</h3>
+    <p>
+      Network Notes uses Bonjour (mDNS) to discover other Macs running Network Notes on
+      your local network, and establishes direct peer-to-peer TCP connections to them.
+      All communication is local — no traffic is routed to the internet.
+    </p>
+
+    <h3>Message Content</h3>
+    <p>
+      The text, images, and links you send are stored locally on your Mac in an encrypted
+      SwiftData database. They are never transmitted to DataIsland or any external server.
+      Message history is visible only on the Mac that sent or received them.
+    </p>
+
+    <h3>Display Name</h3>
+    <p>
+      Network Notes advertises your Mac's display name (defaulting to your Mac's computer
+      name, which you can customise) to other Macs on the same network via Bonjour. This
+      name is visible to anyone on the same local network who is running Network Notes.
+      It is never sent to DataIsland or any internet service.
+    </p>
+
+    <h2>Encryption</h2>
+    <p>
+      Every message is encrypted end-to-end using AES-256-GCM. Encryption keys are derived
+      via a P-256 Elliptic Curve Diffie-Hellman (ECDH) handshake that occurs directly between
+      the two Macs. Your private key is generated on your device and stored only in your
+      macOS Keychain. DataIsland never has access to your keys or your messages.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+    <p>
+      Network Notes makes no outgoing internet connections. The only data that leaves your
+      Mac is the encrypted message payload sent directly to another Mac on the same local
+      network. No data is sent to DataIsland or any third party.
+    </p>
+
+    <h2>Login Item</h2>
+    <p>
+      If you choose to enable Open at Login, Network Notes registers itself as a login item
+      using Apple's <code>SMAppService</code> API. This registration is stored locally by
+      macOS and is not reported to DataIsland.
+    </p>
+
+    <h2>Data Retention</h2>
+    <p>
+      Message history is stored locally on your Mac for as long as you choose to keep it.
+      You can delete individual messages or clear all history at any time from the history
+      window. Deleting the app removes all locally stored data.
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Network Notes does not collect any data from any user, including children. It has no
+      account system, no analytics, and no network communication outside the local network.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If this policy changes materially, the updated version will be posted at this URL with
+      a new "Last updated" date. Because Network Notes collects no data, changes are expected
+      to be minimal.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this privacy policy can be directed to
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a>.
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 0 5rem;
+    border-bottom: none;
+  }
+  .breadcrumb { margin-bottom: 1rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+  .legal h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+  .legal h2 { font-size: 1.25rem; margin: 2rem 0 0.5rem; }
+  .legal h3 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.4rem; color: var(--blue); }
+  .legal p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 1rem; color: var(--gray-dark); }
+  .legal a  { color: var(--blue); }
+  code { background: var(--gray-light); padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; }
+</style>

@@ -1,0 +1,460 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
+
+const icon = "/images/products/kitchencalc/icon.png";
+---
+
+<BaseLayout
+  title="KitchenCalc — Kitchen Converter for Mac"
+  description="Convert cooking volumes, weights, and ingredients by density. Substitute pan sizes. Scale recipes with AI. The native Mac kitchen tool built for real cooks and bakers."
+>
+
+  <!-- Hero -->
+  <section class="product-hero fade-in">
+    <img src={icon} alt="KitchenCalc" class="product-icon" />
+    <h1>KitchenCalc</h1>
+    <p class="tagline">The kitchen calculator your recipes deserve.</p>
+    <p class="hero-sub">
+      Cooking conversions that actually understand the kitchen. Not just cups to millilitres —
+      but 1 cup of flour to grams, a 9" round substituted for a 9×13" rectangle, a recipe for
+      four scaled to serve twelve. Native Mac, one-time purchase, AI included.
+    </p>
+    <div class="hero-meta">macOS 14 Sonoma or later &nbsp;·&nbsp; One-time purchase &nbsp;·&nbsp; No subscription</div>
+    <AppStoreCTA />
+  </section>
+
+  <!-- Feature 1: Convert -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">⚖️</div>
+    <div class="feature-body">
+      <h2>Conversions that know their ingredients.</h2>
+      <p>
+        A cup of water and a cup of flour are not the same thing. KitchenCalc knows the difference.
+        Its built-in database of 95+ ingredients converts volumes to weights — and back — using
+        each ingredient's actual density.
+      </p>
+      <div class="convert-grid">
+        <div class="convert-item"><strong>1 cup flour</strong><span>→ 120 g</span></div>
+        <div class="convert-item"><strong>1 cup butter</strong><span>→ 227 g</span></div>
+        <div class="convert-item"><strong>1 cup honey</strong><span>→ 339 g</span></div>
+        <div class="convert-item"><strong>250 mL milk</strong><span>→ 258 g</span></div>
+      </div>
+      <p>
+        Every volume unit (tsp, tbsp, cup, fl oz, pint, mL, L) converts to every weight unit
+        (g, kg, oz, lb) — and vice versa. Need an ingredient that isn't in the database?
+        Add it yourself with a custom density entry, stored locally on your Mac.
+      </p>
+      <p class="detail-note">
+        Fraction input matches how recipes are written. Enter "2" and "1/4" to get 2¼ cups —
+        not a decimal approximation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 2: Temperature -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🌡️</div>
+    <div class="feature-body">
+      <h2>Every oven temperature, including fan.</h2>
+      <p>
+        Convert between Celsius, Fahrenheit, Kelvin, and Gas Mark. KitchenCalc also handles
+        fan (convection) ovens — a common source of baking confusion when following recipes
+        from a different country.
+      </p>
+      <div class="temp-list">
+        <div class="temp-row"><span class="temp-label">°C</span><span>Standard Celsius</span></div>
+        <div class="temp-row"><span class="temp-label">°F</span><span>Standard Fahrenheit</span></div>
+        <div class="temp-row"><span class="temp-label">GM</span><span>Gas Mark — GM 4 = 180°C</span></div>
+        <div class="temp-row"><span class="temp-label">Fan °C</span><span>Convection Celsius — 20°C lower than conventional</span></div>
+        <div class="temp-row"><span class="temp-label">Fan °F</span><span>Convection Fahrenheit</span></div>
+      </div>
+      <p>
+        British and Australian recipes routinely use Gas Mark and fan temperatures.
+        American recipes use Fahrenheit. KitchenCalc converts in any direction, instantly.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 3: Pan -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🍳</div>
+    <div class="feature-body">
+      <h2>Pan substitution with material-aware temperature notes.</h2>
+      <p>
+        The recipe calls for a 9" round. You have a 9×13" rectangle. KitchenCalc compares
+        the baking area, tells you exactly how to adjust — and adds temperature guidance
+        when the pan material differs.
+      </p>
+
+      <div class="pan-grid">
+        <div class="pan-card">
+          <h3>8 pan shapes</h3>
+          <p>Round, square, rectangle, springform, bundt, loaf, pie/tart, and tube.</p>
+        </div>
+        <div class="pan-card">
+          <h3>Standard sizes</h3>
+          <p>US imperial and metric. Or enter custom dimensions for any pan you own.</p>
+        </div>
+        <div class="pan-card">
+          <h3>Area comparison</h3>
+          <p>Exact area in in² or cm², volume in cups or mL, and a scale factor for the recipe quantities.</p>
+        </div>
+        <div class="pan-card">
+          <h3>Material notes</h3>
+          <p>Metal, dark non-stick, or glass/ceramic. KitchenCalc explains the temperature adjustment when materials differ.</p>
+        </div>
+      </div>
+
+      <p class="detail-note">
+        Example: recipe calls for a metal 8" round, you have a glass 9" round.
+        KitchenCalc tells you the area is 26% larger, to scale your batter by 1.27×,
+        and to reduce oven temperature by 25°F because glass retains heat differently.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 4: Recipe scaler -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📋</div>
+    <div class="feature-body">
+      <h2>Scale any recipe. Import with AI.</h2>
+      <p>
+        Enter your original and target serving counts and KitchenCalc recalculates every
+        ingredient instantly — displayed as clean fractions ("3 1/4 cups", not "3.25 cups").
+      </p>
+      <ul class="feature-list">
+        <li><strong>Fraction-aware scaling</strong> — results snap to the nearest cooking fraction (⅛, ¼, ⅓, ½, ⅔, ¾) so amounts stay practical.</li>
+        <li><strong>All recipe units</strong> — tsp, tbsp, cup, fl oz, pint, mL, L, g, kg, oz, lb, and count for items like eggs.</li>
+        <li><strong>Copy Scaled</strong> — copies the full scaled ingredient list to the clipboard for pasting into any app.</li>
+        <li><strong>AI import</strong> — paste a recipe in plain text and KitchenCalc extracts every ingredient and amount automatically.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Feature 5: AI -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🧠</div>
+    <div class="feature-body">
+      <h2>AI that reads recipes so you don't have to.</h2>
+      <p>
+        Paste the text of any recipe — from a webpage, a PDF, or even a photo caption — and
+        the AI extracts every ingredient and amount into the scaler automatically.
+        No typing. No reformatting.
+      </p>
+      <ul class="feature-list">
+        <li><strong>Apple Intelligence</strong> — on-device and completely private.
+          Requires Apple Silicon + macOS 26 + Apple Intelligence enabled.</li>
+        <li><strong>OpenRouter</strong> — works on any Mac with a free API key.
+          Recipe text is sent to OpenRouter for processing under their privacy policy.</li>
+      </ul>
+      <p>
+        The recipe scaler works perfectly without AI — AI import just saves the step
+        of entering ingredients by hand.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 6: Privacy -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🔒</div>
+    <div class="feature-body">
+      <h2>Private by default.</h2>
+      <p>
+        KitchenCalc makes no network requests during normal use. All conversions run
+        entirely on your Mac. Custom ingredients are stored locally in the app's sandbox.
+      </p>
+      <p>
+        The only optional network activity is the AI recipe import — and only if you
+        enable OpenRouter. Apple Intelligence never leaves your device. No analytics,
+        no account, no tracking.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section fade-in">
+    <h2>Simple, honest pricing.</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card featured">
+        <h3>KitchenCalc</h3>
+        <div class="price">$4.99</div>
+        <div class="price-detail">one-time purchase · no subscription</div>
+        <ul>
+          <li>Volume, weight, and ingredient converter</li>
+          <li>95+ ingredient density database</li>
+          <li>Custom ingredient support</li>
+          <li>Temperature including fan / Gas Mark</li>
+          <li>Pan substitution with material notes</li>
+          <li>Recipe scaler with fraction-aware output</li>
+          <li>AI recipe import</li>
+          <li>One purchase · yours forever</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "What's the difference between this and a regular unit converter?",
+      answer: "A regular unit converter treats every cup as identical. KitchenCalc knows that 1 cup of flour weighs 120 g but 1 cup of honey weighs 339 g — because they have different densities. When you're baking by weight (the most accurate method), that difference matters enormously. The pan substitution and recipe scaler go further still, solving problems no generic converter addresses."
+    },
+    {
+      question: "Does it handle both US and metric measurements?",
+      answer: "Yes, fully. The converter handles tsp, tbsp, cup, fl oz, pint, mL, and L for volumes; g, kg, oz, and lb for weights. The pan section works in both inches and centimetres, with standard sizes for both US and European baking pans."
+    },
+    {
+      question: "What's a fan oven and why does it matter?",
+      answer: "A fan oven (called a convection oven in North America) has a fan that circulates hot air, cooking food faster and more evenly. Recipes written for a conventional oven need the temperature reduced by about 25°F (15°C) when cooked in a fan oven — and vice versa. Many home bakers get this wrong because they don't realise UK and Australian recipes often assume a fan oven by default. KitchenCalc converts between both modes and includes Gas Mark for gas ovens common in British recipes."
+    },
+    {
+      question: "How does pan substitution work?",
+      answer: "KitchenCalc compares the base area of your pan against the recipe's pan. If your pan is 26% larger, the batter will be shallower and will cook faster — so KitchenCalc tells you to reduce baking time and scale the recipe quantities by the area ratio. It also considers pan material: glass heats more slowly than metal but retains heat longer, so switching materials requires a temperature adjustment."
+    },
+    {
+      question: "Do I need an OpenRouter API key for AI features?",
+      answer: "Only if you want to use AI recipe import on a Mac without Apple Intelligence. On Apple Silicon Macs running macOS 26 with Apple Intelligence enabled, KitchenCalc uses on-device AI at no cost. On other Macs, you can get a free API key at openrouter.ai — the free tier is sufficient for occasional recipe imports. You can also skip AI entirely and enter ingredients manually."
+    },
+    {
+      question: "Can I add my own ingredients?",
+      answer: "Yes. If an ingredient isn't in the built-in database, you can add it with a custom density value (grams per mL). Your custom ingredients are stored locally and appear alongside the built-in list in the ingredient picker. You can manage, edit, and delete them at any time."
+    },
+    {
+      question: "Is there a subscription?",
+      answer: "No. KitchenCalc is a one-time purchase of $4.99. You get all features including AI import, and all future updates to the current major version, forever."
+    }
+  ]} />
+
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 { font-size: 2.75rem; margin-bottom: 0.5rem; }
+
+  .tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta { font-size: 0.9rem; color: var(--gray); }
+
+  /* Feature sections */
+  .feature-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .feature-section.alt {
+    background: var(--gray-light);
+    max-width: 100%;
+    padding: 3.5rem 1.5rem;
+    margin: 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .feature-section.alt > * { max-width: 450px; }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .feature-body { flex: 1; }
+  .feature-body h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+  .feature-body p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+
+  .detail-note {
+    font-size: 0.95rem !important;
+    color: var(--gray) !important;
+    font-style: italic;
+    border-left: 3px solid var(--blue-light);
+    padding-left: 1rem;
+  }
+
+  /* Convert examples */
+  .convert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .convert-item {
+    background: #fff;
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .convert-item span { color: var(--blue); font-weight: 600; }
+
+  /* Temperature list */
+  .temp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .temp-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .temp-label {
+    display: inline-block;
+    min-width: 64px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  /* Pan grid */
+  .pan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .pan-card {
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+  }
+
+  .pan-card h3 {
+    font-size: 0.9rem;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .pan-card p { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.5; margin: 0; }
+
+  /* Feature list */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .feature-list li {
+    padding: 0.6rem 0;
+    padding-left: 1.25rem;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    border-bottom: 1px solid var(--gray-light);
+    position: relative;
+  }
+
+  .feature-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+
+  /* Pricing */
+  .pricing-section {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .pricing-section h2 { font-size: 1.6rem; margin-bottom: 2rem; }
+
+  .pricing-cards { display: flex; justify-content: center; }
+
+  .pricing-card {
+    flex: 1;
+    max-width: 360px;
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-align: left;
+  }
+
+  .pricing-card.featured { background: var(--blue); color: #fff; }
+  .pricing-card h3 { font-size: 1rem; margin-bottom: 0.75rem; color: rgba(255,255,255,0.8); }
+
+  .price { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .price-detail { font-size: 0.8rem; opacity: 0.8; margin-bottom: 1rem; }
+
+  .pricing-card ul { list-style: none; padding: 0; margin-top: 1rem; }
+
+  .pricing-card ul li {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .pricing-card ul li::before { content: "✓  "; }
+
+  /* Waitlist */
+  .waitlist-section { padding: 1rem 0 3rem; border-bottom: none; }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: -1.5rem;
+  }
+
+  .privacy-note a { color: var(--gray-dark); text-decoration: underline; }
+  .privacy-note a:hover { color: var(--blue); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .feature-section,
+    .feature-section.alt { flex-direction: column; gap: 1.25rem; }
+    .convert-grid,
+    .pan-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,351 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
+
+const icon = "/images/products/networknotes/icon.png";
+---
+
+<BaseLayout
+  title="Network Notes — Local Network Messaging for Mac"
+  description="Send notes, images, and links to anyone on your home network. No server, no internet, no account required. Peer-to-peer encrypted. Free."
+>
+
+  <!-- Hero -->
+  <section class="product-hero fade-in">
+    <img src={icon} alt="Network Notes" class="product-icon" />
+    <h1>Network Notes</h1>
+    <p class="tagline">Notes between Macs. Nothing in between.</p>
+    <p class="hero-sub">
+      Send a note, image, or link to anyone on your home or office network in seconds.
+      No server. No internet connection. No account. Just two Macs that find each other
+      automatically and talk directly — encrypted end-to-end.
+    </p>
+    <div class="hero-meta">macOS 15 Sequoia or later &nbsp;·&nbsp; Free &nbsp;·&nbsp; No subscription &nbsp;·&nbsp; Free to share</div>
+    <AppStoreCTA />
+  </section>
+
+  <!-- Feature 1: The problem -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🦆</div>
+    <div class="feature-body">
+      <h2>The spiritual successor to Adium.</h2>
+      <p>
+        Adium's rubber duck sat in millions of Mac menu bars for over a decade — a simple,
+        no-nonsense way to send a message to someone nearby. Then the protocols died
+        and nothing replaced it for local network use.
+      </p>
+      <p>
+        Network Notes is that replacement. Two ducks this time, passing notes between
+        each other. It sits quietly in your menu bar, finds other Macs running Network Notes
+        on your network automatically, and gets out of the way.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 2: How it works -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📡</div>
+    <div class="feature-body">
+      <h2>Automatic. Zero configuration.</h2>
+      <p>
+        Network Notes uses Bonjour — the same technology that makes AirPrint and AirDrop
+        just work — to find other Macs on your network. Launch the app on two Macs and
+        they find each other within seconds. No IP addresses, no ports, no setup.
+      </p>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-step">1</div>
+          <div class="how-text">
+            <strong>Launch on both Macs</strong>
+            <p>The duck appears in your menu bar. Network Notes starts advertising itself via Bonjour.</p>
+          </div>
+        </div>
+        <div class="how-card">
+          <div class="how-step">2</div>
+          <div class="how-text">
+            <strong>Peers appear automatically</strong>
+            <p>Other Macs running Network Notes show up in your list within seconds. No pairing needed.</p>
+          </div>
+        </div>
+        <div class="how-card">
+          <div class="how-step">3</div>
+          <div class="how-text">
+            <strong>Click and send</strong>
+            <p>Click a name, type your note, press ⌘Return. Delivered instantly, encrypted end-to-end.</p>
+          </div>
+        </div>
+        <div class="how-card">
+          <div class="how-step">4</div>
+          <div class="how-text">
+            <strong>History window pops up</strong>
+            <p>Incoming messages open the history window automatically, even if it's buried behind other apps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: What you can send -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">✉</div>
+    <div class="feature-body">
+      <h2>Notes, images, and links.</h2>
+      <p>
+        Type a note or paste a URL and it arrives as a clickable link on the other side.
+        Drop an image onto the compose window or click the photo button to pick one from Finder.
+        Images are compressed automatically and sent over the local connection — no cloud upload,
+        no size limit imposed by a server.
+      </p>
+      <div class="mini-feature-grid">
+        <div class="mini-feature">
+          <h3>Text notes</h3>
+          <p>Plain text, passwords, addresses, reminders — anything you'd otherwise shout across the house.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Clickable links</h3>
+          <p>URLs are automatically detected and rendered as clickable links in the history view.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Images</h3>
+          <p>Drag an image into the compose window or use the photo picker. Tap any image in history to open it full-size.</p>
+        </div>
+        <div class="mini-feature">
+          <h3>Send to All</h3>
+          <p>When multiple people are connected, one tap broadcasts your note to everyone on the network at once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4: Privacy & security -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🔒</div>
+    <div class="feature-body">
+      <h2>End-to-end encrypted. Nothing leaves your network.</h2>
+      <p>
+        Every message is encrypted with AES-256-GCM before it leaves your Mac, using a
+        key derived from a P-256 Elliptic Curve Diffie-Hellman handshake between the two
+        machines. DataIsland has no server in the path — your messages travel directly
+        from one Mac to the other and nowhere else.
+      </p>
+      <div class="crypto-chips">
+        <span class="chip">P-256 ECDH key exchange</span>
+        <span class="chip">AES-256-GCM encryption</span>
+        <span class="chip">Keys in macOS Keychain</span>
+        <span class="chip">No server · No cloud</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free to share -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🎁</div>
+    <div class="feature-body">
+      <h2>Free to use. Free to share.</h2>
+      <p>
+        Network Notes is free — no catch, no trial period, no "pro" tier. You can share it
+        with anyone: family members, housemates, colleagues, friends. Pass the app along
+        directly, post it on your blog, or share the App Store link. The only condition is
+        that the license document travels with it and nobody charges for it.
+      </p>
+      <p>
+        Direct downloads include a <code>License.txt</code> that makes this explicit.
+        It takes 30 seconds to read and covers everything you need to know about redistribution.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "Does it work without an internet connection?",
+      answer: "Yes — Network Notes uses only your local network. As long as both Macs are on the same WiFi or wired network, it works with no internet connection at all."
+    },
+    {
+      question: "How many people can use it at once?",
+      answer: "There is no hard limit. Every Mac on your network running Network Notes appears in the peer list. You can message individuals or use Send to All to reach everyone at once."
+    },
+    {
+      question: "Is it really free?",
+      answer: "Yes, completely free with no in-app purchases and no subscription. Network Notes is a goodwill app from DataIsland — a genuinely useful tool we wanted to exist and decided to give away."
+    },
+    {
+      question: "Are my messages private?",
+      answer: "Yes. Messages are encrypted end-to-end using AES-256-GCM with keys derived via P-256 ECDH. They travel directly between your Macs with no DataIsland server involved. Keys are stored only in your macOS Keychain."
+    },
+    {
+      question: "Does it run in the background?",
+      answer: "Yes — Network Notes sits in your menu bar and can optionally open at login (you're asked on first launch). The history window opens automatically when a message arrives, even if it's behind other windows."
+    },
+    {
+      question: "Can I share Network Notes with other people?",
+      answer: "Yes — freely. You can share the app directly, post it on your blog, or send the App Store link to anyone. The only conditions are that the License.txt document travels with any direct copy of the app, and that nobody charges for it. DataIsland never will."
+    },
+    {
+      question: "What about iMessage or AirDrop?",
+      answer: "iMessage requires an internet connection and an Apple ID. AirDrop is for one-off file transfers. Network Notes is for quick back-and-forth notes and images on your local network — no Apple ID, no internet, persistent history."
+    },
+  ]} />
+
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 { font-size: 2.75rem; margin-bottom: 0.5rem; }
+
+  .tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta { font-size: 0.9rem; color: var(--gray); }
+
+  /* Feature sections — reuse panorama layout */
+  .feature-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .feature-section.alt {
+    background: var(--gray-light);
+    padding: 3.5rem calc((100% - 900px) / 2 + 1.5rem);
+    max-width: 100vw;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    border-bottom: none;
+    justify-content: center;
+  }
+
+  .feature-section.alt > .feature-body { max-width: 820px; }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .feature-body { flex: 1; max-width: 820px; }
+  .feature-body h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+  .feature-body p  { font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+
+  /* How it works grid */
+  .how-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .how-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+  }
+
+  .how-step {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .how-text strong { display: block; font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .how-text p { font-size: 0.87rem; color: var(--gray-dark); margin: 0; line-height: 1.5; }
+
+  /* Mini feature grid */
+  .mini-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .mini-feature {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+  }
+
+  .mini-feature h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .mini-feature p { font-size: 0.9rem; margin: 0; color: var(--gray-dark); }
+
+  /* Crypto chips */
+  .crypto-chips {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+
+  .chip {
+    background: var(--blue);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .feature-section, .feature-section.alt {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 2.5rem 1rem;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      left: 0;
+    }
+    .how-grid, .mini-feature-grid { grid-template-columns: 1fr; }
+  }
+</style>

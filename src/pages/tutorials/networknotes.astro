@@ -1,0 +1,294 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Network Notes Tutorials — DataIsland Software"
+  description="Step-by-step guides for Network Notes — setup, sending notes and images, Send to All, history, settings, and login item."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>Network Notes — Tutorials</h1>
+      <p class="intro">
+        Everything you need to get Network Notes running on your home or office network.
+        Work through them in order or jump to any section.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Getting started</a></li>
+          <li><a href="#t2">Sending a note</a></li>
+          <li><a href="#t3">Sending images</a></li>
+          <li><a href="#t4">Send to All</a></li>
+          <li><a href="#t5">Message history</a></li>
+          <li><a href="#t6">Your display name</a></li>
+          <li><a href="#t7">Open at Login</a></li>
+          <li><a href="#t8">Installing on another Mac</a></li>
+          <li><a href="#t9">Troubleshooting</a></li>
+        </ol>
+      </nav>
+
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Getting Started</h2>
+          <p class="goal">What you'll learn: installing Network Notes and connecting two Macs.</p>
+
+          <p>Network Notes is a menu bar app. Once launched it sits quietly as a duck icon in your menu bar until you need it.</p>
+
+          <h3>First launch</h3>
+          <ol class="steps">
+            <li>Download and open Network Notes. The duck icon appears in your menu bar.</li>
+            <li>On first launch, Network Notes asks whether you want it to <strong>Open at Login</strong>. Click <strong>Open at Login</strong> — this ensures you never miss a message. You can change this later in Settings.</li>
+            <li>Install Network Notes on the other Mac and launch it there too.</li>
+            <li>Click the duck icon on either Mac. Within a few seconds the other Mac's name appears in the peer list with a green dot.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Same network required.</strong> Both Macs must be on the same WiFi network or connected to the same router. Network Notes does not work over the internet.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Sending a Note</h2>
+          <p class="goal">What you'll learn: sending a text note or URL to another Mac.</p>
+
+          <ol class="steps">
+            <li>Click the duck icon in your menu bar.</li>
+            <li>Click the name of the Mac you want to message. The compose window slides open.</li>
+            <li>Type your note. URLs are detected automatically — paste a link and it will arrive as a clickable link on the other side.</li>
+            <li>Press <strong>⌘Return</strong> or click <strong>Send</strong>. A "Sent" confirmation appears briefly, then the window returns to the peer list.</li>
+          </ol>
+
+          <p>When the message arrives on the other Mac, the history window opens automatically and comes to the front — even if it was behind other windows.</p>
+
+          <div class="tip">
+            <strong>Encrypted in transit.</strong> Every message is encrypted end-to-end with AES-256-GCM before it leaves your Mac. No one between the two machines can read it.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Sending Images</h2>
+          <p class="goal">What you'll learn: sending a photo or screenshot to another Mac.</p>
+
+          <h3>Drag and drop</h3>
+          <ol class="steps">
+            <li>Open the compose window for the person you want to send to.</li>
+            <li>Drag any image from Finder, Photos, or your Desktop and drop it onto the compose area. A preview appears.</li>
+            <li>Optionally type a caption in the text field below the preview.</li>
+            <li>Press <strong>⌘Return</strong> or click <strong>Send.</strong></li>
+          </ol>
+
+          <h3>Using the photo picker</h3>
+          <ol class="steps">
+            <li>Open the compose window and click the <strong>photo icon</strong> at the bottom left.</li>
+            <li>Select an image from Finder.</li>
+            <li>Add a caption if you like, then send.</li>
+          </ol>
+
+          <div class="tip">
+            Images are automatically resized to a maximum of 1024 pixels on their longest side and compressed before sending. This keeps transfers fast on a home network while preserving enough quality for most uses.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Send to All</h2>
+          <p class="goal">What you'll learn: broadcasting a note or image to everyone on the network at once.</p>
+
+          <p>When two or more Macs are connected, a <strong>Send to All</strong> button appears at the top of the peer list.</p>
+
+          <ol class="steps">
+            <li>Click the duck icon to open the peer list.</li>
+            <li>Click <strong>Send to All</strong> at the top of the list (only visible when 2+ people are connected).</li>
+            <li>The compose window opens with <strong>To: Everyone</strong> as the recipient.</li>
+            <li>Type your note or drop an image, then send. Every connected Mac receives it simultaneously.</li>
+          </ol>
+
+          <div class="tip">
+            Each recipient sees the message individually in their history. The delivery to each person is encrypted separately — your note is not broadcast as a single unencrypted packet.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Message History</h2>
+          <p class="goal">What you'll learn: viewing, searching, and clearing your message history.</p>
+
+          <p>Every sent and received message is stored locally in Message History. It opens automatically when a message arrives, and you can also open it manually.</p>
+
+          <h3>Opening history</h3>
+          <ol class="steps">
+            <li>Click the duck icon and then click <strong>History</strong> in the footer.</li>
+            <li>The history window shows all messages, newest first. Outgoing messages show a blue arrow; incoming show a green arrow.</li>
+            <li>Click any image to open it full-size in Preview.</li>
+            <li>URLs in messages are underlined and clickable.</li>
+          </ol>
+
+          <h3>Clearing history</h3>
+          <ol class="steps">
+            <li>Open the history window.</li>
+            <li>To delete a single message, hover over it and press <strong>Delete</strong>, or swipe left.</li>
+            <li>To clear everything, click <strong>Clear All</strong> in the toolbar.</li>
+          </ol>
+
+          <div class="tip">
+            Message history is stored only on your Mac. Clearing it on one machine does not affect history on other machines.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Your Display Name</h2>
+          <p class="goal">What you'll learn: changing the name other people see when you send them a note.</p>
+
+          <p>Network Notes uses your Mac's computer name by default. If multiple Macs on your network share the same name (e.g., "MacBook Pro"), you can set a unique display name.</p>
+
+          <ol class="steps">
+            <li>Click the duck icon, then click the <strong>gear icon</strong> in the footer.</li>
+            <li>Edit the name in the <strong>Display name</strong> field.</li>
+            <li>Click <strong>Apply.</strong> Network Notes re-advertises immediately with the new name.</li>
+          </ol>
+
+          <div class="tip">
+            Your display name is what other Macs see in their peer list and in their message history. Choose something that makes it obvious who is sending — "Geoff's Mac" is clearer than "MacBook Pro."
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> Open at Login</h2>
+          <p class="goal">What you'll learn: making Network Notes start automatically when you log in.</p>
+
+          <p>Network Notes works best when it starts at login — that way the duck is always in your menu bar and you never miss a message.</p>
+
+          <h3>Enabling Open at Login</h3>
+          <ol class="steps">
+            <li>Click the duck icon, then click the gear icon.</li>
+            <li>Turn on the <strong>Open at Login</strong> toggle.</li>
+          </ol>
+
+          <h3>Disabling Open at Login</h3>
+          <ol class="steps">
+            <li>Click the duck icon, then click the gear icon.</li>
+            <li>Turn off the <strong>Open at Login</strong> toggle.</li>
+          </ol>
+
+          <div class="tip">
+            You can also manage login items in <strong>System Settings → General → Login Items &amp; Extensions.</strong> Network Notes appears there under "Allow in the Background."
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Installing on Another Mac</h2>
+          <p class="goal">What you'll learn: getting Network Notes onto a second Mac without the App Store.</p>
+
+          <h3>From the App Store</h3>
+          <p>Search for <strong>Network Notes</strong> in the Mac App Store and install it the same way as any free app.</p>
+
+          <h3>Direct install (for beta or household sharing)</h3>
+          <ol class="steps">
+            <li>On the Mac that already has Network Notes, use <strong>Finder → Applications</strong> to locate NetworkNotes.app.</li>
+            <li>AirDrop it to the other Mac, or copy it to a shared folder.</li>
+            <li>On the receiving Mac, <strong>Control-click → Open</strong> (or two-finger click on a trackpad) on the first launch to allow it past Gatekeeper.</li>
+          </ol>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 9 -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Troubleshooting</h2>
+          <p class="goal">What to do when peers don't appear or messages don't arrive.</p>
+
+          <table>
+            <thead>
+              <tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Peer never appears in the list</td>
+                <td>Both Macs are not on the same network, or a firewall is blocking Bonjour.</td>
+                <td>Confirm both Macs are on the same WiFi. Check System Settings → Network → Firewall and ensure it allows incoming connections for Network Notes.</td>
+              </tr>
+              <tr>
+                <td>Peer shows as "Connecting…" but never connects</td>
+                <td>A VPN or corporate proxy is interfering with local network traffic.</td>
+                <td>Disable any active VPN. Network Notes only uses the local network and doesn't route traffic through a VPN, but some VPN clients block local discovery.</td>
+              </tr>
+              <tr>
+                <td>Messages send but don't arrive</td>
+                <td>The receiving Mac may have notifications disabled for Network Notes.</td>
+                <td>On the receiving Mac, go to System Settings → Notifications → Network Notes and enable alerts.</td>
+              </tr>
+              <tr>
+                <td>Peer disappears after being connected</td>
+                <td>Network Notes automatically reconnects if the Bonjour service is still visible. The peer reappears within a few seconds.</td>
+                <td>Wait a few seconds. If the peer doesn't reappear, ensure both Macs are still on the same network.</td>
+              </tr>
+              <tr>
+                <td>History window doesn't open on incoming messages</td>
+                <td>Focus &amp; Assistance modes on macOS may be suppressing alerts.</td>
+                <td>Check System Settings → Focus and ensure Network Notes notifications are allowed in your active Focus mode.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap { max-width: 980px; margin: 0 auto; padding: 1.25rem 1.5rem 5rem; }
+  .tut-header { margin-bottom: 1.25rem; }
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+  .intro { font-size: 1.05rem; color: var(--gray-dark); line-height: 1.7; max-width: 640px; margin-bottom: 1.25rem; }
+  .print-btn { background: var(--blue); color: #fff; border: none; border-radius: 8px; padding: 0.5rem 1.2rem; font-size: 0.9rem; cursor: pointer; }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both; }
+  @keyframes layout-enter { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
+
+  .toc { position: sticky; top: 2rem; background: var(--gray-light); border-radius: var(--radius); padding: 1.25rem 1.25rem 1.5rem; }
+  .toc h2 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--gray); margin-bottom: 0.75rem; }
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--gray-light); }
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+  .tut-section h2 { font-size: 1.45rem; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 1.8rem; height: 1.8rem; background: var(--blue); color: #fff; border-radius: 50%; font-size: 0.9rem; font-weight: 700; flex-shrink: 0; }
+  .goal { font-size: 0.95rem; color: var(--gray-dark); font-style: italic; margin-bottom: 1.25rem; padding-left: 2.4rem; }
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+  .tut-section ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1rem 0 1.25rem; }
+  th { text-align: left; padding: 0.5rem 0.75rem; background: var(--gray-light); font-weight: 600; border: 1px solid #e0e0e0; }
+  td { padding: 0.5rem 0.75rem; border: 1px solid #e0e0e0; vertical-align: top; line-height: 1.55; }
+
+  .tip { background: var(--blue-light, rgba(0,102,255,0.06)); border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; font-size: 0.92rem; line-height: 1.6; margin: 1rem 0; }
+
+  @media (max-width: 700px) { .tut-layout { grid-template-columns: 1fr; } .toc { position: static; } }
+  @media print { .print-btn, .breadcrumb { display: none; } .tut-layout { grid-template-columns: 1fr; } .toc { position: static; page-break-after: always; } .tut-section { page-break-inside: avoid; } }
+</style>

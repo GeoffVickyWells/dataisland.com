@@ -7,8 +7,8 @@ interface Props {
 
 const {
   app = "",
-  label = "Get 10% off at launch",
-  subtext = "Join the waitlist and we'll send you a discount code when the app is available. No spam, unsubscribe anytime.",
+  label = "Get notified at launch",
+  subtext = "Join the waitlist and we'll email you the moment the app is available. No spam, unsubscribe anytime.",
 } = Astro.props;
 
 // Replace with your Pabbly Connect webhook URL once configured
@@ -17,7 +17,7 @@ const WEBHOOK_URL = "https://connect.pabbly.com/webhook-listener/webhook/IjU3NjI
 
 <section class="email-capture fade-in" id="waitlist">
   <div class="capture-inner">
-    <div class="capture-badge">Early Access</div>
+    <div class="capture-badge">Waitlist</div>
     <h2>{label}</h2>
     <p class="capture-sub">{subtext}</p>
 

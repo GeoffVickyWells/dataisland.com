@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "11 July 2026";
+---
+
+<BaseLayout
+  title="Studio — Privacy Policy"
+  description="Privacy policy for Studio, the native Mac performance capture and voice conversion app by DataIsland Software LLC, part of the PolySpeak suite."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>Studio — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      Studio is a native Mac performance-capture and voice-conversion app, part of the
+      PolySpeak voice-production suite. This policy explains exactly what data Studio
+      accesses — including its use of the microphone — and confirms that nothing it
+      processes ever leaves your device.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>Studio makes no network requests of any kind.</strong> Recording, importing,
+      and voice conversion all run entirely on your Mac using a local voice pipeline.
+      Studio does use your microphone to capture performance takes, but only while you are
+      actively recording, and only with your explicit permission. The app has no server,
+      no account, and no analytics.
+    </p>
+
+    <h2>What Studio Accesses</h2>
+    <ul>
+      <li>
+        <strong>Microphone</strong> — used for live in-app recording of performance takes.
+        This requires the standard macOS microphone permission prompt, and the microphone
+        is only active while you are actively recording
+      </li>
+      <li>Audio files you explicitly import</li>
+      <li>The shared local voice-library folder, read to populate the voice-conversion picker</li>
+      <li><code>.studiosession</code> files you open or create</li>
+      <li>A nearby <code>.polyproject</code> manifest file, if one exists, which Studio may write export records into</li>
+    </ul>
+    <p>
+      Studio does not access your camera, contacts, location, photos, or calendar.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>Nothing</h3>
+    <p>
+      As with TableRead, Studio's voice conversion runs a local Python/RVC pipeline via
+      subprocess entirely on your Mac. No recorded audio, no imported audio, and no
+      converted audio is ever uploaded anywhere. Microphone input captured during
+      recording is written to a local audio file and processed on-device — it is never
+      transmitted over the network, to DataIsland, or to any third party.
+    </p>
+
+    <h2>What Is Stored Locally</h2>
+    <ul>
+      <li><strong>Session files</strong> (<code>.studiosession</code>) — takes list, character assignments, and selected voice, saved to locations you choose</li>
+      <li><strong>Imported, recorded, converted, and exported audio files</strong> — saved to locations you choose on your Mac</li>
+      <li><strong>The shared voice library</strong> — local voice models used for conversion</li>
+    </ul>
+    <p>None of this data is synced to iCloud or transmitted to DataIsland.</p>
+
+    <h2>What Studio Does Not Do</h2>
+    <ul>
+      <li>Does not transmit microphone audio, or any other data, anywhere</li>
+      <li>Does not require an account or login</li>
+      <li>Does not collect analytics, usage statistics, or crash reports</li>
+      <li>Does not access your microphone except while you are actively recording</li>
+      <li>Does not access your files without your explicit action</li>
+      <li>Does not share data with third parties</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Studio is not directed at children under 13. We do not knowingly collect
+      information from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of Studio after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:<br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a><br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

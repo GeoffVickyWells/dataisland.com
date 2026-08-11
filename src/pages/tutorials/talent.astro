@@ -1,0 +1,298 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Talent Tutorials — DataIsland Software"
+  description="Step-by-step guides for Talent — training a voice from a recording, importing an existing model, consent tracking, catalog numbers, casting status, and a voice's resume."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>Talent — Tutorials</h1>
+      <p class="intro">
+        Written guides for every feature in Talent, the voice-library app in the PolySpeak
+        pipeline. Work through them in order for a full introduction, or jump to any section
+        using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Training a voice from a recording</a></li>
+          <li><a href="#t2">Importing an existing model</a></li>
+          <li><a href="#t3">Reviewing the preview sample</a></li>
+          <li><a href="#t4">Consent tracking</a></li>
+          <li><a href="#t5">Catalog numbers &amp; casting status</a></li>
+          <li><a href="#t6">A voice's resume</a></li>
+          <li><a href="#t7">Multi-window</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─── Tutorial 1 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Training a Voice from a Recording</h2>
+          <p class="goal">What you'll learn: turning a source recording into a trained AI voice.</p>
+
+          <ol class="steps">
+            <li>Click <strong>New Voice</strong> in the sidebar.</li>
+            <li>Record directly in the app, or import an existing recording — roughly 10 to 30 minutes of clean source audio gives the best results.</li>
+            <li>Name the voice and set the number of training epochs.</li>
+            <li>Start training. Talent runs the training pipeline entirely on-device — this can take a while depending on your Mac and the recording length.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Clean audio in, better voice out.</strong> A quiet recording with consistent
+            mic distance and minimal background noise trains a noticeably cleaner voice than a
+            noisy or inconsistent one.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 2 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Importing an Existing Model</h2>
+          <p class="goal">What you'll learn: adding a voice you've already trained elsewhere, without retraining it.</p>
+
+          <ol class="steps">
+            <li>Click <strong>New Voice</strong>, then choose <strong>Import Existing Model…</strong>.</li>
+            <li>Select an RVC <strong>.pth</strong> model file, and its matching <strong>.index</strong> file if you have one.</li>
+            <li>Choose the RVC architecture version the model was trained with (v1 or v2).</li>
+            <li>Talent registers it as a new voice in your library, ready to cast.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>No training history for imported voices.</strong> Since Talent didn't train
+            it, an imported voice's origin is recorded honestly as "imported" rather than showing
+            fabricated training details.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 3 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Reviewing the Preview Sample</h2>
+          <p class="goal">What you'll learn: hearing what a freshly trained voice actually sounds like before trusting it.</p>
+
+          <ol class="steps">
+            <li>After training finishes, Talent converts a short clip of the original recording through the new model.</li>
+            <li>Play the preview — this is a real converted sample, not a placeholder, so it's an honest test of quality.</li>
+          </ol>
+        </section>
+
+        <!-- ─── Tutorial 4 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Consent Tracking</h2>
+          <p class="goal">What you'll learn: recording consent for a trained voice, and why it matters.</p>
+
+          <ol class="steps">
+            <li>When training a voice from someone else's recording, complete the consent attestation step.</li>
+            <li>The consent record is stored alongside the voice's other data, viewable from the voice's Authenticity section.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>This is your responsibility, not just a form field.</strong> You must have
+            real consent from the person whose voice you're recording, or use only your own voice.
+            Talent's attestation records that you've confirmed it — it can't verify consent
+            actually exists. See the Terms of Use for the full policy.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 5 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Catalog Numbers &amp; Casting Status</h2>
+          <p class="goal">What you'll learn: keeping a growing library organized and knowing which voices are production-ready.</p>
+
+          <ol class="steps">
+            <li>Every voice gets a permanent catalog number automatically when it's added to your library.</li>
+            <li>Toggle a voice between <strong>Testing</strong> and <strong>Ready for Casting</strong> from its detail view once you're confident in its quality.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Leave new voices as Testing at first.</strong> Cast them in a scene or two,
+            confirm the quality holds up, then flip to Ready for Casting so you and any
+            collaborators know it's trusted for real production work.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 6 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> A Voice's Resume</h2>
+          <p class="goal">What you'll learn: how a voice's performance history builds up automatically.</p>
+
+          <ol class="steps">
+            <li>Open a voice's detail view and scroll to the Resume section.</li>
+            <li>Every credit here was added automatically — by TableRead when it generates a full read-through, and by Studio when it exports a finished take.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>No manual entry needed.</strong> A voice's resume fills itself in as you use
+            it across the suite — there's nothing to type in yourself.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 7 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> Multi-Window</h2>
+          <p class="goal">What you'll learn: comparing voices side by side.</p>
+
+          <ol class="steps">
+            <li>Press <strong>⌘N</strong>, or choose <strong>File → New Window</strong>, to open a second library window.</li>
+            <li>Select a different voice in each window to compare them side by side.</li>
+          </ol>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul  { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

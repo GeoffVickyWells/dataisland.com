@@ -1,0 +1,1093 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="AccountCache Tutorials — DataIsland Software"
+  description="Step-by-step guides for AccountCache — setting up categories, managing accounts, using reports, importing from other apps, and more."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>AccountCache — Tutorials</h1>
+      <p class="intro">
+        Complete written guides for every feature in AccountCache. Work through them in order
+        for a full tour of the app, or jump to any section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">First launch &amp; the interface</a></li>
+          <li><a href="#t2">Categories</a></li>
+          <li><a href="#t3">Creating your first account</a></li>
+          <li><a href="#t4">The account detail form</a></li>
+          <li><a href="#t5">Basic categories in practice</a></li>
+          <li><a href="#t6">Pro specialist fields</a></li>
+          <li><a href="#t7">Searching your accounts</a></li>
+          <li><a href="#t8">Account status &amp; the wallet</a></li>
+          <li><a href="#t9">Reports</a></li>
+          <li><a href="#t10">Importing from other apps</a></li>
+          <li><a href="#t11">Upgrade plans</a></li>
+          <li><a href="#t12">Settings reference</a></li>
+          <li><a href="#t13">User profiles &amp; household sharing</a></li>
+          <li><a href="#t14">Sync, backup &amp; new Mac migration</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> First Launch &amp; the Interface</h2>
+          <p class="goal">What you'll learn: the three-column layout and how to navigate the app.</p>
+
+          <p>AccountCache opens in a three-column window:</p>
+
+          <table>
+            <thead><tr><th>Column</th><th>What it shows</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Left — Categories</strong></td><td>Your category list. Click any category to filter the account list to that category only. Click <strong>All Accounts</strong> at the top to see everything.</td></tr>
+              <tr><td><strong>Centre — Account List</strong></td><td>All accounts in the selected category, listed alphabetically. Click any row to open it in the detail panel.</td></tr>
+              <tr><td><strong>Right — Account Detail</strong></td><td>The full record for the selected account. All fields are editable here. Click anywhere in a field to edit it.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Toolbar buttons</h3>
+          <ul>
+            <li><strong>+ (New Account)</strong> — creates a blank account in the current category. Keyboard shortcut: ⌘N.</li>
+            <li><strong>Eye icon</strong> — toggles between showing active accounts only and showing all accounts including inactive and cancelled ones.</li>
+            <li><strong>Wallet icon</strong> — opens the Lost Wallet Report.</li>
+          </ul>
+
+          <h3>Menu bar</h3>
+          <ul>
+            <li><strong>File → New Account (⌘N)</strong> — same as the toolbar button.</li>
+            <li><strong>File → Import Passwords… (⌘⇧I)</strong> — opens the import wizard.</li>
+            <li><strong>Reports menu</strong> — access all four reports: Lost Wallet, Expiry Dashboard, Cost Summary, Account Health.</li>
+          </ul>
+
+          <div class="tip">
+            <strong>Tip:</strong> The window has a minimum width of 1150 points. If the detail panel looks crowded, drag the window wider or drag the column dividers to redistribute space.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Categories</h2>
+          <p class="goal">What you'll learn: the Basic and Pro category types, the built-in categories, and how to add your own.</p>
+
+          <p>
+            Categories organise your accounts into groups. AccountCache has two types:
+          </p>
+
+          <h3>Basic categories</h3>
+          <p>
+            Basic categories use the <strong>standard account form only</strong> — name, login,
+            password, URL, registration email, two-factor, security questions, expiry, billing,
+            tags, and notes. Any category you create yourself is a Basic category.
+          </p>
+          <p>
+            AccountCache ships with several Basic categories pre-configured: <strong>Accounts</strong>
+            (the general catch-all), <strong>Identity</strong>, <strong>WiFi</strong>,
+            <strong>Social</strong>, <strong>Shopping</strong>, <strong>Streaming</strong>,
+            <strong>Travel</strong>, <strong>Education</strong>, and <strong>Membership</strong>.
+          </p>
+          <p>
+            The standard form is more flexible than it looks — see Tutorial 5 for practical
+            examples of what you can store with just these fields.
+          </p>
+
+          <h3>Pro categories</h3>
+          <p>
+            Pro categories add a <strong>specialist section</strong> below the standard form,
+            with fields specific to that account type. AccountCache ships with ten Pro categories:
+          </p>
+
+          <table>
+            <thead><tr><th>Category</th><th>Specialist fields added</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Financial</strong></td><td>Institution details, logins per cardholder, account products, physical and digital cards</td></tr>
+              <tr><td><strong>Email</strong></td><td>IMAP server, IMAP port, IMAP security, SMTP server, SMTP port, SMTP security</td></tr>
+              <tr><td><strong>Domains</strong></td><td>Registrar, nameservers, hosting provider, domain expiry, DKIM, SPF, MX records</td></tr>
+              <tr><td><strong>Software &amp; Licences</strong></td><td>Licence key, licence expiry, seat count, platform</td></tr>
+              <tr><td><strong>Hosting &amp; Servers</strong></td><td>Server IP, SSH port, control panel URL, datacenter</td></tr>
+              <tr><td><strong>AI &amp; APIs</strong></td><td>API key, org ID, base URL, models, MCP transport, webhooks, monthly limit</td></tr>
+              <tr><td><strong>Medical Insurance</strong></td><td>Plan type, insurer, member ID, group number, deductible, copay, coverage dates</td></tr>
+              <tr><td><strong>Crypto Wallet</strong></td><td>Wallet address, seed phrase (locked), private key, blockchain, wallet software</td></tr>
+              <tr><td><strong>Vehicle</strong></td><td>VIN, make/model/year, plate, registration expiry, insurance policy, roadside, financing</td></tr>
+              <tr><td><strong>Insurance</strong></td><td>Policy type, provider, policy number, agent, annual premium, renewal date, coverage</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Adding a category</h3>
+          <ol class="steps">
+            <li>At the bottom of the category sidebar, click the <strong>+</strong> button.</li>
+            <li>Type a name and press ↩. AccountCache picks an icon automatically based on the name. The new category appears in the list immediately.</li>
+            <li>Drag any category row up or down in the sidebar to change its position.</li>
+          </ol>
+
+          <h3>Renaming or deleting a category</h3>
+          <ol class="steps">
+            <li>Control-click a category in the sidebar (or two-finger click on a trackpad).</li>
+            <li>Choose <strong>Rename</strong> to edit its name, or <strong>Delete</strong> to remove it.</li>
+            <li>Deleting a category moves all its accounts to the first available category — no accounts are lost.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Note:</strong> The built-in Pro categories cannot be deleted — they are tied to the specialist field system. You can rename them freely.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Creating Your First Account</h2>
+          <p class="goal">What you'll learn: creating a new account and filling in the core fields.</p>
+
+          <ol class="steps">
+            <li>Click <strong>+ New Account</strong> in the toolbar (or press ⌘N). A new blank account is created and its detail panel opens on the right.</li>
+            <li>The <strong>Category</strong> dropdown opens automatically. Select the category this account belongs to — for example, "Email", "Financial", or one of your own categories. The form updates immediately to show any specialist fields for that category.</li>
+            <li>Focus moves automatically to the <strong>Account Name</strong> field. Type the name of the service (e.g., "Gmail", "Amazon", "Chase Bank"). The header at the top of the detail panel updates as you type.</li>
+            <li>Tab through the remaining fields or click each one to fill them in. All fields other than Account Name are optional.</li>
+            <li>There is no Save button. AccountCache saves your changes automatically when you select a different account or click away from the window.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Abandoned accounts:</strong> If you create a new account but navigate away before entering a name, login, password, or notes, AccountCache automatically deletes the empty record. Your account list stays clean with no stray "Untitled" entries.
+          </div>
+
+          <div class="tip">
+            <strong>Shortcut:</strong> Press Tab to move forward through fields and Shift-Tab to move backwards. Press ↩ inside any multi-line field (Notes, Backup Codes) to insert a line break.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> The Account Detail Form</h2>
+          <p class="goal">What you'll learn: every field in the standard account form and what it's for.</p>
+
+          <h3>Identity section</h3>
+          <table>
+            <thead><tr><th>Field</th><th>What to put here</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Category</strong></td><td>Which category this account belongs to. The Category field comes first — changing it updates the specialist fields shown below. If you move an account to a different smart-category type and it already has specialist data, AccountCache will ask you to confirm before deleting that data.</td></tr>
+              <tr><td><strong>Account Name</strong></td><td>The name of the service or website. This is the primary identifier shown in the account list and in the detail panel header.</td></tr>
+              <tr><td><strong>Status</strong></td><td>Active, Inactive, Cancelled, or Suspended. Inactive and Cancelled accounts are hidden in the list by default — use the eye icon in the toolbar to show them.</td></tr>
+              <tr><td><strong>Tags</strong></td><td>Comma-separated labels for grouping across categories (e.g., "work, critical, shared" or "geoff, vicky" to distinguish records belonging to different family members). See Tutorial 5 for practical tag strategies.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Access section</h3>
+          <table>
+            <thead><tr><th>Field</th><th>What to put here</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Home URL</strong></td><td>The website's main address (e.g., https://gmail.com). Click the Safari icon next to it to open in your browser.</td></tr>
+              <tr><td><strong>Login URL</strong></td><td>The direct sign-in page URL if different from the home URL.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Credentials section</h3>
+          <table>
+            <thead><tr><th>Field</th><th>What to put here</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Login / Username</strong></td><td>Your username, handle, or account ID for this service.</td></tr>
+              <tr><td><strong>Password</strong></td><td>Hidden by default — click the lock icon to reveal and edit it. The date the password was last changed is shown below after the first save.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Registration &amp; 2FA section</h3>
+          <table>
+            <thead><tr><th>Field</th><th>What to put here</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Registration Email</strong></td><td>The email address used to create this account — useful when the login is a username but you need to know which email is on file.</td></tr>
+              <tr><td><strong>2FA Method</strong></td><td>None, SMS, Authenticator App, Email, or Hardware Key.</td></tr>
+              <tr><td><strong>Authenticator App</strong></td><td>Which app holds the TOTP code (e.g., Authy, 1Password, Google Authenticator). Shown only when 2FA is set to Authenticator App.</td></tr>
+              <tr><td><strong>Backup Codes</strong></td><td>Paste your 2FA recovery codes here so they're stored with the account. Hidden by default.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Recovery section</h3>
+          <table>
+            <thead><tr><th>Field</th><th>What to put here</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Recovery Email</strong></td><td>The recovery email set on this account (may differ from your registration email).</td></tr>
+              <tr><td><strong>Recovery Phone</strong></td><td>The recovery phone number on file for this account.</td></tr>
+              <tr><td><strong>Security Questions</strong></td><td>Click <strong>Add Security Question</strong> to store Q&amp;A pairs. You can add as many as you need.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Subscription section</h3>
+          <table>
+            <thead><tr><th>Field</th><th>What to put here</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Billing Cycle</strong></td><td>Monthly, Quarterly, Annual, or One-time. Leave blank for accounts with no recurring cost.</td></tr>
+              <tr><td><strong>Cost</strong></td><td>What you pay per billing cycle. Used by the Cost Summary report.</td></tr>
+              <tr><td><strong>Next Renewal</strong></td><td>When the subscription next renews or expires. Used by the Expiry Dashboard.</td></tr>
+              <tr><td><strong>Payment Method</strong></td><td>How you pay (e.g., "Visa ···· 1234").</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Notes panel</h3>
+          <p>The right side of the detail panel is a dedicated Notes area — free-form text for anything that doesn't fit elsewhere. It's always visible alongside the form, so you can take notes without scrolling.</p>
+
+          <h3>Record info section</h3>
+          <p>At the bottom of the form, AccountCache shows when the record was <strong>Created</strong> and last <strong>Modified</strong>, along with the name of the user who performed each action. These are set automatically and cannot be edited. When multiple people share a database, the user name tells you who last touched a record.</p>
+
+          <div class="tip">
+            <strong>Deleting an account:</strong> Control-click the account in the centre list (or two-finger click on a trackpad) and choose <strong>Delete</strong>. A confirmation dialog appears before anything is removed.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 (NEW) -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Basic Categories in Practice</h2>
+          <p class="goal">What you'll learn: how to use the standard account form — and the Tags field — to store a surprising range of everyday records without needing Pro.</p>
+
+          <p>
+            The standard form's Login, Password, and Expiry fields can represent far more
+            than website credentials. With a few naming conventions and tags, Basic categories
+            replace several types of information people usually scatter across notes apps,
+            photo albums, and their own memory.
+          </p>
+
+          <h3>Identity documents</h3>
+          <p>
+            AccountCache ships with an <strong>Identity</strong> category for exactly this.
+            Create one record per document. Put the document number in the <strong>Login</strong>
+            field and the expiry date in the <strong>Expiry</strong> field. Use tags to
+            distinguish whose document it is.
+          </p>
+
+          <table>
+            <thead><tr><th>Account Name</th><th>Login field</th><th>Expiry</th><th>Tags</th></tr></thead>
+            <tbody>
+              <tr><td>Passport</td><td>AB123456</td><td>2031-03-14</td><td>travel, geoff</td></tr>
+              <tr><td>Passport</td><td>CD789012</td><td>2029-07-22</td><td>travel, vicky</td></tr>
+              <tr><td>Driver's Licence</td><td>G1234-56789-01234</td><td>2027-08-15</td><td>id, geoff</td></tr>
+              <tr><td>Health Card</td><td>1234-567-890</td><td>2026-12-31</td><td>id, geoff</td></tr>
+              <tr><td>SIN / SSN</td><td>—</td><td>—</td><td>id, geoff</td></tr>
+              <tr><td>NEXUS / Global Entry</td><td>123456789</td><td>2029-05-01</td><td>travel, geoff</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            Once expiry dates are set, the <strong>Expiry Dashboard</strong> will warn you
+            60 and 30 days before a document lapses. Most people have never written their
+            passport number anywhere they could find it at 11pm before a 6am flight —
+            AccountCache is where it lives.
+          </p>
+
+          <h3>WiFi passwords</h3>
+          <p>
+            AccountCache ships with a <strong>WiFi</strong> category. Put the network name
+            (SSID) in the <strong>Account Name</strong> field and the password in the
+            <strong>Password</strong> field.
+          </p>
+
+          <table>
+            <thead><tr><th>Account Name</th><th>Password</th><th>Tags</th></tr></thead>
+            <tbody>
+              <tr><td>Home WiFi 5G</td><td>your-wifi-password</td><td>wifi, home</td></tr>
+              <tr><td>Cabin Network</td><td>cabin-password</td><td>wifi, travel</td></tr>
+              <tr><td>Office Guest</td><td>welcome2024</td><td>wifi, work</td></tr>
+              <tr><td>Rogers Modem Admin</td><td>modem-password</td><td>wifi, home, router</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            How many times have you been asked for the WiFi password and had to walk to
+            the router? It's in AccountCache.
+          </p>
+
+          <h3>Using tags for grouping — not identity</h3>
+          <p>
+            Tags are best for ad-hoc grouping across categories — not for identifying whose
+            account it is. For that, use <strong>user profiles</strong> (Tutorial 13).
+            With profiles, each person owns their own records and can mark them private.
+            Tags work across profiles for cross-cutting concerns like urgency or topic.
+          </p>
+
+          <table>
+            <thead><tr><th>Tag</th><th>Good for</th></tr></thead>
+            <tbody>
+              <tr><td><strong>critical</strong></td><td>Accounts that must never lapse — domains, payment processors, primary email</td></tr>
+              <tr><td><strong>travel</strong></td><td>Everything you need when abroad — loyalty numbers, passport, foreign cards</td></tr>
+              <tr><td><strong>work</strong></td><td>Accounts used only for professional purposes, searchable in one click</td></tr>
+              <tr><td><strong>expiring</strong></td><td>Manually flag accounts you're actively monitoring between Expiry Dashboard checks</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            Search <strong>streaming</strong> to audit all streaming subscriptions before
+            the next billing cycle. Search <strong>travel</strong> before a trip to pull
+            up every account you'll need. Tags complement profiles — they don't replace them.
+          </p>
+
+          <h3>Other Basic categories that ship with AccountCache</h3>
+          <table>
+            <thead><tr><th>Category</th><th>What to store here</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Social</strong></td><td>Social media logins — Instagram, X, LinkedIn, TikTok. Tags: work, personal.</td></tr>
+              <tr><td><strong>Shopping</strong></td><td>E-commerce accounts — Amazon, eBay, Shopify stores. Tags by person or purpose.</td></tr>
+              <tr><td><strong>Streaming</strong></td><td>Netflix, Spotify, Disney+, Apple TV+ — anything with a monthly or annual cost. Set billing cycle and cost to include them in Cost Summary.</td></tr>
+              <tr><td><strong>Travel</strong></td><td>Airline and hotel loyalty programs — Aeroplan, Marriott Bonvoy. Login is your membership number. Tags: air, hotel.</td></tr>
+              <tr><td><strong>Education</strong></td><td>Student portals, institutional logins, course platforms like Coursera or Udemy.</td></tr>
+              <tr><td><strong>Membership</strong></td><td>Clubs, gyms, professional associations. Login is your membership number. Tags by person if shared household.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip">
+            <strong>The rule of thumb:</strong> if the information fits in a name, a number, a
+            password, and a date, it's a Basic record. The Login field is just a text field —
+            it can hold a membership number, a document number, a SSID, or anything else.
+            Only reach for a Pro category when you need structured fields the standard form
+            cannot represent.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 (was 5) -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Pro Specialist Fields</h2>
+          <p class="goal">What you'll learn: the extra fields that appear when an account is in a Pro category.</p>
+
+          <p>
+            When an account is in one of the ten Pro categories, a specialist section appears
+            below the standard form with fields specific to that type. These sections are
+            labelled in the form (e.g., "INSURANCE DETAILS", "WALLET").
+          </p>
+
+          <h3>Financial</h3>
+          <p>Financial is the most structured Pro category. One record holds your complete relationship with a financial institution — the institution-level details, every login (one per cardholder), every product account (checking, savings, mortgage, RRSP…), and every physical or digital card. Card number, CVV, and expiry fields are masked by default. The Expiry Dashboard tracks card expiry dates automatically.</p>
+          <p>See also: the <strong>Lost Wallet Report</strong> (Tutorial 9) — it's driven by the Physical Wallet toggle on each card.</p>
+
+          <h3>Email</h3>
+          <p>Fields: IMAP Server, IMAP Port, IMAP Security (SSL / TLS / STARTTLS), SMTP Server, SMTP Port, SMTP Security. Fill these in with your email provider's server settings — they're what you'd enter into Apple Mail, Outlook, or Thunderbird.</p>
+
+          <h3>Domains</h3>
+          <p>Fields: Registrar, Nameservers, Hosting Provider, Domain Expiry Date, DKIM Record, SPF Record, MX Records. Store the full DNS picture alongside your registrar login so everything needed to recover or move a domain is in one place. Domain Expiry feeds the Expiry Dashboard.</p>
+
+          <h3>Software &amp; Licences</h3>
+          <p>Fields: Licence Key, Licence Expiry, Seat Count, Platform (macOS / Windows / cross-platform / web). The Licence Key is masked by default. Licence Expiry feeds the Expiry Dashboard.</p>
+
+          <h3>Hosting &amp; Servers</h3>
+          <p>Fields: Server IP, SSH Port, Control Panel URL, Datacenter. For web hosting, VPS, and dedicated servers. Pair with the standard form's Login and Password fields for a complete server record.</p>
+
+          <h3>AI &amp; APIs</h3>
+          <p>Fields: API Key, API Key Label (e.g., "Production"), Organisation ID, Base URL, API Version, Models, Usage Tier, Monthly Limit, Usage Dashboard URL, MCP Transport, MCP Server URL, Webhook URL, Webhook Secret. API Key and Webhook Secret are masked by default.</p>
+
+          <h3>Medical Insurance</h3>
+          <p>Fields: Plan Type (Medical / Dental / Vision / Prescription / Supplementary), Insurer Name, Member ID, Group Number, Payer ID, Plan Name, Deductible, Out-of-Pocket Max, Copay, Coverage Start Date, Renewal Date, Claims Phone, Insurer Website. Renewal Date feeds the Expiry Dashboard.</p>
+
+          <h3>Crypto Wallet</h3>
+          <p>Fields: Blockchain / Network, Wallet Software, Wallet Address (with copy button), Seed Phrase, Private Key, Notes. Seed Phrase is displayed with a red lock — the most prominent lock treatment in the app — to signal that it must never be shared. Both Seed Phrase and Private Key are hidden until explicitly unlocked.</p>
+          <div class="tip">
+            <strong>Security note:</strong> If you lose your seed phrase, your crypto is gone forever. If you store it in a notes app, one breach puts it at risk. AccountCache stores it encrypted inside your macOS app sandbox, protected by your Mac's login password and, ideally, FileVault.
+          </div>
+
+          <h3>Vehicle</h3>
+          <p>Three sub-sections in one record:</p>
+          <ul>
+            <li><strong>Vehicle:</strong> Make, Model, Year, VIN, Plate Number, Province / State, Registration Expiry.</li>
+            <li><strong>Auto Insurance:</strong> Provider, Policy Number, Expiry Date, Claims Phone, Roadside Assistance.</li>
+            <li><strong>Financing:</strong> Lender, Account Number, Monthly Payment, Payoff Date.</li>
+          </ul>
+          <p>Registration Expiry and Insurance Expiry both feed the Expiry Dashboard separately.</p>
+
+          <h3>Insurance</h3>
+          <p>For home, auto, life, disability, tenant, umbrella, and travel policies. Fields: Policy Type, Provider Name, Policy Number, Agent Name, Agent Phone, Annual Premium, Renewal Date, Coverage Amount, Deductible, Claims Phone, Policy Document (file path or URL). Renewal Date feeds the Expiry Dashboard.</p>
+
+          <div class="tip">
+            <strong>Moving an account to a different Pro category:</strong> If you change the Category field to a different Pro category type, AccountCache will ask you to confirm before proceeding — since specialist data from one category type makes no sense in another.<br><br>
+            <strong>Move and Delete Specialist Data</strong> — immediately deletes the old specialist data and saves the account in its new category. This cannot be undone.<br><br>
+            <strong>Keep Current Category</strong> — cancels the move and restores the original category.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 (was 6) -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> Searching Your Accounts</h2>
+          <p class="goal">What you'll learn: finding accounts quickly with the search bar and the search results popover.</p>
+
+          <h3>The search bar</h3>
+          <ol class="steps">
+            <li>The search bar is in the left sidebar, above the category list. Click it or press ⌘F to focus it.</li>
+            <li>Start typing. Results appear immediately in the centre panel — the account list switches to showing matching accounts across all categories.</li>
+            <li>Press Escape or clear the search field to return to category browsing.</li>
+          </ol>
+
+          <h3>Search options</h3>
+          <p>While searching, a small options button (⚙) appears next to the search field. Click it to open the search options popover:</p>
+          <ul>
+            <li><strong>Search Name Only</strong> (checked by default) — matches only the account name field. Uncheck to search all text fields including notes, login, URL, and tags.</li>
+            <li>The popover can be resized horizontally by dragging the right edge, and the results list height can be adjusted by dragging the handle at the top.</li>
+          </ul>
+
+          <h3>Search results popover</h3>
+          <p>
+            When you have a category selected and type a search, a floating popover appears
+            showing matching accounts from all categories. Click any result to jump directly
+            to that account — AccountCache will switch the sidebar to that account's category
+            and highlight it in the list simultaneously.
+          </p>
+
+          <div class="tip">
+            <strong>Tip:</strong> "Search Name Only" is the fastest way to find an account when you know roughly what it's called. Turn it off when you need to search notes or other details.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 (was 7) -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Account Status &amp; the Physical Wallet</h2>
+          <p class="goal">What you'll learn: marking accounts as inactive or cancelled, and tracking which cards are in your wallet.</p>
+
+          <h3>Account status</h3>
+          <p>Every account has a status. Use it to track the lifecycle of your accounts without deleting them:</p>
+          <table>
+            <thead><tr><th>Status</th><th>What it means</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Active</strong></td><td>Default. The account is in current use.</td></tr>
+              <tr><td><strong>Inactive</strong></td><td>You still have the account but rarely use it.</td></tr>
+              <tr><td><strong>Cancelled</strong></td><td>The account or subscription has been cancelled. Shown with strikethrough styling in the list.</td></tr>
+              <tr><td><strong>Suspended</strong></td><td>The account exists but access is currently restricted.</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            The account list hides inactive and cancelled accounts by default.
+            To show them, click the <strong>eye icon</strong> in the toolbar.
+            The status badge appears next to the account name in the list for any non-Active account.
+          </p>
+
+          <p>To change an account's status: open the account detail, find the <strong>Status</strong> field in the Identity section, and pick a value from the dropdown.</p>
+
+          <h3>Physical wallet tracking</h3>
+          <p>
+            Wallet tracking lives on individual cards in the <strong>Financial</strong> category.
+            Each card has a Physical Wallet toggle, a Wallet Tag, and checkboxes for Apple Wallet
+            and Google Wallet.
+          </p>
+          <ol class="steps">
+            <li>Open a Financial account and scroll to the <strong>CARDS</strong> section.</li>
+            <li>Find the card you carry in your wallet and turn on <strong>Physical Wallet</strong>.</li>
+            <li>Optionally enter a <strong>Wallet Tag</strong> — a short label like "Main wallet" or "Travel wallet" to distinguish which physical wallet holds that card.</li>
+            <li>If the card is also in Apple Wallet or Google Wallet, tick those checkboxes.</li>
+          </ol>
+
+          <p>All cards with Physical Wallet enabled appear in the <strong>Lost Wallet Report</strong>. See Tutorial 9.</p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 9 (was 8) -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Reports</h2>
+          <p class="goal">What you'll learn: the four built-in reports and when to use each one.</p>
+
+          <p>All reports are in the <strong>Reports</strong> menu in the menu bar. Each opens as a separate sheet.</p>
+
+          <h3>Lost Wallet Report (⌘⇧W)</h3>
+          <p>
+            Shows every Financial card you've marked as "in physical wallet." Each entry
+            displays the institution name, cardholder name, card type, network, last four
+            digits, wallet tag, and the institution's emergency phone numbers — domestic
+            and international. Use this if your wallet is stolen: open the report and you
+            have every number you need to cancel and replace your cards, in one place, in
+            under a minute.
+          </p>
+          <p>The report includes the date and time it was generated. Use the <strong>Print / Save as PDF</strong> button in the report to save a copy for emergencies.</p>
+
+          <h3>Expiry Dashboard (⌘⇧E)</h3>
+          <p>
+            Shows everything with a date that matters, sorted by urgency:
+          </p>
+          <ul>
+            <li><strong>Expired</strong> — the date has already passed.</li>
+            <li><strong>Critical</strong> — expires within 30 days.</li>
+            <li><strong>Soon</strong> — expires within 90 days.</li>
+            <li><strong>OK</strong> — more than 90 days from now.</li>
+          </ul>
+          <p>
+            The dashboard pulls from every date field across all Pro categories:
+            subscription renewal dates, domain expiry, software licence expiry,
+            card expiry, vehicle registration, vehicle insurance, medical insurance
+            renewal, and insurance policy renewal. If there's a date attached to
+            an account, it appears here.
+          </p>
+          <p>Click any row in the Expiry Dashboard to jump directly to that account.</p>
+
+          <h3>Cost Summary (⌘⇧K)</h3>
+          <p>
+            Shows the total cost of all your accounts that have a subscription cost entered.
+            Displays a monthly total, an annual total, and a breakdown by account.
+            Use this to audit subscriptions and find ones you've forgotten about.
+          </p>
+          <p>Click any row to jump directly to that account to update or cancel it.</p>
+
+          <h3>Account Health (⌘⇧H)</h3>
+          <p>
+            Analyses your accounts and flags potential issues:
+          </p>
+          <ul>
+            <li><strong>Weak password</strong> — short or simple passwords.</li>
+            <li><strong>No two-factor authentication</strong> — accounts without 2FA enabled.</li>
+            <li><strong>Password not recently changed</strong> — accounts where the password hasn't been updated in over a year.</li>
+            <li><strong>Inactive subscriptions</strong> — accounts marked as Inactive with a subscription cost.</li>
+          </ul>
+          <p>Click any row in the Account Health report to jump directly to that account and make improvements.</p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 10 (was 9) -->
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> Importing from Other Apps</h2>
+          <p class="goal">What you'll learn: importing accounts from a password manager or spreadsheet.</p>
+
+          <p>
+            Use <strong>File → Import Passwords… (⌘⇧I)</strong> to open the import wizard.
+            AccountCache supports six file formats.
+          </p>
+
+          <h3>Supported formats</h3>
+          <table>
+            <thead><tr><th>Format</th><th>How to export from the source app</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Generic CSV</strong></td><td>Any CSV with a header row containing words like "name", "username", "password", "url", "notes".</td></tr>
+              <tr><td><strong>Apple Passwords</strong></td><td>Open the Passwords app → All → select all → Export. Saves as a CSV.</td></tr>
+              <tr><td><strong>1Password</strong></td><td>1Password → File → Export → All Items → CSV format.</td></tr>
+              <tr><td><strong>Bitwarden</strong></td><td>Bitwarden web vault → Tools → Export Vault → JSON format.</td></tr>
+              <tr><td><strong>KeePass XML</strong></td><td>KeePass → File → Export → KeePass XML (2.x) format.</td></tr>
+              <tr><td><strong>Excel / Numbers (.xlsx)</strong></td><td>Save your spreadsheet in .xlsx format from Excel, Numbers, or any spreadsheet app.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Import steps</h3>
+          <ol class="steps">
+            <li>Choose <strong>File → Import Passwords…</strong> (or press ⌘⇧I).</li>
+            <li>Click <strong>Choose File…</strong> and select your export file. AccountCache detects the format automatically.</li>
+            <li>
+              <strong>If your file has column headers</strong> (most password manager exports do),
+              AccountCache goes straight to the Preview step — you'll see a table showing the
+              first few records that will be imported.
+            </li>
+            <li>
+              <strong>If your file has no column headers</strong> (common with Excel exports
+              built manually), the <strong>Column Mapping</strong> screen appears first.
+              A sample of your data is shown. Use the dropdown menus to assign each column
+              to the right field (Account Name, Login, Password, URL, Notes).
+              Account Name is required; the others are optional.
+              When you're satisfied, click <strong>Preview Import</strong>.
+            </li>
+            <li>In the Preview step, choose which category to import into using the <strong>Import into</strong> picker.</li>
+            <li>Decide whether to <strong>Skip duplicate accounts</strong> (recommended if you've already imported once — prevents the same account appearing twice).</li>
+            <li>Click <strong>Import N Accounts</strong> to complete the import.</li>
+            <li>The Done screen shows how many accounts were imported, how many were skipped as duplicates, and any errors.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Importing in batches:</strong> If you have data in multiple places, run the import wizard multiple times. Each run is independent. Duplicate detection uses the account name and login together — so the same name with a different login is treated as a separate account.
+          </div>
+
+          <div class="tip">
+            <strong>Excel with no headers:</strong> If your spreadsheet doesn't have a header row (the first row is data, not labels), AccountCache will ask you to map each column. Use the sample data table at the top of the mapping screen to identify which column holds which information.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 11 -->
+        <section class="tut-section" id="t11">
+          <h2><span class="num">11</span> Upgrade Plans</h2>
+          <p class="goal">What you'll learn: what Basic includes, what Family and Home Office add, and how to purchase.</p>
+
+          <h3>Basic — Free</h3>
+          <p>
+            The Basic tier is <strong>free with no time limit and no credit card required.</strong>
+            It includes one user profile, unlimited basic accounts, all four reports, CSV import,
+            encrypted backup and restore, and iCloud sync across all your Macs.
+          </p>
+          <p>
+            You can import your entire password manager export and use AccountCache as a
+            full-featured account directory forever without paying. Basic is not a trial.
+          </p>
+
+          <h3>Family — $29.99</h3>
+          <p>
+            The Family plan adds up to <strong>5 user profiles</strong> and unlocks all
+            ten Pro specialist categories — Financial, Email, Domains, Software, Hosting,
+            AI &amp; APIs, Medical Insurance, Crypto Wallet, Vehicle, and Insurance.
+            Each profile can have its own PIN; visibility controls let each person
+            keep private records private.
+          </p>
+          <ol class="steps">
+            <li>Open <strong>Settings</strong> (⌘,) and go to the <strong>General</strong> tab.</li>
+            <li>Click <strong>Unlock Family — $29.99</strong>. The App Store processes a single one-time payment using your Apple ID.</li>
+            <li>After purchase, the status card shows a green confirmation. Profiles and Pro categories are available immediately.</li>
+          </ol>
+
+          <h3>Home Office — $49.99</h3>
+          <p>
+            Home Office raises the profile limit to <strong>10 users</strong> and includes
+            everything in Family. It is a standalone one-time purchase — Family is not
+            required first.
+          </p>
+          <ol class="steps">
+            <li>Open <strong>Settings → General</strong> and click <strong>Unlock Home Office — $49.99</strong>.</li>
+            <li>The App Store processes the one-time payment. The profile limit increases to 10 immediately.</li>
+          </ol>
+
+          <h3>Restoring a purchase</h3>
+          <ol class="steps">
+            <li>Open <strong>Settings → General</strong>.</li>
+            <li>Click <strong>Restore Purchases</strong>. AccountCache queries the App Store and restores your entitlements on this Mac.</li>
+          </ol>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 12 -->
+        <section class="tut-section" id="t12">
+          <h2><span class="num">12</span> Settings Reference</h2>
+          <p class="goal">A guide to every setting in AccountCache.</p>
+
+          <p>Open Settings with ⌘, or via the AccountCache menu. There are seven tabs.</p>
+
+          <h3>General tab</h3>
+          <ul>
+            <li><strong>Plan status card</strong> — shows your current plan (Basic / Family / Home Office) and the Unlock and Restore Purchase buttons.</li>
+            <li><strong>Currency</strong> — the default currency for subscription costs shown in reports. Change this if you track costs in a currency other than USD.</li>
+            <li><strong>New Record Visibility</strong> — the default visibility applied when you create a new account (Open, Shared, or Private). You can override per record. Only meaningful when more than one user profile is active.</li>
+            <li><strong>Backup &amp; Restore</strong> — export an encrypted backup of your entire database, or restore from a backup file. See Tutorial 14.</li>
+          </ul>
+
+          <h3>Security tab</h3>
+          <ul>
+            <li><strong>App Lock</strong> — requires Touch ID or your Mac login password to open AccountCache after the app has been in the background.</li>
+            <li><strong>Auto-Lock timeout</strong> — how long the app can be inactive before it locks automatically. Options range from 1 minute to 1 hour, or "require on every launch."</li>
+          </ul>
+
+          <h3>Users tab (admin only)</h3>
+          <p>Visible only when you are logged in as an administrator.</p>
+          <ul>
+            <li><strong>User list</strong> — shows all profiles with their role (Admin / Member) and status (active / inactive). The count header shows how many profiles you're using against your plan limit.</li>
+            <li><strong>Add User</strong> — create a new profile. Disabled and replaced with an upgrade prompt when you've reached your plan's profile limit.</li>
+            <li><strong>Edit</strong> — change a user's display name, colour, or admin status.</li>
+            <li><strong>Deactivate</strong> — prevents the user from logging in. If they have private records, you choose to make them shared, transfer them to another user, or delete them.</li>
+          </ul>
+
+          <h3>Sync tab</h3>
+          <ul>
+            <li><strong>Enable iCloud Sync</strong> — turns on CloudKit sync. Every change on this Mac is pushed to iCloud and pulled to your other Macs automatically.</li>
+            <li><strong>Sync status</strong> — shows whether the last sync succeeded, is in progress, or has an error (e.g., no iCloud account signed in).</li>
+          </ul>
+
+          <h3>Appearance tab</h3>
+          <ul>
+            <li><strong>Theme</strong> — choose from several colour themes. Themes change the accent colour used throughout the interface.</li>
+            <li><strong>Font size</strong> — adjust the text size in the account list and detail form.</li>
+          </ul>
+
+          <h3>Accessibility tab</h3>
+          <ul>
+            <li><strong>Reduce motion</strong> — disables animations and transitions throughout the app.</li>
+            <li><strong>Larger tap targets</strong> — increases the size of interactive controls for easier clicking.</li>
+          </ul>
+
+          <h3>Intelligence tab</h3>
+          <ul>
+            <li><strong>Engine status</strong> — shows which AI engine is active: Apple Intelligence (on-device, macOS 26+) or OpenRouter (your own API key).</li>
+            <li><strong>OpenRouter API Key</strong> — enter your own OpenRouter key to enable AI features on macOS 25 and earlier, or when Apple Intelligence is off. Your key is stored only on this Mac.</li>
+            <li><strong>Model</strong> — optionally override the default model. Leave blank to use the recommended default.</li>
+          </ul>
+
+          <div class="tip">
+            <strong>Where is my data?</strong> The database is stored at
+            <code>~/Library/Application Support/com.dataisland.AccountCache/AccountCache.sqlite</code>.
+            Time Machine backs it up automatically. For a portable encrypted copy,
+            use Settings → General → Export Backup.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 13 -->
+        <section class="tut-section" id="t13">
+          <h2><span class="num">13</span> User Profiles &amp; Household Sharing</h2>
+          <p class="goal">What you'll learn: setting up named user profiles, switching between them, setting PINs, and controlling who can see which records.</p>
+
+          <h3>How profiles work</h3>
+          <p>
+            AccountCache uses a household profile model — like Mac login accounts or Netflix
+            profiles. Everyone shares the same database on the same Apple ID. Each person
+            has their own named profile and can mark records as private so only they (and admins)
+            can see them.
+          </p>
+          <p>
+            This is different from syncing separate databases. All profiles see the same
+            shared and open records. Only private records are hidden from other profiles.
+          </p>
+
+          <h3>First launch — creating the admin profile</h3>
+          <p>
+            On first launch, AccountCache creates an admin profile from your Mac username
+            and logs in automatically. If you are the only user, nothing else is needed.
+          </p>
+
+          <h3>Adding profiles (Family or Home Office plan)</h3>
+          <ol class="steps">
+            <li>Log in as admin and open <strong>Settings → Users</strong>.</li>
+            <li>Click <strong>Add User</strong>.</li>
+            <li>Enter a display name (e.g., "Vicky") and choose a colour. Optionally toggle <strong>Administrator</strong> to give this profile full access.</li>
+            <li>Click <strong>Add User</strong>. The new profile appears in the list and on the user picker screen.</li>
+          </ol>
+
+          <h3>Switching profiles</h3>
+          <ol class="steps">
+            <li>Click the <strong>avatar icon</strong> in the top-right of the toolbar. This signs you out and returns to the profile picker.</li>
+            <li>The picker shows all active profiles as avatar circles. Click any one to switch to it.</li>
+            <li>If a profile has a PIN set, AccountCache prompts for it before switching.</li>
+          </ol>
+
+          <h3>Setting a PIN on a profile</h3>
+          <ol class="steps">
+            <li>Log in as the profile you want to protect.</li>
+            <li>Open <strong>Settings → Security</strong> and turn on <strong>Profile PIN</strong>.</li>
+            <li>Enter and confirm your PIN. The PIN is required whenever another user switches to this profile.</li>
+          </ol>
+
+          <h3>Record visibility</h3>
+          <p>Every account record has a visibility setting in the detail panel:</p>
+          <table>
+            <thead><tr><th>Visibility</th><th>Who can see it</th><th>Who can edit it</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Open</strong></td><td>All profiles</td><td>All profiles</td></tr>
+              <tr><td><strong>Shared</strong></td><td>All profiles</td><td>Owner and admins only</td></tr>
+              <tr><td><strong>Private</strong></td><td>Owner and admins only</td><td>Owner and admins only</td></tr>
+            </tbody>
+          </table>
+          <p>
+            New records default to the visibility set in <strong>Settings → General → New Record Visibility</strong>.
+            Change it per record any time.
+          </p>
+
+          <h3>Deactivating a profile</h3>
+          <ol class="steps">
+            <li>Log in as admin and open <strong>Settings → Users</strong>.</li>
+            <li>Hover over the profile and click <strong>Deactivate</strong>.</li>
+            <li>If the profile owns any private records, AccountCache asks what to do with them: make them shared, transfer to another profile, or delete them permanently.</li>
+            <li>The profile disappears from the picker. Its open and shared records remain visible to everyone.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Admin rule:</strong> At least one admin must always remain active. AccountCache will not let you deactivate the last administrator.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 14 -->
+        <section class="tut-section" id="t14">
+          <h2><span class="num">14</span> Sync, Backup &amp; New Mac Migration</h2>
+          <p class="goal">What you'll learn: iCloud sync across your Macs, cross-account sharing with a different Apple ID, encrypted backup export, and how to move to a new Mac.</p>
+
+          <h3>iCloud sync — free</h3>
+          <p>
+            AccountCache syncs your entire database — accounts, categories, user profiles,
+            and specialist fields — across all your Macs using iCloud. All Macs must use
+            the <strong>same Apple ID</strong>.
+          </p>
+          <ol class="steps">
+            <li>On each Mac, open <strong>Settings → Sync</strong>.</li>
+            <li>Turn on <strong>Enable iCloud Sync</strong>. AccountCache creates a private zone in your iCloud account and begins pushing data immediately.</li>
+            <li>On additional Macs, turn sync on the same way. Data appears within seconds.</li>
+          </ol>
+          <div class="tip">
+            <strong>What syncs:</strong> Everything — accounts, categories, all specialist fields, user profiles, visibility, and deletion records. Sync is incremental; only changes are sent, not the full database each time.
+          </div>
+
+          <h3>Cross-account sharing — Family &amp; Home Office plans</h3>
+          <p>
+            iCloud sync above requires everyone to use the <strong>same Apple ID</strong>. If the
+            people you want to share with have their own separate Apple IDs — a partner, a
+            colleague — use cross-account sharing instead.
+          </p>
+          <ol class="steps">
+            <li>On the database owner's Mac, open <strong>Settings → Sync</strong> and click <strong>Create Share Link…</strong>.</li>
+            <li>Send the generated link to the other person however you'd like — Messages, email, AirDrop.</li>
+            <li>They open the link on their own Mac. AccountCache prompts them to accept and connect.</li>
+            <li>Once accepted, their AccountCache connects to the owner's database over Apple's CloudKit shared-database infrastructure — no separate install, no shared Apple ID required.</li>
+          </ol>
+          <div class="tip">
+            <strong>Whose database is it?</strong> Everything still lives in the owner's iCloud
+            account. The recipient sees every Open and Shared record and can add their own, but
+            records stay in the owner's database — this is sharing one database, not merging two.
+            Disconnecting (<strong>Settings → Sync → Disconnect from Shared Database</strong>)
+            stops syncing without deleting anything already shared.
+          </div>
+
+          <h3>Encrypted backup — export</h3>
+          <p>
+            An encrypted backup is a portable, self-contained snapshot of your entire database,
+            sealed with a password only you know. It has no expiry, needs no iCloud, and can
+            be moved anywhere: USB drive, AirDrop, a folder on your desktop.
+          </p>
+          <ol class="steps">
+            <li>Open <strong>Settings → General → Export Backup…</strong></li>
+            <li>Enter a backup password and confirm it. This password is separate from your profile PIN — write it down somewhere safe.</li>
+            <li>Click <strong>Choose Location…</strong>. Pick where to save the <code>.accountcachebak</code> file.</li>
+            <li>AccountCache creates a clean snapshot of the database and encrypts it. The process takes a few seconds.</li>
+          </ol>
+          <div class="tip">
+            <strong>Store it safely:</strong> Without the password, the backup is unreadable — not even DataIsland can recover it. Keep at least one copy in a location separate from your Mac (external drive, another computer, a trusted cloud service).
+          </div>
+
+          <h3>Encrypted backup — restore</h3>
+          <ol class="steps">
+            <li>Open <strong>Settings → General → Restore from Backup…</strong></li>
+            <li>Click <strong>Choose Backup File…</strong> and select your <code>.accountcachebak</code> file.</li>
+            <li>Enter the password you used when exporting.</li>
+            <li>Tick <strong>I understand this will replace all current data</strong> and click <strong>Restore</strong>.</li>
+            <li>AccountCache decrypts the file, validates it, and replaces the live database. You are returned to the profile picker.</li>
+          </ol>
+
+          <h3>Moving to a new Mac</h3>
+          <p>You have two options — choose the one that fits your setup.</p>
+
+          <h4>Option A — iCloud Sync (recommended if already using sync)</h4>
+          <ol class="steps">
+            <li>On the new Mac, install AccountCache from the App Store and sign in with the same Apple ID.</li>
+            <li>Open <strong>Settings → Sync</strong> and turn on <strong>Enable iCloud Sync</strong>.</li>
+            <li>AccountCache pulls your database from iCloud. All accounts, categories, and user profiles appear within a minute or two depending on database size.</li>
+          </ol>
+
+          <h4>Option B — Encrypted backup (no iCloud required)</h4>
+          <ol class="steps">
+            <li>On the old Mac, export an encrypted backup (see above) and copy the file to the new Mac — USB drive, AirDrop, or any method you prefer.</li>
+            <li>On the new Mac, install AccountCache from the App Store and open it.</li>
+            <li>Open <strong>Settings → General → Restore from Backup…</strong> and restore from the file you copied.</li>
+            <li>Your complete database — all accounts, profiles, and settings — is restored immediately.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Version skew:</strong> If you open AccountCache on an older Mac after creating records on a newer version of the app, a yellow banner may appear at the top of the window: "Some records were created with a newer version of AccountCache on another Mac." These records are visible but read-only until you update the older Mac to the latest version.
+          </div>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  /* ── Layout ───────────────────────────────────────────── */
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ── TOC ──────────────────────────────────────────────── */
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol {
+    list-style: decimal;
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .toc li { margin-bottom: 0.45rem; }
+
+  .toc a {
+    font-size: 0.88rem;
+    color: var(--gray-dark);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .toc a:hover { color: var(--blue); }
+
+  /* ── Tutorial sections ────────────────────────────────── */
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 {
+    font-size: 1.05rem;
+    margin: 1.25rem 0 0.5rem;
+    color: var(--blue);
+  }
+
+  .tut-section p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .steps {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .steps li {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 0.6rem;
+  }
+
+  .tut-section ul {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .tut-section ul li {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin-bottom: 0.45rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.88em;
+    background: var(--gray-light);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+
+  /* ── Responsive ───────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  /* ── Print ────────────────────────────────────────────── */
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

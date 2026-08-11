@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "12 July 2026";
+---
+
+<BaseLayout
+  title="AccountCache — Privacy Policy"
+  description="Privacy policy for AccountCache, the account manager for Mac by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>AccountCache — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      AccountCache is an account and credential manager for macOS. This policy explains exactly
+      what data AccountCache stores, where it lives, and what — if anything — leaves your device.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>AccountCache does not collect personal data.</strong> Everything you store in
+      AccountCache lives on your Mac and, optionally, in your own iCloud account.
+      DataIsland has no server, no account system, and no visibility into your data.
+    </p>
+
+    <h2>What AccountCache Stores</h2>
+    <p>
+      AccountCache stores the information you enter — account names, usernames, passwords,
+      URLs, security questions, financial institution details, card numbers, domain records,
+      API keys, and similar credentials — in an encrypted SQLite database on your Mac, in
+      your application's sandboxed container.
+    </p>
+    <p>
+      This database is accessible only to AccountCache and to you. DataIsland cannot access it.
+    </p>
+
+    <h2>iCloud Sync (Optional)</h2>
+    <p>
+      If you enable iCloud sync, AccountCache uses Apple's CloudKit private database to sync
+      your records across your own Apple devices. CloudKit private database data is:
+    </p>
+    <ul>
+      <li>Stored in <strong>your personal iCloud account</strong>, not in DataIsland's servers</li>
+      <li>Encrypted in transit and at rest by Apple</li>
+      <li>Accessible only to you — DataIsland cannot read or retrieve it</li>
+    </ul>
+    <p>
+      iCloud sync is governed by
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.
+      You can disable sync at any time in Settings → iCloud on your Mac.
+    </p>
+
+    <h2>Cross-Account Sharing (Optional)</h2>
+    <p>
+      Family and Home Office plans include an optional cross-account sharing feature. The database
+      owner can generate a CloudKit share invitation link and send it to someone on a different
+      Apple ID. When the recipient accepts:
+    </p>
+    <ul>
+      <li>The recipient connects to the <strong>owner's iCloud zone</strong> via Apple's CloudKit shared database infrastructure</li>
+      <li>Records the recipient creates are stored in the <strong>owner's</strong> iCloud account, not the recipient's</li>
+      <li>The recipient can see all open and shared records; private records belonging to other users remain hidden</li>
+      <li>All data still travels only through Apple's CloudKit infrastructure — DataIsland has no access to it</li>
+    </ul>
+    <p>
+      If the recipient disconnects, their records remain in the owner's database. This sharing
+      feature uses Apple's standard CloudKit zone sharing and is governed by
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+    <p>
+      The only data that leaves your Mac is what you explicitly sync to iCloud or share via the
+      cross-account sharing feature (both described above). AccountCache makes no other network
+      connections. It does not contact DataIsland servers, does not send telemetry, and does not
+      transmit your credentials to any third party.
+    </p>
+
+    <h2>Sensitive Fields</h2>
+    <p>
+      Fields such as passwords, CVV codes, API keys, seed phrases, and private keys are stored
+      in the same local SQLite database as all other fields. AccountCache protects these visually
+      in the UI (lock/reveal toggle) but does not apply additional per-field encryption beyond
+      what the macOS sandbox and disk encryption (FileVault) provide.
+    </p>
+    <p>
+      We recommend enabling FileVault on your Mac to ensure full-disk encryption of all
+      AccountCache data.
+    </p>
+
+    <h2>What AccountCache Does Not Do</h2>
+    <ul>
+      <li>Does not require an account or login with DataIsland</li>
+      <li>Does not collect analytics, usage metrics, or crash reports</li>
+      <li>Does not share any data with third parties for any purpose</li>
+      <li>Does not make network requests except to your own iCloud account (if sync is enabled)</li>
+      <li>Does not access data outside its sandboxed container</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      AccountCache is not directed at children under 13. We do not knowingly collect information
+      from children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+      Continued use of AccountCache after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:
+      <br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a>
+      <br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>
