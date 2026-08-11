@@ -32,9 +32,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li><a href="#t5">International writing &amp; RTL</a></li>
           <li><a href="#t6">AI writing assistant</a></li>
           <li><a href="#t7">Translation</a></li>
-          <li><a href="#t8">Open in FusionMD</a></li>
-          <li><a href="#t9">Settings &amp; preferences</a></li>
-          <li><a href="#t10">Automating PolyWrite with AppleScript</a></li>
+          <li><a href="#t8">Reading your document aloud</a></li>
+          <li><a href="#t9">Open in FusionMD</a></li>
+          <li><a href="#t10">Settings &amp; preferences</a></li>
+          <li><a href="#t11">Automating PolyWrite with AppleScript</a></li>
         </ol>
       </nav>
 
@@ -271,16 +272,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>The language badge</h3>
           <p>
-            When you have written at least 30 characters, the status bar shows a language badge
-            — a globe icon with the detected language name. This is the dominant language of
-            your current document.
+            The status bar shows a language badge — a globe icon with the detected language
+            name — once auto-detection is confident enough to name one. This is the dominant
+            language of your current document.
           </p>
           <ol class="steps">
-            <li>Tap the language badge to open the language menu.</li>
-            <li>If PolyWrite detects a right-to-left language (Arabic, Hebrew, Urdu, Persian, etc.), the menu offers <strong>Switch to Right-to-Left</strong>.</li>
-            <li>Tap that option — the entire editor switches to RTL layout. Cursor position, paragraph alignment, and the writing direction button in the toolbar all update.</li>
-            <li>To switch back, tap the badge again and choose <strong>Switch to Left-to-Right</strong>.</li>
+            <li>Click the language badge to open the language menu.</li>
+            <li><strong>Auto-Detect</strong> sits at the top, checked by default — PolyWrite keeps re-detecting live as you type.</li>
+            <li><strong>If auto-detect gets confused</strong> on short, ambiguous, or mixed-language text, pick the correct language directly from the full list below Auto-Detect. That pins the badge to your choice — the icon changes to a "pinned" globe — until you switch back to Auto-Detect.</li>
+            <li>If the effective language (pinned or detected) is a right-to-left script, the same menu also offers <strong>Switch to Right-to-Left</strong>. Choosing it switches the entire editor to RTL layout — cursor position, paragraph alignment, and the writing direction button in the toolbar all update.</li>
+            <li>To switch back, open the menu again and choose <strong>Switch to Left-to-Right</strong>.</li>
           </ol>
+          <div class="tip">
+            <strong>The pin doesn't save to the file.</strong> It's a per-window choice for the current editing session, not something written into the document — PolyWrite's <code>.txt</code>/<code>.rtf</code>/<code>.md</code> files stay honest, standard files with no extra metadata, so reopening the document starts fresh on Auto-Detect.
+          </div>
 
           <h3>Setting writing direction manually</h3>
           <p>
@@ -418,7 +423,30 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- ─── Tutorial 8 ─────────────────────────────────────────── -->
         <section class="tut-section" id="t8">
-          <h2><span class="num">8</span> Open in FusionMD</h2>
+          <h2><span class="num">8</span> Reading Your Document Aloud</h2>
+          <p class="goal">What you'll learn: using PolyWrite's built-in text-to-speech to hear your document read back.</p>
+
+          <p>
+            PolyWrite is named for polyglot — writing across languages — so it speaks them too.
+            Reading aloud uses macOS's own built-in speech synthesis, covering every language
+            PolyWrite's spell check and translation support, entirely on-device.
+          </p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li>To hear a specific passage, select it first. With nothing selected, PolyWrite reads the whole document.</li>
+            <li>Go to <strong>Edit → Speech → Start Speaking</strong>.</li>
+            <li>To stop partway through, go to <strong>Edit → Speech → Stop Speaking</strong>.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Uses your Mac's system voice.</strong> Which voice reads and how it sounds is controlled by System Settings → Accessibility → Spoken Content, the same setting every Mac app that reads text aloud uses — not something configured inside PolyWrite itself.
+          </div>
+        </section>
+
+        <!-- ─── Tutorial 9 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Open in FusionMD</h2>
           <p class="goal">What you'll learn: handing a document from PolyWrite to FusionMD for publishing.</p>
 
           <p>
@@ -455,9 +483,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ul>
         </section>
 
-        <!-- ─── Tutorial 9 ─────────────────────────────────────────── -->
-        <section class="tut-section" id="t9">
-          <h2><span class="num">9</span> Settings &amp; Preferences</h2>
+        <!-- ─── Tutorial 10 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> Settings &amp; Preferences</h2>
           <p class="goal">What you'll learn: all PolyWrite preferences and where to find them.</p>
 
           <h3>Opening Settings</h3>
@@ -486,9 +514,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
         </section>
 
-        <!-- ─── Tutorial 10 ─────────────────────────────────────────── -->
-        <section class="tut-section" id="t10">
-          <h2><span class="num">10</span> Automating PolyWrite with AppleScript</h2>
+        <!-- ─── Tutorial 11 ─────────────────────────────────────────── -->
+        <section class="tut-section" id="t11">
+          <h2><span class="num">11</span> Automating PolyWrite with AppleScript</h2>
           <p class="goal">What you'll learn: reading PolyWrite's scripting dictionary in Script Editor, and writing a script that reads and replaces a document's contents.</p>
 
           <h3>Open the dictionary</h3>
