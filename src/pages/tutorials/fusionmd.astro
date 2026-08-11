@@ -74,7 +74,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <div class="tip">
-            <strong>Left sidebar tabs:</strong> The left panel has multiple tabs that appear or change with the active mode. In Markdown mode you'll find the <strong>Navigator</strong> (document outline, jump to any heading), the <strong>Boilerplate</strong> library, and the <strong>Table Creator</strong> (visual table builder that outputs Markdown tables). In Variables mode the Variables and Conditions tabs appear; in Script mode the Scene Navigator; in Layout mode the Layout Styles tab.
+            <strong>Four independent side panels:</strong> the outer-left <strong>Navigator</strong> holds <strong>Outline</strong> (jump to any heading) and <strong>Metadata</strong> (title, author, description — the default tab on a brand-new document, since it's the first thing worth filling in), plus <strong>Scenes</strong> in Script mode and <strong>Variables</strong> in Variables mode. The inner-left <strong>Tools</strong> panel (⌘3) holds <strong>Tables</strong>, <strong>Boilerplate</strong>, and <strong>Markdown Styles</strong> (fonts, colors, themes) — available in every mode except Script and Layout. The inner-right panel (⌘4) is <strong>Layout Styles</strong> — tagging content for Affinity/InDesign export, covered in <a href="#t8">Tutorial 8</a>. The outer-right <strong>Assistant</strong> panel (⌘2) holds the AI Writing Coach and writing-tool plugins.
           </div>
         </section>
 
@@ -86,8 +86,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3>Steps</h3>
           <ol class="steps">
             <li>Open any document.</li>
-            <li><strong>Open the right panel.</strong> Click the panel button in the toolbar (rightmost group), or press ⌘2.</li>
-            <li><strong>Go to the Document Styles tab</strong> — the last tab in the right panel. You'll see a list of built-in themes.</li>
+            <li><strong>Open the Tools panel.</strong> Click the panel button in the toolbar (inner-left group), or press ⌘3.</li>
+            <li><strong>Go to the Markdown Styles tab</strong> in the Tools panel. You'll see a list of built-in themes.</li>
             <li><strong>Click "Novel."</strong> The preview pane immediately updates — a warm serif body font, generous line height, and book-style heading sizes appear.</li>
             <li><strong>Try "Typewriter."</strong> The monospaced font and tighter spacing give the preview a classic typewritten look. The editor background stays clean while the preview and all exports reflect the theme.</li>
             <li><strong>Try "Technical."</strong> Clean sans-serif body with code-friendly proportions — good for documentation and reference material.</li>
@@ -236,16 +236,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Steps</h3>
           <ol class="steps">
-            <li>Open a multi-section document (article, report, newsletter content) in Markdown mode.</li>
-            <li><strong>Open the Layout Styles tab.</strong> Open the Tools sidebar (<strong>⌘3</strong>) and select <strong>"Layout Styles"</strong> — it sits alongside Tables and Boilerplate, available in Markdown, Template, and Design modes. No need to switch modes just to tag styles.</li>
+            <li>Open a multi-section document (article, report, newsletter content) in Markdown mode — you stay in Markdown mode for the manual-tagging workflow below; <strong>Layout mode</strong> (last step) is a separate, AI-driven alternative.</li>
+            <li><strong>Open the Layout Styles panel.</strong> Click the inner-right panel button in the toolbar, or press <strong>⌘4</strong>. Layout Styles is available in Markdown, Variables, and Design modes — anywhere you're editing the actual document — but not in Script (different buffer entirely) or Layout mode (see below for why).</li>
             <li><strong>Add paragraph styles.</strong> Click <strong>"Add Paragraph Style"</strong> at the bottom of the Paragraph Styles section. Add: "Body Text", "Chapter Title", "Pull Quote", "Byline".</li>
-            <li><strong>Tag a paragraph.</strong> Place your cursor in a paragraph. In the Layout Styles panel, click "Body Text". FusionMD inserts <code>:::Body Text</code> before and <code>:::</code> after the paragraph — marking it with that style name. Toggle <strong>"Hide style markers"</strong> for a cleaner view while you write.</li>
-            <li><strong>Tag an inline span.</strong> Select a word in the editor. In the Character Styles panel, click a style name to wrap it in the inline syntax.</li>
+            <li><strong>Tag a paragraph.</strong> Place your cursor in a paragraph. In the Layout Styles panel, click "Body Text". FusionMD inserts <code>:::Body Text</code> before and <code>:::</code> after the paragraph — marking it with that style name. Toggle <strong>"Hide style markers"</strong> to fade these markers while you write, without removing them.</li>
+            <li><strong>Tag an inline span.</strong> Select a word in the editor. In the Character Styles panel, click a style name to wrap it as <code>[text]{"{"}.StyleName{"}"}</code>.</li>
             <li><strong>Faster: let AI tag it for you.</strong> If you're pasting in AI-drafted content, see <a href="#t10">Tutorial 10: Text Transformations</a> — the "Tags → Paragraph Styles" ruleset (and the automatic detection banner) convert bracket-tagged content like <code>[PULLQUOTE]...[/PULLQUOTE]</code> straight into these same fences, in bulk.</li>
-            <li><strong>Or generate a full layout with AI.</strong> Switch to <strong>Layout mode</strong> in the mode picker for the full-window Semantic Publish experience: clear the document, and in the AI prompt bar type <em>"Write a 4-article newspaper front page covering local government, arts, sports, and weather. Tag each article with appropriate paragraph styles."</em> The AI generates multiple annotated articles — each becomes a separate IDML TextFrame.</li>
-            <li><strong>Export to IDML.</strong> Click <strong>"Export as IDML…"</strong> in the navigation bar.</li>
+            <li><strong>Or generate a full layout with AI instead.</strong> <strong>Layout mode</strong> is a different, AI-driven path to the same IDML export — not an extension of the manual tagging above. Switch to it in the mode picker for the full-window Semantic Publish experience: clear the document, and in the AI prompt bar type <em>"Write a 4-article newspaper front page covering local government, arts, sports, and weather. Tag each article with appropriate paragraph styles."</em> The AI generates multiple annotated articles — each becomes a separate IDML TextFrame, styled automatically without you touching a Layout Styles panel at all (which is why that panel isn't part of Layout mode — there's no manual tagging left to do there).</li>
+            <li><strong>Export to IDML.</strong> Click <strong>"Export as IDML…"</strong> in the navigation bar — this works from either workflow above.</li>
             <li><strong>Open in Affinity or InDesign.</strong> Your content appears in TextFrames on a grid. Your style names are in the Paragraph Styles panel, pre-tagged, ready to assign visual appearance (font, size, color).</li>
           </ol>
+
+          <div class="tip">
+            <strong>These tags are invisible outside of IDML export.</strong> <code>:::StyleName</code> fences and <code>[text]{"{"}.StyleName{"}"}</code> spans are pure export metadata — FusionMD's own live preview and every other export format (PDF, HTML, DOCX, plain <code>.md</code> Save As) skip the fence lines entirely and strip the character-span brackets, so your document looks and reads exactly as if the tags weren't there. They only do something when you export to IDML. One caveat: if you hand the raw <code>.md</code> file to a different Markdown tool that doesn't know this convention, it won't skip or strip them — a <code>:::StyleName</code> line and a bracketed <code>[text]{"{"}.StyleName{"}"}</code> span will show up as literal text there, so treat a heavily-tagged document as a layout-ready deliverable for Affinity/InDesign, not simultaneously as a plain-Markdown file for sharing elsewhere.
+          </div>
 
           <div class="tip">
             <strong>No Pandoc required:</strong> IDML export is built into FusionMD — no third-party tools needed. FusionMD prefixes style names with <code>[FUSION]</code> to avoid collisions with any styles already in your layout document.
@@ -438,7 +442,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Steps</h3>
           <ol class="steps">
-            <li>Open a document. Open the right panel (⌘2) and click the <strong>Metadata tab</strong> (the info badge icon).</li>
+            <li>Open a document. Open the left panel (⌘1) and click the <strong>Metadata tab</strong> — it's the default tab on a brand-new document.</li>
             <li><strong>Set the Title.</strong> By default this matches the document title FusionMD uses in the browser. Edit it here to set the published title independently of the filename.</li>
             <li><strong>Set the Author.</strong> Type your name exactly as you want it to appear in the ePub file and in Apple Books.</li>
             <li><strong>Add a Description.</strong> Write one to three sentences that describe the book. This appears in the ePub's metadata and in ebook store listings when you upload the file.</li>
@@ -463,7 +467,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3>Steps</h3>
           <ol class="steps">
             <li><strong>Complete the Metadata panel.</strong> See Tutorial 14. At minimum set Title, Author, and Language. Attach a cover image if you have one — it is embedded automatically.</li>
-            <li><strong>Choose a text theme.</strong> Open the Document Styles tab in the right panel. For fiction and narrative prose, select the <strong>ePub Book</strong> theme — it applies serif body type, first-line paragraph indents, and generous line height. For technical writing, <strong>Technical</strong> works well. The theme controls how the ebook renders in Apple Books and other readers.</li>
+            <li><strong>Choose a text theme.</strong> Open the Markdown Styles tab in the Tools panel (left, ⌘3). For fiction and narrative prose, select the <strong>ePub Book</strong> theme — it applies serif body type, first-line paragraph indents, and generous line height. For technical writing, <strong>Technical</strong> works well. The theme controls how the ebook renders in Apple Books and other readers.</li>
             <li><strong>Preview the output.</strong> The live web preview panel (drag the divider left to widen it) shows a close approximation of what the ebook will look like.</li>
             <li><strong>Export.</strong> Go to <strong>File → Export… → ePub3</strong>, or press ⌘⇧E and choose ePub3 from the format picker. Choose a save location.</li>
             <li><strong>Open in Apple Books.</strong> Double-click the <code>.epub</code> file. Apple Books opens it. Check the cover, chapter list, text rendering, and any embedded images.</li>
@@ -540,7 +544,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Part 3 — Metadata panel in FusionMD</h3>
           <ol class="steps">
-            <li>Open the right panel (⌘2) → <strong>Metadata tab</strong>.</li>
+            <li>Open the left panel (⌘1) → <strong>Metadata tab</strong>.</li>
             <li><strong>Title</strong> — exactly as it should appear in stores, in title case.</li>
             <li><strong>Author</strong> — your full name or pen name.</li>
             <li><strong>Description</strong> — 150–300 words of store listing copy. Hook in the first sentence; end with a call to action. Amazon allows HTML formatting in descriptions; you can add that later in KDP's dashboard.</li>
@@ -550,7 +554,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Part 4 — Export and test</h3>
           <ol class="steps">
-            <li>In the right panel → Document Styles, select the <strong>ePub Book</strong> theme (serif body, first-line indents, generous line height).</li>
+            <li>In the Tools panel (left, ⌘3) → Markdown Styles, select the <strong>ePub Book</strong> theme (serif body, first-line indents, generous line height).</li>
             <li><strong>File → Export… → ePub3</strong> (or ⌘⇧E). Name the file: <code>your-book-title.epub</code>.</li>
             <li><strong>Test in Apple Books:</strong> double-click the <code>.epub</code> file. Check the cover, table of contents, body text, and all images. Fix anything in FusionMD and re-export before uploading.</li>
           </ol>
@@ -659,15 +663,39 @@ end tell</code></pre>
           </div>
         </section>
 
-        <!-- ─────────────────────────────────────────── Featured guide link -->
+        <!-- ─────────────────────────────────────────── Featured guide links -->
         <section class="tut-section guide-link-section">
-          <h2>Going further — ePub publishing guide</h2>
-          <p>Ready to publish your ebook on Apple Books and Amazon KDP? The full step-by-step guide covers manuscript structure, cover image specifications, metadata, exporting, uploading to both stores, and using FusionMD's translation feature to publish in multiple languages.</p>
+          <h2>Going further — publishing guides</h2>
+          <p>Ready to publish? These guides cover the full path from manuscript to reader — ebook, print, and writing across languages.</p>
           <a href="/tutorials/epub-author" class="guide-link-card">
             <span class="guide-link-icon">📚</span>
             <span class="guide-link-body">
               <strong>Are You an ePub Author?</strong>
               <span>A complete walkthrough from FusionMD manuscript to published ebook on Apple Books and Amazon KDP — including cover specs, translation, and reaching a global audience.</span>
+            </span>
+            <span class="guide-link-arrow">→</span>
+          </a>
+          <a href="/tutorials/print-author" class="guide-link-card">
+            <span class="guide-link-icon">📖</span>
+            <span class="guide-link-body">
+              <strong>Are You Ready to Go to Print?</strong>
+              <span>The same manuscript, turned into a print-ready paperback — trim size, style tagging, Affinity layout, cover wrap design, and publishing through KDP Print and IngramSpark.</span>
+            </span>
+            <span class="guide-link-arrow">→</span>
+          </a>
+          <a href="/tutorials/international-trade" class="guide-link-card">
+            <span class="guide-link-icon">🌐</span>
+            <span class="guide-link-body">
+              <strong>Writing for International Trade</strong>
+              <span>Write in English or French, translate on-device to your trading partner's language, and produce a professional document — with nothing sent to a foreign cloud service.</span>
+            </span>
+            <span class="guide-link-arrow">→</span>
+          </a>
+          <a href="/tutorials/dictate-without-a-keyboard" class="guide-link-card">
+            <span class="guide-link-icon">🎙️</span>
+            <span class="guide-link-body">
+              <strong>No Keyboard for That Language? Just Say It.</strong>
+              <span>Dictate straight into FusionMD in a language you don't have a keyboard for — and skip translation errors on the sentences that need to be exact.</span>
             </span>
             <span class="guide-link-arrow">→</span>
           </a>

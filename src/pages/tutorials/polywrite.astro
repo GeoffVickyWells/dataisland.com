@@ -147,12 +147,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <ul>
             <li><strong>Font picker</strong> — click to open a searchable list of all installed fonts</li>
             <li><strong>Size field + stepper</strong> — type a size or use ▲▼ to change it</li>
-            <li><strong>B / I / U / S</strong> — Bold (⌘B), Italic (⌘I), Underline (⌘U), Strikethrough</li>
+            <li><strong>B / I / U / S</strong> — Bold (⌘B), Italic (⌘I), Underline (⌘U), Strikethrough (⇧⌘X)</li>
             <li><strong>Link (⌘K)</strong> — add or remove a hyperlink on the selected text</li>
             <li><strong>Alignment</strong> — Left, Center, Right, Justify</li>
-            <li><strong>Lists &amp; Ruler</strong> — toggle the paragraph ruler with list and tab controls</li>
+            <li><strong>Bullet List / Numbered List</strong> — real, working lists — see <a href="#lists">Creating Lists</a> below</li>
             <li><strong>Indent</strong> — Decrease indent / Increase indent</li>
-            <li><strong>Writing direction</strong> — a globe icon (🌐) near the right end of the toolbar; toggles right-to-left text flow for Arabic, Hebrew, Urdu, etc. Not to be confused with the translate globe in the main toolbar above — that one opens a translation sheet (see Tutorial 7)</li>
+            <li><strong>Writing direction</strong> — a two-headed arrow icon (⇄) near the right end of the toolbar; toggles right-to-left text flow for Arabic, Hebrew, Urdu, etc. Not to be confused with the translate globe (🌐) in the main toolbar above — that one opens a translation sheet (see Tutorial 7)</li>
             <li><strong>Text Color</strong> — color swatch labeled "Text"; sets character foreground color</li>
             <li><strong>Highlight Color</strong> — color swatch labeled "Highlight"; sets character background color</li>
             <li><strong>Zoom</strong> — Zoom Out, zoom percentage (click for Actual Size), Zoom In (⌘−, ⌘0, ⌘+)</li>
@@ -165,6 +165,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li>Formatting applies immediately. Click the same button again to remove it.</li>
             <li>If no text is selected, the style applies to text you type next (typing attributes).</li>
           </ol>
+
+          <h3 id="lists">Creating Lists</h3>
+          <ol class="steps">
+            <li>Click the <strong>Bullet List</strong> or <strong>Numbered List</strong> button (⌥⌘U / ⌥⌘O) — or place your cursor in an existing paragraph first to turn just that paragraph into a list item.</li>
+            <li>Type your first item, then press <strong>Return</strong> — a new bullet (or the next number) starts automatically on the following line, exactly like every other list-supporting editor.</li>
+            <li>Keep typing and pressing Return to add as many items as you want. Numbered lists renumber automatically as you add items.</li>
+            <li><strong>To stop the list:</strong> press Return on an empty item (i.e. press Return twice at the end). The list ends and you're back to a normal paragraph — no trailing empty bullet left behind.</li>
+            <li>Click the Bullet List or Numbered List button again on any list paragraph to turn it back into plain text.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Same shortcut, whichever mode you're in:</strong> ⌥⌘U and ⌥⌘O work in both Rich Text and Markdown mode. In Rich Text they create a real formatted list; in Markdown they insert <code>- </code> / <code>1. </code> prefixes instead, since that's how Markdown represents a list.
+          </div>
 
           <h3>Text color</h3>
           <ol class="steps">
@@ -271,10 +284,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Setting writing direction manually</h3>
           <p>
-            In Rich Text mode, the formatting toolbar includes a writing direction button — a globe icon (🌐) near the right end of the second toolbar row. Click it to toggle between left-to-right and right-to-left regardless of the detected language. This is useful when mixing RTL and LTR content in the same document.
+            In Rich Text mode, the formatting toolbar includes a writing direction button — a two-headed arrow icon (⇄) near the right end of the second toolbar row. Click it to toggle between left-to-right and right-to-left regardless of the detected language. This is useful when mixing RTL and LTR content in the same document.
           </p>
           <p>
-            This globe changes text direction only. It is different from the globe in the main toolbar above it, which opens a translation sheet — see Tutorial 7.
+            This button changes text direction only. It is different from the globe (🌐) in the main toolbar above it, which opens a translation sheet — see Tutorial 7.
           </p>
 
           <h3>RTL languages recognised for auto-detection</h3>
@@ -352,10 +365,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- ─── Tutorial 7 ─────────────────────────────────────────── -->
         <section class="tut-section" id="t7">
           <h2><span class="num">7</span> Translation</h2>
-          <p class="goal">What you'll learn: the two globe buttons in PolyWrite and how to translate text into your language.</p>
+          <p class="goal">What you'll learn: telling the Translate button apart from the Writing Direction button, and how to translate text into your language.</p>
 
-          <h3>Two globe buttons — not the same thing</h3>
-          <p>PolyWrite has two buttons that look identical — a globe icon. They do completely different things:</p>
+          <h3>Translate vs. Writing Direction — two different icons, on purpose</h3>
+          <p>PolyWrite has two buttons that are easy to confuse by location alone, so they use two different icons:</p>
           <table>
             <thead><tr><th>Location</th><th>Button</th><th>What it does</th></tr></thead>
             <tbody>
@@ -366,12 +379,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               </tr>
               <tr>
                 <td>Rich Text toolbar (second row, Rich Text mode only)</td>
-                <td>🌐 Writing Direction</td>
+                <td>⇄ Writing Direction</td>
                 <td>Toggles right-to-left text flow for Arabic, Hebrew, Urdu, etc.</td>
               </tr>
             </tbody>
           </table>
-          <p>The Rich Text toolbar globe changes how text <em>flows on the page</em>. It does not translate anything. For translation, always use the globe in the main toolbar.</p>
+          <p>The Rich Text toolbar's two-headed arrow changes how text <em>flows on the page</em>. It does not translate anything. For translation, always use the globe in the main toolbar.</p>
 
           <h3>Translating a document or selection</h3>
           <ol class="steps">
@@ -518,6 +531,28 @@ end tell</code></pre>
           <div class="tip">
             <strong>No "create new document" verb.</strong> PolyWrite's dictionary operates on documents that are already open — including one just opened from a file with the <code>open</code> command — but it doesn't expose a <code>make new document</code> command for building a blank document purely from a script. Create the document (⌘N or an <code>open</code> call on an existing file) first, then script the rest.
           </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Featured guide link -->
+        <section class="tut-section guide-link-section">
+          <h2>Going further — writing across languages</h2>
+          <p>PolyWrite's on-device Translation (Tutorial 7) makes it just as suited to this as FusionMD.</p>
+          <a href="/tutorials/international-trade" class="guide-link-card">
+            <span class="guide-link-icon">🌐</span>
+            <span class="guide-link-body">
+              <strong>Writing for International Trade</strong>
+              <span>Write in English or French, translate on-device to your trading partner's language, and produce a professional document — with nothing sent to a foreign cloud service.</span>
+            </span>
+            <span class="guide-link-arrow">→</span>
+          </a>
+          <a href="/tutorials/dictate-without-a-keyboard" class="guide-link-card">
+            <span class="guide-link-icon">🎙️</span>
+            <span class="guide-link-body">
+              <strong>No Keyboard for That Language? Just Say It.</strong>
+              <span>Dictate straight into PolyWrite in a language you don't have a keyboard for — and skip translation errors on the sentences that need to be exact.</span>
+            </span>
+            <span class="guide-link-arrow">→</span>
+          </a>
         </section>
 
       </div><!-- /tut-content -->
@@ -714,6 +749,44 @@ end tell</code></pre>
     font-size: 0.84rem;
     color: var(--gray-dark);
   }
+
+  /* Guide link card */
+  .guide-link-section h2 { margin-bottom: 0.75rem; }
+
+  .guide-link-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border: 1px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 1rem;
+    transition: background 0.15s;
+  }
+
+  .guide-link-card:hover { background: rgba(0,102,255,0.12); }
+
+  .guide-link-icon { font-size: 2rem; flex-shrink: 0; }
+
+  .guide-link-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .guide-link-body strong { font-size: 1.05rem; color: var(--blue); }
+
+  .guide-link-body span {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+
+  .guide-link-arrow { font-size: 1.25rem; color: var(--blue); flex-shrink: 0; }
 
   @media (max-width: 700px) {
     .tut-layout { grid-template-columns: 1fr; }

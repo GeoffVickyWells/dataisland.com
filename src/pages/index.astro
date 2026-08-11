@@ -17,7 +17,7 @@ import { products } from "../data/products.js";
 
   {products.map((product, index) => (
     <section class={`product-section fade-in ${index % 2 === 0 ? "left" : "right"}`}>
-      <div class="product-image">
+      <div class={`product-image ${product.id === "polywrite" ? "dark-backing" : ""}`}>
         <img src={product.icon} alt={product.title} />
       </div>
 
@@ -120,6 +120,14 @@ import { products } from "../data/products.js";
     width: 200px;
     height: 200px;
     object-fit: contain;
+    border-radius: 24px;
+  }
+
+  /* PolyWrite's icon has transparent rounded corners baked in; on this
+     page's white background that reads as a white backing plate instead
+     of the dark one the icon was designed against. */
+  .product-image.dark-backing img {
+    background: #05070f;
     border-radius: 24px;
   }
 
