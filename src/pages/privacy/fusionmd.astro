@@ -26,7 +26,9 @@ const updated = "11 August 2026";
       metadata). Document content is never
       sent to DataIsland. AI features are opt-in — either on-device via Apple Intelligence
       (nothing leaves your Mac) or via OpenRouter (with your own API key and your explicit
-      consent). FusionMD has no server, no account, and no analytics.
+      consent). The Vocabulary panel sends a single selected word (never document content) to
+      two free public lookup APIs when you use its Thesaurus or Dictionary sections. FusionMD
+      has no server, no account, and no analytics.
     </p>
 
     <h2>Your Documents</h2>
@@ -64,10 +66,23 @@ const updated = "11 August 2026";
       by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>.
     </p>
 
+    <h3>Vocabulary Lookups (Thesaurus &amp; Dictionary)</h3>
+    <p>
+      The Vocabulary panel's Thesaurus and Dictionary sections send the single word you've
+      selected — never your document content — to two free, key-free public APIs:
+      <a href="https://www.datamuse.com/api/" rel="noopener">Datamuse</a> (synonyms/antonyms)
+      and <a href="https://dictionaryapi.dev" rel="noopener">Free Dictionary API</a>
+      (definitions). This happens whenever you select a word in that panel, independent of
+      whether any AI feature is configured. The Overused Words analysis in the same panel is
+      separate and runs entirely on-device via Apple's Natural Language framework.
+    </p>
+
     <h3>No Other Outbound Network Activity</h3>
     <p>
-      When neither AI feature is enabled, FusionMD makes no outbound network connections.
-      It is a fully offline-capable application.
+      Outside of the AI features above and the Vocabulary lookups just described, FusionMD
+      makes no outbound network connections. Every other feature — Markdown editing, templates,
+      proofreading, style analysis, screenplay mode, and all export formats — works fully
+      offline.
     </p>
 
     <h2>What Is Stored Locally</h2>
