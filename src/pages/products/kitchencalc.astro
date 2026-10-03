@@ -36,9 +36,9 @@ const icon = "/images/products/kitchencalc/icon.png";
         each ingredient's actual density.
       </p>
       <div class="convert-grid">
-        <div class="convert-item"><strong>1 cup flour</strong><span>→ 120 g</span></div>
+        <div class="convert-item"><strong>1 cup flour</strong><span>→ 125 g</span></div>
         <div class="convert-item"><strong>1 cup butter</strong><span>→ 227 g</span></div>
-        <div class="convert-item"><strong>1 cup honey</strong><span>→ 339 g</span></div>
+        <div class="convert-item"><strong>1 cup honey</strong><span>→ 336 g</span></div>
         <div class="convert-item"><strong>250 mL milk</strong><span>→ 258 g</span></div>
       </div>
       <p>
@@ -146,7 +146,8 @@ const icon = "/images/products/kitchencalc/icon.png";
       <ul class="feature-list">
         <li><strong>Apple Intelligence</strong> — on-device and completely private.
           Requires Apple Silicon + macOS 26 + Apple Intelligence enabled.</li>
-        <li><strong>OpenRouter</strong> — works on any Mac with a free API key.
+        <li><strong>OpenRouter</strong> — works on any Mac with your own OpenRouter API key
+          and a few dollars of prepaid credit (each recipe costs a fraction of a cent).
           Recipe text is sent to OpenRouter for processing under their privacy policy.</li>
       </ul>
       <p>
@@ -163,7 +164,7 @@ const icon = "/images/products/kitchencalc/icon.png";
       <h2>Private by default.</h2>
       <p>
         KitchenCalc makes no network requests during normal use. All conversions run
-        entirely on your Mac. Custom ingredients are stored locally in the app's sandbox.
+        entirely on your Mac. Custom ingredients and saved recipes are stored locally in the app's sandbox.
       </p>
       <p>
         The only optional network activity is the AI recipe import — and only if you
@@ -199,7 +200,7 @@ const icon = "/images/products/kitchencalc/icon.png";
   <AppFAQ items={[
     {
       question: "What's the difference between this and a regular unit converter?",
-      answer: "A regular unit converter treats every cup as identical. KitchenCalc knows that 1 cup of flour weighs 120 g but 1 cup of honey weighs 339 g — because they have different densities. When you're baking by weight (the most accurate method), that difference matters enormously. The pan substitution and recipe scaler go further still, solving problems no generic converter addresses."
+      answer: "A regular unit converter treats every cup as identical. KitchenCalc knows that 1 cup of flour weighs 125 g but 1 cup of honey weighs 336 g — because they have different densities. When you're baking by weight (the most accurate method), that difference matters enormously. The pan substitution and recipe scaler go further still, solving problems no generic converter addresses."
     },
     {
       question: "Does it handle both US and metric measurements?",
@@ -207,19 +208,19 @@ const icon = "/images/products/kitchencalc/icon.png";
     },
     {
       question: "What's a fan oven and why does it matter?",
-      answer: "A fan oven (called a convection oven in North America) has a fan that circulates hot air, cooking food faster and more evenly. Recipes written for a conventional oven need the temperature reduced by about 25°F (15°C) when cooked in a fan oven — and vice versa. Many home bakers get this wrong because they don't realise UK and Australian recipes often assume a fan oven by default. KitchenCalc converts between both modes and includes Gas Mark for gas ovens common in British recipes."
+      answer: "A fan oven (called a convection oven in North America) has a fan that circulates hot air, cooking food faster and more evenly. Recipes written for a conventional oven need the temperature reduced by about 20°C (35°F) when cooked in a fan oven — and vice versa. Many home bakers get this wrong because they don't realise UK and Australian recipes often assume a fan oven by default. KitchenCalc converts between both modes and includes Gas Mark for gas ovens common in British recipes."
     },
     {
       question: "How does pan substitution work?",
-      answer: "KitchenCalc compares the base area of your pan against the recipe's pan. If your pan is 26% larger, the batter will be shallower and will cook faster — so KitchenCalc tells you to reduce baking time and scale the recipe quantities by the area ratio. It also considers pan material: glass heats more slowly than metal but retains heat longer, so switching materials requires a temperature adjustment."
+      answer: "KitchenCalc compares the base area of your pan against the recipe's pan. If your pan is 26% larger, KitchenCalc tells you to make 1.26× the recipe so the batter keeps the same depth and baking time — or, if you'd rather use the recipe as written, that the batter will be shallower and how much earlier to check it. It also considers pan material: glass heats more slowly than metal but retains heat longer, so switching materials requires a temperature adjustment."
     },
     {
       question: "Do I need an OpenRouter API key for AI features?",
-      answer: "Only if you want to use AI recipe import on a Mac without Apple Intelligence. On Apple Silicon Macs running macOS 26 with Apple Intelligence enabled, KitchenCalc uses on-device AI at no cost. On other Macs, you can get a free API key at openrouter.ai — the free tier is sufficient for occasional recipe imports. You can also skip AI entirely and enter ingredients manually."
+      answer: "Only if you want to use AI recipe import on a Mac without Apple Intelligence. On Apple Silicon Macs running macOS 26 with Apple Intelligence enabled, KitchenCalc uses on-device AI at no cost. On other Macs, create an account at openrouter.ai, generate an API key, and add a few dollars of credit — each recipe import costs a fraction of a cent, so a small balance lasts a very long time. You can also skip AI entirely and enter ingredients manually."
     },
     {
       question: "Can I add my own ingredients?",
-      answer: "Yes. If an ingredient isn't in the built-in database, you can add it with a custom density value (grams per mL). Your custom ingredients are stored locally and appear alongside the built-in list in the ingredient picker. You can manage, edit, and delete them at any time."
+      answer: "Yes. If an ingredient isn't in the built-in database, you can add it with a custom density value (grams per mL). Your custom ingredients are stored locally and appear alongside the built-in list in the ingredient picker. You can delete them at any time from the same Manage sheet."
     },
     {
       question: "Is there a subscription?",

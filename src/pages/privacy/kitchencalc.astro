@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const updated = "19 June 2026";
+const updated = "3 October 2026";
 ---
 
 <BaseLayout
@@ -52,14 +52,14 @@ const updated = "19 June 2026";
       of any kind is transmitted.
     </p>
 
-    <h3>Apple Intelligence (Optional — Opt-In Only)</h3>
+    <h3>Apple Intelligence (On-Device)</h3>
     <p>
       KitchenCalc can use Apple Intelligence to extract ingredients from pasted recipe text.
       Apple Intelligence runs entirely on-device. Recipe text never leaves your Mac via this path.
     </p>
     <ul>
       <li>Requires Apple Silicon Mac, macOS 26 or later, and Apple Intelligence enabled in System Settings</li>
-      <li>Disabled by default — must be configured in Settings → AI</li>
+      <li>Used automatically when available — only when you click Import Recipe; there is nothing to configure in KitchenCalc</li>
       <li>No data is sent to DataIsland or any third party</li>
     </ul>
 
@@ -82,6 +82,7 @@ const updated = "19 June 2026";
     <h2>What Is Stored Locally</h2>
     <ul>
       <li><strong>Custom ingredients</strong> — names and density values you add, stored in the app's SwiftData database in its local sandbox</li>
+      <li><strong>Saved recipes</strong> — up to 20 recipes you choose to save (name, servings, and ingredients), stored in the same local SwiftData database</li>
       <li><strong>Theme preference</strong> — your selected appearance theme, stored in UserDefaults</li>
       <li><strong>OpenRouter API key</strong> (if provided) — stored in macOS Keychain, never transmitted to DataIsland</li>
     </ul>
