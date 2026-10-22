@@ -126,9 +126,12 @@ const icon = "/images/products/kitchencalc/icon.png";
       </p>
       <ul class="feature-list">
         <li><strong>Fraction-aware scaling</strong> — results snap to the nearest cooking fraction (⅛, ¼, ⅓, ½, ⅔, ¾) so amounts stay practical.</li>
-        <li><strong>All recipe units</strong> — tsp, tbsp, cup, fl oz, pint, mL, L, g, kg, oz, lb, and count for items like eggs.</li>
+        <li><strong>Big batches that make sense</strong> — scale a recipe for 4 up to 400 and results move to units you can measure: 200 tbsp becomes 12 1/2 cups, 25,000 g becomes 25 kg.</li>
+        <li><strong>Scaling notes</strong> — practical reminders when a big batch needs less seasoning or more dishes, or a small batch calls for part of an egg.</li>
+        <li><strong>All recipe units</strong> — tsp, British dessertspoon, tbsp, cup, fl oz, pint, mL, L, g, kg, oz, lb, and count for items like eggs.</li>
+        <li><strong>Named, saved recipes</strong> — keep up to 20 recipes, rename them any time, and update a saved recipe or save a new version.</li>
         <li><strong>Copy Scaled</strong> — copies the full scaled ingredient list to the clipboard for pasting into any app.</li>
-        <li><strong>AI import</strong> — paste a recipe in plain text and KitchenCalc extracts every ingredient and amount automatically.</li>
+        <li><strong>AI import</strong> — paste a recipe in plain text and KitchenCalc fills in its name, servings, and every ingredient automatically.</li>
       </ul>
     </div>
   </section>
@@ -140,8 +143,13 @@ const icon = "/images/products/kitchencalc/icon.png";
       <h2>AI that reads recipes so you don't have to.</h2>
       <p>
         Paste the text of any recipe — from a webpage, a PDF, or even a photo caption — and
-        the AI extracts every ingredient and amount into the scaler automatically.
+        KitchenCalc fills in the recipe's name, its servings, and every ingredient automatically.
         No typing. No reformatting.
+      </p>
+      <p>
+        Amounts are taken exactly as your recipe prints them: AI identifies the ingredients,
+        and KitchenCalc reads "1 1/2 cups", "½ tsp" or "2 (15 oz) cans" straight from the text —
+        so an import never quietly changes a quantity.
       </p>
       <ul class="feature-list">
         <li><strong>Apple Intelligence</strong> — on-device and completely private.
@@ -204,7 +212,7 @@ const icon = "/images/products/kitchencalc/icon.png";
     },
     {
       question: "Does it handle both US and metric measurements?",
-      answer: "Yes, fully. The converter handles tsp, tbsp, cup, fl oz, pint, mL, and L for volumes; g, kg, oz, and lb for weights. The pan section works in both inches and centimetres, with standard sizes for both US and European baking pans."
+      answer: "Yes, fully. The converter handles US measures (tsp, tbsp, cup, fl oz, pint, quart, gallon), British measures (including the dessertspoon), and metric (mL, cL, dL, L) for volumes; mg, g, kg, oz, lb, and stone for weights. British spoons use the modern metric sizes UK recipes mean — 5 mL teaspoon, 10 mL dessertspoon, 15 mL tablespoon. The pan section works in both inches and centimetres, with standard sizes for both US and European baking pans."
     },
     {
       question: "What's a fan oven and why does it matter?",
