@@ -291,7 +291,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p class="goal">What you'll learn: saving a scaled recipe by name so you can reload it in one tap without re-entering every ingredient — and renaming it later.</p>
 
           <p>
-            KitchenCalc stores up to 20 named recipes. Once saved, a recipe can be loaded
+            KitchenCalc saves as many named recipes as you like. Once saved, a recipe can be loaded
             instantly at any time, and its name appears in the Recipe field at the top of the tab
             so you always know which recipe is active.
           </p>
@@ -312,22 +312,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li><strong>Save as New</strong> — keeps the original and saves this version as a separate recipe. Handy for keeping both a family-size and a party-size version.</li>
           </ul>
 
-          <div class="tip">
-            <strong>20-recipe limit:</strong> when you already have 20 saved recipes, the Save
-            prompt warns you and names the oldest recipe, which is removed to make room. Cancel
-            and delete recipes you no longer need from the Saved list if you'd rather keep that one.
-          </div>
-
           <h3>Recalling a saved recipe</h3>
           <ol class="steps">
-            <li>Click the <strong>Saved</strong> button (or the <strong>N of 20</strong> count button) in the action bar. A popover opens listing all saved recipes, newest first.</li>
-            <li>The header shows how many recipes are stored out of the 20-recipe maximum — for example, <strong>14 of 20</strong>.</li>
+            <li>Click the <strong>Saved</strong> button in the action bar — it shows how many recipes you have, for example <strong>Saved (14)</strong>. A popover opens listing all saved recipes, newest first.</li>
+            <li>Once you have more than 8 recipes, a <strong>search field</strong> appears at the top of the list. Type part of a name to show only matching recipes.</li>
             <li>Click <strong>Load</strong> next to any recipe. The ingredient list, servings, and recipe name all update immediately. The popover closes automatically.</li>
           </ol>
 
           <h3>Renaming a saved recipe</h3>
           <ol class="steps">
-            <li>Click the <strong>Saved</strong> / <strong>N of 20</strong> button to open the list.</li>
+            <li>Click the <strong>Saved</strong> button to open the list.</li>
             <li>Click the <strong>pencil</strong> next to the recipe. Its name becomes editable.</li>
             <li>Type the new name and press <strong>Return</strong> or click the <strong>checkmark</strong>. Press <strong>Esc</strong> or click the <strong>×</strong> to cancel. If that recipe is loaded, the Recipe field updates too.</li>
           </ol>
@@ -335,7 +329,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <h3>Deleting a saved recipe</h3>
           <ol class="steps">
-            <li>Click the <strong>Saved</strong> / <strong>N of 20</strong> button to open the list.</li>
+            <li>Click the <strong>Saved</strong> button to open the list.</li>
             <li>Click the <strong>trash icon</strong> on the right of the recipe you want to remove. The recipe is deleted immediately — no confirmation required.</li>
           </ol>
 
