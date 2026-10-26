@@ -1,11 +1,18 @@
+// Apps that are live on the Mac App Store. Product pages and the home page read from here.
+/** @type {Record<string, { url: string, price: string }>} */
+export const appStore = {
+  fusionmd:     { url: "https://apps.apple.com/us/app/fusionmd/id6794668416", price: "Free 30-day trial · one-time purchase" },
+  kitchencalc:  { url: "https://apps.apple.com/us/app/kitchencalc-cooking-converter/id6819032993", price: "$4.99 · one-time purchase" },
+  networknotes: { url: "https://apps.apple.com/us/app/network-notes-local-messaging/id6819061711", price: "Free" },
+};
+
 export const products = [
   {
     id: "fusionmd",
     title: "FusionMD",
     icon: "/images/products/fusionmd/icon.png",
     description: "A native Mac document studio — Markdown editor, AI writing assistant, template engine, and professional publishing pipeline in one app. Exports to IDML for Affinity and InDesign.",
-    active: true,
-    launchingFirst: true
+    active: true
   },
   {
     id: "polywrite",

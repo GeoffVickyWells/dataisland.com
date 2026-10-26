@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { products } from "../data/products.js";
+import { products, appStore } from "../data/products.js";
 ---
 
 <BaseLayout title="DataIsland Software">
@@ -11,7 +11,8 @@ import { products } from "../data/products.js";
       We build privacy‑first apps that help you think, write, and work better.
     </p>
     <p class="hero-launch">
-      <strong>FusionMD</strong> and <strong>PolyWrite</strong> are launching first.
+      Now on the Mac App Store: <strong>FusionMD</strong>, <strong>KitchenCalc</strong>
+      and <strong>Network Notes</strong>.
     </p>
   </section>
 
@@ -31,6 +32,11 @@ import { products } from "../data/products.js";
         {product.active && (
           <a href={`/products/${product.id}`} class="cta">
             Learn More
+          </a>
+        )}
+        {appStore[product.id] && (
+          <a href={appStore[product.id].url} class="cta store">
+            Get it on the Mac App Store
           </a>
         )}
       </div>
@@ -166,6 +172,15 @@ import { products } from "../data/products.js";
   .cta:hover {
     background: #005fa3;
     opacity: 1;
+  }
+
+  .cta.store {
+    margin-left: 0.5rem;
+    background: #000;
+  }
+
+  .cta.store:hover {
+    background: #1a1a1a;
   }
 
   .next-steps {

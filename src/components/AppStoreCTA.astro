@@ -1,10 +1,15 @@
 ---
+import { appStore } from "../data/products.js";
+
 interface Props {
-  href?: string;
-  comingSoon?: boolean;
+  app?: string;
 }
 
-const { href = "#", comingSoon = true } = Astro.props;
+// An app listed in appStore gets a working button; anything else shows "Coming Soon".
+const { app } = Astro.props;
+const listing = app ? appStore[app] : undefined;
+const comingSoon = !listing;
+const href = listing?.url ?? "#";
 ---
 
 <div class="cta-wrap">
@@ -22,9 +27,9 @@ const { href = "#", comingSoon = true } = Astro.props;
       <span class="btn-main">Mac App Store</span>
     </span>
   </a>
-  {comingSoon && (
-    <p class="cta-nudge">Not yet available.</p>
-  )}
+  {comingSoon
+    ? <p class="cta-nudge">Not yet available.</p>
+    : <p class="cta-nudge">{listing.price}</p>}
 </div>
 
 <style>
