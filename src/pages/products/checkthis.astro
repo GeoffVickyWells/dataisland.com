@@ -135,11 +135,17 @@ const icon = "/images/products/checkthis/icon.png";
   <section class="feature-section fade-in alt">
     <div class="feature-icon">🧠</div>
     <div class="feature-body">
-      <h2>AI that reads between the lines.</h2>
+      <h2>AI that asks: is this really who it says it is?</h2>
       <p>
-        On supported hardware, CheckThis adds an AI layer that catches what rules alone can miss:
-        social engineering framing, narrative inconsistency, and pressure tactics that feel
-        wrong even when every technical signal checks out.
+        Scammers borrow famous names. On supported Macs, CheckThis has the AI read who an email
+        claims to be from and what it wants you to do — phone a number, sign in, pay, open an
+        attachment — and then checks that claim against who actually sent it. A "Target" password
+        notice from a free Microsoft trial address, or a "USPS" delivery fee from
+        usps-redelivery.info, is caught even when the email has no links at all.
+      </p>
+      <p>
+        The AI only reports facts; CheckThis decides. That keeps genuine mail from being flagged
+        just because it sounds urgent.
       </p>
       <ul class="feature-list">
         <li><strong>Apple Intelligence</strong> — on-device, completely private.
@@ -147,7 +153,8 @@ const icon = "/images/products/checkthis/icon.png";
         <li><strong>OpenRouter</strong> — optional fallback for users without Apple Intelligence.
           You supply your own API key. Email content is sent to OpenRouter under their privacy policy.</li>
         <li><strong>Neither</strong> — CheckThis works fully without AI.
-          The rule engine and DNS analysis stand alone.</li>
+          The rule engine and DNS analysis stand alone, and it still checks the sender's name
+          against the address it came from.</li>
       </ul>
     </div>
   </section>
@@ -210,7 +217,11 @@ const icon = "/images/products/checkthis/icon.png";
     },
     {
       question: "What's the difference between the Mail extension and the standalone app?",
-      answer: "The extension lives inside Apple Mail and works silently — every arriving message is automatically screened and color-coded before you open it. The standalone app does the same forensic analysis on demand: select an email in Mail and click 'Get Selected from Mail', or paste raw headers from any client. Both use the same detection engine and give the same verdict."
+      answer: "The extension lives inside Apple Mail and works silently — every arriving message is automatically screened and color-coded before you open it. The standalone app does the same forensic analysis on demand: select an email in Mail and choose Check Selected Email from the CheckThis menu bar icon (or click 'Get Selected from Mail' in the app), or paste raw headers from any client. Both use the same detection engine and give the same verdict."
+    },
+    {
+      question: "Does CheckThis need to stay open?",
+      answer: "No. The Mail extension runs inside Apple Mail and colour-codes your inbox whether or not the CheckThis app is open. Keep the app running if you also want notifications about suspicious emails: closing its window leaves it in the menu bar, and you can turn on Open at Login in Settings. Quit any time from the menu bar icon."
     },
     {
       question: "Does CheckThis require an internet connection?",
@@ -230,7 +241,7 @@ const icon = "/images/products/checkthis/icon.png";
     },
     {
       question: "Is there a subscription?",
-      answer: "No. CheckThis is a one-time purchase of $29.99, yours to keep including all future updates to the current major version. A 10-day free trial gives you complete access to every feature before you decide."
+      answer: "No. CheckThis is a one-time purchase of $29.99, yours to keep including all future updates to the current major version. A 10-day free trial gives you complete access to every feature before you decide. After the trial, the Mail extension pauses until CheckThis is unlocked."
     },
   ]} />
 
