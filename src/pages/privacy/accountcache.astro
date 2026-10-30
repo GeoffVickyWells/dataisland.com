@@ -53,22 +53,21 @@ const updated = "12 July 2026";
       You can disable sync at any time in Settings → iCloud on your Mac.
     </p>
 
-    <h2>Cross-Account Sharing (Optional)</h2>
+    <h2>Shared Caches (Optional)</h2>
     <p>
-      Family and Home Office plans include an optional cross-account sharing feature. The database
-      owner can generate a CloudKit share invitation link and send it to someone on a different
-      Apple ID. When the recipient accepts:
+      Your records start in My Cache, stored only in your own iCloud account. You can choose to
+      create a shared cache and invite people who use a different Apple ID. For a shared cache:
     </p>
     <ul>
-      <li>The recipient connects to the <strong>owner's iCloud zone</strong> via Apple's CloudKit shared database infrastructure</li>
-      <li>Records the recipient creates are stored in the <strong>owner's</strong> iCloud account, not the recipient's</li>
-      <li>The recipient can see all open and shared records; private records belonging to other users remain hidden</li>
-      <li>All data still travels only through Apple's CloudKit infrastructure — DataIsland has no access to it</li>
+      <li>The cache is stored in the <strong>iCloud account of the person who created it</strong> (its admin), using Apple's standard CloudKit sharing</li>
+      <li>Only people the admin invites can join; everyone in the cache can see every record in it</li>
+      <li>Records you move into a shared cache, or add there, are stored in the admin's iCloud; records in your My Cache never are</li>
+      <li>All data travels only through Apple's CloudKit infrastructure — DataIsland has no access to it</li>
     </ul>
     <p>
-      If the recipient disconnects, their records remain in the owner's database. This sharing
-      feature uses Apple's standard CloudKit zone sharing and is governed by
-      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.
+      If you leave a shared cache, its records disappear from your Macs and remain with the
+      cache. Moving a record back to My Cache removes it from the shared cache. Sharing is
+      governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.
     </p>
 
     <h2>What Leaves Your Device</h2>

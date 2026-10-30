@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="AccountCache Tutorials — DataIsland Software"
-  description="Step-by-step guides for AccountCache — setting up categories, managing accounts, using reports, importing from other apps, and more."
+  description="Step-by-step guides for AccountCache — categories, accounts, private and shared caches, reports, importing, sync and backup."
 >
 
   <div class="tut-wrap">
@@ -24,26 +24,74 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <!-- Table of contents -->
       <nav class="toc">
         <h2>Contents</h2>
+        <p class="toc-first"><a href="#t0">Start here: the big picture</a></p>
         <ol>
           <li><a href="#t1">First launch &amp; the interface</a></li>
           <li><a href="#t2">Categories</a></li>
           <li><a href="#t3">Creating your first account</a></li>
           <li><a href="#t4">The account detail form</a></li>
           <li><a href="#t5">Basic categories in practice</a></li>
-          <li><a href="#t6">Pro specialist fields</a></li>
+          <li><a href="#t6">Specialist fields</a></li>
           <li><a href="#t7">Searching your accounts</a></li>
           <li><a href="#t8">Account status &amp; the wallet</a></li>
           <li><a href="#t9">Reports</a></li>
           <li><a href="#t10">Importing from other apps</a></li>
-          <li><a href="#t11">Upgrade plans</a></li>
+          <li><a href="#t11">Free trial &amp; unlock</a></li>
           <li><a href="#t12">Settings reference</a></li>
-          <li><a href="#t13">User profiles &amp; household sharing</a></li>
+          <li><a href="#t13">Caches: private &amp; shared</a></li>
           <li><a href="#t14">Sync, backup &amp; new Mac migration</a></li>
         </ol>
       </nav>
 
       <!-- Tutorial content -->
       <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── The big picture -->
+        <section class="tut-section" id="t0">
+          <h2>The Big Picture: Caches</h2>
+          <p class="goal">Read this first — two minutes that make everything else make sense.</p>
+
+          <p>
+            AccountCache keeps your records in <strong>caches</strong>. A cache is simply a
+            collection of records, and each cache decides <strong>who can see them</strong>.
+            Every record lives in exactly one cache.
+          </p>
+
+          <h3>My Cache — just you</h3>
+          <p>
+            Everyone has one. It's private, it lives in your own iCloud, and nobody else can ever
+            see it. If you use AccountCache on your own, this is all you'll ever need.
+          </p>
+
+          <h3>Shared caches — you and the people you choose</h3>
+          <p>
+            Create one for each group of people you keep accounts with. Everyone keeps their own
+            Apple ID; you invite them, and they see what's in that cache — nothing else.
+          </p>
+
+          <table>
+            <thead><tr><th>Cache</th><th>Who's in it</th><th>Typical records</th></tr></thead>
+            <tbody>
+              <tr><td><strong>My Cache</strong></td><td>Just you</td><td>Your personal email, your doctor's portal, social media, the surprise you're planning</td></tr>
+              <tr><td><strong>Family</strong></td><td>You and your partner</td><td>Joint bank accounts, mortgage, utilities, home and car insurance, streaming services, the kids' school logins</td></tr>
+              <tr><td><strong>Business</strong></td><td>You and your business partner or staff</td><td>Website and hosting logins, domain registrars, email server settings, API keys, software licences</td></tr>
+              <tr><td><strong>Mum &amp; Dad</strong></td><td>You and your siblings</td><td>An elderly parent's bank, pension, pharmacy and utilities — so whoever is helping can find them</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Three rules that answer most questions</h3>
+          <ol class="steps">
+            <li><strong>To share a record, move it.</strong> There's no "share" switch on a record. Move it into a shared cache to share it; move it back to My Cache to make it private again.</li>
+            <li><strong>Whoever adds a record owns it.</strong> Only the owner and the cache's admin (whoever created the cache) can change it — unless the owner ticks "Others can edit".</li>
+            <li><strong>Everyone in a shared cache sees everything in it.</strong> Ownership protects records from being changed by accident; it doesn't hide them. Anything only you should see belongs in My Cache.</li>
+          </ol>
+
+          <p>
+            Use the <strong>Caches</strong> menu at the top of the sidebar to look at one cache or
+            all of them together. Step-by-step instructions for creating, inviting, moving and
+            leaving are in <a href="#t13">Tutorial 13</a>.
+          </p>
+        </section>
 
         <!-- ─────────────────────────────────────────── Tutorial 1 -->
         <section class="tut-section" id="t1">
@@ -55,9 +103,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <table>
             <thead><tr><th>Column</th><th>What it shows</th></tr></thead>
             <tbody>
-              <tr><td><strong>Left — Categories</strong></td><td>Your category list. Click any category to filter the account list to that category only. Click <strong>All Accounts</strong> at the top to see everything.</td></tr>
+              <tr><td><strong>Left — Caches &amp; Categories</strong></td><td>At the top, the <strong>Caches</strong> menu chooses whose records you see — My Cache, a shared cache, or All Caches (it appears once you have more than one cache; see Tutorial 13). Below it, click any category to filter the list, or <strong>All Categories</strong> to see every category in the chosen cache.</td></tr>
               <tr><td><strong>Centre — Account List</strong></td><td>All accounts in the selected category, listed alphabetically. Click any row to open it in the detail panel.</td></tr>
-              <tr><td><strong>Right — Account Detail</strong></td><td>The full record for the selected account. All fields are editable here. Click anywhere in a field to edit it.</td></tr>
+              <tr><td><strong>Right — Account Detail</strong></td><td>The full record for the selected account. Click any field to edit it — changes save automatically a moment after you stop typing.</td></tr>
             </tbody>
           </table>
 
@@ -83,7 +131,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- ─────────────────────────────────────────── Tutorial 2 -->
         <section class="tut-section" id="t2">
           <h2><span class="num">2</span> Categories</h2>
-          <p class="goal">What you'll learn: the Basic and Pro category types, the built-in categories, and how to add your own.</p>
+          <p class="goal">What you'll learn: the Basic and Specialist category types, the built-in categories, and how to add your own.</p>
 
           <p>
             Categories organise your accounts into groups. AccountCache has two types:
@@ -106,10 +154,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             examples of what you can store with just these fields.
           </p>
 
-          <h3>Pro categories</h3>
+          <h3>Specialist categories</h3>
           <p>
-            Pro categories add a <strong>specialist section</strong> below the standard form,
-            with fields specific to that account type. AccountCache ships with ten Pro categories:
+            Specialist categories (listed under <strong>Specialist</strong> in the sidebar) add a
+            <strong>specialist section</strong> below the standard form, with fields specific to that
+            account type. AccountCache ships with ten:
           </p>
 
           <table>
@@ -143,7 +192,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            <strong>Note:</strong> The built-in Pro categories cannot be deleted — they are tied to the specialist field system. You can rename them freely.
+            <strong>Note:</strong> The built-in Specialist categories cannot be deleted — they are tied to the specialist field system. You can rename them freely.
           </div>
         </section>
 
@@ -174,6 +223,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h2><span class="num">4</span> The Account Detail Form</h2>
           <p class="goal">What you'll learn: every field in the standard account form and what it's for.</p>
 
+          <h3>Security section</h3>
+          <p>Appears at the top of the form once you have more than one cache.</p>
+          <table>
+            <thead><tr><th>Control</th><th>What it does</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Cache</strong></td><td>Which cache the record lives in, and — in a shared cache — who added it ("Added by …"). In My Cache the record is private to you.</td></tr>
+              <tr><td><strong>Move to…</strong></td><td>Moves the record, with its category and every detail, to another cache. This is how you share a record, or make one private again. See Tutorial 13.</td></tr>
+              <tr><td><strong>Others can edit</strong></td><td>Shared caches only. Lets other members who can make changes edit this record. Only the record's owner and the cache's admin see this box.</td></tr>
+            </tbody>
+          </table>
+
           <h3>Identity section</h3>
           <table>
             <thead><tr><th>Field</th><th>What to put here</th></tr></thead>
@@ -181,7 +241,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               <tr><td><strong>Category</strong></td><td>Which category this account belongs to. The Category field comes first — changing it updates the specialist fields shown below. If you move an account to a different smart-category type and it already has specialist data, AccountCache will ask you to confirm before deleting that data.</td></tr>
               <tr><td><strong>Account Name</strong></td><td>The name of the service or website. This is the primary identifier shown in the account list and in the detail panel header.</td></tr>
               <tr><td><strong>Status</strong></td><td>Active, Inactive, Cancelled, or Suspended. Inactive and Cancelled accounts are hidden in the list by default — use the eye icon in the toolbar to show them.</td></tr>
-              <tr><td><strong>Tags</strong></td><td>Comma-separated labels for grouping across categories (e.g., "work, critical, shared" or "geoff, vicky" to distinguish records belonging to different family members). See Tutorial 5 for practical tag strategies.</td></tr>
+              <tr><td><strong>Tags</strong></td><td>Comma-separated labels for grouping across categories (e.g., "work, critical" or "travel"). To keep records private or share them with someone, use caches (Tutorial 13), not tags. See Tutorial 5 for practical tag strategies.</td></tr>
             </tbody>
           </table>
 
@@ -239,17 +299,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>The right side of the detail panel is a dedicated Notes area — free-form text for anything that doesn't fit elsewhere. It's always visible alongside the form, so you can take notes without scrolling.</p>
 
           <h3>Record info section</h3>
-          <p>At the bottom of the form, AccountCache shows when the record was <strong>Created</strong> and last <strong>Modified</strong>, along with the name of the user who performed each action. These are set automatically and cannot be edited. When multiple people share a database, the user name tells you who last touched a record.</p>
+          <p>At the bottom of the form, AccountCache shows when the record was <strong>Created</strong> and last <strong>Modified</strong>, and by whom. These are set automatically and cannot be edited. In a shared cache, this tells you who last changed a record.</p>
 
           <div class="tip">
-            <strong>Deleting an account:</strong> Control-click the account in the centre list (or two-finger click on a trackpad) and choose <strong>Delete</strong>. A confirmation dialog appears before anything is removed.
+            <strong>Saving and deleting:</strong> there is no Save button — edits save automatically about a second after you stop typing, and when you switch records or quit. To delete a record, click the red <strong>trash</strong> button in the toolbar above the form (or Control-click it in the centre list and choose <strong>Delete</strong>). A confirmation appears before anything is removed.
           </div>
         </section>
 
         <!-- ─────────────────────────────────────────── Tutorial 5 (NEW) -->
         <section class="tut-section" id="t5">
           <h2><span class="num">5</span> Basic Categories in Practice</h2>
-          <p class="goal">What you'll learn: how to use the standard account form — and the Tags field — to store a surprising range of everyday records without needing Pro.</p>
+          <p class="goal">What you'll learn: how to use the standard account form — and the Tags field — to store a surprising range of everyday records without needing a Specialist category.</p>
 
           <p>
             The standard form's Login, Password, and Expiry fields can represent far more
@@ -310,9 +370,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3>Using tags for grouping — not identity</h3>
           <p>
             Tags are best for ad-hoc grouping across categories — not for identifying whose
-            account it is. For that, use <strong>user profiles</strong> (Tutorial 13).
-            With profiles, each person owns their own records and can mark them private.
-            Tags work across profiles for cross-cutting concerns like urgency or topic.
+            account it is or who may see it. For that, use <strong>caches</strong> (Tutorial 13):
+            My Cache keeps your records private, and a shared cache shows each record's owner.
+            Tags work across caches for cross-cutting concerns like urgency or topic.
           </p>
 
           <table>
@@ -328,7 +388,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>
             Search <strong>streaming</strong> to audit all streaming subscriptions before
             the next billing cycle. Search <strong>travel</strong> before a trip to pull
-            up every account you'll need. Tags complement profiles — they don't replace them.
+            up every account you'll need. Tags complement caches — they don't replace them.
           </p>
 
           <h3>Other Basic categories that ship with AccountCache</h3>
@@ -348,24 +408,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <strong>The rule of thumb:</strong> if the information fits in a name, a number, a
             password, and a date, it's a Basic record. The Login field is just a text field —
             it can hold a membership number, a document number, a SSID, or anything else.
-            Only reach for a Pro category when you need structured fields the standard form
+            Only reach for a Specialist category when you need structured fields the standard form
             cannot represent.
           </div>
         </section>
 
         <!-- ─────────────────────────────────────────── Tutorial 6 (was 5) -->
         <section class="tut-section" id="t6">
-          <h2><span class="num">6</span> Pro Specialist Fields</h2>
-          <p class="goal">What you'll learn: the extra fields that appear when an account is in a Pro category.</p>
+          <h2><span class="num">6</span> Specialist Fields</h2>
+          <p class="goal">What you'll learn: the extra fields that appear when an account is in a Specialist category.</p>
 
           <p>
-            When an account is in one of the ten Pro categories, a specialist section appears
+            When an account is in one of the ten Specialist categories, a specialist section appears
             below the standard form with fields specific to that type. These sections are
             labelled in the form (e.g., "INSURANCE DETAILS", "WALLET").
           </p>
 
           <h3>Financial</h3>
-          <p>Financial is the most structured Pro category. One record holds your complete relationship with a financial institution — the institution-level details, every login (one per cardholder), every product account (checking, savings, mortgage, RRSP…), and every physical or digital card. Card number, CVV, and expiry fields are masked by default. The Expiry Dashboard tracks card expiry dates automatically.</p>
+          <p>Financial is the most structured Specialist category. One record holds your complete relationship with a financial institution — the institution-level details, every login (one per cardholder), every product account (checking, savings, mortgage, RRSP…), and every physical or digital card. Card number, CVV, and expiry fields are masked by default. The Expiry Dashboard tracks card expiry dates automatically.</p>
           <p>See also: the <strong>Lost Wallet Report</strong> (Tutorial 9) — it's driven by the Physical Wallet toggle on each card.</p>
 
           <h3>Email</h3>
@@ -405,7 +465,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>For home, auto, life, disability, tenant, umbrella, and travel policies. Fields: Policy Type, Provider Name, Policy Number, Agent Name, Agent Phone, Annual Premium, Renewal Date, Coverage Amount, Deductible, Claims Phone, Policy Document (file path or URL). Renewal Date feeds the Expiry Dashboard.</p>
 
           <div class="tip">
-            <strong>Moving an account to a different Pro category:</strong> If you change the Category field to a different Pro category type, AccountCache will ask you to confirm before proceeding — since specialist data from one category type makes no sense in another.<br><br>
+            <strong>Moving an account to a different Specialist category:</strong> If you change the Category field to a different Specialist category type, AccountCache will ask you to confirm before proceeding — since specialist data from one category type makes no sense in another.<br><br>
             <strong>Move and Delete Specialist Data</strong> — immediately deletes the old specialist data and saves the account in its new category. This cannot be undone.<br><br>
             <strong>Keep Current Category</strong> — cancels the move and restores the original category.
           </div>
@@ -513,7 +573,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li><strong>OK</strong> — more than 90 days from now.</li>
           </ul>
           <p>
-            The dashboard pulls from every date field across all Pro categories:
+            The dashboard pulls from every date field across all Specialist categories:
             subscription renewal dates, domain expiry, software licence expiry,
             card expiry, vehicle registration, vehicle insurance, medical insurance
             renewal, and insurance policy renewal. If there's a date attached to
@@ -599,49 +659,46 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- ─────────────────────────────────────────── Tutorial 11 -->
         <section class="tut-section" id="t11">
-          <h2><span class="num">11</span> Upgrade Plans</h2>
-          <p class="goal">What you'll learn: what Basic includes, what Family and Home Office add, and how to purchase.</p>
+          <h2><span class="num">11</span> Free Trial &amp; Unlock</h2>
+          <p class="goal">What you'll learn: what the free trial includes, what the one-time unlock adds, and what still works without it.</p>
 
-          <h3>Basic — Free</h3>
+          <h3>30-day free trial — everything included</h3>
           <p>
-            The Basic tier is <strong>free with no time limit and no credit card required.</strong>
-            It includes one user profile, unlimited basic accounts, all four reports, CSV import,
-            encrypted backup and restore, and iCloud sync across all your Macs.
-          </p>
-          <p>
-            You can import your entire password manager export and use AccountCache as a
-            full-featured account directory forever without paying. Basic is not a trial.
+            AccountCache is a free download. For your first <strong>30 days</strong> every feature
+            works: all categories including the Specialist ones, shared caches, import, reports,
+            sync and backup. No account or credit card is needed. Settings → General shows how
+            many trial days are left.
           </p>
 
-          <h3>Family — $29.99</h3>
+          <h3>One-time unlock — $19.99</h3>
           <p>
-            The Family plan adds up to <strong>5 user profiles</strong> and unlocks all
-            ten Pro specialist categories — Financial, Email, Domains, Software, Hosting,
-            AI &amp; APIs, Medical Insurance, Crypto Wallet, Vehicle, and Insurance.
-            Each profile can have its own PIN; visibility controls let each person
-            keep private records private.
+            One purchase unlocks AccountCache for good. There's no subscription and no tiers —
+            everything is included.
           </p>
           <ol class="steps">
-            <li>Open <strong>Settings</strong> (⌘,) and go to the <strong>General</strong> tab.</li>
-            <li>Click <strong>Unlock Family — $29.99</strong>. The App Store processes a single one-time payment using your Apple ID.</li>
-            <li>After purchase, the status card shows a green confirmation. Profiles and Pro categories are available immediately.</li>
+            <li>Open <strong>Settings</strong> (⌘,) → <strong>General</strong>.</li>
+            <li>Click <strong>Unlock AccountCache…</strong> and complete the App Store purchase with your Apple ID.</li>
+            <li>The card changes to <strong>AccountCache — Unlocked</strong>.</li>
           </ol>
 
-          <h3>Home Office — $49.99</h3>
+          <h3>After the trial, without the unlock</h3>
+          <p>Your data is never held hostage. Without the unlock you can always:</p>
+          <ul>
+            <li>open, search and read every record,</li>
+            <li>copy logins and passwords,</li>
+            <li>run all reports,</li>
+            <li>export an encrypted backup.</li>
+          </ul>
           <p>
-            Home Office raises the profile limit to <strong>10 users</strong> and includes
-            everything in Family. It is a standalone one-time purchase — Family is not
-            required first.
+            Adding, editing, deleting and importing records, managing categories, and creating or
+            joining shared caches need the unlock. When you try one of those, AccountCache offers
+            the unlock instead.
           </p>
-          <ol class="steps">
-            <li>Open <strong>Settings → General</strong> and click <strong>Unlock Home Office — $49.99</strong>.</li>
-            <li>The App Store processes the one-time payment. The profile limit increases to 10 immediately.</li>
-          </ol>
 
           <h3>Restoring a purchase</h3>
           <ol class="steps">
             <li>Open <strong>Settings → General</strong>.</li>
-            <li>Click <strong>Restore Purchases</strong>. AccountCache queries the App Store and restores your entitlements on this Mac.</li>
+            <li>Click <strong>Restore Purchase</strong>. AccountCache asks the App Store and unlocks this Mac if your Apple ID has bought it.</li>
           </ol>
         </section>
 
@@ -650,35 +707,27 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h2><span class="num">12</span> Settings Reference</h2>
           <p class="goal">A guide to every setting in AccountCache.</p>
 
-          <p>Open Settings with ⌘, or via the AccountCache menu. There are seven tabs.</p>
+          <p>Open Settings with ⌘, or via the AccountCache menu. There are six tabs.</p>
 
           <h3>General tab</h3>
           <ul>
-            <li><strong>Plan status card</strong> — shows your current plan (Basic / Family / Home Office) and the Unlock and Restore Purchase buttons.</li>
+            <li><strong>AccountCache Plan</strong> — shows trial days left or "Unlocked", with the <strong>Unlock AccountCache…</strong> and <strong>Restore Purchase</strong> buttons. See Tutorial 11.</li>
             <li><strong>Currency</strong> — the default currency for subscription costs shown in reports. Change this if you track costs in a currency other than USD.</li>
-            <li><strong>New Record Visibility</strong> — the default visibility applied when you create a new account (Open, Shared, or Private). You can override per record. Only meaningful when more than one user profile is active.</li>
-            <li><strong>Backup &amp; Restore</strong> — export an encrypted backup of your entire database, or restore from a backup file. See Tutorial 14.</li>
+            <li><strong>Backup &amp; Restore</strong> — <strong>Export Backup…</strong> and <strong>Restore from Backup…</strong>. See Tutorial 14.</li>
           </ul>
 
           <h3>Security tab</h3>
           <ul>
             <li><strong>App Lock</strong> — requires Touch ID or your Mac login password to open AccountCache after the app has been in the background.</li>
-            <li><strong>Auto-Lock timeout</strong> — how long the app can be inactive before it locks automatically. Options range from 1 minute to 1 hour, or "require on every launch."</li>
-          </ul>
-
-          <h3>Users tab (admin only)</h3>
-          <p>Visible only when you are logged in as an administrator.</p>
-          <ul>
-            <li><strong>User list</strong> — shows all profiles with their role (Admin / Member) and status (active / inactive). The count header shows how many profiles you're using against your plan limit.</li>
-            <li><strong>Add User</strong> — create a new profile. Disabled and replaced with an upgrade prompt when you've reached your plan's profile limit.</li>
-            <li><strong>Edit</strong> — change a user's display name, colour, or admin status.</li>
-            <li><strong>Deactivate</strong> — prevents the user from logging in. If they have private records, you choose to make them shared, transfer them to another user, or delete them.</li>
+            <li><strong>Auto-Lock</strong> — how long the app can be inactive before it locks: 1, 5, 15 or 30 minutes, 1 hour, or <strong>On launch only</strong> (locks only when you quit and reopen).</li>
           </ul>
 
           <h3>Sync tab</h3>
           <ul>
             <li><strong>Enable iCloud Sync</strong> — turns on CloudKit sync. Every change on this Mac is pushed to iCloud and pulled to your other Macs automatically.</li>
-            <li><strong>Sync status</strong> — shows whether the last sync succeeded, is in progress, or has an error (e.g., no iCloud account signed in).</li>
+            <li><strong>Sync status</strong> — whether your iCloud account is available, when the last sync happened, and a <strong>Sync Now</strong> button.</li>
+            <li><strong>Caches</strong> — My Cache and every shared cache, with <strong>New Shared Cache…</strong>, and per cache <strong>Move All To…</strong>, <strong>Invite People…</strong>, <strong>Rename…</strong>, <strong>Delete…</strong> or <strong>Leave…</strong>. See Tutorial 13.</li>
+            <li><strong>Have a share link?</strong> — paste an invitation link here and click <strong>Connect</strong> if opening the invitation didn't do it.</li>
           </ul>
 
           <h3>Appearance tab</h3>
@@ -710,87 +759,134 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- ─────────────────────────────────────────── Tutorial 13 -->
         <section class="tut-section" id="t13">
-          <h2><span class="num">13</span> User Profiles &amp; Household Sharing</h2>
-          <p class="goal">What you'll learn: setting up named user profiles, switching between them, setting PINs, and controlling who can see which records.</p>
+          <h2><span class="num">13</span> Caches: Private &amp; Shared</h2>
+          <p class="goal">What you'll learn: what a cache is, how to share records with someone who has their own Apple ID, and who can see and change what.</p>
 
-          <h3>How profiles work</h3>
+          <h3>The idea in one paragraph</h3>
           <p>
-            AccountCache uses a household profile model — like Mac login accounts or Netflix
-            profiles. Everyone shares the same database on the same Apple ID. Each person
-            has their own named profile and can mark records as private so only they (and admins)
-            can see them.
-          </p>
-          <p>
-            This is different from syncing separate databases. All profiles see the same
-            shared and open records. Only private records are hidden from other profiles.
+            A <strong>cache</strong> is a set of records. Everyone has <strong>My Cache</strong> —
+            it's private, it lives in your own iCloud, and nobody else can ever see it. When you
+            want to keep some records together with other people (your partner, your business),
+            you create a <strong>shared cache</strong> and invite them. A record is in exactly one
+            cache at a time, so <em>sharing a record means moving it into a shared cache</em>.
+            There is no "share" switch on a record in My Cache.
           </p>
 
-          <h3>First launch — creating the admin profile</h3>
-          <p>
-            On first launch, AccountCache creates an admin profile from your Mac username
-            and logs in automatically. If you are the only user, nothing else is needed.
-          </p>
-
-          <h3>Adding profiles (Family or Home Office plan)</h3>
-          <ol class="steps">
-            <li>Log in as admin and open <strong>Settings → Users</strong>.</li>
-            <li>Click <strong>Add User</strong>.</li>
-            <li>Enter a display name (e.g., "Vicky") and choose a colour. Optionally toggle <strong>Administrator</strong> to give this profile full access.</li>
-            <li>Click <strong>Add User</strong>. The new profile appears in the list and on the user picker screen.</li>
-          </ol>
-
-          <h3>Switching profiles</h3>
-          <ol class="steps">
-            <li>Click the <strong>avatar icon</strong> in the top-right of the toolbar. This signs you out and returns to the profile picker.</li>
-            <li>The picker shows all active profiles as avatar circles. Click any one to switch to it.</li>
-            <li>If a profile has a PIN set, AccountCache prompts for it before switching.</li>
-          </ol>
-
-          <h3>Setting a PIN on a profile</h3>
-          <ol class="steps">
-            <li>Log in as the profile you want to protect.</li>
-            <li>Open <strong>Settings → Security</strong> and turn on <strong>Profile PIN</strong>.</li>
-            <li>Enter and confirm your PIN. The PIN is required whenever another user switches to this profile.</li>
-          </ol>
-
-          <h3>Record visibility</h3>
-          <p>Every account record has a visibility setting in the detail panel:</p>
           <table>
-            <thead><tr><th>Visibility</th><th>Who can see it</th><th>Who can edit it</th></tr></thead>
+            <thead><tr><th></th><th>My Cache</th><th>A shared cache</th></tr></thead>
             <tbody>
-              <tr><td><strong>Open</strong></td><td>All profiles</td><td>All profiles</td></tr>
-              <tr><td><strong>Shared</strong></td><td>All profiles</td><td>Owner and admins only</td></tr>
-              <tr><td><strong>Private</strong></td><td>Owner and admins only</td><td>Owner and admins only</td></tr>
+              <tr><td><strong>Who sees it</strong></td><td>Only you</td><td>You and the people you invite</td></tr>
+              <tr><td><strong>Where it lives</strong></td><td>Your iCloud</td><td>The iCloud of whoever created it (the <em>admin</em>)</td></tr>
+              <tr><td><strong>How many</strong></td><td>Exactly one, always</td><td>As many as you like — e.g. one for the family, one for the business</td></tr>
+              <tr><td><strong>Needs iCloud Sync on</strong></td><td>Only to reach your other Macs</td><td>Yes, for everyone in it</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Choosing which cache you're looking at</h3>
+          <p>
+            Once you have more than one cache, a <strong>Caches</strong> menu appears at the top of
+            the sidebar. Choose <strong>All Caches</strong> to see everything together, or pick one
+            cache to see only its records. <strong>All Categories</strong>, just below it, shows every
+            category <em>within the cache you chose</em>.
+          </p>
+
+          <h3>Creating a shared cache</h3>
+          <ol class="steps">
+            <li>Make sure <strong>Settings → Sync → Enable iCloud Sync</strong> is on.</li>
+            <li>In the <strong>Caches</strong> list on that same tab, click <strong>New Shared Cache…</strong></li>
+            <li>Give it a name everyone will recognise — for example "DataIsland Accounts" or "Family". Click <strong>Save</strong>.</li>
+          </ol>
+          <p>You are the <strong>admin</strong> of any cache you create.</p>
+
+          <h3>Inviting someone</h3>
+          <ol class="steps">
+            <li>In <strong>Settings → Sync → Caches</strong>, find the cache and click <strong>Invite People…</strong></li>
+            <li>Choose how to send the invitation — Messages, Mail, AirDrop or Copy Link.</li>
+            <li>Before sending, choose what they may do: <strong>Can make changes</strong> (they can add records) or <strong>View only</strong>.</li>
+            <li>The other person opens the invitation on their Mac, with AccountCache installed and iCloud Sync on. The cache appears in their Caches list.</li>
+          </ol>
+          <div class="tip">
+            <strong>The invitation didn't open AccountCache?</strong> Copy the link
+            (it starts with <code>https://www.icloud.com/share/</code>), then on their Mac open
+            <strong>Settings → Sync</strong>, paste it into <strong>Have a share link?</strong>
+            and click <strong>Connect</strong>.
+          </div>
+
+          <h3>Sharing a record (moving it into a shared cache)</h3>
+          <ol class="steps">
+            <li>Open the record. At the top of the form, in the <strong>Security</strong> section, the <strong>Cache</strong> row shows where it lives.</li>
+            <li>Click <strong>Move to…</strong> and choose the shared cache. The record, with its category and every detail, moves there and appears for everyone in that cache.</li>
+            <li>To share many records at once: <strong>Settings → Sync → Caches</strong>, then <strong>Move All To…</strong> on the cache they're in.</li>
+          </ol>
+          <p>
+            To make a record private again, move it back to <strong>My Cache</strong> the same way.
+            It disappears from everyone else's Macs.
+          </p>
+
+          <h3>Who can change what</h3>
+          <p>
+            In a shared cache, <strong>whoever adds a record owns it</strong>. The form shows
+            "Added by …" next to the cache name.
+          </p>
+          <table>
+            <thead><tr><th>Person</th><th>Can see</th><th>Can change</th></tr></thead>
+            <tbody>
+              <tr><td><strong>The record's owner</strong></td><td>Everything in the cache</td><td>Their own records</td></tr>
+              <tr><td><strong>The cache's admin</strong></td><td>Everything in the cache</td><td><em>Every</em> record in the cache — even with "Others can edit" off</td></tr>
+              <tr><td><strong>Member — can make changes</strong></td><td>Everything in the cache</td><td>Records they added, plus any record whose owner ticked <strong>Others can edit</strong></td></tr>
+              <tr><td><strong>Member — view only</strong></td><td>Everything in the cache</td><td>Nothing (they can still copy and reveal passwords)</td></tr>
             </tbody>
           </table>
           <p>
-            New records default to the visibility set in <strong>Settings → General → New Record Visibility</strong>.
-            Change it per record any time.
+            <strong>Others can edit</strong> is a tick box in the record's Security section. Only the
+            record's owner and the admin see it. Tick it to let other members who can make changes
+            edit that record too.
           </p>
-
-          <h3>Deactivating a profile</h3>
-          <ol class="steps">
-            <li>Log in as admin and open <strong>Settings → Users</strong>.</li>
-            <li>Hover over the profile and click <strong>Deactivate</strong>.</li>
-            <li>If the profile owns any private records, AccountCache asks what to do with them: make them shared, transfer to another profile, or delete them permanently.</li>
-            <li>The profile disappears from the picker. Its open and shared records remain visible to everyone.</li>
-          </ol>
-
           <div class="tip">
-            <strong>Admin rule:</strong> At least one admin must always remain active. AccountCache will not let you deactivate the last administrator.
+            <strong>"Others can edit" is off, but I can still edit it?</strong> You're the admin of
+            that cache — the admin can always edit every record in it. The form says so:
+            "You can edit this as the cache's admin."
           </div>
+          <div class="tip">
+            <strong>Protection, not secrecy:</strong> ownership rules stop people changing each
+            other's records by accident. Everyone in a shared cache can <em>see</em> every record in
+            it. Anything only you should see belongs in My Cache.
+          </div>
+
+          <h3>Renaming, deleting and leaving</h3>
+          <ul>
+            <li><strong>Rename…</strong> (admin) — in Settings → Sync → Caches. The new name shows for everyone.</li>
+            <li><strong>Delete…</strong> (admin) — removes the cache for everyone. You choose to move its records to your My Cache first, or delete them with it.</li>
+            <li><strong>Leave…</strong> (members) — the cache and its records disappear from your Macs. They stay in the cache for everyone else, and the admin can invite you again.</li>
+          </ul>
+
+          <h3>Upgrading from the old "share my whole database" link</h3>
+          <p>
+            Earlier test versions shared your entire database with one link. If that's still in
+            place, an orange box appears in <strong>Settings → Sync</strong>:
+            <strong>"My Cache is still shared the old way."</strong> On the other person's Mac
+            your records show as a cache called "<em>Your Name</em>'s Cache". To switch over:
+          </p>
+          <ol class="steps">
+            <li>Create a shared cache and invite them (above).</li>
+            <li>Use <strong>Move All To…</strong> on My Cache — or Move to… on single records — to move what they should see into the shared cache.</li>
+            <li>When they can see the shared cache, click <strong>Stop Sharing My Cache…</strong> in the orange box.</li>
+            <li>On their Mac, they click <strong>Leave…</strong> on the old "<em>Your Name</em>'s Cache".</li>
+          </ol>
         </section>
+
 
         <!-- ─────────────────────────────────────────── Tutorial 14 -->
         <section class="tut-section" id="t14">
           <h2><span class="num">14</span> Sync, Backup &amp; New Mac Migration</h2>
-          <p class="goal">What you'll learn: iCloud sync across your Macs, cross-account sharing with a different Apple ID, encrypted backup export, and how to move to a new Mac.</p>
+          <p class="goal">What you'll learn: iCloud sync across your Macs, encrypted backup and restore, and how to move to a new Mac.</p>
 
           <h3>iCloud sync — free</h3>
           <p>
-            AccountCache syncs your entire database — accounts, categories, user profiles,
-            and specialist fields — across all your Macs using iCloud. All Macs must use
-            the <strong>same Apple ID</strong>.
+            AccountCache syncs your records, categories and specialist fields across all your
+            Macs that use the <strong>same Apple ID</strong>, through your own iCloud — no
+            DataIsland servers. To share with someone who has their <em>own</em> Apple ID,
+            use a shared cache (Tutorial 13).
           </p>
           <ol class="steps">
             <li>On each Mac, open <strong>Settings → Sync</strong>.</li>
@@ -798,27 +894,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li>On additional Macs, turn sync on the same way. Data appears within seconds.</li>
           </ol>
           <div class="tip">
-            <strong>What syncs:</strong> Everything — accounts, categories, all specialist fields, user profiles, visibility, and deletion records. Sync is incremental; only changes are sent, not the full database each time.
-          </div>
-
-          <h3>Cross-account sharing — Family &amp; Home Office plans</h3>
-          <p>
-            iCloud sync above requires everyone to use the <strong>same Apple ID</strong>. If the
-            people you want to share with have their own separate Apple IDs — a partner, a
-            colleague — use cross-account sharing instead.
-          </p>
-          <ol class="steps">
-            <li>On the database owner's Mac, open <strong>Settings → Sync</strong> and click <strong>Create Share Link…</strong>.</li>
-            <li>Send the generated link to the other person however you'd like — Messages, email, AirDrop.</li>
-            <li>They open the link on their own Mac. AccountCache prompts them to accept and connect.</li>
-            <li>Once accepted, their AccountCache connects to the owner's database over Apple's CloudKit shared-database infrastructure — no separate install, no shared Apple ID required.</li>
-          </ol>
-          <div class="tip">
-            <strong>Whose database is it?</strong> Everything still lives in the owner's iCloud
-            account. The recipient sees every Open and Shared record and can add their own, but
-            records stay in the owner's database — this is sharing one database, not merging two.
-            Disconnecting (<strong>Settings → Sync → Disconnect from Shared Database</strong>)
-            stops syncing without deleting anything already shared.
+            <strong>What syncs:</strong> Everything — records, categories, specialist fields, deletions, and the shared caches you belong to. Only changes are sent, not the whole database each time.
           </div>
 
           <h3>Encrypted backup — export</h3>
@@ -829,7 +905,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <ol class="steps">
             <li>Open <strong>Settings → General → Export Backup…</strong></li>
-            <li>Enter a backup password and confirm it. This password is separate from your profile PIN — write it down somewhere safe.</li>
+            <li>Enter a backup password and confirm it. Write it down somewhere safe.</li>
             <li>Click <strong>Choose Location…</strong>. Pick where to save the <code>.accountcachebak</code> file.</li>
             <li>AccountCache creates a clean snapshot of the database and encrypts it. The process takes a few seconds.</li>
           </ol>
@@ -843,7 +919,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li>Click <strong>Choose Backup File…</strong> and select your <code>.accountcachebak</code> file.</li>
             <li>Enter the password you used when exporting.</li>
             <li>Tick <strong>I understand this will replace all current data</strong> and click <strong>Restore</strong>.</li>
-            <li>AccountCache decrypts the file, validates it, and replaces the live database. You are returned to the profile picker.</li>
+            <li>AccountCache decrypts the file, checks it, and replaces the data on this Mac. If you belong to shared caches, their records are downloaded again fresh — a restore never overwrites other people's records.</li>
           </ol>
 
           <h3>Moving to a new Mac</h3>
@@ -853,7 +929,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <ol class="steps">
             <li>On the new Mac, install AccountCache from the App Store and sign in with the same Apple ID.</li>
             <li>Open <strong>Settings → Sync</strong> and turn on <strong>Enable iCloud Sync</strong>.</li>
-            <li>AccountCache pulls your database from iCloud. All accounts, categories, and user profiles appear within a minute or two depending on database size.</li>
+            <li>AccountCache pulls your database from iCloud. Your records, categories and shared caches appear within a minute or two depending on how many records you have.</li>
           </ol>
 
           <h4>Option B — Encrypted backup (no iCloud required)</h4>
@@ -861,7 +937,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <li>On the old Mac, export an encrypted backup (see above) and copy the file to the new Mac — USB drive, AirDrop, or any method you prefer.</li>
             <li>On the new Mac, install AccountCache from the App Store and open it.</li>
             <li>Open <strong>Settings → General → Restore from Backup…</strong> and restore from the file you copied.</li>
-            <li>Your complete database — all accounts, profiles, and settings — is restored immediately.</li>
+            <li>Your records and categories are restored immediately. Turn on iCloud Sync to rejoin your shared caches.</li>
           </ol>
 
           <div class="tip">
@@ -947,6 +1023,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   }
 
   .toc li { margin-bottom: 0.45rem; }
+  .toc-first { margin: 0 0 0.6rem; font-weight: 600; }
 
   .toc a {
     font-size: 0.88rem;
