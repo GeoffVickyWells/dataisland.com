@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Ordina Tutorials — DataIsland Software"
-  description="Step-by-step written tutorials for Ordina — adding drives, searching files, finding duplicates, smart filters, storage statistics, tags, and the Ordina Agent."
+  description="Step-by-step written tutorials for Ordina — adding drives, searching files, finding duplicates, smart filters, storage statistics, tags, and indexing your other Macs with Ordina Agent."
 >
 
   <div class="tut-wrap">
@@ -33,7 +33,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li><a href="#t6">Finding duplicates</a></li>
           <li><a href="#t7">Storage statistics</a></li>
           <li><a href="#t8">Tags</a></li>
-          <li><a href="#t9">Ordina Agent (AI search)</a></li>
+          <li><a href="#t9">Ordina Agent: drives on your other Macs</a></li>
           <li><a href="#t10">File detail panel</a></li>
           <li><a href="#t11">Settings reference</a></li>
         </ol>
@@ -234,8 +234,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h3>Running a duplicate scan</h3>
           <ol class="steps">
             <li>Click the <strong>Duplicates tab</strong> in the toolbar (two overlapping documents icon).</li>
-            <li>If no scan has been run, click <strong>Find Duplicates.</strong> Ordina compares files across all indexed drives using file size and content hash — only exact byte-for-byte duplicates are matched.</li>
-            <li>Results are grouped by confidence level using sub-tabs: <strong>100%</strong> (exact hash match), and lower confidence tiers for near-matches. Start with the 100% tab for safe deletions.</li>
+            <li>If no scan has been run, click <strong>Find Duplicates.</strong> Ordina compares files across all indexed drives by name and size, using the index (it doesn't open the files). Files with the same name and size are almost always the same file, but check before deleting anything important.</li>
+            <li>Results are grouped by confidence level using sub-tabs: <strong>100%</strong> (same name and size), and lower confidence tiers for near-matches. Start with the 100% tab for safe deletions.</li>
           </ol>
 
           <h3>Reviewing duplicate groups</h3>
@@ -311,43 +311,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- ─────────────────────────────────────────── Tutorial 9 -->
         <section class="tut-section" id="t9">
-          <h2><span class="num">9</span> Ordina Agent (AI Search)</h2>
-          <p class="goal">What you'll learn: using natural-language queries to search your files without needing to know exact filenames or extensions.</p>
+          <h2><span class="num">9</span> Ordina Agent: Drives on Your Other Macs</h2>
+          <p class="goal">What you'll learn: indexing the drives attached to another Mac (for example a Mac mini full of backups) and searching them from Ordina without a slow scan across the network.</p>
 
-          <p>The Ordina Agent translates natural-language questions into structured file searches. Instead of remembering that a file was called "Q3_report_final_v2.docx", you can ask "find Word documents from last quarter" and Ordina figures out the rest.</p>
+          <p>Scanning a big drive across the network can take days. Ordina Agent is a small free app that indexes the drives on the Mac they're attached to, in minutes, and saves each index on the drive itself. Ordina then loads that index in seconds. Loading Agent indexes is part of Ordina Pro.</p>
 
-          <h3>Opening the Agent panel</h3>
+          <h3>On the other Mac</h3>
           <ol class="steps">
-            <li>Click the <strong>sparkles (✦) button</strong> in the toolbar to open the AI Assistant panel on the right side.</li>
+            <li>Download <a href="/downloads/ordina-agent.dmg">Ordina Agent</a> (macOS 12 Monterey or later), or in Ordina go to <strong>Settings → Agent</strong> and click <strong>Copy Download Link</strong>.</li>
+            <li>Open the disk image and drag <strong>Ordina Agent</strong> to Applications, then open it.</li>
+            <li>Tick the drives to index (your home folder and each attached drive are listed) and click <strong>Index</strong>.</li>
+            <li>Leave it running until every drive says <strong>Done</strong>. The Mac stays awake while it works. A large backup drive with millions of files takes well under an hour.</li>
           </ol>
 
-          <h3>Natural-language search</h3>
-          <ol class="steps">
-            <li>Type a query in plain English. Examples:</li>
-          </ol>
-          <ul>
-            <li>"PDFs modified in the last two weeks"</li>
-            <li>"Large video files on my external drive"</li>
-            <li>"Images created this year"</li>
-            <li>"Word documents bigger than 10 MB"</li>
-            <li>"Files I haven't opened in more than a year"</li>
-          </ul>
-          <ol class="steps" start="2">
-            <li>The Agent parses your query and builds a filter. A preview of the interpreted filter appears below your query — confirming what Ordina understood.</li>
-            <li>Click <strong>Run Search</strong> (or press ↩). Results appear in the main search view.</li>
-            <li>If the results are not what you expected, refine your query. The Agent shows its interpretation so you can see exactly how it understood your request and adjust accordingly.</li>
+          <h3>On your Mac</h3>
+          <ol class="steps" start="5">
+            <li>Connect the drives: plug them in, or in Finder choose <strong>Network</strong>, open the other Mac, and connect to each shared drive.</li>
+            <li>In Ordina's sidebar the drives appear under <strong>Network Drives</strong> (or External Drives if plugged in). Click <strong>Load Index</strong> next to each one.</li>
+            <li>The first time, Ordina asks for access to the drive: click <strong>Grant Access</strong>. Ordina copies the index in, showing <em>Loading index…</em>; a very large index can take a few minutes over Wi-Fi.</li>
+            <li>The file count appears under the drive name and its files show up in your searches. Use <strong>Sources</strong> to search just that drive.</li>
           </ol>
 
-          <h3>Context-aware features</h3>
-          <p>The Agent also offers suggestions based on what you're currently doing:</p>
+          <h3>Keeping it up to date</h3>
           <ul>
-            <li>In the <strong>Search tab</strong> with results visible — the Agent can suggest related searches or refine the current query.</li>
-            <li>In the <strong>Duplicates tab</strong> — the Agent can help identify which duplicate copies are safest to remove based on location and date.</li>
-            <li>In the <strong>Statistics tab</strong> — the Agent can explain unusually large categories and suggest what to look at first.</li>
+            <li>Run Ordina Agent again on the other Mac whenever those drives change, then click <strong>Reload Index</strong> in Ordina.</li>
           </ul>
 
           <div class="tip">
-            The Ordina Agent works entirely locally — it parses your natural-language query on your Mac and converts it to a database filter. No file names or metadata are sent to any server.
+            Ordina never scans a network drive across the network, and Ordina Agent makes no network connections of its own: the index travels with the drive. On the other Mac, Desktop and Documents are skipped when they sync with iCloud, so files aren't counted twice.
           </div>
         </section>
 

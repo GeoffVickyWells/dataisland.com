@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const updated = "20 May 2026";
+const updated = "1 November 2026";
 ---
 
 <BaseLayout
@@ -24,7 +24,7 @@ const updated = "20 May 2026";
       <strong>Ordina does not collect personal data.</strong> All file index data is stored locally
       on your Mac. Ordina has no server, no account, and no analytics. The only outbound network
       activity is OAuth authentication for cloud drive providers (credentials stored in macOS
-      Keychain) and Bonjour service discovery on your local network.
+      Keychain) and, when you click Check for Updates, a version check with Apple's App Store.
     </p>
 
     <h2>What Ordina Indexes</h2>
@@ -80,28 +80,12 @@ const updated = "20 May 2026";
       <li><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy Policy (iCloud)</a></li>
     </ul>
 
-    <h3>Bonjour — Local Network Only</h3>
-    <p>
-      Ordina uses Apple's Bonjour protocol on your local network (LAN) for two purposes:
-    </p>
-    <ul>
-      <li><strong>Ordina Agent discovery</strong> — when the Ordina Agent is running on another
-        machine on your network, Ordina discovers it automatically via Bonjour. No data is sent
-        to the internet.</li>
-      <li><strong>Pro license broadcast</strong> (Ordina Pro only) — Ordina broadcasts a hash of
-        your purchase receipt on the LAN to enforce single-machine licensing. This hash contains
-        no personal information. No data is sent to the internet.</li>
-    </ul>
-    <p>
-      Bonjour traffic stays entirely within your local network. It is not routed to the internet.
-    </p>
-
     <h2>Ordina Agent</h2>
     <p>
-      The Ordina Agent is a command-line tool that runs on a remote machine on your local network.
-      It builds an index database and broadcasts its availability via Bonjour. All communication
-      between the Agent and Ordina occurs on your local network only. No data is sent to DataIsland
-      or to any internet server.
+      Ordina Agent is a separate free app that runs on another Mac. It indexes that Mac's drives
+      and saves each index on the drive itself, in a hidden <code>.ordina</code> folder. Ordina reads
+      that index when you connect the drive, directly or through Finder file sharing. Ordina Agent
+      makes no network connections of its own and sends nothing to DataIsland or any internet server.
     </p>
 
     <h2>Full Disk Access</h2>

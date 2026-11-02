@@ -32,7 +32,7 @@ const icon = "/images/products/ordina/icon.png";
     <div class="feature-body">
       <h2>Spotlight stops at your front door.</h2>
       <p>
-        macOS Spotlight doesn't index external drives, network shares, or cloud storage.
+        macOS Spotlight doesn't index external drives, your other Macs, or cloud storage.
         Finder search is slow and incomplete. If a file isn't on your internal drive,
         finding it means opening each drive, one at a time, and hoping.
       </p>
@@ -73,20 +73,14 @@ const icon = "/images/products/ordina/icon.png";
             <td class="check">✓</td>
           </tr>
           <tr>
-            <td>Network</td>
-            <td>SMB shares, NAS devices, AFP servers</td>
-            <td class="dash">—</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
             <td>Cloud</td>
             <td>Google Drive, OneDrive, Dropbox, iCloud Drive</td>
             <td class="dash">—</td>
             <td class="check">✓</td>
           </tr>
           <tr>
-            <td>Remote via Agent</td>
-            <td>Any Mac or NAS on your local network</td>
+            <td>Other Macs</td>
+            <td>Drives on your other Macs, indexed there by Ordina Agent</td>
             <td class="dash">—</td>
             <td class="check">✓</td>
           </tr>
@@ -99,20 +93,21 @@ const icon = "/images/products/ordina/icon.png";
   <section class="feature-section fade-in">
     <div class="feature-icon">🌐</div>
     <div class="feature-body">
-      <h2>Index a NAS or another Mac — no cable required.</h2>
+      <h2>Index the drives on your other Macs — in minutes, not days.</h2>
       <p>
-        For drives that can't be physically connected, the Ordina Agent is a lightweight
-        command-line tool that runs on the remote machine. It scans the drive, builds an
-        index, and announces itself on your local network. Ordina on your Mac discovers it
-        automatically.
+        Ordina Agent is a small free app for the Mac those drives are attached to, such as a
+        Mac mini full of backups. Open it, tick the drives, click Index. It indexes them right
+        there, far faster than scanning across the network, and saves each index on the drive.
       </p>
       <p>
-        Works with any Mac, including headless servers and NAS devices. No cloud. No VPN.
-        Just your local network.
+        Then connect to that Mac in Finder (or plug the drive in) and click Load Index in
+        Ordina Pro. Millions of files appear without a rescan. No cloud. No server. Nothing
+        to configure.
       </p>
-      <div class="code-block">
-        <code># Run on the remote machine:<br />ordina-agent /Volumes/MyNAS</code>
-      </div>
+      <p>
+        <a class="btn" href="/downloads/ordina-agent.dmg">Download Ordina Agent</a>
+        &nbsp;<span class="meta">macOS 12 Monterey or later · free</span>
+      </p>
     </div>
   </section>
 
@@ -123,8 +118,8 @@ const icon = "/images/products/ordina/icon.png";
       <h2>Search any way you think.</h2>
       <div class="mini-feature-grid">
         <div class="mini-feature">
-          <h3>Natural language</h3>
-          <p>Type "large video files from last month" — Ordina converts it to a structured filter automatically. On-device, no cloud.</p>
+          <h3>Quick filters</h3>
+          <p>One click finds every PDF, video, spreadsheet, or file over 500 MB across all your drives — straight from the index, in seconds.</p>
         </div>
         <div class="mini-feature">
           <h3>Saved filters</h3>
@@ -136,7 +131,7 @@ const icon = "/images/products/ordina/icon.png";
         </div>
         <div class="mini-feature">
           <h3>Duplicate finder</h3>
-          <p>Find exact duplicate files across every indexed drive using SHA-256 content hashing. Open in Finder, delete what you don't need.</p>
+          <p>Find copies of the same file across every indexed drive, matched by name and size, straight from the index. Open in Finder, check, delete what you don't need.</p>
         </div>
       </div>
     </div>
@@ -180,11 +175,10 @@ const icon = "/images/products/ordina/icon.png";
       <p>
         Ordina stores all index data locally in Application Support. There is no Ordina server.
         There is no account. Cloud drive credentials are stored only in your macOS Keychain.
-        The natural language filter runs on-device.
       </p>
       <p>
         The only outbound network activity: OAuth flows for cloud providers (in-app, credentials
-        stored in Keychain) and Bonjour for Agent discovery (LAN only, no internet).
+        stored in Keychain) and, when you click Check for Updates, a version check with the App Store.
       </p>
     </div>
   </section>
@@ -202,18 +196,16 @@ const icon = "/images/products/ordina/icon.png";
           <li>Full search: sort, filter, file types</li>
           <li>Tags and file notes</li>
           <li>Saved custom filters</li>
-          <li>Natural language filter assistant</li>
           <li>Duplicate detection</li>
           <li>Storage analysis</li>
         </ul>
       </div>
       <div class="pricing-card featured">
         <h3>Ordina Pro</h3>
-        <div class="price">$79.99</div>
+        <div class="price">$39.99</div>
         <div class="price-detail">one-time purchase · no subscription</div>
         <ul>
           <li>External drives (USB, Thunderbolt)</li>
-          <li>Network drives (SMB, AFP, NFS)</li>
           <li>Cloud drives (Google Drive, OneDrive, Dropbox, iCloud)</li>
           <li>Ordina Agent for remote drives</li>
           <li>Unlimited drives</li>
@@ -227,7 +219,7 @@ const icon = "/images/products/ordina/icon.png";
   <AppFAQ items={[
     {
       question: "How is Ordina different from Spotlight?",
-      answer: "Spotlight only indexes your internal drive. Ordina indexes every drive you add — external drives, network shares, cloud storage, and remote machines via the Ordina Agent — and searches them all simultaneously from a single interface. It also goes further with duplicate detection, storage analysis, saved filters, and file tagging."
+      answer: "Spotlight only indexes your internal drive. Ordina indexes every drive you add — external drives, cloud storage, and the drives on your other Macs via the Ordina Agent — and searches them all simultaneously from a single interface. It also goes further with duplicate detection, storage analysis, saved filters, and file tagging."
     },
     {
       question: "Does Ordina need to be running to search?",
@@ -235,7 +227,7 @@ const icon = "/images/products/ordina/icon.png";
     },
     {
       question: "How long does the initial index take?",
-      answer: "It depends on drive size and speed. A typical 500 GB internal SSD with around 200,000 files takes a few minutes. External and network drives vary with connection speed. You can search immediately — results appear as indexing progresses."
+      answer: "It depends on drive size and speed. A typical 500 GB internal SSD with around 200,000 files takes a few minutes. External drives vary with connection speed. Drives on your other Macs are indexed there by Ordina Agent, then load in Ordina without a rescan. You can search immediately — results appear as indexing progresses."
     },
     {
       question: "What happens if I disconnect a drive?",
@@ -247,7 +239,7 @@ const icon = "/images/products/ordina/icon.png";
     },
     {
       question: "Does Ordina send my files or file names anywhere?",
-      answer: "No. All index data is stored locally on your Mac in Application Support. The natural language filter runs entirely on-device. The only outbound network activity is OAuth for cloud provider sign-in (credentials stored in your Keychain) and Bonjour for Agent discovery on your local network."
+      answer: "No. All index data is stored locally on your Mac in Application Support. The only outbound network activity is OAuth for cloud provider sign-in (credentials stored in your Keychain) and, when you click Check for Updates, a version check with the App Store."
     },
     {
       question: "Can I use Ordina on more than one Mac?",
@@ -255,7 +247,7 @@ const icon = "/images/products/ordina/icon.png";
     },
     {
       question: "Is there a subscription?",
-      answer: "No. Ordina Pro is a one-time purchase of $79.99 — yours to keep, including all future updates to the current major version. No renewal fees, no account required."
+      answer: "No. Ordina Pro is a one-time purchase of $39.99 — yours to keep, including all future updates to the current major version. No renewal fees, no account required."
     },
   ]} />
 
