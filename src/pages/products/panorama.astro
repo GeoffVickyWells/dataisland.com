@@ -50,13 +50,13 @@ const icon = "/images/products/panorama/icon.png";
   <section class="feature-section fade-in alt">
     <div class="feature-icon">📡</div>
     <div class="feature-body">
-      <h2>35+ live data sources, organised into sections.</h2>
-      <p>Every section in a Panorama profile is pulled fresh from its official source — not a stale database we maintain.</p>
+      <h2>30+ public data sources, organised into sections.</h2>
+      <p>Every section in a Panorama profile is fetched from its official source when you add or refresh a location, with the source and year shown beside each figure.</p>
       <div class="source-grid">
         <div class="source-card">
           <div class="source-cat">People</div>
           <ul>
-            <li>US Census — population, age, income, education</li>
+            <li>US Census &amp; Statistics Canada — population, age, income, housing, education</li>
             <li>Pew Research — religion &amp; faith community breakdown</li>
             <li>Movement Advancement Project — LGBTQ+ state equality</li>
             <li>Equaldex — linked for LGBTQ+ legal rights by country</li>
@@ -65,7 +65,7 @@ const icon = "/images/products/panorama/icon.png";
         <div class="source-card">
           <div class="source-cat">Safety</div>
           <ul>
-            <li>FBI / NIBRS — violent &amp; property crime rates</li>
+            <li>FBI, city police &amp; Statistics Canada — crime rates</li>
             <li>FEMA National Risk Index — 18 natural hazard ratings</li>
             <li>FEMA flood zone designation</li>
             <li>USGS earthquake history (200 km, 1 year)</li>
@@ -74,8 +74,8 @@ const icon = "/images/products/panorama/icon.png";
         <div class="source-card">
           <div class="source-cat">Health &amp; Environment</div>
           <ul>
-            <li>CDC PLACES — 36 chronic health metrics by tract</li>
-            <li>EPA AirToxScreen — air toxics cancer &amp; respiratory risk</li>
+            <li>CDC PLACES — chronic conditions &amp; lifestyle health by county</li>
+            <li>Open-Meteo — climate history, extremes &amp; sunshine</li>
             <li>WHO — healthy life expectancy, UHC coverage index</li>
             <li>Open-Meteo — PM2.5 air quality, UV index</li>
           </ul>
@@ -85,16 +85,14 @@ const icon = "/images/products/panorama/icon.png";
           <ul>
             <li>BEA — metro per capita personal income</li>
             <li>BLS — unemployment rate &amp; 12-month trend</li>
-            <li>FRED — metro real GDP trend &amp; 5-year growth</li>
             <li>EIA — residential electricity rate by state</li>
           </ul>
         </div>
         <div class="source-card">
           <div class="source-cat">Liveability</div>
           <ul>
-            <li>Walk Score — walkability, transit, bikeability</li>
-            <li>OpenStreetMap — schools, hospitals, parks, grocery, dining</li>
-            <li>Teleport — quality-of-life city scores (17 categories)</li>
+            <li>Apple Maps — schools, hospitals, parks, grocery, transit, dining</li>
+            <li>Tourism — attractions, nature reserves, viewpoints</li>
             <li>Wikipedia — location overview &amp; background</li>
           </ul>
         </div>
@@ -103,7 +101,7 @@ const icon = "/images/products/panorama/icon.png";
           <ul>
             <li>World Bank — GDP, life expectancy, infrastructure</li>
             <li>IMF — GDP growth, inflation, unemployment</li>
-            <li>ILO / OECD — global wages &amp; labour data</li>
+            <li>OECD — average wages</li>
             <li>Eurostat (EU) · UK Police · Statistics Canada</li>
           </ul>
         </div>
@@ -193,14 +191,11 @@ const icon = "/images/products/panorama/icon.png";
     <div class="feature-body">
       <h2>Your searches stay on your device.</h2>
       <p>
-        Panorama calls government and public data APIs directly from your Mac — there is no
-        Panorama server in the middle. Saved profiles are stored locally and synced via your
-        own iCloud. DataIsland never sees which locations you search.
-      </p>
-      <p>
-        API keys for optional services (Walk Score, FBI Crime, BEA, FRED) are stored only in
-        your macOS Keychain. The AI summary uses Apple Intelligence on-device or your own
-        OpenRouter key — no key is bundled in the app.
+        Panorama fetches public data for the places you choose and keeps your saved locations
+        on your Mac. There's no account and no analytics. A few US government requests pass
+        through a small relay that forwards them and keeps nothing, so they work even behind
+        VPNs. The AI summary uses Apple Intelligence on your Mac, or your own OpenRouter key
+        if you prefer a cloud model.
       </p>
     </div>
   </section>
@@ -210,14 +205,14 @@ const icon = "/images/products/panorama/icon.png";
     <h2>Simple, honest pricing.</h2>
     <div class="pricing-cards">
       <div class="pricing-card">
-        <h3>Free</h3>
+        <h3>Free Trial</h3>
         <div class="price">$0</div>
-        <div class="price-detail">forever · no time limit</div>
+        <div class="price-detail">10 days · everything included</div>
         <ul>
-          <li>Search any location</li>
-          <li>Census, climate, and Wikipedia data</li>
-          <li>USGS earthquakes</li>
-          <li>5 saved locations</li>
+          <li>Every feature and data source for 10 days</li>
+          <li>No account, no card, nothing to cancel</li>
+          <li>Afterwards your saved locations, reports and exports stay readable</li>
+          <li>Upgrade to keep adding cities, refreshing data and using AI</li>
         </ul>
       </div>
       <div class="pricing-card featured">
@@ -231,9 +226,9 @@ const icon = "/images/products/panorama/icon.png";
           <li>In-Depth PDF Report</li>
           <li>10 interactive chart views</li>
           <li>Drag-and-drop chart export</li>
-          <li>FEMA, CDC, FBI, BLS, BEA, FRED, EIA</li>
+          <li>FEMA, CDC, FBI, BLS, BEA, EIA</li>
           <li>LGBTQ+, Religion, Social Climate sections</li>
-          <li>International — EU, UK, Canada</li>
+          <li>International — EU, UK, and every Canadian town</li>
           <li>Unlimited saved locations</li>
           <li>Siri &amp; Apple Intelligence integration</li>
           <li>Buy once · yours forever</li>
@@ -246,11 +241,11 @@ const icon = "/images/products/panorama/icon.png";
   <AppFAQ items={[
     {
       question: "Where does the data come from?",
-      answer: "Every data source in Panorama is a live call to an official public API — the US Census Bureau, CDC, FBI/NIBRS, FEMA, BLS, BEA, FRED, EIA, USGS, EPA EJScreen, Walk Score, World Bank, Statistics Canada, and others. Panorama assembles the results; it does not maintain its own database of location data."
+      answer: "From official and well-known public sources — the US Census Bureau, CDC, FBI, FEMA, BLS, BEA, EIA, USGS, Statistics Canada, Eurostat, UK police data, the World Bank, IMF, OECD, WHO, Open-Meteo, Pew Research, Wikipedia and Apple Maps. Each figure shows its source and year. Panorama assembles the results when you add or refresh a location; it does not keep its own database of location data."
     },
     {
       question: "Do I need to sign up or create an account?",
-      answer: "No. Panorama has no account. Some optional data sources (Walk Score, FBI Crime, BEA, FRED) require free API keys from those providers — you add your key in Settings and it is stored only in your macOS Keychain. DataIsland never receives your keys."
+      answer: "No. Panorama has no account and needs no API keys — every data source works out of the box. The only key you might add is your own OpenRouter key, if you want cloud AI instead of Apple Intelligence."
     },
     {
       question: "Which AI models does Panorama support?",
@@ -258,15 +253,15 @@ const icon = "/images/products/panorama/icon.png";
     },
     {
       question: "Does Panorama work outside the US?",
-      answer: "Yes. International locations use World Bank country indicators, Numbeo cost-of-living data, Teleport city scores, and WHO health data. UK locations add Met Police crime statistics. Canadian locations add Statistics Canada demographics. US-only sources (FEMA, CDC, BLS, BEA, FRED) are omitted automatically for non-US addresses."
+      answer: "Yes. Every location gets climate, air quality, earthquakes, nearby places, Wikipedia, and World Bank, IMF and WHO country figures. Canadian locations add Statistics Canada figures for the town itself — all 5,161 municipalities, from big cities to small towns — plus police-reported crime. UK locations add police crime statistics; EU locations add Eurostat regional figures. US-only sections are left out automatically elsewhere."
     },
     {
       question: "Why do some sections show no data or an error?",
-      answer: "Most Panorama data sources are US government APIs. Some block certain VPNs, proxies, or network tools like Cloudflare WARP. If you see errors in the FEMA, Crime, EIA, or BEA sections, try disabling any active VPN or proxy and tapping Retry. Each section has its own Retry button."
+      answer: "Some sources only cover certain countries, so those sections are left out. If a section shows an error, the source may be busy or blocked by a VPN or network filter — each section has its own Retry button."
     },
     {
       question: "How current is the data?",
-      answer: "Data is fetched live each time you search a location. Census data reflects the most recent ACS 5-year estimates. Crime data reflects the latest NIBRS release (typically one year behind). FRED, BLS, and BEA data reflects their most recent published releases. Climate and environmental data is updated annually by the respective agencies."
+      answer: "Figures are fetched when you add or refresh a location, and each shows its year. US figures use the latest Census ACS 5-year estimates and the FBI's latest full year of crime data; Canadian towns use the 2021 Census; other sources use their latest published release."
     },
     {
       question: "Can I export data out of Panorama?",

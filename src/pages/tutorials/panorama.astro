@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Panorama Tutorials — DataIsland Software"
-  description="Step-by-step guides for Panorama — the Data / Views / Insights layout, charts, AI Verdict, Research Q&A, City Comparison, In-Depth PDF Report, API keys, and Siri."
+  description="Step-by-step guides for Panorama — the Data / Views / Insights layout, charts, AI Verdict, Research Q&A, City Comparison, In-Depth PDF Report, where Panorama works, and Siri."
 >
 
   <div class="tut-wrap">
@@ -29,7 +29,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li><a href="#t2">Data / Views / Insights layout</a></li>
           <li><a href="#t3">Saving locations</a></li>
           <li><a href="#t4">Data sections reference</a></li>
-          <li><a href="#t5">Adding API keys</a></li>
+          <li><a href="#t5">Where Panorama works</a></li>
           <li><a href="#t6">AI features</a></li>
           <li><a href="#t7">Refreshing data</a></li>
           <li><a href="#t8">Errors &amp; retrying</a></li>
@@ -101,7 +101,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ul>
 
           <h3>International locations</h3>
-          <p>US-only sections (FEMA, CDC, BLS, BEA, FRED, FBI Crime) are automatically omitted for non-US locations. International profiles use World Bank, IMF, ILO, OECD, WHO, and Teleport data. UK addresses add Police UK crime statistics; EU cities add Eurostat; Canadian cities add Statistics Canada.</p>
+          <p>US-only sections (FEMA, CDC, BLS, BEA, FBI crime) are left out automatically for other countries. Every location gets climate, air quality, earthquakes, nearby places and country figures from the World Bank, IMF, OECD and WHO. Canadian places add Statistics Canada figures for the town itself; UK places add police crime statistics; EU places add Eurostat regional figures. See Tutorial 5.</p>
         </section>
 
         <!-- ─────────────────────────────────────────── Tutorial 3 -->
@@ -125,7 +125,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <p>Switch to <strong>Insights</strong> in the navigation rail. Checkboxes appear next to each saved location. Tick up to five cities — they become available in the Compare tab.</p>
 
           <div class="tip">
-            <strong>Free plan:</strong> Up to 5 saved locations. Panorama Pro removes the limit.
+            <strong>Free trial:</strong> Panorama is fully unlocked for 10 days. After that, your saved locations, reports and exports stay readable; adding cities, refreshing data and the AI features need Panorama Pro, a one-time purchase.
           </div>
         </section>
 
@@ -146,102 +146,77 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               <tr>
                 <td>Overview</td>
                 <td>Wikipedia</td>
-                <td>Location summary, history, notable facts</td>
+                <td>Summary, history and character of the place</td>
               </tr>
               <tr>
-                <td>Demographics</td>
-                <td>US Census (ACS 5-year)</td>
-                <td>Population, median age, household income, education</td>
+                <td>Demographics, Housing, Employment, Education</td>
+                <td>US Census Bureau (ACS 5-year) · Statistics Canada · Eurostat</td>
+                <td>Population, age, income, home values, rent, homeownership, unemployment, degrees</td>
               </tr>
               <tr>
-                <td>Ethnicity</td>
-                <td>US Census (ACS 5-year)</td>
-                <td>Racial and ethnic composition percentages</td>
+                <td>Race &amp; Ethnicity, Community Profile</td>
+                <td>US Census Bureau (ACS 5-year)</td>
+                <td>Ethnic composition, foreign-born, veterans, vehicles, household make-up (US)</td>
               </tr>
               <tr>
                 <td>Religion</td>
-                <td>Association of Religion Data Archives</td>
-                <td>Faith community breakdown by county</td>
+                <td>Pew Research Center</td>
+                <td>Religious composition by state (US)</td>
               </tr>
               <tr>
                 <td>LGBTQ+</td>
-                <td>Movement Advancement Project</td>
-                <td>State-level inclusivity score and policy breakdown</td>
+                <td>Movement Advancement Project · Pew · Gallup · link to Equaldex</td>
+                <td>State equality rating (US), social acceptance by country, and a link to each country's laws</td>
               </tr>
               <tr>
-                <td>Hazard Risk</td>
+                <td>Natural Hazard Risk</td>
                 <td>FEMA National Risk Index</td>
-                <td>Composite risk score, 18 hazard ratings, flood zone</td>
+                <td>Composite risk rating, hazard ratings and flood zone (US)</td>
               </tr>
               <tr>
-                <td>Crime</td>
-                <td>FBI / NIBRS</td>
-                <td>Violent crime rate, property crime rate per 100k</td>
+                <td>Crime Statistics</td>
+                <td>FBI · city police open data · Statistics Canada · UK police · Eurostat</td>
+                <td>Violent and property crime (US state and 8 large cities), total crime (Canada), monthly crimes (UK), EU country figures</td>
               </tr>
               <tr>
-                <td>Earthquakes</td>
+                <td>Earthquake Activity</td>
                 <td>USGS</td>
-                <td>Significant earthquakes in the past 30 years within 100 km</td>
+                <td>Earthquakes within 200 km in the past year</td>
               </tr>
               <tr>
-                <td>Health</td>
+                <td>Community Health</td>
                 <td>CDC PLACES</td>
-                <td>36 chronic condition prevalence rates by census tract</td>
+                <td>Chronic conditions and lifestyle health by county (US)</td>
               </tr>
               <tr>
-                <td>Environment</td>
-                <td>EPA EJScreen</td>
-                <td>Air quality, particulates, ozone, environmental burden percentile</td>
-              </tr>
-              <tr>
-                <td>Income</td>
-                <td>BEA Regional Accounts</td>
-                <td>Per capita personal income by metro area</td>
-              </tr>
-              <tr>
-                <td>Employment</td>
-                <td>BLS</td>
-                <td>Unemployment rate by county or metro</td>
-              </tr>
-              <tr>
-                <td>Economy</td>
-                <td>FRED (St. Louis Fed)</td>
-                <td>Metro real GDP trend label, 5-year growth rate</td>
-              </tr>
-              <tr>
-                <td>Electricity</td>
-                <td>EIA</td>
-                <td>Average residential electricity rate (¢ per kWh) by state</td>
-              </tr>
-              <tr>
-                <td>Walkability</td>
-                <td>Walk Score</td>
-                <td>Walk Score, Transit Score, Bike Score</td>
-              </tr>
-              <tr>
-                <td>Amenities</td>
-                <td>OpenStreetMap / Overpass</td>
-                <td>Nearby schools, hospitals, parks, grocery stores, cafes</td>
-              </tr>
-              <tr>
-                <td>City Scores</td>
-                <td>Teleport</td>
-                <td>Quality-of-life scores across 17 categories</td>
+                <td>Global Health</td>
+                <td>WHO</td>
+                <td>Healthy life expectancy, universal health coverage</td>
               </tr>
               <tr>
                 <td>Climate</td>
-                <td>Open-Meteo / NOAA</td>
-                <td>Temperatures, precipitation, humidity, UV, extreme heat days</td>
+                <td>Open-Meteo</td>
+                <td>10-year averages, extremes, rainfall, snow, sunshine, UV</td>
               </tr>
               <tr>
-                <td>Cost of Living</td>
-                <td>Numbeo</td>
-                <td>City cost-of-living index, quality-of-life index (international)</td>
+                <td>Air Quality</td>
+                <td>Open-Meteo</td>
+                <td>Current PM2.5, ozone and nitrogen dioxide</td>
               </tr>
               <tr>
-                <td>Country</td>
-                <td>World Bank</td>
-                <td>GDP per capita, life expectancy, literacy rate (international)</td>
+                <td>Employment Trend, Regional Income, Electricity</td>
+                <td>BLS · BEA · EIA</td>
+                <td>State unemployment trend, metro income, electricity rate (US)</td>
+              </tr>
+              <tr>
+                <td>Country Context, Economy</td>
+                <td>World Bank · IMF · OECD</td>
+                <td>GDP, growth, inflation, wages, internet and electricity access</td>
+              </tr>
+              <tr>
+                <td>Nearby Amenities, Tourism</td>
+                <td>Apple Maps</td>
+                <td>Hospitals, schools, groceries, parks, transit, attractions, viewpoints</td>
               </tr>
             </tbody>
           </table>
@@ -249,48 +224,29 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- ─────────────────────────────────────────── Tutorial 5 -->
         <section class="tut-section" id="t5">
-          <h2><span class="num">5</span> Adding API Keys</h2>
-          <p class="goal">What you'll learn: which data sources need a key, how to get one, and where to enter it in Panorama.</p>
+          <h2><span class="num">5</span> Where Panorama Works</h2>
+          <p class="goal">What you'll learn: how much detail to expect in each country.</p>
 
-          <p>Most of Panorama's data sources are fully open — no key required. A few sources require a free API key from the data provider. Panorama never bundles developer keys; you supply your own so your usage stays private and tied to your account.</p>
-
-          <h3>Which sources need a key?</h3>
+          <p>Panorama works for any city or town in the world. How local the figures are depends on what each country publishes. Every figure shows its source and year, and a section is left out when a source doesn't cover a place.</p>
 
           <table>
             <thead>
               <tr>
-                <th>Data source</th>
-                <th>Key required?</th>
-                <th>Cost</th>
+                <th>Where</th>
+                <th>Local figures</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>US Census, FEMA, CDC, USGS, EPA, BLS, FRED, EIA, Wikipedia, OpenStreetMap</td><td>No</td><td>Free</td></tr>
-              <tr><td>Walk Score</td><td>Yes</td><td>Free tier available</td></tr>
-              <tr><td>FBI Crime (NIBRS)</td><td>Yes</td><td>Free</td></tr>
-              <tr><td>BEA Regional Income</td><td>Yes</td><td>Free</td></tr>
-              <tr><td>OpenRouter (AI summaries)</td><td>Yes</td><td>Pay per use · from ~$0.001/summary</td></tr>
+              <tr><td>United States</td><td>Metro-area Census figures, FBI state crime (plus 8 large cities), FEMA hazards and flood zones, CDC health by county, BLS, BEA and EIA.</td></tr>
+              <tr><td>Canada</td><td>Every municipality, from cities to small towns: 2021 Census population, age, income, home values, rent and education. Within the 15 largest metro areas, the latest annual estimates. Police-reported crime for the metro area or the province.</td></tr>
+              <tr><td>United Kingdom</td><td>Monthly police-reported crime near the location.</td></tr>
+              <tr><td>European Union</td><td>Eurostat regional population, GDP, unemployment and country crime figures.</td></tr>
+              <tr><td>Everywhere</td><td>Climate, air quality, earthquakes, nearby places, Wikipedia, and World Bank, IMF, OECD and WHO country figures.</td></tr>
             </tbody>
           </table>
 
-          <h3>Getting and entering a key</h3>
-          <ol class="steps">
-            <li>Open <strong>Panorama → Settings</strong> (⌘,).</li>
-            <li>Select the <strong>Data Sources</strong> tab.</li>
-            <li>Find the source you want to enable and click <strong>Get API Key</strong> — this opens the provider's sign-up page in your browser.</li>
-            <li>Sign up for a free account on the provider's website and copy your API key.</li>
-            <li>Return to Panorama Settings, paste the key into the field, and press Return.</li>
-            <li>The key is saved to your macOS Keychain. Panorama will use it the next time that section loads.</li>
-          </ol>
-
           <div class="tip">
-            <strong>Walk Score:</strong> Go to <strong>walkscore.com/professional/api.php</strong> and request a free API key. Keys are approved manually — allow 1–2 business days.
-          </div>
-          <div class="tip">
-            <strong>FBI Crime:</strong> Go to <strong>api.data.gov/signup</strong> and register. Your key is emailed immediately and works for FBI NIBRS and many other government APIs.
-          </div>
-          <div class="tip">
-            <strong>BEA:</strong> Go to <strong>apps.bea.gov/api/signup</strong>. Registration is instant and the key is emailed within minutes.
+            No API keys are needed. The only key you might add is your own OpenRouter key, if you'd rather use a cloud AI model than Apple Intelligence (see Tutorial 6).
           </div>
         </section>
 
@@ -364,7 +320,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </ol>
 
           <div class="tip">
-            Government data (Census, BEA, BLS, FRED) updates on annual or quarterly schedules — you generally don't need to refresh more than once per month to see new data. Environmental and climate data updates less frequently still.
+            Government data (Census, BEA, BLS) updates on annual or quarterly schedules — you generally don't need to refresh more than once per month to see new data. Environmental and climate data updates less frequently still.
           </div>
         </section>
 
@@ -405,11 +361,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 <td>Secure connection failed</td>
                 <td>General TLS failure — may be a temporary server issue or a network tool not detected above.</td>
                 <td>Tap Retry. If it keeps failing, check VPN, proxy, and Private Relay settings.</td>
-              </tr>
-              <tr>
-                <td>API key required</td>
-                <td>This section needs a key you haven't added yet.</td>
-                <td>Open Settings → Data Sources and add the key. See Tutorial 5.</td>
               </tr>
               <tr>
                 <td>Service unavailable</td>

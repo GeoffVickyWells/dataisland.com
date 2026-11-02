@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const updated = "13 June 2026";
+const updated = "2 November 2026";
 ---
 
 <BaseLayout
@@ -21,105 +21,107 @@ const updated = "13 June 2026";
 
     <h2>Summary</h2>
     <p>
-      <strong>Panorama does not collect personal data.</strong> Location searches and profile data
-      stay on your device. Panorama has no server, no account, and no analytics. All API calls
-      are made directly from your Mac to the data providers — DataIsland is not in the middle.
+      <strong>Panorama does not collect personal data.</strong> It has no account, no analytics
+      and no advertising. Your saved locations, profiles and reports are stored only on your Mac.
+      To fetch figures for a place, Panorama sends that place's name or coordinates to public data
+      services; a few of those requests pass through a small DataIsland relay, described below,
+      which forwards them and keeps nothing.
     </p>
 
     <h2>Location Searches</h2>
     <p>
-      When you search for a location, Panorama sends your search query to a geocoding service
-      (Apple Maps or a compatible geocoder) to convert it to coordinates. This is the same
-      geocoding service used by other Apple apps. DataIsland does not receive or log your searches.
-    </p>
-    <p>
-      Coordinates are then sent directly from your Mac to the relevant data APIs (Census Bureau,
-      FEMA, CDC, etc.). DataIsland never sees which locations you search or which profiles you view.
+      When you search for a place, Panorama sends what you type to OpenStreetMap's Nominatim
+      geocoding service to find the place and its coordinates. Nominatim's own privacy policy
+      governs that request.
     </p>
 
-    <h2>Saved Profiles</h2>
+    <h2>Fetching Data for a Location</h2>
     <p>
-      Saved location profiles are stored locally in Application Support and, if iCloud Drive
-      is enabled on your Mac, synced via your personal iCloud account. DataIsland has no access
-      to your iCloud storage. Profiles contain the data fetched from public APIs and any AI
-      summaries you generate.
+      When you add or refresh a location, Panorama sends only what each data service needs —
+      coordinates, a place or country name, a state or province code, or a county code — directly
+      from your Mac to the services listed below. No personal information is included.
+    </p>
+    <p>
+      Requests to a few US government services (the Census Bureau geocoder, FEMA hazard and flood
+      data, EIA, BEA, and FBI and city police crime data) go through a relay that DataIsland runs on Cloudflare
+      Workers, because those services often fail behind VPNs and network filters. The relay
+      receives the same parameters (for example a location's coordinates for the flood-zone
+      lookup), forwards the request, and returns the answer. It does not store requests or keep
+      logs of them, and it cannot tell who you are. Cloudflare processes the traffic under its
+      own privacy policy.
     </p>
 
-    <h2>API Keys</h2>
+    <h2>Saved Locations</h2>
     <p>
-      Optional API keys (Walk Score, FBI Crime, BEA, FRED, OpenRouter) are stored only in your
-      macOS Keychain. They are never transmitted to DataIsland. Each key is sent only to the
-      corresponding provider's API when that data section loads.
+      Saved locations, the figures fetched for them, notes and AI summaries are stored locally
+      on your Mac, in Panorama's own container. They are not uploaded to DataIsland or synced
+      to any cloud service.
     </p>
 
     <h2>AI Summaries</h2>
 
     <h3>Apple Intelligence (on-device)</h3>
     <p>
-      When you use Apple Intelligence for AI summaries, all processing happens on your device.
-      No location data or profile content is sent to Apple's servers or to DataIsland.
+      When you use Apple Intelligence, all processing happens on your Mac. No location data or
+      profile content is sent to Apple or to DataIsland.
     </p>
 
     <h3>OpenRouter (optional cloud model)</h3>
     <p>
-      When you use OpenRouter, Panorama sends a structured summary of your location profile
-      (the assembled facts — not raw API responses) to OpenRouter's API using your own API key.
-      This is governed by OpenRouter's privacy policy and the policy of the model provider
-      you select (OpenAI, Anthropic, Google, etc.). DataIsland does not receive this data.
+      If you choose to use OpenRouter, Panorama sends a summary of the location's figures (the
+      assembled facts, not raw data) and your question to OpenRouter using your own OpenRouter
+      key, which is stored in your macOS Keychain. OpenRouter's privacy policy and that of the
+      model provider you select govern this. DataIsland does not receive it.
     </p>
 
-    <h2>Third-Party Data APIs</h2>
+    <h2>Data Services</h2>
     <p>
-      Panorama calls the following public data APIs directly from your device. Each provider's
-      own privacy policy governs their handling of API requests:
+      Panorama fetches figures from the following public services. Each provider's privacy
+      policy governs its handling of requests:
     </p>
     <ul>
       <li>US Census Bureau — census.gov</li>
-      <li>FEMA — fema.gov</li>
+      <li>FEMA (National Risk Index and flood zones, via Esri ArcGIS) — fema.gov</li>
       <li>CDC PLACES — cdc.gov</li>
-      <li>FBI / NIBRS — crime-data-explorer.fr.cloud.gov</li>
+      <li>FBI Crime Data Explorer — api.usa.gov</li>
+      <li>City police open data (Socrata) — for 8 large US cities</li>
       <li>BEA — bea.gov</li>
       <li>BLS — bls.gov</li>
-      <li>FRED (Federal Reserve Bank of St. Louis) — fred.stlouisfed.org</li>
       <li>EIA — eia.gov</li>
       <li>USGS — earthquake.usgs.gov</li>
-      <li>EPA EJScreen — ejscreen.epa.gov</li>
-      <li>Walk Score — walkscore.com</li>
-      <li>OpenStreetMap / Overpass API — openstreetmap.org</li>
-      <li>Teleport — teleport.org</li>
-      <li>World Bank — api.worldbank.org</li>
-      <li>Numbeo — numbeo.com</li>
-      <li>Wikipedia — wikipedia.org</li>
-      <li>WHO — who.int</li>
       <li>Statistics Canada — statcan.gc.ca</li>
-      <li>UK Police API — data.police.uk</li>
-      <li>Open-Meteo — open-meteo.com</li>
+      <li>UK police data — data.police.uk</li>
+      <li>Eurostat — ec.europa.eu/eurostat</li>
+      <li>World Bank — worldbank.org</li>
+      <li>IMF — imf.org</li>
+      <li>OECD — oecd.org</li>
+      <li>WHO — who.int</li>
+      <li>Open-Meteo (climate and air quality) — open-meteo.com</li>
+      <li>Wikipedia — wikipedia.org</li>
+      <li>Apple Maps (nearby places) — apple.com</li>
+      <li>OpenStreetMap Nominatim (search) — openstreetmap.org</li>
     </ul>
-    <p>
-      Panorama sends only the minimum required parameters (coordinates, state code, or county FIPS)
-      to each API. No personal information is included in these requests.
-    </p>
 
     <h2>Network Interference Detection</h2>
     <p>
-      When a government API fails with a TLS error, Panorama may contact Cloudflare's CDN trace
-      endpoint (cloudflare.com/cdn-cgi/trace) to detect whether Cloudflare WARP is active, and
-      Apple's egress IP list (mask-api.icloud.com) to detect iCloud Private Relay. These checks
-      help Panorama give you a specific, actionable error message. No personal data is included
-      in these requests; only your outbound IP address is involved, which is inherent to any
-      internet request.
+      When a government service fails with a secure-connection error, Panorama may contact
+      Cloudflare's trace endpoint (cloudflare.com/cdn-cgi/trace) to detect whether Cloudflare
+      WARP is active, and Apple's egress list (mask-api.icloud.com) to detect iCloud Private
+      Relay, so it can show you a specific fix. No personal data is included in these requests.
     </p>
 
-    <h2>Analytics and Crash Reporting</h2>
+    <h2>Crash Reports</h2>
     <p>
-      Panorama does not use third-party analytics or crash reporting services. DataIsland does
-      not receive any usage telemetry, crash logs, or diagnostics from Panorama.
+      Panorama uses Apple's MetricKit to keep crash and hang reports in a folder on your Mac so
+      you can send them to us if you ask for support. Nothing is sent automatically. If you have
+      chosen to share analytics with developers in macOS settings, Apple also provides anonymous
+      crash reports to DataIsland through App Store Connect.
     </p>
 
     <h2>What Panorama Does Not Do</h2>
     <ul>
-      <li>Does not transmit your location searches to DataIsland</li>
-      <li>Does not store profile data on DataIsland servers</li>
+      <li>Does not send your searches or saved locations to DataIsland</li>
+      <li>Does not keep any record of requests on the relay</li>
       <li>Does not require an account or login</li>
       <li>Does not use advertising SDKs or share data with advertisers</li>
       <li>Does not collect analytics or usage statistics</li>
