@@ -407,36 +407,29 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <!-- ─────────────────────────────────────────── Tutorial 10 -->
         <section class="tut-section" id="t10">
           <h2><span class="num">10</span> Settings Reference</h2>
-          <p class="goal">A complete guide to every setting in Panorama.</p>
+          <p class="goal">A guide to every setting in Panorama.</p>
 
-          <p>Settings has four tabs: <strong>General, Data Sources, AI,</strong> and <strong>About.</strong></p>
+          <p>Open <strong>Panorama → Settings</strong> (⌘,). Settings has three tabs: <strong>Appearance, AI,</strong> and <strong>Data.</strong></p>
 
-          <h3>General</h3>
+          <h3>Appearance</h3>
           <ul>
-            <li><strong>Default country</strong> — sets the geocoder's default country bias so searches for ambiguous names (e.g. "Springfield") prefer the right country.</li>
-            <li><strong>Units</strong> — Imperial or Metric. Affects temperature display in the Climate section.</li>
-            <li><strong>Show section headers</strong> — toggle section titles in the profile view on or off.</li>
-          </ul>
-
-          <h3>Data Sources</h3>
-          <ul>
-            <li><strong>Enable / disable sections</strong> — toggle any data source off if you don't need it. Disabled sources are skipped and don't count against your API quota.</li>
-            <li><strong>API keys</strong> — enter keys for Walk Score, FBI Crime, BEA, and OpenRouter. Each key is stored in macOS Keychain, never in the app bundle.</li>
-            <li><strong>Get API Key buttons</strong> — open the provider's registration page directly from Settings.</li>
+            <li><strong>Color Theme</strong> — choose one of Panorama's themes. Each swatch previews the navigation rail, sidebar and main panel.</li>
           </ul>
 
           <h3>AI</h3>
           <ul>
-            <li><strong>AI engine</strong> — choose Apple Intelligence (on-device, M-chip only) or OpenRouter (cloud, any model).</li>
-            <li><strong>OpenRouter model</strong> — select from any model available on OpenRouter. The dropdown refreshes from the OpenRouter model list when you tap it.</li>
-            <li><strong>OpenRouter API key</strong> — stored in Keychain. Get a key at openrouter.ai.</li>
-            <li><strong>Auto-generate summaries</strong> — if on, the AI Summary is generated automatically when a profile finishes loading. Off by default to save API credits.</li>
+            <li><strong>AI Provider</strong> — <em>Auto</em> uses Apple Intelligence when your Mac supports it and OpenRouter otherwise; <em>Apple Intelligence</em> runs everything on your Mac; <em>OpenRouter</em> uses a cloud model you choose.</li>
+            <li><strong>OpenRouter key and model</strong> — only needed for OpenRouter. The key is stored in your macOS Keychain; OpenRouter charges a few cents for what you use.</li>
           </ul>
 
-          <h3>About</h3>
+          <h3>Data</h3>
           <ul>
-            <li>App version, Pro license status, and links to the DataIsland website and support.</li>
-            <li><strong>Restore Purchase</strong> — use this if you purchased Pro on another Mac and need to activate it on this one.</li>
+            <li><strong>Data Sources</strong> — turn any source off if you don't need it. Turned-off sources are skipped the next time a location loads or refreshes. No source needs an API key.</li>
+          </ul>
+
+          <h3>Licence menu</h3>
+          <ul>
+            <li>Shows your trial or purchase status, opens the purchase screen, and has <strong>Restore Purchases</strong> for a Mac where you've already bought Panorama.</li>
           </ul>
         </section>
 
