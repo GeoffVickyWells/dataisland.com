@@ -43,8 +43,8 @@ const updated = "2 November 2026";
     </p>
     <p>
       Requests to a few US government services (the Census Bureau geocoder, FEMA hazard and flood
-      data, EIA, BEA, and FBI and city police crime data) go through a relay that DataIsland runs on Cloudflare
-      Workers, because those services often fail behind VPNs and network filters. The relay
+      data, EIA, BEA, FBI and city police crime data) and air-quality lookups (OpenAQ) go through a relay that DataIsland runs on Cloudflare
+      Workers, because those services often fail behind VPNs and network filters, and so the OpenAQ key stays private. The relay
       receives the same parameters (for example a location's coordinates for the flood-zone
       lookup), forwards the request, and returns the answer. It does not store requests or keep
       logs of them, and it cannot tell who you are. Cloudflare processes the traffic under its
@@ -96,7 +96,8 @@ const updated = "2 November 2026";
       <li>IMF — imf.org</li>
       <li>OECD — oecd.org</li>
       <li>WHO — who.int</li>
-      <li>Open-Meteo (climate and air quality) — open-meteo.com</li>
+      <li>NASA POWER (climate) — power.larc.nasa.gov</li>
+      <li>OpenAQ (air quality, through the DataIsland relay) — openaq.org</li>
       <li>Wikipedia — wikipedia.org</li>
       <li>Apple Maps (nearby places) — apple.com</li>
       <li>OpenStreetMap Nominatim (search) — openstreetmap.org</li>
