@@ -44,6 +44,13 @@ export const products = [
     active: true
   },
   {
+    id: "superflyer",
+    title: "SuperFlyer",
+    icon: "/images/products/superflyer/icon.png",
+    description: "Comics that move. Make comics, flyers and school projects with balloons, sound effects and comic looks, draw with Image Playground, and share a flip-book that plays on any phone. Free.",
+    active: true
+  },
+  {
     id: "panorama",
     title: "Panorama",
     icon: "/images/products/panorama/icon.png",

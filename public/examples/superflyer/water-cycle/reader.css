@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#1d1d20;color:#eee;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;overflow:hidden}
+.stage{position:absolute;inset:0 0 64px 0;display:flex;align-items:center;justify-content:center;perspective:2200px}
+.book{position:relative;--u:1px}
+.page{position:absolute;inset:0;overflow:hidden;visibility:hidden;box-shadow:0 10px 40px rgba(0,0,0,.5);backface-visibility:hidden}
+.page.active{visibility:visible;z-index:2}
+.page.leaving{visibility:visible;z-index:1}
+.panel{position:absolute;overflow:hidden;border-style:solid;border-width:calc(var(--bw) * var(--u))}
+.layer{position:absolute}
+.pbg{position:absolute;inset:0;overflow:hidden}
+.pbg img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pborder{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.pborder polygon{fill:none;vector-effect:non-scaling-stroke;stroke-width:calc(var(--bw) * var(--u) * 2)}
+.anim{position:absolute;inset:0}
+.layer img,.layer video{position:absolute;inset:0;width:100%;height:100%;display:block}
+.action{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#111;padding:calc(30 * var(--u));gap:calc(16 * var(--u))}
+.action .cup{font-size:calc(54 * var(--u))}
+.action h2{margin:0;font-size:calc(30 * var(--u));font-weight:900}
+.action p{margin:0 calc(30 * var(--u));font-size:calc(15 * var(--u));opacity:.75}
+.action .buttons{display:flex;flex-direction:column;gap:calc(10 * var(--u));margin-top:calc(6 * var(--u))}
+.action a{background:var(--accent);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:calc(11 * var(--u)) calc(28 * var(--u));font-size:calc(17 * var(--u))}
+.controls{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:center;align-items:center;gap:18px}
+.controls button{background:#333;color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:24px;line-height:36px;cursor:pointer}
+.controls button:disabled{opacity:.3;cursor:default}
+.count{font-variant-numeric:tabular-nums;min-width:64px;text-align:center}
+footer{position:absolute;bottom:4px;width:100%;text-align:center;font-size:11px;opacity:.45}
+/* page turns */
+.page.enter-turn{animation:turnIn .55s ease both;transform-origin:left center}
+.page.back-turn{animation:turnBack .55s ease both;transform-origin:right center}
+.page.enter-slide{animation:slideIn .45s ease both}
+.page.back-slide{animation:slideBack .45s ease both}
+.page.enter-fade,.page.back-fade{animation:fadeIn .45s ease both}
+@keyframes turnIn{from{transform:rotateY(80deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes turnBack{from{transform:rotateY(-80deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
+@keyframes slideBack{from{transform:translateX(-100%)}to{transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+/* layer motions, run each time a page becomes active */
+.page.active .m-popIn{animation:pop var(--dur) cubic-bezier(.3,1.6,.5,1) var(--delay) both}
+.page.active .m-pulse{animation:pulse var(--dur) ease-in-out var(--delay) infinite alternate}
+.page.active .m-slowZoom{animation:zoom max(2s,var(--dur)) linear var(--delay) both}
+.page.active .m-slideIn{animation:slide var(--dur) ease-out var(--delay) both}
+@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:none;opacity:1}}
+@keyframes pulse{from{transform:none}to{transform:scale(1.08)}}
+@keyframes zoom{from{transform:none}to{transform:scale(1.15)}}
+@keyframes slide{from{transform:translateX(-60px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.page,.page *{animation:none!important}}

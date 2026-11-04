@@ -1,0 +1,331 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="SuperFlyer Tutorials — DataIsland Software"
+  description="Step-by-step guides for SuperFlyer: pages and panels, pictures and Image Playground, balloons and sound effects, the effects palette, motion, flip-books, translation and more."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>SuperFlyer — Tutorials</h1>
+      <p class="intro">
+        Everything SuperFlyer can do, one step at a time. Want to see the results first?
+        <a href="/products/superflyer">Read the example flip-books.</a>
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Getting started</a></li>
+          <li><a href="#t2">Pages and layouts</a></li>
+          <li><a href="#t3">Panels</a></li>
+          <li><a href="#t4">Pictures</a></li>
+          <li><a href="#t5">Words, balloons and sound effects</a></li>
+          <li><a href="#t6">The effects palette</a></li>
+          <li><a href="#t7">Editing, copying and undo</a></li>
+          <li><a href="#t8">Motion and Preview</a></li>
+          <li><a href="#t9">Sharing: flip-books, PDF and images</a></li>
+          <li><a href="#t10">Translate Book</a></li>
+          <li><a href="#t11">Optional: more AI with OpenRouter</a></li>
+        </ol>
+      </nav>
+
+      <div class="tut-content">
+
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Getting started</h2>
+          <p class="goal">What you'll learn: what you see when SuperFlyer opens, and starting a comic.</p>
+
+<p>When SuperFlyer opens, the <strong>Welcome</strong> window offers three ways to start:</p>
+<ul>
+<li><strong>New Comic</strong>: a front cover, three inside pages and a back cover.</li>
+<li><strong>New Classroom Comic</strong>: the same, with all AI tools switched off for that comic.</li>
+<li><strong>Use as Template</strong> under an example: an untitled copy of Captain Clay, Waggly Tails Daycare or The Water Cycle, with all its pictures, ready to change.</li>
+</ul>
+<p>To see the Welcome window again, choose <strong>File ▸ Examples…</strong> (⇧⌘N). Turn off <em>Show this window when SuperFlyer opens</em> if you'd rather start with a blank comic.</p>
+<h3>The window</h3>
+<ul>
+<li><strong>Pages</strong> (left): every page of the book. Click one to edit it.</li>
+<li><strong>Effects palette</strong>: balloons, words, sound effects and comic looks to drag onto the page. The <strong>Effects</strong> button in the toolbar hides or shows it.</li>
+<li><strong>Canvas</strong> (middle): the page you're working on.</li>
+<li><strong>Inspector</strong> (right): settings for whatever is selected. The line at the top (for example <em>Page 1 › Panel › Balloon</em>) shows where you are; click a step to go back up.</li>
+<li><strong>Library</strong> (below the canvas): your Cast of characters, the book's Media, and AI Jobs.</li>
+</ul>
+        </section>
+
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Pages and layouts</h2>
+          <p class="goal">What you'll learn: adding, arranging and deleting pages, and changing a page's panels.</p>
+
+<ol class="steps">
+<li><strong>Add a page</strong> with the <strong>Add Page</strong> button in the toolbar or the <strong>Page</strong> menu. Its arrow lists every layout, including <em>Full Page Panel</em> and <em>Full Page, Edge to Edge</em>.</li>
+<li><strong>Change a page's layout</strong> with the <strong>Layout</strong> button (grid icon, top left) or <strong>Page ▸ Layout</strong>. Panels keep their pictures and words.</li>
+<li><strong>Reorder pages</strong> by dragging them in the page list.</li>
+<li><strong>Duplicate</strong> a page with <strong>Duplicate Page</strong> (⇧⌘D); <strong>delete</strong> it with <strong>Delete Page</strong> in the toolbar or Page menu (⇧⌘⌫), or press Delete in the page list. Covers can't be deleted.</li>
+</ol>
+<div class="tip"><strong>Tip Jar page:</strong> <em>Add Tip Jar Page</em> adds a page with buttons that link to your tip page (Ko-fi, Buy Me a Coffee, PayPal…). Type the web address in the page settings.</div>
+        </section>
+
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> Panels</h2>
+          <p class="goal">What you'll learn: moving, resizing and styling panels, and putting a picture behind them.</p>
+
+<p>Click a panel to select it. Drag the round handle above it to move it, or the square handles to resize. Panels snap to the page edges and to each other, and pink guides show when they line up. <strong>Add Panel</strong> puts a new one anywhere.</p>
+<h3>Panel Style</h3>
+<ul>
+<li><strong>Fill</strong>: the panel's background colour.</li>
+<li><strong>Shape</strong>: square, rounded, oval or angled. For <em>angled</em>, drag the yellow diamond corners to tilt the panel.</li>
+<li><strong>See-through</strong>: no fill, so the page's background picture shows inside.</li>
+<li><strong>Outline</strong>: the line around the panel, with thickness and colour.</li>
+</ul>
+<h3>Background picture</h3>
+<p>Select the page (click it in the page list, or the page name in the inspector's path). Under <strong>Background Picture</strong>, choose <em>File…</em>, <em>Photos</em>, <em>Media</em> or <em>Playground</em>. It fills the page edge to edge behind every panel. Position it with <em>Zoom</em>, <em>Across</em> and <em>Up/Down</em>, or drag the round picture handle in the middle of the page. <strong>Add Title</strong> puts big words straight over it.</p>
+        </section>
+
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Pictures</h2>
+          <p class="goal">What you'll learn: adding pictures and clips, drawing with Image Playground, and keeping characters consistent.</p>
+
+<ul>
+<li><strong>Picture or Clip</strong> and <strong>Photos</strong> add pictures or short videos to the selected panel. You can also drag files from Finder onto a panel. Videos loop silently.</li>
+<li><strong>Draw with Image Playground…</strong> draws a picture on your Mac. Describe it, pick a style, and click Done.</li>
+<li><strong>Draw a Character…</strong> appears once a character in your Cast has a picture. It starts Image Playground from that picture, so the character looks the same in every panel. Describe only the scene ("eating ice cream on a park bench").</li>
+<li><strong>Cut Out Subject</strong> removes a picture's background, keeping the person, pet or object.</li>
+<li><strong>Fit</strong>, <strong>Zoom</strong>, <strong>Across</strong> and <strong>Up/Down</strong> crop a picture inside its panel.</li>
+</ul>
+<h3>Comic looks</h3>
+<p>Turn a photo into comic art: <em>Comic Ink</em>, <em>Halftone Dots</em>, <em>Pop Art</em>, <em>Pencil Sketch</em> or <em>Noir</em>. Choose one under <strong>Comic Look</strong> for the selected picture, or drag one from the palette onto a picture. <strong>Original</strong> brings back the untouched picture.</p>
+        </section>
+
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Words, balloons and sound effects</h2>
+          <p class="goal">What you'll learn: balloons and their tails, captions, titles, fonts and lettering.</p>
+
+<ul>
+<li><strong>Balloons</strong>: speech, thought, shout or whisper. Type the words in the inspector. Drag the yellow handle on the page to point the tail at the speaker.</li>
+<li><strong>Captions</strong>: boxed narration ("Meanwhile…"). Turn off <em>Caption Box</em> for plain words.</li>
+<li><strong>Sound effects</strong>: POW!, BOOM!, SPLASH! and more, as a starburst or as big outlined lettering. Retype the word to make your own.</li>
+</ul>
+<h3>Lettering</h3>
+<p>The <strong>Font</strong> button lists every font on your Mac, comic favourites first. Use <strong>Language</strong> to show only fonts for a writing system (Arabic, Hebrew, Japanese, Hindi, Thai…). Arabic and Hebrew text right-aligns automatically. <strong>Outline</strong> and <strong>Shadow</strong> keep words readable over busy pictures.</p>
+        </section>
+
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> The effects palette</h2>
+          <p class="goal">What you'll learn: dragging items onto the page.</p>
+
+<p>The palette is grouped into drop-downs: <em>Balloons</em>, <em>Words</em>, <em>Sound Effects</em>, <em>Lettering</em> and <em>Comic Looks</em>. Click a heading to open or close it.</p>
+<ol class="steps">
+<li><strong>Drag</strong> a tile onto any panel. It lands where you drop it.</li>
+<li>Or select a panel first and <strong>click</strong> a tile to add it there.</li>
+<li>Drop a <strong>comic look</strong> onto a picture to change that picture.</li>
+</ol>
+        </section>
+
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> Editing, copying and undo</h2>
+          <p class="goal">What you'll learn: copy, paste, duplicate and undo.</p>
+
+<ul>
+<li><strong>Undo</strong> and <strong>Redo</strong> are at the top right of the toolbar, and ⌘Z / ⇧⌘Z. Hover over Undo to see what it will undo. Every change can be undone, as far back as you like.</li>
+<li><strong>Copy</strong>, <strong>Cut</strong> and <strong>Paste</strong> (⌘C, ⌘X, ⌘V) work on balloons, pictures, captions and whole panels, even between comics.</li>
+<li><strong>Duplicate</strong> (⌘D) copies the selected item, or the page when nothing is selected.</li>
+</ul>
+        </section>
+
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Motion and Preview</h2>
+          <p class="goal">What you'll learn: making things move, and reading your book.</p>
+
+<p>Select a layer and choose <strong>When the page opens</strong>: <em>Pop In</em>, <em>Pulse</em>, <em>Slow Zoom</em> or <em>Slide In</em>, with a delay and length. Each page has a <strong>Page Turn</strong> effect too.</p>
+<p><strong>Preview</strong> (toolbar, or ⇧⌘P) reads the book as your readers will see it: motions play and clips loop. Use the arrow keys to turn pages.</p>
+        </section>
+
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Sharing: flip-books, PDF and images</h2>
+          <p class="goal">What you'll learn: exporting, and putting a flip-book online.</p>
+
+<p>Choose <strong>File ▸ Export</strong> or the Export button in the toolbar:</p>
+<ul>
+<li><strong>Flip-Book Website</strong>: a folder that works as a small website, plus a .zip for uploading. Pages turn, motions play, clips loop and Tip Jar buttons work, on any phone, tablet or computer.</li>
+<li><strong>PDF</strong>: print-size pages.</li>
+<li><strong>Page Images</strong>: one PNG per page, for social media or printing.</li>
+</ul>
+<h3>Putting a flip-book online</h3>
+<p>Phones can't open a folder from email or Messages, so the flip-book needs a web address. After exporting, click <strong>Put It Online…</strong> for the steps. The easiest free way is <a href="https://app.netlify.com/drop">Netlify Drop</a>: sign in and drag the flip-book folder onto the page. You can also upload the .zip to Cloudflare Pages, or the folder to your own website. Then share the link.</p>
+        </section>
+
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> Translate Book</h2>
+          <p class="goal">What you'll learn: making an edition in another language.</p>
+
+<ol class="steps">
+<li>Choose <strong>File ▸ Translate Book…</strong>, or <em>Translate Book…</em> in the Book settings.</li>
+<li>Pick a language and click <strong>Translate</strong>. The first time, macOS may ask to download that language.</li>
+<li>A new untitled comic opens with every balloon, caption, title and Tip Jar text translated. Sound effects stay as they are. Your original isn't changed.</li>
+</ol>
+<div class="tip"><strong>Read it through:</strong> machine translation can miss jokes and comic terms. Every word stays editable.</div>
+        </section>
+
+        <section class="tut-section" id="t11">
+          <h2><span class="num">11</span> Optional: more AI with OpenRouter</h2>
+          <p class="goal">What you'll learn: drawing with other image models and animating panels.</p>
+
+<p>Everything above works without an account. If you'd like more image models, add your own <a href="https://openrouter.ai">OpenRouter</a> key in <strong>SuperFlyer ▸ Settings ▸ AI</strong>. Then:</p>
+<ul>
+<li><strong>Draw with OpenRouter…</strong> draws a panel with the model you choose, using your characters' reference pictures. The cost estimate is shown before you start.</li>
+<li><strong>Animate with AI…</strong> turns a panel's picture into a short looping clip. Jobs run in the background; follow them in the <strong>AI Jobs</strong> tab.</li>
+<li><strong>Make with AI</strong> in a character's card draws a reference sheet from its description.</li>
+</ul>
+<p>OpenRouter charges your OpenRouter account for these. SuperFlyer marks AI-made pictures under <em>How this was made</em>.</p>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal { font-size: 0.95rem; color: var(--gray-dark); font-style: italic; margin-bottom: 1.25rem; padding-left: 2.4rem; }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1rem 0 1.25rem; }
+  th { text-align: left; padding: 0.5rem 0.75rem; background: var(--gray-light); font-weight: 600; border: 1px solid #e0e0e0; }
+  td { padding: 0.5rem 0.75rem; border: 1px solid #e0e0e0; vertical-align: top; line-height: 1.55; }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>

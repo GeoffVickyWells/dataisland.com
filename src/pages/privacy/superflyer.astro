@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "4 November 2026";
+---
+
+<BaseLayout
+  title="SuperFlyer — Privacy Policy"
+  description="Privacy policy for SuperFlyer, the comic and flyer app by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>SuperFlyer — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      SuperFlyer is an app for making comics, flyers and picture stories on the Mac. This policy
+      explains what SuperFlyer does with your information.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>SuperFlyer does not collect personal data.</strong> It has no account, no analytics
+      and no advertising. Your comics are files on your Mac. DataIsland never receives your comics,
+      pictures, words or prompts.
+    </p>
+
+    <h2>Your Comics</h2>
+    <p>
+      Comics are saved as files where you choose, with their pictures and clips inside. They are
+      not uploaded anywhere by SuperFlyer. If you keep them in iCloud Drive, Apple's iCloud terms apply.
+    </p>
+
+    <h2>Features That Run on Your Mac</h2>
+    <p>
+      Image Playground drawings, Apple Intelligence writing help, translation (Translate Book),
+      Cut Out Subject and the comic looks all run on your Mac using Apple's frameworks. Apple's own
+      privacy policy covers Image Playground and Apple Intelligence; when Apple Intelligence uses
+      Private Cloud Compute, Apple processes that request under its privacy commitments.
+    </p>
+
+    <h2>Optional Cloud AI (OpenRouter)</h2>
+    <p>
+      If you choose to add your own OpenRouter API key, the "Draw with OpenRouter", "Animate" and
+      "Make with AI" features send your prompt, and any reference pictures you've chosen, from your
+      Mac directly to OpenRouter and the AI model you select. That traffic does not pass through
+      DataIsland. OpenRouter's and the model provider's privacy policies apply. Your key is stored
+      in your Mac's keychain. These features are off unless you add a key. New Classroom Comic switches off all AI tools
+      for that comic, including the ones that run on your Mac.
+    </p>
+    <p>
+      Pictures made this way are marked as AI-generated inside the comic ("How this was made"),
+      and flip-books that include them say so.
+    </p>
+
+    <h2>Photos and Files</h2>
+    <p>
+      SuperFlyer only sees the photos and files you pick. Photos you choose are copied into your
+      comic. SuperFlyer does not read the rest of your Photos library.
+    </p>
+
+    <h2>Flip-Books You Publish</h2>
+    <p>
+      A flip-book is a folder of web files you export. If you put it online, it's hosted by the
+      service you choose and anyone with the link can read it. Flip-books contain no tracking code.
+      Tip Jar buttons link to the web addresses you type in.
+    </p>
+
+    <h2>Crash Reports</h2>
+    <p>
+      If you've agreed to share analytics with app developers in macOS settings, Apple may send
+      DataIsland anonymous crash and performance reports through the App Store. They contain no
+      personal information or comic content.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      SuperFlyer collects no personal data from anyone, including children. Teachers can use
+      New Classroom Comic, which switches off all AI tools for that comic.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy: <a href="mailto:support@dataisland.com">support@dataisland.com</a>.
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul { margin: 0.5rem 0 1rem 1.25rem; color: var(--gray-dark); }
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>
