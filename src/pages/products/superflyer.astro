@@ -36,7 +36,8 @@ const shots = "/images/products/superflyer";
     <div class="feature-body">
       <h2>See what you can make. Read these on your phone.</h2>
       <p>
-        These three were made in SuperFlyer, with pictures drawn by Image Playground on a Mac.
+        These were made in SuperFlyer, with pictures drawn by Image Playground on a Mac. The house,
+        the trip and the food bank are illustrated samples, not real listings or charities.
         Open one, then swipe or tap to turn the pages. They're also inside the app as templates,
         ready to change.
       </p>
@@ -55,6 +56,21 @@ const shots = "/images/products/superflyer";
           <img src={`${shots}/example-water-cycle.jpg`} alt="The Water Cycle school project cover" />
           <strong>The Water Cycle</strong>
           <span>A school project</span>
+        </a>
+        <a class="example" href="/examples/superflyer/property-listing/" target="_blank" rel="noopener">
+          <img src={`${shots}/example-property-listing.jpg`} alt="A property listing flyer cover with a price burst" />
+          <strong>12 Example Ridge <em class="pro">Pro</em></strong>
+          <span>A property listing</span>
+        </a>
+        <a class="example" href="/examples/superflyer/road-trip/" target="_blank" rel="noopener">
+          <img src={`${shots}/example-road-trip.jpg`} alt="A road-trip itinerary cover with a route map" />
+          <strong>Arizona Road Trip <em class="pro">Pro</em></strong>
+          <span>A travel itinerary</span>
+        </a>
+        <a class="example" href="/examples/superflyer/food-drive/" target="_blank" rel="noopener">
+          <img src={`${shots}/example-food-drive.jpg`} alt="A winter food drive campaign cover" />
+          <strong>Winter Food Drive <em class="pro">Pro</em></strong>
+          <span>A fundraising campaign with an event</span>
         </a>
       </div>
     </div>
@@ -134,6 +150,52 @@ const shots = "/images/products/superflyer";
     </div>
   </section>
 
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">👥</div>
+    <div class="feature-body">
+      <h2>Who uses SuperFlyer</h2>
+      <p>One app, many kinds of book. Every feature works in every book.</p>
+      <div class="uses-grid">
+        <div class="use"><h3>Real estate agents</h3><p>Listings with photos, a 3D walk-through, a neighbourhood map, Book a Viewing, and a QR code for the sign.</p></div>
+        <div class="use"><h3>Teachers</h3><p>Class comics and step-by-step lessons, translated for families.</p></div>
+        <div class="use"><h3>Private schools and day care</h3><p>A day in the life from your photos, open-house events, newsletters, for children or pets.</p></div>
+        <div class="use"><h3>Travel agents</h3><p>Itineraries with route maps and a personalised copy for every client.</p></div>
+        <div class="use"><h3>Stores</h3><p>Weekly flyers for grocery, hardware, toy and furniture stores, from a price list or spreadsheet, with price bursts.</p></div>
+        <div class="use"><h3>Liquor stores</h3><p>Weekly specials, wine and spirit lists, tasting nights.</p></div>
+        <div class="use"><h3>Restaurants and cafés</h3><p>Menus, today's specials on the TV, QR menus on the tables.</p></div>
+        <div class="use"><h3>Entertainment venues</h3><p>Show flyers with tickets and Add to Calendar.</p></div>
+        <div class="use"><h3>Amateur theatre</h3><p>Programmes with the synopsis, cast list and sponsors, plus performance dates and donations.</p></div>
+        <div class="use"><h3>Museums and galleries</h3><p>Exhibition guides, 3D objects to turn, clips with sound, a visit planner.</p></div>
+        <div class="use"><h3>Churches and charities</h3><p>Appeals showing what each gift does, donate and volunteer pages, small print.</p></div>
+        <div class="use"><h3>Comic creators and families</h3><p>Comics and trip albums, and stories that portal from one magical world to the next.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-section fade-in">
+    <div class="feature-icon">⭐</div>
+    <div class="feature-body">
+      <h2>SuperFlyer Pro <span class="soon">Coming soon</span></h2>
+      <p>
+        Everything above stays free. SuperFlyer Pro, a one-time purchase with a free trial, adds tools
+        for businesses, schools and groups:
+      </p>
+      <img src={`${shots}/pro-listing.jpg`} alt="A property listing being made in SuperFlyer" class="shot inline" />
+      <div class="mini-feature-grid">
+        <div class="mini-feature"><h3>Action pages and events</h3><p>Donate, Sign Up, Book Now, Contact and 3D Tour pages. Any event gets Add to Calendar and Directions.</p></div>
+        <div class="mini-feature"><h3>3D</h3><p>A 3D model or iPhone room scan as a turntable, a walk through the rooms, a fly-over, or a flight through a portal.</p></div>
+        <div class="mini-feature"><h3>Maps and QR codes</h3><p>A map of any place or a route through several stops, and QR codes that lead from paper to the moving version.</p></div>
+        <div class="mini-feature"><h3>Brand Kit</h3><p>Your logo, colours, fonts and contact details on every page in one click.</p></div>
+        <div class="mini-feature"><h3>Item lists</h3><p>Products, a menu or gift amounts that lay themselves out as pages. Paste a list or import a spreadsheet.</p></div>
+        <div class="mini-feature"><h3>Auto-Book</h3><p>Choose your photos and clips; SuperFlyer picks the best and builds the book.</p></div>
+        <div class="mini-feature"><h3>Social media and signs</h3><p>Pictures or a video sized for posts and Stories, and a full-screen loop for a shop TV.</p></div>
+        <div class="mini-feature"><h3>Affinity and InDesign</h3><p>Every page exported with its frames and text still editable.</p></div>
+        <div class="mini-feature"><h3>A copy for everyone</h3><p>Put {"{{Name}}"} in the words and make a personalised PDF or flip-book for every row of a spreadsheet.</p></div>
+      </div>
+      <img src={`${shots}/pro-event.jpg`} alt="An event page with Add to Calendar and Directions" class="shot inline" />
+    </div>
+  </section>
+
   <section class="feature-section fade-in">
     <div class="feature-icon">🔒</div>
     <div class="feature-body">
@@ -163,6 +225,10 @@ const shots = "/images/products/superflyer";
     {
       question: "Can I use photos of people?",
       answer: "Use your own photos and pictures you have the right to use. For a character's reference picture, use a drawing, a photo of yourself, or an AI-made sheet, not photos of other real people without their permission."
+    },
+    {
+      question: "What is SuperFlyer Pro?",
+      answer: "An optional one-time purchase, coming soon, for businesses, schools and groups: action pages and events, 3D, maps and QR codes, Brand Kit, item lists, Auto-Book, social media and sign export, Affinity/InDesign export, and personalised copies. You'll be able to try it free first. Everything that's free today stays free."
     },
     {
       question: "Is it good for classrooms?",
@@ -487,5 +553,12 @@ const shots = "/images/products/superflyer";
   .example:hover img { transform: translateY(-3px); }
   .example strong { font-size: 0.95rem; color: var(--blue); }
   .example span { font-size: 0.85rem; color: var(--gray-dark); }
+  .pro, .soon { font-style: normal; font-size: 0.7rem; font-weight: 700; color: #fff; background: #f28c26; border-radius: 999px; padding: 0.1rem 0.45rem; vertical-align: middle; }
+  .soon { font-size: 0.8rem; background: var(--blue); }
+  .uses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.25rem; }
+  .use { background: #fff; border-radius: 10px; padding: 1rem 1.1rem; }
+  .use h3 { font-size: 0.95rem; color: var(--blue); margin: 0 0 0.35rem; }
+  .use p { font-size: 0.88rem; margin: 0; color: var(--gray-dark); }
+  @media (max-width: 768px) { .uses-grid { grid-template-columns: 1fr; } }
   @media (max-width: 768px) { .example-grid { grid-template-columns: 1fr; } }
 </style>
