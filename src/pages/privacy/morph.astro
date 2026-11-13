@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const updated = "13 November 2026";
+---
+
+<BaseLayout
+  title="Morph — Privacy Policy"
+  description="Privacy policy for Morph, the word ladder game for Mac, iPhone and iPad by DataIsland Software LLC."
+>
+
+  <section class="legal fade-in">
+    <div class="breadcrumb"><a href="/privacy">← All Privacy Policies</a></div>
+
+    <h1>Morph — Privacy Policy</h1>
+    <p class="meta">DataIsland Software LLC &nbsp;·&nbsp; Last updated: {updated}</p>
+
+    <p>
+      Morph is a word ladder game for Mac, iPhone and iPad in English, French, Spanish and German.
+      This policy explains what data Morph uses, what is stored on your device, and what, if
+      anything, leaves it.
+    </p>
+
+    <h2>Summary</h2>
+    <p>
+      <strong>Morph does not collect personal data and makes no network requests while you play.</strong>
+      The word lists and puzzles are built into the app. The app has no server, no account, no ads
+      and no analytics.
+    </p>
+
+    <h2>What Is Stored on Your Device</h2>
+    <ul>
+      <li><strong>Your puzzles</strong>: the words you played, hints used and results, so you can pick a puzzle up again and see your statistics and streaks</li>
+      <li><strong>Your choices</strong>: the two languages you picked and your settings</li>
+    </ul>
+    <p>
+      These are stored in the app's own storage on your device (UserDefaults). They are not synced
+      to iCloud and are never sent to DataIsland.
+    </p>
+
+    <h2>What Leaves Your Device</h2>
+
+    <h3>Playing: Nothing</h3>
+    <p>
+      Checking words, making practice puzzles, hints and statistics all run on your device using
+      the word lists inside the app.
+    </p>
+
+    <h3>Buying the Full Game</h3>
+    <p>
+      When you buy or restore the Full Game, the purchase is handled entirely by Apple's App Store.
+      DataIsland receives no payment details or personal information from Apple about you.
+    </p>
+
+    <h3>Sharing a Result</h3>
+    <p>
+      If you tap Share after a daily puzzle, Morph prepares a short line of text (for example,
+      the puzzle number, languages and your rating) and hands it to the system share sheet. Where
+      it goes is your choice. Morph sends nothing on its own.
+    </p>
+
+    <h2>What Morph Does Not Do</h2>
+    <ul>
+      <li>Does not transmit any data to DataIsland's servers</li>
+      <li>Does not require an account or login</li>
+      <li>Does not show ads or track you across apps and websites</li>
+      <li>Does not collect analytics or usage statistics</li>
+      <li>Does not access your contacts, photos, location, files or microphone</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Morph collects no information from anyone, including children.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If we make material changes to this policy, we will update the "Last updated" date above.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy:<br />
+      <a href="mailto:support@dataisland.com">support@dataisland.com</a><br />
+      DataIsland Software LLC
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+    border-bottom: none;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; font-size: 0.9rem; }
+
+  .legal h1 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+  .meta { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+
+  .legal h2 { margin-top: 2.25rem; margin-bottom: 0.6rem; font-size: 1.2rem; }
+  .legal h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
+  .legal p  { font-size: 1rem; line-height: 1.7; margin-bottom: 0.9rem; }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+    color: var(--gray-dark);
+  }
+
+  ul li { margin-bottom: 0.4rem; font-size: 0.97rem; line-height: 1.5; }
+</style>

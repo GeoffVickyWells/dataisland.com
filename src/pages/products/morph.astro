@@ -1,0 +1,410 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppFAQ from "../../components/AppFAQ.astro";
+import AppStoreCTA from "../../components/AppStoreCTA.astro";
+
+const icon = "/images/products/morph/icon.png";
+---
+
+<BaseLayout
+  title="Morph — Word Ladder in Four Languages"
+  description="Change one letter at a time to turn one word into another, in English, French, Spanish or German, or across any two. A new puzzle every day for Mac, iPhone and iPad."
+>
+
+  <!-- Hero -->
+  <section class="product-hero fade-in">
+    <img src={icon} alt="Morph" class="product-icon" />
+    <h1>Morph</h1>
+    <p class="tagline">Word · Mot · Palabra · Wort</p>
+    <p class="hero-sub">
+      Change one letter at a time to turn one word into another. COLD, CORD, CARD, WARD, WARM.
+      Play in English, French, Spanish or German, or pick two languages and use words from both
+      on the way. A new puzzle every day, free.
+    </p>
+    <div class="hero-meta">Mac, iPhone and iPad &nbsp;·&nbsp; Free daily puzzle &nbsp;·&nbsp; Full Game one-time purchase</div>
+    <AppStoreCTA app="morph" />
+  </section>
+
+  <!-- Feature 1: The game -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🪜</div>
+    <div class="feature-body">
+      <h2>One letter at a time.</h2>
+      <p>
+        Every word on the way must be a real word. Letters that already match the target turn gold,
+        so you can see yourself getting closer. Par is the fewest steps possible: reach the target on
+        par for a Perfect, one over for Great, two over for Good. Need more steps? Keep going. The
+        ladder grows.
+      </p>
+      <div class="convert-grid">
+        <div class="convert-item"><strong>COLD</strong><span>start</span></div>
+        <div class="convert-item"><strong>CORD → CARD</strong><span>one letter each</span></div>
+        <div class="convert-item"><strong>WARD</strong><span>almost there</span></div>
+        <div class="convert-item"><strong>WARM</strong><span>Perfect, on par</span></div>
+      </div>
+      <p class="detail-note">
+        Lewis Carroll invented this puzzle on Christmas Day 1877 and called it "Doublets". His first
+        one turned HEAD into TAIL.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 2: Two languages -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">🌍</div>
+    <div class="feature-body">
+      <h2>Play across two languages.</h2>
+      <p>
+        Choose a language to start in and a language to finish in. Every step can be a word in
+        either one, and each word on the ladder shows which language it counted as. A French
+        puzzle might pass through English words on its way to the target, and back again.
+      </p>
+      <div class="convert-grid">
+        <div class="convert-item"><strong>MURE</strong><span>French</span></div>
+        <div class="convert-item"><strong>CURE → CORE</strong><span>French and English</span></div>
+        <div class="convert-item"><strong>CORK → COOK</strong><span>English</span></div>
+        <div class="convert-item"><strong>HOOK</strong><span>English, the target</span></div>
+      </div>
+      <p>
+        Pick the same language twice for the classic game. Accents don't matter: É counts as E,
+        just as in crosswords. Spanish keeps its Ñ.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 3: Modes -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">📅</div>
+    <div class="feature-body">
+      <h2>A puzzle every day, and more when you want it.</h2>
+      <ul class="feature-list">
+        <li><strong>Today</strong> — one free puzzle a day for every pair of languages, the same for everyone.</li>
+        <li><strong>Clever · 5 letters</strong> — a harder daily English puzzle for the ones who think they're clever.</li>
+        <li><strong>Practice</strong> — as many extra puzzles as you like.</li>
+        <li><strong>Translations</strong> — start on a word and finish on its meaning in the other language: LUNE to MOON, LUNA to MOND.</li>
+        <li><strong>Past puzzles</strong> — play any day you missed.</li>
+        <li><strong>Hints when you're stuck</strong> — go back a step, get the next word, or see a route.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Feature 4: Devices -->
+  <section class="feature-section fade-in alt">
+    <div class="feature-icon">📱</div>
+    <div class="feature-body">
+      <h2>Mac, iPhone, iPad and iPhone Duo.</h2>
+      <p>
+        One purchase covers every device signed in with the same Apple Account. On a wide screen,
+        such as an iPad, a Mac window or an unfolded iPhone Duo, the ladder sits beside the
+        keyboard and hints. Fold the Duo mid-puzzle and your ladder stays exactly where it was.
+      </p>
+      <p class="detail-note">
+        The app is in English, French, Spanish and German. Every word list and ten years of daily
+        puzzles are built in, so Morph works without an internet connection.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature 5: Privacy -->
+  <section class="feature-section fade-in">
+    <div class="feature-icon">🔒</div>
+    <div class="feature-body">
+      <h2>No ads, no account, no tracking.</h2>
+      <p>
+        Morph makes no network requests while you play. Your puzzles, results and streaks stay on
+        your device. The only time it contacts anyone is when you buy or restore the Full Game,
+        which is handled by Apple's App Store.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section fade-in">
+    <h2>Simple, honest pricing.</h2>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Morph</h3>
+        <div class="price">Free</div>
+        <div class="price-detail">a new puzzle every day</div>
+        <ul>
+          <li>Today's puzzle in any pair of languages</li>
+          <li>English, French, Spanish and German</li>
+          <li>Hints, par and ratings</li>
+          <li>Statistics and streaks</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Full Game</h3>
+        <div class="price">$4.99</div>
+        <div class="price-detail">one-time purchase · no subscription</div>
+        <ul>
+          <li>Everything in the free game</li>
+          <li>Clever · 5-letter daily puzzle</li>
+          <li>Unlimited practice puzzles</li>
+          <li>Translation puzzles</li>
+          <li>Every past puzzle</li>
+          <li>One purchase · all your devices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <AppFAQ items={[
+    {
+      question: "How do I play?",
+      answer: "You get a start word and a target word. Change one letter at a time, and every word on the way must be a real word. Par is the fewest steps possible. Reach the target on par for a Perfect; take more steps if you need them and the ladder grows."
+    },
+    {
+      question: "What does playing across two languages mean?",
+      answer: "Choose the language you start in and the one you finish in. Every step can be a word in either language, and each word shows a small tag such as FR, EN or FR · EN for words that are in both. Choose the same language twice for the classic one-language game."
+    },
+    {
+      question: "Do I have to speak both languages?",
+      answer: "No. If you get stuck, Hint suggests the next word on a shortest route and shows which language it's from. Many players use the two-language mode to pick up new words."
+    },
+    {
+      question: "Does everyone get the same daily puzzle?",
+      answer: "Yes. Each pair of languages has its own daily puzzle, the same for everyone on that day. Ten years of puzzles are built into the app, so nothing needs downloading."
+    },
+    {
+      question: "What do accents count as?",
+      answer: "Accents are ignored, as in crosswords: É counts as E and Ü counts as U. German ß counts as SS. Spanish Ñ stays its own letter, and the keyboard shows an Ñ key when Spanish is one of your languages."
+    },
+    {
+      question: "Is there a subscription?",
+      answer: "No. The daily puzzle is free. The Full Game is a one-time purchase of $4.99 that unlocks Clever, Practice, Translations and past puzzles on all your devices."
+    }
+  ]} />
+
+</BaseLayout>
+
+<style>
+  .product-hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .product-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-hero h1 { font-size: 2.75rem; margin-bottom: 0.5rem; }
+
+  .tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta { font-size: 0.9rem; color: var(--gray); }
+
+  /* Feature sections */
+  .feature-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .feature-section.alt {
+    background: var(--gray-light);
+    max-width: 100%;
+    padding: 3.5rem 1.5rem;
+    margin: 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .feature-section.alt > * { max-width: 450px; }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 56px;
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .feature-body { flex: 1; }
+  .feature-body h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+  .feature-body p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+
+  .detail-note {
+    font-size: 0.95rem !important;
+    color: var(--gray) !important;
+    font-style: italic;
+    border-left: 3px solid var(--blue-light);
+    padding-left: 1rem;
+  }
+
+  /* Convert examples */
+  .convert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .convert-item {
+    background: #fff;
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .convert-item span { color: var(--blue); font-weight: 600; }
+
+  /* Temperature list */
+  .temp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .temp-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .temp-label {
+    display: inline-block;
+    min-width: 64px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  /* Pan grid */
+  .pan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+
+  .pan-card {
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+  }
+
+  .pan-card h3 {
+    font-size: 0.9rem;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .pan-card p { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.5; margin: 0; }
+
+  /* Feature list */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .feature-list li {
+    padding: 0.6rem 0;
+    padding-left: 1.25rem;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    border-bottom: 1px solid var(--gray-light);
+    position: relative;
+  }
+
+  .feature-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+
+  /* Pricing */
+  .pricing-section {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .pricing-section h2 { font-size: 1.6rem; margin-bottom: 2rem; }
+
+  .pricing-cards { display: flex; justify-content: center; }
+
+  .pricing-card {
+    flex: 1;
+    max-width: 360px;
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-align: left;
+  }
+
+  .pricing-card.featured { background: var(--blue); color: #fff; }
+  .pricing-card h3 { font-size: 1rem; margin-bottom: 0.75rem; color: rgba(255,255,255,0.8); }
+
+  .price { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .price-detail { font-size: 0.8rem; opacity: 0.8; margin-bottom: 1rem; }
+
+  .pricing-card ul { list-style: none; padding: 0; margin-top: 1rem; }
+
+  .pricing-card ul li {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .pricing-card ul li::before { content: "✓  "; }
+
+  /* Waitlist */
+  .waitlist-section { padding: 1rem 0 3rem; border-bottom: none; }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: -1.5rem;
+  }
+
+  .privacy-note a { color: var(--gray-dark); text-decoration: underline; }
+  .privacy-note a:hover { color: var(--blue); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .feature-section,
+    .feature-section.alt { flex-direction: column; gap: 1.25rem; }
+    .convert-grid,
+    .pan-grid { grid-template-columns: 1fr; }
+  }
+</style>

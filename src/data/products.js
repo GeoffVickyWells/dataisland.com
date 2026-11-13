@@ -65,6 +65,13 @@ export const products = [
     active: true
   },
   {
+    id: "morph",
+    title: "Morph",
+    icon: "/images/products/morph/icon.png",
+    description: "A word ladder game in English, French, Spanish and German. Change one letter at a time to turn one word into another, in one language or across two. A free puzzle every day for Mac, iPhone and iPad.",
+    active: true
+  },
+  {
     id: "networknotes",
     title: "Network Notes",
     icon: "/images/products/networknotes/icon.png",
