@@ -1,7 +1,7 @@
 ---
 title: "How Many Grams in a Cup of Flour? Why the Answer Depends on the Ingredient"
 description: "A cup is a measure of space, not weight, so a cup of flour and a cup of honey weigh very different amounts. Here's how to convert cups to grams for baking, and why weighing gives better results."
-pubDate: 2026-11-13
+pubDate: 2026-10-23
 topics: [cooking]
 apps: [kitchencalc]
 ---

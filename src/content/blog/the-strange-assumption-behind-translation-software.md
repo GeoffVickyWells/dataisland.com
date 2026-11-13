@@ -1,7 +1,7 @@
 ---
 title: "The Strange Assumption Behind Modern Translation Software"
 description: "Translation software assumes your writing is finished. For people who work across languages, translation is part of writing, not the step after it."
-pubDate: 2026-11-13
+pubDate: 2026-09-18
 topics: [languages, essays]
 apps: [polywrite]
 ---

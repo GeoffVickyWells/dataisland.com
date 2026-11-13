@@ -1,7 +1,7 @@
 ---
 title: "Why We Refused To Build Another Electron Editor"
 description: "Some Mac apps feel like part of the system; others feel like websites in a Mac costume. Why DataIsland builds only native Mac software."
-pubDate: 2026-11-13
+pubDate: 2026-10-02
 topics: [essays, mac-tips]
 apps: [polywrite]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "The Case Against Subscription Software"
 description: "Subscriptions make sense for services with ongoing costs. For a finished tool, a one-time purchase is a simpler and more honest agreement."
-pubDate: 2026-11-13
+pubDate: 2026-09-04
 topics: [essays]
 apps: []
 ---

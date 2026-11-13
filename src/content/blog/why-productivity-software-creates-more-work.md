@@ -1,7 +1,7 @@
 ---
 title: "Why Most Productivity Software Creates More Work"
 description: "Productivity software promises to save time every year, and every year people seem busier. Why the real enemy is interruption, not speed."
-pubDate: 2026-11-13
+pubDate: 2026-07-31
 topics: [essays]
 apps: []
 ---

@@ -1,7 +1,7 @@
 ---
 title: "How To Write In Languages That Aren't On Your Keyboard"
 description: "You don't need a second keyboard to type French, Greek, Arabic or Japanese on a Mac. How to add input sources, switch between them and use the Keyboard Viewer."
-pubDate: 2026-11-13
+pubDate: 2026-09-11
 topics: [languages, mac-tips]
 apps: [polywrite]
 ---

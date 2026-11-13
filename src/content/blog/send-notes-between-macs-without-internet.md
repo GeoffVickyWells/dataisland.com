@@ -1,7 +1,7 @@
 ---
 title: "How to Send a Note Between Macs on the Same Wi-Fi, No Internet Required"
 description: "Want to pass a quick note, link or photo to another Mac in the house or office without email, iMessage or the cloud? Here's how local-network messaging works, and a free way to do it."
-pubDate: 2026-11-13
+pubDate: 2026-10-30
 topics: [mac-tips, privacy]
 apps: [networknotes]
 ---

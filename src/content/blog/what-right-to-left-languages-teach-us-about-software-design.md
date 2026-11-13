@@ -1,7 +1,7 @@
 ---
 title: "What Right-To-Left Languages Teach Us About Software Design"
 description: "Right-to-left languages like Arabic and Hebrew expose the hidden assumptions in software design. What they teach us about building tools for everyone."
-pubDate: 2026-11-13
+pubDate: 2026-08-21
 topics: [languages, essays]
 apps: [polywrite]
 ---

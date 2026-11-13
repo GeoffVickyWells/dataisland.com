@@ -1,7 +1,7 @@
 ---
 title: "Using AI As An Editor Instead Of A Writer"
 description: "AI-written documents often feel generic. Write the draft yourself, then use AI as an editor to cut repetition, improve clarity and adjust tone."
-pubDate: 2026-11-13
+pubDate: 2026-08-28
 topics: [writing]
 apps: [polywrite]
 ---

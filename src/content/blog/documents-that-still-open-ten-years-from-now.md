@@ -1,7 +1,7 @@
 ---
 title: "How To Create Documents That Still Open Ten Years From Now"
 description: "Your documents often outlive the software that made them. How to choose file formats, from plain text to Markdown to rich text, that will still open in 2036."
-pubDate: 2026-11-13
+pubDate: 2026-08-14
 topics: [writing]
 apps: []
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Canada May Be One Of The World's Most Multilingual Writing Environments"
 description: "Canada has two official languages, but about 450 languages are spoken in Canadian homes. Why the multilingual document is becoming normal in Canada."
-pubDate: 2026-11-13
+pubDate: 2026-10-16
 topics: [languages]
 apps: [polywrite]
 ---

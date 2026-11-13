@@ -1,7 +1,7 @@
 ---
 title: "Why Writers Need Plain Text, Rich Text, and Markdown"
 description: "Writing apps ask you to pick a side: plain text, rich text or Markdown. Real writing uses all three. Why formats should be tools, not tribes."
-pubDate: 2026-11-13
+pubDate: 2026-08-07
 topics: [writing, essays]
 apps: [polywrite]
 ---

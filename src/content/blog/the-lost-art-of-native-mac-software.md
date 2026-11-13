@@ -1,7 +1,7 @@
 ---
 title: "The Lost Art Of Native Mac Software"
 description: "Mac users once knew an app by how it felt: the scrolling, the menus, the shortcuts. Why consistency and craft in native Mac software still matter."
-pubDate: 2026-11-13
+pubDate: 2026-07-17
 topics: [essays, mac-tips]
 apps: []
 ---

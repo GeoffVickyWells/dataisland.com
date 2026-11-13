@@ -1,7 +1,7 @@
 ---
 title: "The Hidden Problem With Single-Language Editors"
 description: "Add one paragraph in another language and most editors fill the screen with red underlines. Why single-language editors turn writers into software administrators."
-pubDate: 2026-11-13
+pubDate: 2026-10-09
 topics: [languages, writing]
 apps: [polywrite]
 ---

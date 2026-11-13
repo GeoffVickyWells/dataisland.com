@@ -4,7 +4,6 @@ description: "Most writing software assumes you write in one language. Much of t
 pubDate: 2026-11-13
 topics: [languages, writing]
 apps: [polywrite]
-featured: true
 ---
 
 For decades, writing software has been designed by people who assume their users write in one language. If you're reading this in New York or London, that assumption may seem perfectly reasonable. Open a document, write your text, save the file, move on. But for much of the world, writing isn't that simple.

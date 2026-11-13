@@ -1,7 +1,7 @@
 ---
 title: "When To Use Plain Text, Rich Text, Or Markdown"
 description: "Plain text, rich text and Markdown aren't competitors. A practical guide to which format fits notes, business documents, blogs, books and archives."
-pubDate: 2026-11-13
+pubDate: 2026-09-25
 topics: [writing]
 apps: [polywrite]
 ---

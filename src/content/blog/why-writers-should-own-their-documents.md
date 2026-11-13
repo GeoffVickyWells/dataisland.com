@@ -1,7 +1,7 @@
 ---
 title: "Why Writers Should Own Their Documents"
 description: "Accounts close, subscriptions lapse and services disappear. A file stored under your own control stays yours. Why writers should own their documents."
-pubDate: 2026-11-13
+pubDate: 2026-07-24
 topics: [writing, essays]
 apps: []
 ---

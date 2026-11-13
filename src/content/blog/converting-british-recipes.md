@@ -1,7 +1,7 @@
 ---
 title: "Gas Mark 4, Fan Ovens and Dessertspoons: How to Follow a British Recipe in North America"
 description: "British and Australian recipes use Gas Mark, fan oven temperatures, metric spoons and grams. Here's what each one means and how to convert them for an American or Canadian kitchen."
-pubDate: 2026-11-13
+pubDate: 2026-11-06
 topics: [cooking]
 apps: [kitchencalc]
 ---
