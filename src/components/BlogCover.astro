@@ -1,0 +1,116 @@
+---
+import { topicInfo, productInfo, type Post } from "../lib/blog";
+
+interface Props {
+  post: Post;
+  size?: "card" | "large";
+}
+
+// A post's own photo when it has one; otherwise a cover drawn from its main topic's colours
+// and the icons of the apps it covers, so every post has artwork without a photo shoot.
+const { post, size = "card" } = Astro.props;
+const { cover, coverAlt, topics, apps } = post.data;
+const topic = topicInfo(topics[0]);
+const icons = apps.map(productInfo).filter((p) => p !== undefined).slice(0, 3);
+
+// Posts about the same app would otherwise get identical covers, so the layout varies with the
+// post's URL: same post, same cover on every build, but neighbours in the grid look different.
+const hash = [...post.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+const glow = ["85% 15%", "15% 20%", "80% 90%", "50% 0%"][hash % 4];
+const waves = [
+  ["M0 160 Q100 120 200 160 T400 160 V225 H0Z", "M0 185 Q100 150 200 185 T400 185 V225 H0Z"],
+  ["M0 140 Q140 190 260 150 T400 130 V225 H0Z", "M0 180 Q120 160 240 190 T400 175 V225 H0Z"],
+  ["M0 175 Q80 140 170 170 T340 150 T400 165 V225 H0Z", "M0 195 Q150 175 280 200 T400 190 V225 H0Z"],
+][(hash >>> 2) % 3];
+const place = ["center", "left", "right"][(hash >>> 4) % 3];
+const initial = post.data.title.replace(/^[^A-Za-z0-9]+/, "").charAt(0);
+---
+
+{cover ? (
+  <img class={`cover photo ${size}`} src={cover} alt={coverAlt ?? ""} loading={size === "large" ? "eager" : "lazy"} />
+) : (
+  <div class={`cover drawn ${size} at-${place}`} style={`--tint:${topic.tint};--ink:${topic.ink};--glow:${glow}`} aria-hidden="true">
+    <svg class="waves" viewBox="0 0 400 225" preserveAspectRatio="none">
+      {waves.map((d) => <path d={d} />)}
+    </svg>
+    {place !== "center" && <span class="initial">{initial}</span>}
+    <div class="icons">
+      {icons.length > 0
+        ? icons.map((p) => <img src={p.icon} alt="" loading="lazy" />)
+        : <img src="/images/brand/palm.png" alt="" loading="lazy" class="palm" />}
+    </div>
+    <span class="topic">{topic.label}</span>
+  </div>
+)}
+
+<style>
+  .cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+  }
+  .photo { object-fit: cover; background: var(--gray-light); }
+
+  .drawn {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at var(--glow), color-mix(in srgb, var(--ink) 14%, transparent), transparent 55%),
+      var(--tint);
+  }
+  .waves {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .waves path { fill: var(--ink); opacity: 0.07; }
+
+  .icons {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6%;
+  }
+  .at-left .icons { justify-content: flex-start; padding-left: 12%; }
+  .at-right .icons { justify-content: flex-end; padding-right: 12%; }
+  .initial {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-58%);
+    font-family: "New York", "Iowan Old Style", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(5rem, 14vw, 12rem);
+    line-height: 1;
+    color: var(--ink);
+    opacity: 0.13;
+  }
+  .card .initial { font-size: clamp(4.5rem, 9vw, 7.5rem); }
+  .at-left .initial { right: 14%; }
+  .at-right .initial { left: 14%; }
+  .icons img {
+    width: 24%;
+    max-width: 150px;
+    aspect-ratio: 1;
+    border-radius: 22%;
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--ink) 25%, transparent);
+  }
+  .icons img.palm { box-shadow: none; border-radius: 0; width: 30%; opacity: 0.9; }
+  .icons img:nth-child(2) { transform: translateY(6%) rotate(4deg); }
+  .icons img:nth-child(1):not(:only-child) { transform: rotate(-4deg); }
+
+  .topic {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.8rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .large .topic { font-size: 0.8rem; left: 1.5rem; bottom: 1.2rem; }
+</style>

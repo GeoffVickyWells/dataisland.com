@@ -2,7 +2,17 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const { title = "DataIsland Software", description = "Privacy‑first tools for creators and professionals." } = Astro.props;
+const {
+  title = "DataIsland Software",
+  description = "Privacy‑first tools for creators and professionals.",
+  // Social-preview image, a path under /public. Defaults to the palm logo.
+  image = "/images/brand/palm.png",
+  // "article" for blog posts, so link previews and search engines treat them as articles.
+  ogType = "website",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
 ---
 
 <html lang="en">
@@ -11,10 +21,21 @@ const { title = "DataIsland Software", description = "Privacy‑first tools for 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content="DataIsland Software" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageURL} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="alternate" type="application/rss+xml" title="DataIsland Blog" href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/images/brand/palm.png" />
     <link rel="apple-touch-icon" href="/images/brand/palm.png" />
     <link rel="stylesheet" href="/styles/global.css" />
+    <slot name="head" />
   </head>
 
   <body>

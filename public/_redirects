@@ -1,2 +1,3 @@
 # Cloudflare Pages redirects
 /404  /404/index.html  404
+/tutorials/dictate-without-a-keyboard  /blog/dictate-without-a-keyboard  301

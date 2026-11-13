@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogCard from "../../../components/BlogCard.astro";
+import { getPosts, topics } from "../../../lib/blog";
+
+// One page per topic that has at least one post.
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return Object.keys(topics)
+    .filter((t) => posts.some((p) => p.data.topics.includes(t)))
+    .map((t) => ({ params: { topic: t } }));
+}
+
+const { topic } = Astro.params;
+const info = topics[topic];
+const posts = (await getPosts()).filter((p) => p.data.topics.includes(topic));
+---
+
+<BaseLayout
+  title={`${info.label} — DataIsland Blog`}
+  description={`${info.blurb} Posts from the DataIsland Software blog.`}
+>
+  <div class="topic-page">
+    <header style={`--ink:${info.ink};--tint:${info.tint}`}>
+      <a href="/blog" class="back">← All posts</a>
+      <p class="eyebrow">Topic</p>
+      <h1>{info.label}</h1>
+      <p class="deck">{info.blurb}</p>
+    </header>
+    <div class="grid">
+      {posts.map((post) => <BlogCard post={post} />)}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .topic-page { max-width: 1100px; margin: 0 auto; }
+  header {
+    background: var(--tint);
+    border-radius: var(--radius);
+    padding: 2rem 2rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .back { font-size: 0.9rem; }
+  .eyebrow {
+    margin: 1.25rem 0 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  h1 {
+    font-family: "New York", "Iowan Old Style", Georgia, serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 0.5rem;
+  }
+  .deck { margin: 0; font-size: 1.05rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 2.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 600px) { header { padding: 1.5rem 1.25rem; } }
+</style>
