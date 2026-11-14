@@ -1,0 +1,518 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Morph Tutorials — DataIsland Software"
+  description="Step-by-step guides for Morph — playing a word ladder, hints and par, playing across two languages, daily leaderboards, the Full Game, and keyboard shortcuts on the Mac."
+>
+
+  <div class="tut-wrap">
+
+    <div class="tut-header fade-in">
+      <div class="breadcrumb"><a href="/tutorials">← All Tutorials</a></div>
+      <h1>Morph — Tutorials</h1>
+      <p class="intro">
+        Everything you need to play Morph on Mac, iPhone and iPad. Start with the first guide
+        for the rules, or jump to any section using the contents list.
+      </p>
+      <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    </div>
+
+    <div class="tut-layout">
+
+      <!-- Table of contents -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#t1">Your first puzzle</a></li>
+          <li><a href="#t2">Reading the ladder</a></li>
+          <li><a href="#t3">When you're stuck</a></li>
+          <li><a href="#t4">Par and ratings</a></li>
+          <li><a href="#t5">Playing across two languages</a></li>
+          <li><a href="#t6">Daily puzzles &amp; leaderboards</a></li>
+          <li><a href="#t7">The Full Game</a></li>
+          <li><a href="#t8">Statistics &amp; streaks</a></li>
+          <li><a href="#t9">Playing on the Mac</a></li>
+          <li><a href="#t10">iPhone, iPad &amp; iPhone Duo</a></li>
+        </ol>
+      </nav>
+
+      <!-- Tutorial content -->
+      <div class="tut-content">
+
+        <!-- ─────────────────────────────────────────── Tutorial 1 -->
+        <section class="tut-section" id="t1">
+          <h2><span class="num">1</span> Your First Puzzle</h2>
+          <p class="goal">What you'll learn: the one rule of Morph, and how to enter a word.</p>
+
+          <p>
+            Every puzzle gives you a start word at the top and a target word at the bottom, for
+            example <strong>Turn COLD into WARM</strong>. Change one letter at a time. Every word on
+            the way must be a real word, and you can't use the same word twice.
+          </p>
+
+          <table>
+            <thead><tr><th>Step</th><th>Word</th><th>What changed</th></tr></thead>
+            <tbody>
+              <tr><td>Start</td><td>COLD</td><td></td></tr>
+              <tr><td>1</td><td>CORD</td><td>L becomes R</td></tr>
+              <tr><td>2</td><td>CARD</td><td>O becomes A</td></tr>
+              <tr><td>3</td><td>WARD</td><td>C becomes W</td></tr>
+              <tr><td>4</td><td>WARM</td><td>D becomes M, the target</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Read the brief.</strong> Above the ladder Morph shows "Turn COLD into WARM", with the puzzle number, par and how many steps you've taken so far.</li>
+            <li><strong>Type the next word.</strong> On iPhone and iPad use the on-screen keyboard. On the Mac just type; there's no box to click first.</li>
+            <li><strong>Press Enter</strong> (Return on the Mac). If the word is allowed it joins the ladder and Morph tells you how many steps you need at best from there, for example "3 more steps at best from here."</li>
+            <li><strong>Keep going</strong> until you type the target word. The puzzle is solved and a result card appears.</li>
+          </ol>
+
+          <h3>If a word isn't accepted</h3>
+          <p>Morph explains what went wrong in a line under the ladder:</p>
+          <ul>
+            <li><strong>"You changed 2 letters. Change just one."</strong> Only one letter may differ from the word above.</li>
+            <li><strong>"FROB isn't in the English word list."</strong> The word isn't one Morph knows. Names, abbreviations and very rare words are left out.</li>
+            <li><strong>"You've already used CARD."</strong> Each word can appear only once on a ladder.</li>
+            <li><strong>"Type 4 letters."</strong> Every word is the same length as the start word.</li>
+          </ul>
+          <p>Use Delete (the ⌫ key) to fix a typing mistake before you press Enter.</p>
+
+          <div class="tip">
+            <strong>The first time you open Morph</strong> it shows How to Play, a one-page summary
+            of the rules. You can open it again any time from the <strong>?</strong> button on
+            iPhone and iPad, or <strong>Help → How to Play</strong> on the Mac.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 2 -->
+        <section class="tut-section" id="t2">
+          <h2><span class="num">2</span> Reading the Ladder</h2>
+          <p class="goal">What you'll learn: what the colours, lines and tags on the ladder tell you.</p>
+
+          <ul>
+            <li><strong>Gold letters</strong> already match the target in the same position. The more gold on a row, the closer you are.</li>
+            <li><strong>A blue bar</strong> under a letter marks the letter you just changed.</li>
+            <li><strong>The dotted line</strong> is par, the fewest steps the puzzle can be solved in. Rows above it are your steps; the target sits below.</li>
+            <li><strong>Empty rows</strong> show how many steps are left before par. If you need more steps, keep going: the ladder grows.</li>
+            <li><strong>Language tags</strong> such as EN, FR or EN · FR appear beside each word when you play across two languages (see <a href="#t5">tutorial 5</a>).</li>
+          </ul>
+
+          <div class="tip">
+            <strong>Prefer a plainer ladder?</strong> On the Mac you can turn the gold highlights off
+            with <strong>Puzzle → Highlight Matching Letters</strong>. It makes the puzzle harder,
+            because you have to spot the matching letters yourself.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 3 -->
+        <section class="tut-section" id="t3">
+          <h2><span class="num">3</span> When You're Stuck</h2>
+          <p class="goal">What you'll learn: the three ways to get unstuck, and what each one costs.</p>
+
+          <p>Three buttons sit above the keyboard on iPhone and iPad, and in the toolbar on the Mac:</p>
+          <table>
+            <thead><tr><th>Button</th><th>What it does</th><th>Effect on your result</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Back one step</strong></td><td>Takes back your last word, so you can try a different one.</td><td>None. Only the words on the finished ladder count.</td></tr>
+              <tr><td><strong>Hint</strong></td><td>Types the next word on a shortest route from where you are. Press Enter to use it, or delete it and try your own.</td><td>Each hint is added to your leaderboard score and shown on your result, for example "Perfect, 1 hint".</td></tr>
+              <tr><td><strong>Show a route</strong></td><td>Gives up and shows a shortest route from start to target.</td><td>The puzzle isn't counted as solved, and it doesn't count toward your streak.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Dead ends</h3>
+          <p>
+            Some words are allowed but lead nowhere: no route from them reaches the target. Morph
+            tells you straight away with "That's a dead end. Go back a step." Press
+            <strong>Back one step</strong> and choose a different word.
+          </p>
+
+          <div class="tip">
+            <strong>A good habit:</strong> watch the "more steps at best from here" message after
+            each word. If the number goes up instead of down, you've wandered off the shortest
+            route. Go back a step and try another letter.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 4 -->
+        <section class="tut-section" id="t4">
+          <h2><span class="num">4</span> Par and Ratings</h2>
+          <p class="goal">What you'll learn: how a finished puzzle is rated, and what the result card shows.</p>
+
+          <table>
+            <thead><tr><th>Steps taken</th><th>Rating</th></tr></thead>
+            <tbody>
+              <tr><td>Fewer than par</td><td><strong>Shorter than par!</strong> Rare: you found a route shorter than ours.</td></tr>
+              <tr><td>Exactly par</td><td><strong>Perfect</strong></td></tr>
+              <tr><td>1 over par</td><td><strong>Great</strong></td></tr>
+              <tr><td>2 over par</td><td><strong>Good</strong></td></tr>
+              <tr><td>3 or more over par</td><td><strong>Solved</strong></td></tr>
+              <tr><td>Used Show a route</td><td><strong>Here's a route</strong></td></tr>
+            </tbody>
+          </table>
+
+          <h3>The result card</h3>
+          <ul>
+            <li>Your rating and the number of steps against par.</li>
+            <li>If you went over par, the shortest route, so you can see where a step could be saved.</li>
+            <li><strong>Share</strong> (daily puzzles) copies or sends a short result such as "Morph · Puzzle 12 · French → English · Perfect · 6 steps, par 6". It never gives away the words.</li>
+            <li><strong>Leaderboard</strong> (daily puzzles) shows how everyone did on the same puzzle.</li>
+            <li><strong>Practice puzzle</strong> or <strong>Next translation</strong> starts another puzzle.</li>
+            <li>When the next daily puzzle arrives.</li>
+          </ul>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 5 -->
+        <section class="tut-section" id="t5">
+          <h2><span class="num">5</span> Playing Across Two Languages</h2>
+          <p class="goal">What you'll learn: choosing your languages, and how words from two languages mix on one ladder.</p>
+
+          <p>
+            Morph speaks English, French, Spanish and German. At the top of the screen you'll see
+            <strong>From</strong> and <strong>to</strong>, each with a language menu.
+          </p>
+
+          <h3>Steps</h3>
+          <ol class="steps">
+            <li><strong>Choose a From language.</strong> The start word is in this language.</li>
+            <li><strong>Choose a to language.</strong> The target word is in this language.</li>
+            <li><strong>Play as usual.</strong> Every step can be a word in either language. Each word on the ladder is tagged with the language it counted as: FR, EN, or FR · EN for a word that exists in both.</li>
+          </ol>
+
+          <p>Here's a French-to-English ladder that passes through both languages:</p>
+          <table>
+            <thead><tr><th>Word</th><th>Language</th></tr></thead>
+            <tbody>
+              <tr><td>MURE</td><td>French, the start</td></tr>
+              <tr><td>CURE</td><td>French and English</td></tr>
+              <tr><td>CORE</td><td>English</td></tr>
+              <tr><td>CORK</td><td>English</td></tr>
+              <tr><td>COOK</td><td>English</td></tr>
+              <tr><td>HOOK</td><td>English, the target</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            Choose the same language twice, for example English to English, for the classic
+            one-language game. With four languages there are 16 combinations, and each has its
+            own puzzles.
+          </p>
+
+          <h3>Accents and special letters</h3>
+          <ul>
+            <li>Accents are ignored, as in crosswords: É counts as E, Ü counts as U. Type plain letters.</li>
+            <li>German ß counts as SS.</li>
+            <li>Spanish Ñ is its own letter, so AÑO and ANO are different words. When Spanish is one of your languages, the on-screen keyboard adds an Ñ key. On the Mac, type Ñ with Option-N followed by N.</li>
+          </ul>
+
+          <div class="tip">
+            <strong>You don't need to speak both languages.</strong> If you're stuck, Hint shows the
+            next word and which language it's from. It's an easy way to pick up new words.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 6 -->
+        <section class="tut-section" id="t6">
+          <h2><span class="num">6</span> Daily Puzzles &amp; Leaderboards</h2>
+          <p class="goal">What you'll learn: when new puzzles arrive, and how the daily leaderboards work.</p>
+
+          <ul>
+            <li><strong>One new puzzle a day for every language pair</strong>, free. It's in the <strong>Today</strong> mode.</li>
+            <li><strong>Everyone gets the same puzzle at the same moment.</strong> New puzzles arrive at noon GMT worldwide (7 a.m. Eastern in winter). If Morph is open when a new puzzle arrives, it switches to it, unless you're in the middle of a puzzle you chose yourself.</li>
+            <li><strong>Every pair has its own daily puzzle.</strong> If you play in several languages, you can play several dailies a day.</li>
+            <li><strong>No downloads.</strong> Ten years of daily puzzles are built into the app, so Morph works without an internet connection.</li>
+          </ul>
+
+          <h3>Leaderboards</h3>
+          <p>
+            Each language pair, and Clever, has its own daily leaderboard in Game Center. Your score
+            is the number of steps you took plus one for each hint, so lower is better. Leaderboards
+            reset with each new puzzle.
+          </p>
+          <ol class="steps">
+            <li><strong>Sign in to Game Center</strong> in Settings (iPhone and iPad) or System Settings (Mac), if you aren't already. Game Center is optional; Morph works fully without it.</li>
+            <li><strong>Solve today's puzzle.</strong> Your score is sent automatically.</li>
+            <li><strong>Open the leaderboard</strong> with the <strong>trophy</strong> button, the <strong>Leaderboard</strong> button on the result card, or <strong>Puzzle → Today's Leaderboard</strong> (⇧⌘L) on the Mac.</li>
+          </ol>
+
+          <div class="tip">
+            <strong>Show a route doesn't score.</strong> A puzzle you gave up on isn't sent to the
+            leaderboard.
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 7 -->
+        <section class="tut-section" id="t7">
+          <h2><span class="num">7</span> The Full Game</h2>
+          <p class="goal">What you'll learn: what the one-time Full Game purchase adds, and how to buy or restore it.</p>
+
+          <p>Today's puzzle is free every day, in any pair of languages. The Full Game ($4.99, one time, no subscription) adds four modes:</p>
+          <table>
+            <thead><tr><th>Mode</th><th>What it is</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Clever · 5 letters</strong></td><td>A harder daily puzzle with five-letter words, with its own leaderboard. English to English only.</td></tr>
+              <tr><td><strong>Practice</strong></td><td>As many extra puzzles as you like, in your chosen languages. Press <strong>Practice puzzle</strong> on the result card for another.</td></tr>
+              <tr><td><strong>Translations</strong></td><td>Start on a word and finish on its meaning in the other language, such as LUNE to MOON or LUNA to MOND. Pick one from the list; each shows its par. Appears when your two languages are different.</td></tr>
+              <tr><td><strong>Past puzzles</strong></td><td>Play any daily puzzle you missed, for your current languages. Each day shows your rating if you've played it.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Buying the Full Game</h3>
+          <ol class="steps">
+            <li>Tap the <strong>open lock</strong> button at the top right (iPhone and iPad), or choose <strong>Morph → Full Game…</strong> on the Mac. Choosing any locked mode, marked with a small lock, opens the same screen.</li>
+            <li>Press <strong>Unlock the Full Game</strong> and confirm with your Apple Account.</li>
+          </ol>
+
+          <h3>On another device, or after reinstalling</h3>
+          <p>
+            The Full Game works on every Mac, iPhone and iPad signed in with the same Apple
+            Account. It usually unlocks by itself. If it doesn't, open the Full Game screen and
+            press <strong>Restore Purchase</strong>.
+          </p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 8 -->
+        <section class="tut-section" id="t8">
+          <h2><span class="num">8</span> Statistics &amp; Streaks</h2>
+          <p class="goal">What you'll learn: what Morph keeps track of, and how a streak counts.</p>
+
+          <p>Open Statistics with the <strong>chart</strong> button (iPhone and iPad) or <strong>Puzzle → Statistics</strong> on the Mac. It shows:</p>
+          <ul>
+            <li><strong>Daily puzzles played</strong> and <strong>Solved</strong></li>
+            <li><strong>On par or better</strong>: how many you solved in par or fewer steps</li>
+            <li><strong>Day streak</strong> and <strong>Best streak</strong></li>
+          </ul>
+          <p>
+            Statistics count daily puzzles in every language. A day counts toward your streak when
+            you solve at least one daily puzzle without using Show a route. Your results stay on
+            your device; Morph has no account and sends them nowhere except, if you use it, Game
+            Center.
+          </p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 9 -->
+        <section class="tut-section" id="t9">
+          <h2><span class="num">9</span> Playing on the Mac</h2>
+          <p class="goal">What you'll learn: the Mac layout, menus and keyboard shortcuts.</p>
+
+          <p>
+            On the Mac the ladder fills the left of the window, and a panel on the right holds the
+            language menus, the modes and a short rules card. The actions are in the toolbar and in
+            the <strong>Puzzle</strong> menu. Type words on your keyboard and press Return.
+          </p>
+
+          <h3>Keyboard shortcuts</h3>
+          <table>
+            <thead><tr><th>Action</th><th>Shortcut</th></tr></thead>
+            <tbody>
+              <tr><td>Enter a word</td><td>Return</td></tr>
+              <tr><td>Delete a letter</td><td>Delete</td></tr>
+              <tr><td>Back one step</td><td>⌘Z</td></tr>
+              <tr><td>Hint</td><td>⌘'</td></tr>
+              <tr><td>Show a route</td><td>⌥⌘R</td></tr>
+              <tr><td>Today's puzzle</td><td>⌘1</td></tr>
+              <tr><td>Clever · 5 letters</td><td>⌘2</td></tr>
+              <tr><td>Practice</td><td>⌘3</td></tr>
+              <tr><td>Translations</td><td>⌘4</td></tr>
+              <tr><td>New practice puzzle</td><td>⌘N</td></tr>
+              <tr><td>Past puzzles</td><td>⌘Y</td></tr>
+              <tr><td>Today's leaderboard</td><td>⇧⌘L</td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            The <strong>Puzzle</strong> menu also has <strong>From</strong> and <strong>To</strong>
+            submenus for your languages, <strong>Statistics</strong>, and
+            <strong>Highlight Matching Letters</strong>.
+          </p>
+        </section>
+
+        <!-- ─────────────────────────────────────────── Tutorial 10 -->
+        <section class="tut-section" id="t10">
+          <h2><span class="num">10</span> iPhone, iPad &amp; iPhone Duo</h2>
+          <p class="goal">What you'll learn: how Morph arranges itself on different screens.</p>
+
+          <ul>
+            <li><strong>iPhone:</strong> the ladder is in the middle, with Back one step, Hint, Show a route and the keyboard at the bottom. The buttons along the top are the Full Game (until you buy it), Past puzzles, Statistics, Leaderboard and How to Play.</li>
+            <li><strong>iPad and wide windows:</strong> the ladder sits on the left and the controls and keyboard on the right.</li>
+            <li><strong>iPhone Duo:</strong> folded, Morph uses a compact layout made for the outer screen, with smaller buttons so the whole ladder fits. Unfold it and the ladder moves beside the controls. Your puzzle carries on exactly where it was.</li>
+          </ul>
+
+          <div class="tip">
+            <strong>Changing modes:</strong> the mode buttons under the language menus are
+            Today, Clever · 5 letters, Practice and Translations. If you have a puzzle in progress,
+            it's saved, so you can switch away and come back to it.
+          </div>
+        </section>
+
+      </div><!-- /tut-content -->
+    </div><!-- /tut-layout -->
+  </div><!-- /tut-wrap -->
+
+</BaseLayout>
+
+<style>
+  .tut-wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 5rem;
+  }
+
+  .tut-header { margin-bottom: 1.25rem; }
+
+  .breadcrumb { margin-bottom: 0.75rem; font-size: 0.9rem; }
+  .breadcrumb a { color: var(--blue); }
+
+  .tut-header h1 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+  }
+
+  .print-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .print-btn:hover { background: #005fa3; }
+
+  .tut-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+    animation: layout-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
+  }
+
+  @keyframes layout-enter {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .toc h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc ol { list-style: decimal; padding-left: 1.2rem; margin: 0; }
+  .toc li { margin-bottom: 0.45rem; }
+  .toc a { font-size: 0.88rem; color: var(--gray-dark); text-decoration: none; line-height: 1.4; display: block; }
+  .toc a:hover { color: var(--blue); }
+
+  .tut-section {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .tut-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .tut-section h2 {
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .goal {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-left: 2.4rem;
+  }
+
+  .tut-section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--blue); }
+  .tut-section p  { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.75rem; }
+
+  .steps { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .steps li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.6rem; }
+
+  .tut-section ul  { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .tut-section ul li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.45rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--gray-light);
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .tip {
+    background: var(--blue-light, rgba(0,102,255,0.06));
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+
+  @media print {
+    .print-btn, .breadcrumb { display: none; }
+    .tut-layout { grid-template-columns: 1fr; }
+    .toc { position: static; page-break-after: always; }
+    .tut-section { page-break-inside: avoid; }
+    body { font-size: 11pt; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+</style>
