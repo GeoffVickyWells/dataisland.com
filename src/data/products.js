@@ -78,13 +78,15 @@ export const products = [
     description: "Free local-network messaging for Mac. Send notes, images, and links to anyone on your home network — no server, no internet, no account. Peer-to-peer encrypted. The spiritual successor to Adium.",
     active: true
   },
-  {
-    id: "polyspeak",
-    title: "PolySpeak",
-    icon: "/images/products/comingsoon/icon1.png",
-    description: "Real performances, carried by AI voices — not flat AI reading. PolySpeak captures how someone actually performs a line and carries that performance through an AI voice, the same principle motion capture uses for CG characters. Five connected Mac apps: write, cast, capture, and produce.",
-    active: true
-  },
+  // PolySpeak suite: held back from the site 2026-11-19 (Geoff: don't confuse App Review).
+  // Its pages are in archive/polyspeak-suite/.
+  //   {
+  //     id: "polyspeak",
+  //     title: "PolySpeak",
+  //     icon: "/images/products/comingsoon/icon1.png",
+  //     description: "Real performances, carried by AI voices — not flat AI reading. PolySpeak captures how someone actually performs a line and carries that performance through an AI voice, the same principle motion capture uses for CG characters. Five connected Mac apps: write, cast, capture, and produce.",
+  //     active: true
+  //   },
   // Coming-soon products — kept for reference, not rendered on site
   // {
   //   id: "atlas",
